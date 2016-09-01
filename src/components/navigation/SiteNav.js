@@ -22,12 +22,22 @@ const SiteNav = React.createClass({
         window.removeEventListener('keyup', this._toggleNav);
     },
     _toggleNav(e) {
-        if((e.keyCode && e.keyCode === 27) || this.state.active) {
+        if(e.keyCode && e.keyCode === 27) {
             document.body.classList.remove('nav-container-active');
             this.setState({
                 active: false
             });
-        } else {
+            return;
+        } else if (e.keyCode && e.keyCode !== 27) {
+            return;
+        }
+
+        if(this.state.active) {
+            document.body.classList.remove('nav-container-active');
+            this.setState({
+                active: false
+            });
+        } else  {
             document.body.classList.add('nav-container-active');
             this.setState({
                 active: true
