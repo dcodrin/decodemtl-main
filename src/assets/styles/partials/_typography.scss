@@ -1,0 +1,105 @@
+// ROOT font sizes (html)
+// medium - 125% (20px)
+// large - 138% (22px)
+// small - 
+
+// 16px = 0.8rem
+// 18px = 0.9rem
+// 20px = 1rem (base) -- 125%
+// 24px = 1.2rem
+// 28px = 1.4rem
+// 32px = 1.6rem
+// 36px = 1.8rem
+// 40px = 2rem
+// 60px = 3rem
+// 120px = 6rem
+
+// ===================
+// Global
+// ===================
+html {
+	font-size: 125%; // 20px
+	@include breakpoint(mindesktop) {
+		font-size: 138%;
+	}
+}
+body {
+  font-family: $font_regular, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $black;
+  background: $white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1,
+h2,
+h3 {
+	font-family: $font-bold;
+	font-weight: normal;
+	line-height: 1.2;
+} 
+h1 {
+	font-size: 3rem;
+	margin-bottom: 0.25em;
+}
+h2 {
+	font-size: 2rem;
+	margin-bottom: 0.3em;
+}
+h3 {
+	font-size: 1.6rem;
+	margin-bottom: 0.5em;
+}
+h4 {
+	font-family: $font_medium;
+	font-weight: normal;
+	font-size: 1.2rem;
+	margin-bottom: 0.5em;
+}
+
+// Generic styles ------------
+strong {
+	font-family: $font_bold;
+}
+
+// Body Utility classes ------
+.text-body-large {
+	font-size: 1.4rem;
+}
+.text-body-small {
+	font-size: 0.9rem;
+}
+.text-subtle {
+	color: $hardgrey;
+}
+
+// Module Headers -----------
+.module-title {
+	font-size: 3rem;
+	text-transform: uppercase;
+	letter-spacing: 0.025em;
+	font-family: $font_cond_bold;
+	.module-title-jumbo {
+		font-family: $font_bold;
+		margin-top: -0.2em;
+		display: block;
+		font-size: 6rem;
+		color: $red;
+	}
+}
+// Uppercase Headers -----------
+.uc-title {
+	font-family: $font_cond_bold;
+	text-transform: uppercase;
+	margin-top: 0;
+}
+
+// ===================
+// Footer
+// ===================
+ .site-footer {
+ 	h4 {
+ 		color: $lightgrey;
+ 	}
+ }

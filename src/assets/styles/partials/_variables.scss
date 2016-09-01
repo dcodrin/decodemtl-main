@@ -1,0 +1,33 @@
+// Typography 
+// ------------------------------
+$font_regular:'DIN Next W01 Regular';
+$font_medium:'DIN Next W01 Medium';
+$font_bold:'DIN Next W01 Bold';
+$font_cond_bold:'DINNextW01-CondensedBol';
+$font_italic:'DIN Next W01 Italic';
+$font_decode: 'icomoon';
+
+// Decode icons
+// ------------------------------
+$icon-petal: "\e900";
+
+// Color 
+// ------------------------------
+$red: #D6252C;
+$black: #212121;
+$white: #FAFAFA;
+$blue: #17BECF;
+$lightgrey: #F0F0F0;
+$grey: #D6D6D6;
+$midgrey: #999999;
+$hardgrey: #666666;
+$darkgrey: #303030;
+
+// Utility
+// -----------------------------
+// $transition_all: all 0.2s ease;
+
+// Layout
+// -----------------------------
+$module-vert-pd: 3rem;
+$module-inner-vert-spacing: $module-vert-pd;

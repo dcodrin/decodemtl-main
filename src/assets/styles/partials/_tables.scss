@@ -1,0 +1,73 @@
+// ========================
+// Multicolumn Table
+// ========================
+.multi-column-table {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	@include breakpoint(mintablet) {
+		display: block;
+	}
+	.row {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+		padding: 1.2em;
+		flex: auto;
+		@include breakpoint(mintablet) {
+			flex-flow: row nowrap;
+			padding: 1.2em 0;
+		}
+		&:not(:last-child) {
+			@include breakpoint(mintablet) {
+				border-bottom: 1px solid;
+			}
+			@include breakpoint(phablet) {
+				border-bottom: 1px solid;
+			}
+		}
+	}
+	.cell {
+		padding: 0.3em 0;
+		flex: 1 1 15%;
+		@include breakpoint(mintablet) {
+			&:not(:first-child) {
+				padding-left: 1em;
+			}
+			&:first-child {
+				text-align: left;
+			}
+			&:last-child {
+				flex: 0 2 10%;
+			}
+		}
+	}
+}
+// ========================
+// Two Column Table
+// ========================
+.two-col-table {
+  .row {
+    border-bottom: 1px solid;
+    padding: 1.5em 0;
+    &:last-child {
+    	border: none;
+    	padding-bottom: 0;
+    }
+    @include breakpoint(mintablet) {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+  }
+  .cell-content {
+    @include breakpoint(mintablet) {
+      flex: 70%;
+    }
+  }
+  .cell-header {
+  	flex: 20%;
+  	padding-right: 1em;
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,222 @@
+// ================================
+// Media
+// ================================
+img,
+video,
+svg {
+    max-width: 100%;
+}
+
+// ================================
+// Lists
+// ================================
+ul,
+ol {
+	padding: 0;
+}
+
+// Generic list style for body-copy
+.body-copy-list {
+	margin: 2em 0;
+	font-size: 0.9rem;
+	li {
+		margin-left: 2.5em;
+		margin-bottom: 0.8em;
+		list-style-position: initial;
+	}
+}
+// Social icons list ---------
+.social-list {
+	list-style: none;
+	display: flex;
+}
+// petal icon list ------
+.petal-icon-list {
+	list-style: none;
+	margin-left: 1.7em;
+	li {
+		font-size: 1.4rem;
+		position: relative;
+		margin: 0.7em 0;
+		.petal-icon {
+		  position: absolute;
+		  top: 54%;
+		  transform: translateY(-50%);
+		  height:100%;
+		  left: -1.6em;
+		  width: 1.7em;
+		  font-size: 0.8em;
+			&:before {
+			  content:$icon-petal;
+			  font-family: $font_decode;
+			  display: inline-block; // allows rotation
+			  @include transition-all;
+			}
+		}
+	}
+}
+// faq list -------------
+.accordion-list {
+  .question {
+    cursor: pointer;
+  }
+  .answer {
+    display: none;
+    font-size: 0.9rem;
+    margin-bottom: 2em;
+  }
+  .rotate:before {
+  transform: rotate(-90deg);
+  }
+}
+// ================================
+// Accessability
+// ================================
+// Helper class--------------------
+.visually-hidden {
+	@include screen-reader;
+}
+
+// ================================
+// Logos
+// ================================
+
+// Decode main logo ---------------
+.decode-logo {
+	.mtl,
+	.petal-special {
+		fill: $red;
+	}
+	.decode,
+	.petal-generic {
+		fill: $black;
+	}
+}
+// Decode main logo reversed ------
+.decode-logo.reversed {
+	.mtl,
+	.petal-special {
+		fill: $red;
+	}
+	.decode,
+	.petal-generic {
+		fill: $white;
+	}
+}
+// Decode badge logo --------------
+.decode-logo-badge {
+	.badge-background {
+		fill:$black;
+	}
+	.badge-petal-generic {
+		fill: $white;
+	}
+	.badge-petal-special {
+		fill: $red;
+	}
+}
+// Decode badge logo reversed -----
+.decode-badge-reversed {
+	.petal-generic {
+		fill: $white;
+	}
+	.petal-special {
+		fill: $red;
+	}
+}
+// ================================
+// Info Blocks
+// ================================
+.info-block {
+	padding: 0.8em;
+	background:$lightgrey;
+	a {
+		color: inherit;
+		border-bottom: 1px solid;
+		&:hover {
+			border-bottom: 2px solid;
+		}
+	}
+}
+.info-block-centered {
+	text-align: center;
+}
+.info-block-red,
+.info-block-blue {
+	color: $white;
+	font-family: $font_medium;
+}
+.info-block-red {
+	background:$red;
+}
+.info-block-blue {
+	background:$blue;
+}
+// ================================
+// Image-text Blocks
+// ================================
+.img-text-container {
+	padding: calc(#{$module-vert-pd} / 2) 0;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	&:last-child {
+		padding-bottom: 0;
+	}
+	h4:first-child {
+		margin-top: 0;
+	}
+	p:last-child {
+		margin-bottom: 0;
+	}
+	img {
+		width: 100%;
+	}
+	blockquote {
+		margin: 0;
+		p {
+			font-family: $font_italic;
+		}
+	}
+	.credit {
+		font-size: 0.8em;
+		margin-left: 0.5em;
+		font-family: $font_bold;
+		&::before {
+			content: "—";
+		}
+	}
+	@include breakpoint(minlaptop) {
+		align-items: center;
+	}
+}
+.img-text-pic {
+	flex: 0 0 15%;
+	min-width: 100px;
+	max-width: 200px;
+	margin: 0 60px 0.5em 0;
+	img {
+		border-radius: 50%;
+	}
+}
+.img-text-details {
+	flex: 70%;
+	@include breakpoint(mindesktop) {
+		flex-grow: 0;
+	}
+}
+// Icon blocks -----------
+.icon-block {
+	.icon {
+		flex: 0 0 100px;
+		min-width: 100px;
+		margin: 0 60px 0.5em 0;
+	}
+}
+// ================================
+// Foot notes
+// ================================
+.foot-note {
+	font-family: $font_italic;
+	margin: 1rem 0;
+}

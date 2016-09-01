@@ -1,0 +1,14 @@
+.wrapper {
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 0 2vh;
+	@include breakpoint(mintablet) {
+		padding: 0 3vh;
+	}
+	@include breakpoint(minlaptop) {
+		padding: 0;
+	}
+	@include breakpoint(mindesktop) {
+		max-width: 1200px;
+	}
+}

@@ -1,0 +1,291 @@
+// ===================
+// Site Header
+// ===================
+.site-header {
+	padding: 2rem 0 3rem 0;
+	@include breakpoint(phablet) {
+		background:$lightgrey;
+		padding: 0;
+	}
+}
+.site-header-wrapper {
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+	align-items: center;
+	@include breakpoint(phablet) {
+		justify-content: space-between;
+	}
+	.mobile-home-link {
+		display: none;
+		@include breakpoint(tablet) {
+			display: block;
+			margin-right: auto;
+			font-size: 0;
+		}
+		@include breakpoint(phablet) {
+			margin: 0;
+		}
+		.decode-logo-badge {
+			width: 60px;
+			height: 60px;
+			@include breakpoint(phablet) {
+				width: 48px;
+			}
+		}
+	}
+}
+.home-link {
+	display: flex;
+	flex: 0 0 240px;
+	margin-right: auto;
+	@include breakpoint(tablet) {
+		display: none;
+	}
+	.petals {
+		transform: rotate(0deg);
+		transform-origin: center;
+		transition: transform 0.2s;
+	}
+	&:hover .petals {
+		transform: rotate(180deg);
+	}
+}
+// Header nav --------------
+.site-header-nav {
+	align-self: flex-end;
+	flex: 0 1 50%;
+	margin-right: 8%;
+	@include breakpoint(tablet) {
+		flex-basis: 65%;
+	}
+	@include breakpoint(phablet) {
+		order: -1;
+		flex: 0;
+		margin: 0;
+		li:not(.lang-switcher) {
+			display: none;
+		}
+	}
+}
+.site-header-menu {
+	display: flex;
+	list-style: none;
+	justify-content: space-between;
+	li a {
+		font-family: $font-medium;
+		&:hover {
+			color: $red;
+		}
+	}
+}
+.lang-switcher {
+	text-transform: uppercase;
+}
+// ===================
+// Slideout Nav
+// ===================
+// Hide scrollbars when open
+body.nav-container-active {
+	overflow: hidden;
+	// position: fixed;
+}
+// Nav Overlay --------------------
+.nav-overlay {
+	@include overlay;
+	background:transparentize($lightgrey, 0.1);
+	z-index: 10;
+	visibility: hidden;
+	opacity: 0;
+	@include transition-all();
+}
+.nav-container-active {
+	.nav-overlay {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+// Nav Trigger --------------------
+.nav-trigger-wrapper {
+	position: relative;
+	height: 34px;
+	width: 26px;
+	cursor: pointer;
+	z-index: 30;
+}
+.nav-trigger-icon {
+	content: '';
+	position: absolute;
+	top: 0.6em;
+	height: 4px;
+	width: 26px;
+	background: $black;
+	@include transition-all;
+	&:before {
+		content: '';
+		position: absolute;
+		height: 4px;
+		width: 26px;
+		background: $black;
+		@include transition-all;
+		top: -0.4em;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		height: 4px;
+		width: 26px;
+		background: $black;
+		@include transition-all;
+		top: 0.4em;
+	}
+}
+.nav-container-active {
+	.nav-trigger-icon {
+		background: transparent;
+		transform: rotate(-135deg);
+		&:before {
+			top: 0;
+			transform: rotate(90deg);
+		}
+		&:after {
+			top: 0;
+		}
+	}
+	.nav-container {
+		transform: translateX(0);
+		pointer-events: initial;
+	}
+}
+// Nav Container ------------------
+.nav-container {
+	@include transition-all(0.4s);
+	pointer-events: none;
+	position: fixed;
+	width: 19em;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 20;
+	height: 100%;
+	overflow-y: scroll;
+	padding: 4.6rem 2.5rem 0 2.5rem;
+	background: $white;
+	box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.13);
+	color: $black;
+	transform: translateX(23.75em);
+	@include breakpoint(tablet) {
+		transform: translateX( calc(36.75em + 2.5rem));
+		width: 100%;
+		box-shadow: none;
+		padding-top: 5rem;
+	}
+	@include breakpoint(phablet) {
+		padding-top: 3rem;
+	}
+	.mobile-home-link {
+		position: absolute;
+		top: 2.5rem;
+		left: 2.5rem;
+		.decode-logo-badge {
+			width: 48px;
+			height: 48px;
+		}
+		@include breakpoint(phablet) {
+			top: 15px;
+			left: 2.5rem;
+		}
+	}
+}
+// Nav Content -------------------
+.nav-content {
+	ul {
+		list-style-type: none;
+	}
+}
+// Slideout primary menu
+.nav-primary-menu {
+	margin: 2em 0;
+	li a {
+		font-family: $font-medium;
+		font-size: 1.4rem;
+	}
+}
+// Slideout secondary menu
+.nav-secondary-menu {
+	margin: 2em 0;
+	li a {
+		font-size: 1.1rem;
+	}
+}
+// Slideout social icons 
+.nav-content {
+	.social-list {
+		margin: 1em 0;
+		li a {
+			font-size: 1.6rem;
+			color: $midgrey;
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+}
+// Slideout contact details
+.contact-details {
+	margin: 0;
+	li {
+		font-size: 0.8rem;
+		padding: 0.2em 0;
+		&:first-child a {
+			color: $midgrey;
+		}
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+}
+// common link colors
+.nav-primary-menu,
+.nav-secondary-menu,
+.contact-details {
+	li a:hover {
+		color: $red;
+	}
+}
+
+// ===================
+// Secondary Navigation
+// ===================
+.secondary-nav {
+	background:$lightgrey;
+	box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.13);
+	padding: 0.6em 0;
+	ul {
+		list-style: none;
+	}
+}
+.secondary-nav-container {
+	display: flex;
+	justify-content: space-between;
+	flex-flow: row wrap;
+}
+.secondary-nav-list,
+.secondary-nav-cta {
+	display: flex;
+	align-items: center;
+	li {
+		flex: 0 0 auto;
+	}
+}
+.secondary-nav-cta {
+	margin-left: 2rem;
+}
+.secondary-nav-list {
+	font-size: 0.9rem;
+	flex: auto;
+	justify-content: space-between;
+	li a:hover {
+		color: $red;
+	}
+}
