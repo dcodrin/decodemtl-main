@@ -25,6 +25,11 @@ a {
 	}
 }
 
+// active nav links -------
+.current {
+	color: $red;
+}
+
 // ========================
 // Read More Inline & Block
 // ========================
@@ -67,6 +72,20 @@ a {
 		position: relative;
 		top: 0.05em;
 		transition: transform 0.2s;
+	}
+}
+
+// Foot-notes ---------------
+.foot-note {
+	a {
+		color: inherit;
+		text-decoration: underline;
+		&:hover {
+			color: $black;
+		}
+		&::before {
+			content: none;
+		}
 	}
 }
 
@@ -131,20 +150,6 @@ a {
 		&:hover {
 			border: none;
 			transform: scale(1.1);
-		}
-	}
-}
-
-// Foot-notes ---------------
-.foot-note {
-	a {
-		color: inherit;
-		text-decoration: underline;
-		&:hover {
-			color: $black;
-		}
-		&::before {
-			content: none;
 		}
 	}
 }

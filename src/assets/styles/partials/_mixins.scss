@@ -10,7 +10,8 @@
 	}
 }
 @mixin overlay {
-  position: absolute;
+  // position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -53,6 +54,23 @@
   transition-property: all;
   transition-duration: $s;
   transition-timing-function : ease;
+}
+
+// Fadeout / Fadein animations
+@mixin fade-in-animation {
+  animation: 0.5s fade-in ease;
+}
+@mixin fade-out-animation {
+  animation: 0.5s fade-out ease;
+}
+
+@keyframes fade-in {
+   0% { opacity: 0; }
+   100% { opacity: 1 }
+ }
+@keyframes fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 // Media Queries

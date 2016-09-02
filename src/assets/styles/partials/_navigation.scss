@@ -258,29 +258,16 @@ body.nav-container-active {
 // Secondary Navigation
 // ===================
 .secondary-nav {
-	animation: fadeIn 0.5s ease-out;
-	@keyframes fadeIn {
-		0% {
-			opacity: 0;
-		}
-
-		100% {
-			opacity: 1;
-		}
-	}
 	background:#fff;
 	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.13);
 	position: fixed;
-	top: 0;
+	top:0;
 	width: 100%;
 	z-index: 40;
 	padding: 0.6rem 0;
 	ul {
 		list-style: none;
 		margin: 0;
-	}
-	@include breakpoint(mintablet) {
-		display: block;
 	}
 }
 .secondary-nav-container {

@@ -1,0 +1,18 @@
+.carousel-box {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+  min-width: 500px;
+  div {
+    position: absolute;
+    top: 100%;
+  }
+  div.current {
+    top: 0;
+  }
+}
+
+
+
+
+

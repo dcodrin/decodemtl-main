@@ -1,4 +1,15 @@
 @charset "UTF-8";
+.carousel-box {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+  min-width: 500px; }
+  .carousel-box div {
+    position: absolute;
+    top: 100%; }
+  .carousel-box div.current {
+    top: 0; }
+
 progress, sub, sup {
   vertical-align: baseline; }
 
@@ -153,6 +164,16 @@ html {
   src: url("../fonts/icomoon.eot?7uxdc5#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?7uxdc5") format("truetype"), url("../fonts/icomoon.woff?7uxdc5") format("woff"), url("../fonts/icomoon.svg?7uxdc5#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes fade-out {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 .wrapper {
   max-width: 980px;
   margin: 0 auto;
@@ -244,6 +265,9 @@ video,
 svg {
   max-width: 100%; }
 
+.hidden {
+  visibility: hidden; }
+
 ul,
 ol {
   padding: 0; }
@@ -301,6 +325,12 @@ ol {
   padding: 0;
   position: absolute;
   width: 1px; }
+
+.fade-in {
+  animation: 0.5s fade-in ease; }
+
+.fade-out {
+  animation: 0.5s fade-out ease; }
 
 .decode-logo .mtl,
 .decode-logo .petal-special {
@@ -505,6 +535,9 @@ a {
     height: 100%;
     background: #e3e3e3; }
 
+.current {
+  color: #D6252C; }
+
 .read-more a,
 .link-more a {
   color: #D6252C;
@@ -543,6 +576,14 @@ a {
     position: relative;
     top: 0.05em;
     transition: transform 0.2s; }
+
+.foot-note a {
+  color: inherit;
+  text-decoration: underline; }
+  .foot-note a:hover {
+    color: #212121; }
+  .foot-note a::before {
+    content: none; }
 
 .btn-primary {
   color: #FAFAFA;
@@ -607,14 +648,6 @@ a {
   .career-support .phone-link:hover {
     border: none;
     transform: scale(1.1); }
-
-.foot-note a {
-  color: inherit;
-  text-decoration: underline; }
-  .foot-note a:hover {
-    color: #212121; }
-  .foot-note a::before {
-    content: none; }
 
 .site-header {
   padding: 2rem 0 3rem 0; }
@@ -693,7 +726,7 @@ body.nav-container-active {
   overflow: hidden; }
 
 .nav-overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -837,7 +870,6 @@ body.nav-container-active {
   color: #D6252C; }
 
 .secondary-nav {
-  animation: fadeIn 0.5s ease-out;
   background: #fff;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.13);
   position: fixed;
@@ -845,17 +877,9 @@ body.nav-container-active {
   width: 100%;
   z-index: 40;
   padding: 0.6rem 0; }
-@keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
   .secondary-nav ul {
     list-style: none;
     margin: 0; }
-  @media (min-width: 50em) {
-    .secondary-nav {
-      display: block; } }
 
 .secondary-nav-container {
   display: flex;
