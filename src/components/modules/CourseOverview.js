@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CourseOverview = () => {
+const CourseOverview = (props) => {
     return (
         <section className="module module-course overview-course">
             <div className="wrapper">

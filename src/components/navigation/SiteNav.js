@@ -16,7 +16,7 @@ const SiteNav = React.createClass({
         };
     },
     componentWillMount() {
-        window.addEventListener('keyup', this._toggleNav, false);
+        window.addEventListener('keyup', this._toggleNav);
     },
     componentWillUnmount() {
         window.removeEventListener('keyup', this._toggleNav);

@@ -3,23 +3,9 @@ import React from 'react';
 import {Link} from 'react-router';
 
 const FormOptin = React.createClass({
-    propTypes: {},
-    getDefaultProps () {
-        return {};
-    },
-    getInitialState() {
-        return {
-            input: ''
-        };
-    },
-    _handleInput(e) {
-        this.setState({
-            input: e.target.value
-        });
-    },
     _handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state.input, 'FUTURE ACTION');
+        console.log(this.refs.email.value, 'FUTURE ACTION');
     },
     render() {
         return (
@@ -31,7 +17,7 @@ const FormOptin = React.createClass({
                             own!</p>
                         <form className="optin-form" onSubmit={this._handleSubmit}>
                             <label htmlFor="email" className="visually-hidden">Email</label>
-                            <input type="email" name="email" placeholder="Your email" onChange={this._handleInput}/>
+                            <input type="email" name="email" placeholder="Your email" ref="email"/>
                             <input className="btn-large" type="submit" name="submit" value="Submit"/>
                             <div className="foot-note text-body-small text-subtle">
                                 By providing us with your email, you agree to the terms of our <Link to='#'>Privacy

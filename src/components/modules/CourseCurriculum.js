@@ -8,7 +8,7 @@ import iconTeam from '../../assets/icons/icon-team.svg';
 import iconStrategy from '../../assets/icons/icon-strategy.svg';
 import iconLearn from '../../assets/icons/icon-learn.svg';
 
-//Dynamically load icons based on subjects' icon property
+//Dynamically load icons based on subject's icon property
 const icons = {
     iconApi,
     iconTeam,
