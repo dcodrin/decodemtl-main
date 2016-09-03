@@ -59,7 +59,7 @@ const CourseProjectsSlider = React.createClass({
                     <figure className="student-project-content">
                         <div className="carousel-box">
                             {this.state.projects.map((item, i) => {
-                                return <div key={shortid.generate()} className={this.state.slide === i + 1 ? "student-project-image current" : null}><img
+                                return <div key={shortid.generate()} className={this.state.slide === i + 1 ? "student-project-image visible" : "student-project-image"}><img
                                     src={projectImages[item.image]} alt=""/></div>
                             })}
                         </div>
