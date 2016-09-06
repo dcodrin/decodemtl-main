@@ -1149,7 +1149,6 @@ body.nav-container-active {
       justify-content: space-between; } }
 
 .student-project-image {
-  display: flex;
   align-items: center;
   max-width: 500px;
   display: none; }
