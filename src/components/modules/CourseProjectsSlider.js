@@ -1,17 +1,17 @@
 import React from 'react';
 import shortid from 'shortid';
 
-import coolProject from '../../assets/images/project.png';
-import cat1 from '../../assets/images/cat1.jpg';
-import cat2 from '../../assets/images/cat2.jpg';
-import cat3 from '../../assets/images/cat3.jpg';
 
+import img1 from '../../assets/images/img1.jpg';
+import img2 from '../../assets/images/img2.jpg';
+import img3 from '../../assets/images/img3.jpg';
+import img4 from '../../assets/images/img4.jpg';
 // dynamic images from projects
 const projectImages = {
-    coolProject,
-    cat1,
-    cat2,
-    cat3
+    img1,
+    img2,
+    img3,
+    img4
 };
 
 
@@ -25,15 +25,14 @@ const CourseProjectsSlider = React.createClass({
             slidePosition: 0,
             slideOpacity: 1,
             slideStartPosition: 500,
-            slideStep: 25
+            slideStep: 10
         };
     },
     _handleSlide(slideDirection){
-        const {slide, slideStep, slideStartPosition, slidePosition} = this.state;
+        const {slide, slideStep, slideStartPosition} = this.state;
         const projects = this.props.projects;
-
         //avoid infinite loop
-        if (slidePosition !== 0) {
+        if (this.animate) {
             return;
         }
         //reset state
@@ -92,18 +91,16 @@ const CourseProjectsSlider = React.createClass({
             if (slideDirection === 'next' && this.state.slidePosition < 0) {
                 this._moveSlide(step, slideStartPos);
             } else if (slideDirection === 'prev' && this.state.slidePosition > 0) {
-                this._moveSlide(-step, slideStartPos)
+                this._moveSlide(-step, slideStartPos);
             } else {
-                this.setState({
-                    slidePosition: 0,
-                    slideOpacity: 1
-                });
                 clearInterval(this.animate);
+                this.animate = null;
             }
         }, 20);
     },
     componentWillUnmount() {
         clearInterval(this.animate);
+        this.animate = null;
     },
     render() {
         const {slidePosition, slideOpacity, slideStartPosition, nextSlide, prevSlide, slide} = this.state;
