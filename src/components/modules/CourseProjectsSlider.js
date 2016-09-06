@@ -106,8 +106,6 @@ const CourseProjectsSlider = React.createClass({
         clearInterval(this.animate);
     },
     render() {
-        console.log(this.state.slideOpacity);
-
         const {slidePosition, slideOpacity, slideStartPosition, nextSlide, prevSlide, slide} = this.state;
         const {projects} = this.props;
         const imageContainer = {
