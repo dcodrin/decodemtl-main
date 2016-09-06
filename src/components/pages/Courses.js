@@ -12,6 +12,8 @@ import CourseSchedule from '../modules/CourseSchedule';
 import CourseProjectsSlider from '../modules/CourseProjectsSlider';
 import CourseCareerSupport from '../modules/CourseCareerSupport';
 import CourseFAQ from '../modules/CourseFAQ';
+import PartnersLogos from '../modules/PartnersLogos';
+import Footer from '../navigation/MainFooter';
 
 import tuitionDates from '../../../config/tuitionDates';
 import subjects from '../../../config/subjects';
@@ -69,6 +71,8 @@ const Courses = React.createClass({
                 <CourseProjectsSlider projects={projects}/>
                 <CourseCareerSupport/>
                 <CourseFAQ faq={faq}/>
+                <PartnersLogos/>
+                <Footer/>
             </div>
         );
     }
