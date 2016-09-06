@@ -10,15 +10,17 @@ import SecondaryNav from '../navigation/SecondaryNav';
 import CourseTestimonial from '../modules/CourseTestimonial';
 import CourseSchedule from '../modules/CourseSchedule';
 import CourseProjectsSlider from '../modules/CourseProjectsSlider';
+import CourseCareerSupport from '../modules/CourseCareerSupport';
+import CourseFAQ from '../modules/CourseFAQ';
 
 import tuitionDates from '../../../config/tuitionDates';
 import subjects from '../../../config/subjects';
 import instructors from '../../../config/instructors';
 import testimonials from '../../../config/testimonials';
 import projects from '../../../config/projects';
+import faq from '../../../config/FAQ';
 
 import instructorImage from '../../assets/images/profile-team-ziad.jpg';
-
 
 
 const Courses = React.createClass({
@@ -63,8 +65,10 @@ const Courses = React.createClass({
                 <FormOptin/>
                 <CourseTestimonial src={instructorImage} {...testimonials['Captain Planet']}/>
                 <CourseSchedule/>
-                <CourseProjectsSlider projects={projects}/>
                 <CourseInstructor {...instructors['Ziad Saab']} src={instructorImage}/>
+                <CourseProjectsSlider projects={projects}/>
+                <CourseCareerSupport/>
+                <CourseFAQ faq={faq}/>
             </div>
         );
     }

@@ -1,5 +1,5 @@
+//TODO add proper id's to child elements once database is connected, usage of i is NOT recommended for keys
 import React from 'react';
-import shortid from 'shortid';
 
 
 import img1 from '../../assets/images/img1.jpg';
@@ -112,8 +112,7 @@ const CourseProjectsSlider = React.createClass({
         const currImage = {
             position: 'relative',
             left: slidePosition,
-            opacity: slideOpacity,
-            display: 'inline'
+            opacity: slideOpacity
         };
 
         const imageSlide = {
@@ -133,11 +132,11 @@ const CourseProjectsSlider = React.createClass({
                                 return (
                                     <div
                                         style={imageContainer}
-                                        key={shortid.generate()}
+                                        key={i}
                                         className={slide === i + 1 ? "student-project-image visible" : "student-project-image"}>
-                                        {slidePosition > 0 ? <img style={imageSlide} src={projectImages[projects[nextSlide - 1].image]} alt=""/> : ''}
+                                        {slidePosition > 0 ? <img style={imageSlide} src={projectImages[projects[nextSlide - 1].image]} alt=""/> : null}
                                         <img style={currImage} src={projectImages[item.image]} alt=""/>
-                                        {slidePosition < 0 ? <img style={imageSlide} src={projectImages[projects[prevSlide - 1].image]} alt=""/> : ''}
+                                        {slidePosition < 0 ? <img style={imageSlide} src={projectImages[projects[prevSlide - 1].image]} alt=""/> : null}
                                     </div>
                                 );
                             })}

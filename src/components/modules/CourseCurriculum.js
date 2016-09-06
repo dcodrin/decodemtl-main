@@ -1,5 +1,5 @@
+//TODO add proper id's to child elements once database is connected, usage of i is NOT recommended for keys
 import React from 'react';
-import shortid from 'shortid';
 
 import ImageTextBlock from './ImageTextBlock';
 
@@ -21,7 +21,7 @@ const CourseCurriculum = (props) => {
         <section className="module module-course curriculum-course">
             <div className="wrapper">
                 <h2 className="module-title">What will you learn?</h2>
-                {props.subjects.map(subject => <ImageTextBlock key={shortid.generate()} {...subject} image={icons[subject.icon]}/>)}
+                {props.subjects.map((subject, i) => <ImageTextBlock key={i} {...subject} image={icons[subject.icon]}/>)}
             </div>
         </section>
     );

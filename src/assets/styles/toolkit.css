@@ -315,9 +315,7 @@ ol {
 .accordion-list .question {
   cursor: pointer; }
 .accordion-list .answer {
-  display: none;
-  font-size: 0.9rem;
-  margin-bottom: 2em; }
+  font-size: 0.9rem; }
 .accordion-list .rotate:before {
   transform: rotate(-90deg); }
 
