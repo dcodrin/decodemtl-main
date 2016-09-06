@@ -25,7 +25,7 @@ const CourseProjectsSlider = React.createClass({
             slidePosition: 0,
             slideOpacity: 1,
             slideStartPosition: 500,
-            slideStep: 10
+            slideStep: 25
         };
     },
     _handleSlide(slideDirection){
