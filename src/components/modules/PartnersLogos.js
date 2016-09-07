@@ -1,19 +1,8 @@
-//TODO Needs refactoring. To be decided based on data.
 import React from 'react';
 
-import appDirect from '../../assets/images/partner-logos/partner-logo-appdirect.png';
-import autoDesk from '../../assets/images/partner-logos/partner-logo-autodesk.png';
-import decidata from '../../assets/images/partner-logos/partner-logo-decidata.png';
-import mg2media from '../../assets/images/partner-logos/partner-logo-mg2media.png';
-import turbulent from '../../assets/images/partner-logos/partner-logo-turbulent.png';
-import sidlee from '../../assets/images/partner-logos/partner-logo-sidlee.png';
-import plogg from '../../assets/images/partner-logos/partner-logo-plogg.png';
-import salesFloor from '../../assets/images/partner-logos/partner-logo-salesfloor.png';
-import narcity from '../../assets/images/partner-logos/partner-logo-narcity-media.png';
-import signatureWeb from '../../assets/images/partner-logos/partner-logo-signatureweb.png';
-import askPam from '../../assets/images/partner-logos/partner-logo-askpam.png';
-import sweetIq from '../../assets/images/partner-logos/partner-logo-sweetiq.png';
-
+//req.keys() is an array with all the relative paths of the images
+// req.keys().map(key => req(key)) --> require("../../assets/images/partner-logos/" + key);
+const req = require.context("../../assets/images/partner-logos", true, /^.*\.png$/i);
 import {Link} from 'react-router';
 
 const PartnersLogos = (props) => {
@@ -22,42 +11,13 @@ const PartnersLogos = (props) => {
             <div className="wrapper">
                 <h4>Our grads work with these fine folks</h4>
                 <div className="partner-logos-container">
-                    <div className="partner-logo">
-                        <img src={plogg} alt=""/>
-                    </div>
-                    <div className="partner-logo">
-                        <img src={autoDesk}  alt=""/>
-                    </div>
-                    <div className="partner-logo">
-                        <img src={decidata}  alt=""/>
-                    </div>
-                    <div className="partner-logo">
-                        <img src={mg2media}  alt=""/>
-                    </div>
-                    <div className="partner-logo">
-                        <img src={turbulent}  alt=""/>
-                    </div>
-                    <div className="partner-logo">
-                        <img src={sidlee} alt=""/>
-                    </div>
-                    <div className="partner-logo">
-                        <img src={appDirect}  alt=""/>
-                    </div>
-                    <div className="partner-logo">
-                        <img src={salesFloor} alt=""/>
-                    </div>
-                    <div className="partner-logo">
-                        <img src={narcity}  alt=""/>
-                    </div>
-                    <div className="partner-logo">
-                        <img src={signatureWeb}  alt=""/>
-                    </div>
-                    <div className="partner-logo">
-                        <img src={askPam}  alt=""/>
-                    </div>
-                    <div className="partner-logo">
-                        <img src={sweetIq}  alt=""/>
-                    </div>
+                    {
+                        req.keys().map((img, i) => (
+                            <div key={i} className="partner-logo">
+                                <img src={req(img)} alt=""/>
+                            </div>
+                        ))
+                    }
                 </div>
                 {/*<!-- /.partner-logo-container -->*/}
                 <div className="link-more text-body-small">
