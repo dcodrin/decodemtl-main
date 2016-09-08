@@ -351,3 +351,24 @@
 		max-height: 100% ;
 	}
 }
+
+// ========================
+// Home Hero Module
+// ========================
+.hero-content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.hero-text{
+  flex: 1 calc(50% - 50px);
+  margin-right: 50px;
+}
+.hero-visual {
+  .video-trigger {
+    // max-height: 260px;
+    max-height: 13rem;
+    // max-width: 448px;
+    max-width: 22.4rem;
+  }
+}

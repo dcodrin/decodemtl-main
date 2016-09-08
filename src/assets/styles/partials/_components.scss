@@ -4,32 +4,34 @@
 img,
 video,
 svg {
-    max-width: 100%;
+  max-width: 100%;
 }
+
 // Makes embedded iframes responsive!
 .video-container {
   height: 0;
   padding-bottom: 56.25%; //16:9 ratio => (9 ÷ 16) * 100
   position: relative;
   width: 100%;
-	margin: 0 auto;
-	iframe {
-	  height: 100%;
-	  left: 0;
-	  position: absolute;
-	  top: 0;
-	  width: 100%;
-	}
+  margin: 0 auto;
+  iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 }
 
 // ================================
 // Utility
 // ================================
 .hidden {
-	visibility: hidden;
+  visibility: hidden;
 }
+
 .visible {
-	display: block;
+  display: block;
 }
 
 // ================================
@@ -37,49 +39,52 @@ svg {
 // ================================
 ul,
 ol {
-	padding: 0;
+  padding: 0;
 }
 
 // Generic list style for body-copy
 .body-copy-list {
-	margin: 2em 0;
-	font-size: 0.9rem;
-	li {
-		margin-left: 2.5em;
-		margin-bottom: 0.8em;
-		list-style-position: initial;
-	}
+  margin: 2em 0;
+  font-size: 0.9rem;
+  li {
+    margin-left: 2.5em;
+    margin-bottom: 0.8em;
+    list-style-position: initial;
+  }
 }
+
 // Social icons list ---------
 .social-list {
-	list-style: none;
-	display: flex;
+  list-style: none;
+  display: flex;
 }
+
 // petal icon list ------
 .petal-icon-list {
-	list-style: none;
-	margin-left: 1.7em;
-	li {
-		font-size: 1.4rem;
-		position: relative;
-		margin: 0.7em 0;
-		.petal-icon {
-		  position: absolute;
-		  top: 54%;
-		  transform: translateY(-50%);
-		  height:100%;
-		  left: -1.6em;
-		  width: 1.7em;
-		  font-size: 0.8em;
-			&:before {
-			  content:$icon-petal;
-			  font-family: $font_decode;
-			  display: inline-block; // allows rotation
-			  @include transition-all;
-			}
-		}
-	}
+  list-style: none;
+  margin-left: 1.7em;
+  li {
+    font-size: 1.4rem;
+    position: relative;
+    margin: 0.7em 0;
+    .petal-icon {
+      position: absolute;
+      top: 54%;
+      transform: translateY(-50%);
+      height: 100%;
+      left: -1.6em;
+      width: 1.7em;
+      font-size: 0.8em;
+      &:before {
+        content: $icon-petal;
+        font-family: $font_decode;
+        display: inline-block; // allows rotation
+        @include transition-all;
+      }
+    }
+  }
 }
+
 // faq list -------------
 .accordion-list {
   .question {
@@ -91,205 +96,282 @@ ol {
     //margin-bottom: 2em;
   }
   .rotate:before {
-  transform: rotate(-90deg);
+    transform: rotate(-90deg);
   }
 }
+
 // ================================
 // Accessability
 // ================================
 // Helper class--------------------
 .visually-hidden {
-	@include screen-reader;
+  @include screen-reader;
 }
+
 // ================================
 // Animations
 // ================================
 .fade-in {
-	@include fade-in-animation;
+  @include fade-in-animation;
 }
+
 .fade-out {
-	@include fade-out-animation;
+  @include fade-out-animation;
 }
+
 // ================================
 // Logos
 // ================================
 
 // Decode main logo ---------------
 .decode-logo {
-	.mtl,
-	.petal-special {
-		fill: $red;
-	}
-	.decode,
-	.petal-generic {
-		fill: $black;
-	}
+  .mtl,
+  .petal-special {
+    fill: $red;
+  }
+  .decode,
+  .petal-generic {
+    fill: $black;
+  }
 }
+
 // Decode main logo reversed ------
 .decode-logo.reversed {
-	.mtl,
-	.petal-special {
-		fill: $red;
-	}
-	.decode,
-	.petal-generic {
-		fill: $white;
-	}
+  .mtl,
+  .petal-special {
+    fill: $red;
+  }
+  .decode,
+  .petal-generic {
+    fill: $white;
+  }
 }
+
 // Decode badge logo --------------
 .decode-logo-badge {
-	.badge-background {
-		fill:$black;
-	}
-	.badge-petal-generic {
-		fill: $white;
-	}
-	.badge-petal-special {
-		fill: $red;
-	}
+  .badge-background {
+    fill: $black;
+  }
+  .badge-petal-generic {
+    fill: $white;
+  }
+  .badge-petal-special {
+    fill: $red;
+  }
 }
+
 // Decode badge logo reversed -----
 .decode-badge-reversed {
-	.petal-generic {
-		fill: $white;
-	}
-	.petal-special {
-		fill: $red;
-	}
+  .petal-generic {
+    fill: $white;
+  }
+  .petal-special {
+    fill: $red;
+  }
 }
+
 // ================================
 // Info Blocks
 // ================================
 .info-block {
-	padding: 0.8em;
-	background:$lightgrey;
-	a {
-		color: inherit;
-		border-bottom: 1px solid;
-		&:hover {
-			border-bottom: 2px solid;
-		}
-	}
+  padding: 0.8em;
+  background: $lightgrey;
+  a {
+    color: inherit;
+    border-bottom: 1px solid;
+    &:hover {
+      border-bottom: 2px solid;
+    }
+  }
 }
+
 .info-block-centered {
-	text-align: center;
+  text-align: center;
 }
+
 .info-block-red,
 .info-block-blue {
-	color: $white;
-	font-family: $font_medium;
+  color: $white;
+  font-family: $font_medium;
 }
+
 .info-block-red {
-	background:$red;
+  background: $red;
 }
+
 .info-block-blue {
-	background:$blue;
+  background: $blue;
 }
+
 // ================================
 // Image-text Blocks
 // ================================
 .img-text-container {
-	padding: calc(#{$module-vert-pd} / 2) 0;
-	display: flex;
-	flex-flow: row wrap;
-	align-items: flex-start;
-	&:last-child {
-		padding-bottom: 0;
-	}
-	h4:first-child {
-		margin-top: 0;
-	}
-	p:last-child {
-		margin-bottom: 0;
-	}
-	img {
-		width: 100%;
-	}
-	blockquote {
-		margin: 0;
-		p {
-			font-family: $font_italic;
-		}
-	}
-	.credit {
-		font-size: 0.8em;
-		margin-left: 0.5em;
-		font-family: $font_bold;
-		&::before {
-			content: "—";
-		}
-	}
-	@include breakpoint(minlaptop) {
-		align-items: center;
-	}
+  padding: calc(#{$module-vert-pd} / 2) 0;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  &:last-child {
+    padding-bottom: 0;
+  }
+  h4:first-child {
+    margin-top: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  img {
+    width: 100%;
+  }
+  blockquote {
+    margin: 0;
+    p {
+      font-family: $font_italic;
+    }
+  }
+  .credit {
+    font-size: 0.8em;
+    margin-left: 0.5em;
+    font-family: $font_bold;
+    &::before {
+      content: "—";
+    }
+  }
+  @include breakpoint(minlaptop) {
+    align-items: center;
+  }
 }
+
 .img-text-pic {
-	flex: 0 0 15%;
-	min-width: 100px;
-	max-width: 200px;
-	margin: 0 60px 0.5em 0;
-	img {
-		border-radius: 50%;
-	}
+  flex: 0 0 15%;
+  min-width: 100px;
+  max-width: 200px;
+  margin: 0 60px 0.5em 0;
+  img {
+    border-radius: 50%;
+  }
 }
+
 .img-text-details {
-	flex: 70%;
-	@include breakpoint(mindesktop) {
-		flex-grow: 0;
-	}
+  flex: 70%;
+  @include breakpoint(mindesktop) {
+    flex-grow: 0;
+  }
 }
+
 // Icon blocks -----------
 .icon-block {
-	.icon {
-		flex: 0 0 100px;
-		min-width: 100px;
-		margin: 0 60px 0.5em 0;
-	}
+  .icon {
+    flex: 0 0 100px;
+    min-width: 100px;
+    margin: 0 60px 0.5em 0;
+  }
 }
+
 // ================================
 // Miscellaneous
 // ================================
 // Footnote --------------
 .foot-note {
-	font-family: $font_italic;
-	margin: 1rem 0;
+  font-family: $font_italic;
+  margin: 1rem 0;
 }
+
 // Close button ------------
 .close-btn {
   border-radius: 50%;
   width: 1.5rem;
   cursor: pointer;
-	svg {
-	  display: block;
-	  padding: 5%;
-	}
+  svg {
+    display: block;
+    padding: 5%;
+  }
 }
+
 .close-x path {
   stroke: $midgrey;
   fill: transparent;
   stroke-linecap: round;
   stroke-width: 5;
 }
+
 // ================================
 // Modals
 // ================================
 .modal {
-	display: none;
-	@include overlay;
-	background:transparentize($lightgrey, 0.1);
-	z-index: 50;
-	padding: 10vh 10vw;
-	.close-btn {
-		position: absolute;
-		top:5vh;
-		right:5vw;
-		z-index: 60;
-	}
+  display: none;
+  @include overlay;
+  background: transparentize($lightgrey, 0.1);
+  z-index: 50;
+  padding: 10vh 10vw;
+  .close-btn {
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+    z-index: 60;
+  }
 }
+
 .modal-content {
-	position: relative;
+  position: relative;
 }
+
 .modal-dark {
-	background:transparentize(#000, 0.1);
-	color: $grey;
+  background: transparentize(#000, 0.1);
+  color: $grey;
+}
+
+// ================================
+// Videos
+// ================================
+// Video Trigger -------------
+.video-trigger {
+  overflow: hidden;
+  position: relative;
+}
+
+.video-clip-img {
+  width: 100%;
+  display: block;
+}
+
+// Video Controls ------------
+.video-controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  transition: opacity 200ms;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.video-controls-play {
+  fill: $white;
+}
+
+.video-controls-background {
+  fill: $midgrey;
+  opacity: 0.8;
+}
+
+// Video Modal Transitions ------------
+.video-enter {
+  opacity: 0.01;
+}
+
+.video-enter.video-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.video-leave {
+  opacity: 1;
+}
+
+.video-leave.video-leave-active {
+  opacity: 0.01;
+  transition: opacity 200ms ease-out;
 }
