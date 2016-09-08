@@ -15,12 +15,12 @@ import CourseFAQ from '../modules/CourseFAQ';
 import PartnersLogos from '../modules/PartnersLogos';
 import Footer from '../navigation/MainFooter';
 
-import tuitionDates from '../../../config/tuitionDates';
-import subjects from '../../../config/subjects';
-import instructors from '../../../config/instructors';
-import testimonials from '../../../config/testimonials';
-import projects from '../../../config/projects';
-import faq from '../../../config/FAQ';
+import tuitionDates from '../../config/tuitionDates';
+import subjects from '../../config/subjects';
+import instructors from '../../config/instructors';
+import testimonials from '../../config/testimonials';
+import projects from '../../config/projects';
+import faq from '../../config/FAQ';
 
 import instructorImage from '../../assets/images/profile-team-ziad.jpg';
 
