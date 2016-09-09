@@ -220,9 +220,6 @@ ol {
   p:last-child {
     margin-bottom: 0;
   }
-  img {
-    width: 100%;
-  }
   blockquote {
     margin: 0;
     p {
@@ -265,6 +262,9 @@ ol {
     flex: 0 0 100px;
     min-width: 100px;
     margin: 0 60px 0.5em 0;
+    img {
+      width: 100%;
+    }
   }
 }
 
@@ -294,10 +294,21 @@ ol {
   stroke-linecap: round;
   stroke-width: 5;
 }
-
+// CTA Widget
+.cta-widget {
+  background:$lightgrey;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  .cta {
+    margin: 1rem auto;
+  }
+}
 // ================================
 // Modals
 // ================================
+.clickme {
+  cursor: pointer;
+}
 .modal {
   display: none;
   @include overlay;
@@ -374,4 +385,47 @@ ol {
 .video-leave.video-leave-active {
   opacity: 0.01;
   transition: opacity 200ms ease-out;
+}
+
+// ========================
+// Carousel
+// ========================
+.carousel {
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.carousel-box {
+  width: calc(44em - 6rem);
+}
+
+.carousel-img {
+  display: none;
+  img {
+    width: 100%;
+    display: block;
+  }
+  &.visible {
+    display: block;
+  }
+}
+
+.carousel-control {
+  cursor: pointer;
+  display: flex;
+}
+
+.carousel-next,
+.carousel-previous {
+  color: $midgrey;
+  font-size: 3rem;
+  padding: 0 0.2em;
+  @include transition-all;
+  &:hover {
+    color: $black;
+  }
 }

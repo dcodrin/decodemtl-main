@@ -3,12 +3,13 @@
 
 // Clearfix
 @mixin clearfix {
-	&:after {
-	    content:"";
-	    display:block;
-	    clear:both;
-	}
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
 }
+
 @mixin overlay {
   // position: absolute;
   position: fixed;
@@ -29,76 +30,124 @@
   width: 1px;
 }
 
+@mixin word-wrap() {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
 // Buttons and CTA
 // -------------------------
 
 @mixin btn-color($bg:$red, $col:$white) {
-	color: $col;
+  color: $col;
   background: $bg;
   border: 0;
   @include transition-all;
   &:hover,
   &:active {
-    background:darken($bg,5%);
+    background: darken($bg, 5%);
   }
 }
+
 @mixin btn-size($fz:1rem, $pd: 1em 3em) {
-	font-family: $font_medium;
+  font-family: $font_medium;
   font-size: $fz;
   padding: $pd;
 }
 
 // Animations and Effects
 // -------------------------
-@mixin transition-all ($s:0.2s){
+@mixin transition-all($s:0.2s) {
   transition-property: all;
   transition-duration: $s;
-  transition-timing-function : ease;
+  transition-timing-function: ease;
 }
 
 // Fadeout / Fadein animations
 @mixin fade-in-animation {
   animation: 0.5s fade-in ease;
 }
+
 @mixin fade-out-animation {
   animation: 0.5s fade-out ease;
 }
 
 @keyframes fade-in {
-   0% { opacity: 0; }
-   100% { opacity: 1 }
- }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1
+  }
+}
+
 @keyframes fade-out {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+// Typography
+// -------------------------
+@mixin module-title-style($fz:3rem) {
+  font-size: $fz;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  font-family: $font_cond_bold;
 }
 
 // Media Queries
 // -------------------------
- @mixin breakpoint($point) {
-   @if $point == mindesktop {
-     @media (min-width: 80em) { @content ; } // 1280px +
-  }
-   @else if $point == laptop {
-     @media (max-width: 64em) { @content ; } // 1024px -
-  }
-   @else if $point == minlaptop {
-     @media (min-width: 64em) { @content ; } // 1024px  +
-  }
-    @else if $point == tablet {
-     @media (max-width: 50em) { @content ; } // 800px -
-  }
-    @else if $point == mintablet {
-     @media (min-width: 50em) { @content ; } // 800px +
-  }
-   @else if $point == phablet {
-     @media (max-width: 37.5em)  { @content ; } // 600px -
-  }
-   @else if $point == minphablet {
-     @media (min-width: 37.5em)  { @content ; } // 600px +
-  }
-  @else if $point == mobileonly {
-     @media (max-width: 27em)  { @content ; } // 432px -
+@mixin breakpoint($point) {
+  @if $point == mindesktop {
+    @media (min-width: 80em) {
+      @content;
+    }
+    // 1280px +
+  } @else if $point == laptop {
+    @media (max-width: 64em) {
+      @content;
+    }
+    // 1024px -
+  } @else if $point == minlaptop {
+    @media (min-width: 64em) {
+      @content;
+    }
+    // 1024px  +
+  } @else if $point == tablet {
+    @media (max-width: 50em) {
+      @content;
+    }
+    // 800px -
+  } @else if $point == mintablet {
+    @media (min-width: 50em) {
+      @content;
+    }
+    // 800px +
+  } @else if $point == phablet {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+    // 600px -
+  } @else if $point == minphablet {
+    @media (min-width: 37.5em) {
+      @content;
+    }
+    // 600px +
+  } @else if $point == mobileonly {
+    @media (max-width: 27em) {
+      @content;
+    }
+    // 432px -
 
   }
 }

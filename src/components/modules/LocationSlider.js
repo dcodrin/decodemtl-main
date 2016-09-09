@@ -1,12 +1,13 @@
-//TODO add proper id's to child elements once database is connected, usage of i is NOT recommended for keys
 import React from 'react';
 
-const CourseProjectsSlider = React.createClass({
+const LocationSlider = React.createClass({
     propTypes: {
-        projects: React.PropTypes.array.isRequired,
         req: React.PropTypes.func.isRequired
     },
-    getInitialState(){
+    getDefaultProps () {
+        return {};
+    },
+    getInitialState() {
         return {
             slide: 1,
             slidePosition: 0,
@@ -17,7 +18,7 @@ const CourseProjectsSlider = React.createClass({
     },
     _handleSlide(slideDirection){
         const {slide, slideStep, slideStartPosition} = this.state;
-        const projects = this.props.projects;
+        const images = this.props.req.keys();
         //avoid infinite loop
         if (this.animate) {
             return;
@@ -31,13 +32,13 @@ const CourseProjectsSlider = React.createClass({
             this.setState({
                 slidePosition: -slideStartPosition
             });
-            //500 % step === 0 must be TRUE
+            //500 % slideStep === 0 must be TRUE
             this._animateSlide(slideStep, slideDirection, -slideStartPosition);
-            if (slide % projects.length !== 0) {
+            if (slide % images.length !== 0) {
                 this.setState({
                     slide: slide + 1,
                     prevSlide: slide,
-                    nextSlide: (slide + 2) > projects.length ? 1 : slide + 2
+                    nextSlide: (slide + 2) > images.length ? 1 : slide + 2
                 })
             } else {
                 this.setState({
@@ -56,13 +57,13 @@ const CourseProjectsSlider = React.createClass({
                 this.setState({
                     slide: slide - 1,
                     nextSlide: slide,
-                    prevSlide: (slide - 2) === 0 ? projects.length : slide - 2
+                    prevSlide: (slide - 2) === 0 ? images.length : slide - 2
                 })
             } else {
                 this.setState({
-                    slide: projects.length,
+                    slide: images.length,
                     nextSlide: 1,
-                    prevSlide: projects.length - 1
+                    prevSlide: images.length - 1
                 })
             }
         }
@@ -90,67 +91,63 @@ const CourseProjectsSlider = React.createClass({
         this.animate = null;
     },
     render() {
-        const {slidePosition, slideOpacity, slideStartPosition, nextSlide, prevSlide, slide} = this.state;
-        //req references a require.context function
-        //to access the values array use req.keys()
-        //to access a specific path use req(key)
-        const {projects, req} = this.props;
+        //TODO REMOVE ESLINT EXCEPTION ONCE REFACTORED
+        const {slidePosition, slideOpacity, slideStartPosition, nextSlide, prevSlide, slide} = this.state; // eslint-disable-line no-unused-vars
+        const req = this.props.req;
         const images = req.keys();
+
         const imageContainer = {
             position: 'relative',
             overflow: 'hidden'
         };
+
+
         const currImage = {
             position: 'relative',
-            left: slidePosition,
+            //left: slidePosition, SLIDE DISABLED
             opacity: slideOpacity
         };
 
         const imageSlide = {
             position: 'absolute',
             opacity: 1 - slideOpacity,
-            left: slidePosition > 0 ? slidePosition - slideStartPosition : slidePosition + slideStartPosition
+            // left: slidePosition > 0 ? slidePosition - slideStartPosition : slidePosition + slideStartPosition,
+            top: 0
         };
 
         return (
-            <section className="module module-course student-project module-boxed-dark">
+            <section className="module module-full-width module-boxed-light working-space-module">
                 <div className="wrapper">
-                    <h4>Gain the skills to build projects like these!</h4>
-                    {/* /student-project-content */}
-                    <figure className="student-project-content">
+                    <h4 className="module-title-medium">Learn at the Best Location in Montreal</h4>
+                    <figure className="carousel">
+                        <div className="carousel-control carousel-previous">
+                            <i className="fa fa-angle-left" aria-hidden="true" title="Previous Image" onClick={this._handleSlide.bind(this, 'prev')}/><span className="sr-only">Previous Project</span>
+                        </div>
+                        {/* /.carousel-control */}
                         <div className="carousel-box">
                             {images.map((item, i) => {
                                 return (
                                     <div
                                         style={imageContainer}
                                         key={i}
-                                        className={slide === i + 1 ? "student-project-image visible" : "student-project-image"}>
+                                        className={slide === i + 1 ? "carousel-img visible" : "carousel-img"}>
                                         {slidePosition > 0 ? <img style={imageSlide} src={req(images[nextSlide - 1])} alt=""/> : null}
                                         <img style={currImage} src={req(item)} alt=""/>
-                                        {slidePosition < 0 ? <img style={imageSlide} src={req(images[prevSlide - 1])} alt=""/> : null}
+                                        {slidePosition < 0 ?  <img style={imageSlide} src={req(images[prevSlide - 1])} alt=""/> : null}
                                     </div>
                                 );
                             })}
                         </div>
-                        <div className="student-project-details">
-                            <div className="slider-controls buttons">
-                                <a className="slider-previous prev" onClick={this._handleSlide.bind(this, 'prev')}>
-                                    <i className="fa fa-chevron-circle-left" aria-hidden="true"
-                                       title="Previous Project"/><span className="sr-only">Previous Project</span>
-                                </a>
-                                <div className="slider-current">{slide}</div>
-                                <a className="slider-next next" onClick={this._handleSlide.bind(this, 'next')}><i
-                                    className="fa fa-chevron-circle-right" aria-hidden="true"
-                                    title="Next Project"/><span className="sr-only">Next Project</span></a>
-                            </div>
-                            {/*slider-controls*/}
-                            <figcaption className="student-project-caption">
-                                <p className="project-title">{projects[slide - 1].title}</p>
-                                <p className="text-body-small">{projects[slide - 1].description}</p>
-                            </figcaption>
-                            {/*student-project-caption*/}
+                        {/* /.carousel-box */}
+                        <div className="carousel-control carousel-next">
+                            <i className="fa fa-angle-right" aria-hidden="true" title="Next Image" onClick={this._handleSlide.bind(this, 'next')}/><span className="sr-only">Next Project</span>
                         </div>
+                        {/* /.carousel-control */}
                     </figure>
+                    {/* /.carousel */}
+                    <div className="link-more text-body-small">
+                        <a href="#">This is a block link<span className="fa fa-caret-right" aria-hidden="true" /></a>
+                    </div>
                 </div>
                 {/* /.wrapper */}
             </section>
@@ -158,5 +155,4 @@ const CourseProjectsSlider = React.createClass({
     }
 });
 
-
-export default CourseProjectsSlider;
+export default LocationSlider;

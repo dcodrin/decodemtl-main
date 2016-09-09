@@ -1,19 +1,20 @@
 // input defaults
 input,
 textarea {
-	border: 0;
-	background:$lightgrey;
-	padding: 1em;
-	margin: 0.5em 0;
+  border: 0;
+  background: $lightgrey;
+  padding: 1em;
+  margin: 0.5em 0;
 }
+
 // buttons
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 0;
-	@include btn-color();
-	cursor: pointer;
+  border: 0;
+  @include btn-color();
+  cursor: pointer;
 }
 
 // ===================
@@ -21,76 +22,76 @@ input[type="submit"] {
 // (forms with email and submit)
 // ===================
 .optin-form {
-	display: flex;
-	flex-flow: column wrap;
-	@include breakpoint(mintablet) {
-		flex-flow: row wrap;
-		justify-content: space-between;
-		input:not([type="submit"]) {
-			flex: 1 1 auto;
-			margin-right: 1em;
-		}
-	}
+  display: flex;
+  flex-flow: column wrap;
+  @include breakpoint(mintablet) {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    input:not([type="submit"]) {
+      flex: 1 1 auto;
+      margin-right: 1em;
+    }
+  }
 }
 
 // ===================
 // Footer Optin Form
 // ===================
 .optin-footer {
-	input[type="email"] {
-		background:$midgrey;
-		outline: none;
-		&:focus {
-			background:$lightgrey;
-		}
-		&::placeholder {
-			color: $black;
-			opacity: 1;
-		}
-	}
-	input[type="submit"] {
-		flex: 0 0 22%;
-	}
-	@include breakpoint(minlaptop) {
-		flex-flow: row wrap;
-		justify-content: space-between;
-		input {
-			padding: 0.5em;
-		}
-	}
-	@include breakpoint(mindesktop) {
-		max-width: 80%;
-	}
+  input[type="email"] {
+    background: $midgrey;
+    outline: none;
+    &:focus {
+      background: $lightgrey;
+    }
+    &::placeholder {
+      color: $black;
+      opacity: 1;
+    }
+  }
+  input[type="submit"] {
+    flex: 0 0 22%;
+  }
+  @include breakpoint(minlaptop) {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    input {
+      padding: 0.5em;
+    }
+  }
+  @include breakpoint(mindesktop) {
+    max-width: 80%;
+  }
 }
 
 // ===================
 // Contact form
 // ===================
 .contact-form {
-	display: flex;
-	flex-flow: column wrap;
-	textarea {
-		min-height: 10rem;
-	}
-	.optin-checkbox {
-		margin: 1rem 0;
-	}
-	@include breakpoint(mintablet) {
-		flex-flow: row wrap;
-		justify-content: space-between;
-		input:not([type="submit"]) {
-			flex: 0 1 calc(50% - 0.5em);
-		}
-		textarea {
-			flex-basis: 100%;
-		}
-		.foot-note {
-			text-align: right;
-			flex-basis: 100%;
-		}
-		input[type="submit"],
-		.optin-checkbox {
-			margin-left: auto;
-		}
-	}
+  display: flex;
+  flex-flow: column wrap;
+  textarea {
+    min-height: 10rem;
+  }
+  .optin-checkbox {
+    margin: 1rem 0;
+  }
+  @include breakpoint(mintablet) {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    input:not([type="submit"]) {
+      flex: 0 1 calc(50% - 0.5em);
+    }
+    textarea {
+      flex-basis: 100%;
+    }
+    .foot-note {
+      text-align: right;
+      flex-basis: 100%;
+    }
+    input[type="submit"],
+    .optin-checkbox {
+      margin-left: auto;
+    }
+  }
 }

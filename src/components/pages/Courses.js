@@ -22,6 +22,9 @@ import testimonials from '../../config/testimonials';
 import projects from '../../config/projects';
 import faq from '../../config/FAQ';
 
+//TODO REPLACE PLACEHOLDER IMAGES
+// /^\.\/img(.*)\.jpg$/i will match all files starting with img and ending with .jpg
+const req = require.context("../../assets/images/", true, /^\.\/img(.*)\.jpg$/i);
 import instructorImage from '../../assets/images/profile-team-ziad.jpg';
 
 
@@ -68,7 +71,7 @@ const Courses = React.createClass({
                 <CourseTestimonial src={instructorImage} {...testimonials['Captain Planet']}/>
                 <CourseSchedule/>
                 <CourseInstructor {...instructors['Ziad Saab']} src={instructorImage}/>
-                <CourseProjectsSlider projects={projects}/>
+                <CourseProjectsSlider projects={projects} req={req}/>
                 <CourseCareerSupport/>
                 <CourseFAQ faq={faq}/>
                 <PartnersLogos/>
