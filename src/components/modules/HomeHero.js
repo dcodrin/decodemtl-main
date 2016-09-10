@@ -31,7 +31,7 @@ const HomeHero = React.createClass({
                         </div>
                         <figure className="video-container modal-content">
                             <iframe width="1280" height="720"
-                                    src="https://www.youtube.com/embed/AE31kPUJE8o?rel=0&amp;showinfo=0"
+                                    src="https://www.youtube.com/embed/AE31kPUJE8o?rel=0&amp&autoplay=1;showinfo=0"
                                     frameBorder="0" allowFullScreen={true}>
                             </iframe>
                         </figure>

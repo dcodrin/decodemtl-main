@@ -1,4 +1,5 @@
 //TODO add proper id's to child elements once database is connected, usage of i is NOT recommended for keys
+//TODO INTEGRATE IMAGES WITH PROJECTS
 import React from 'react';
 
 const CourseProjectsSlider = React.createClass({
