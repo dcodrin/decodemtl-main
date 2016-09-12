@@ -1,21 +1,35 @@
 import React from 'react';
 
-import {CTAPrimaryLarge, CTASecondaryLarge} from '../buttons/buttons';
-
-
+//DO NOT CONVERT TO PRESENTATIONAL COMPONENT
+//to attach "ref" to component the component must have state
 const CourseHero = React.createClass({
+    propTypes: {
+        CTAP: React.PropTypes.func,
+        CTAS: React.PropTypes.func,
+        moduleTitle: React.PropTypes.string.isRequired,
+        jumboTitle: React.PropTypes.string.isRequired,
+        text: React.PropTypes.string,
+        subText: React.PropTypes.string
+    },
     render() {
+        const {CTAP, CTAS, moduleTitle, jumboTitle, text, subText} = this.props;
+        function renderButtons() {
+            return (
+                <div className="cta-double">
+                    {CTAP ? <CTAP text="Apply Now" path="#"/> : null} {CTAS ? <CTAS path="#" text="Syllabus"/> : null}
+                </div>
+            );
+        }
         return (
             <header className="module module-course hero-course">
-                <div ref={wrapper => {this._headerWrapper = wrapper}} className="wrapper">
-                    <h1 className="module-title">Web Development<span className="module-title-jumbo">Bootcamp</span>
+                <div ref={wrapper => {
+                    this._headerWrapper = wrapper
+                }} className="wrapper">
+                    <h1 className="module-title">{moduleTitle}<span className="module-title-jumbo">{jumboTitle}</span>
                     </h1>
-                    <p className="text-body-large text-subtle">Fusce vehicula dolor arcu, sit amet blandit dolor
-                        mollis nec. Donec arcu, sit amet blandit dolor mollis nec. Donec viverra.</p>
-                    <p className="text-body-small text-subtle">Next bootcamp starts: July 4th 2016</p>
-                    <div className="cta-double">
-                        <CTAPrimaryLarge text="Apply Now" path="#"/> <CTASecondaryLarge path="#" text="Syllabus"/>
-                    </div>
+                    {text ? <p className="text-body-large text-subtle">{text}</p> : null}
+                    {subText ? <p className="text-body-small text-subtle">{subText}</p> : null}
+                    {CTAS || CTAP ? renderButtons() : null}
                 </div>
             </header>
         );

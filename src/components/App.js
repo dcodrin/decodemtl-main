@@ -2,6 +2,7 @@ import React from 'react';
 import RouteTransition from 'react-easy-transition';
 
 import SiteNav from './navigation/SiteNav';
+import Footer from './navigation/MainFooter';
 
 const App = (props) => {
     return (
@@ -15,6 +16,7 @@ const App = (props) => {
             >
                 {props.children}
             </RouteTransition>
+            <Footer/>
         </div>
     );
 };

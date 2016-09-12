@@ -13,7 +13,6 @@ import CourseProjectsSlider from '../modules/CourseProjectsSlider';
 import CourseCareerSupport from '../modules/CourseCareerSupport';
 import CourseFAQ from '../modules/CourseFAQ';
 import PartnersLogos from '../modules/PartnersLogos';
-import Footer from '../navigation/MainFooter';
 
 import tuitionDates from '../../config/tuitionDates';
 import subjects from '../../config/subjects';
@@ -27,7 +26,7 @@ import faq from '../../config/FAQ';
 // /^\.\/img(.*)\.jpg$/i will match all files starting with img and ending with .jpg
 const req = require.context("../../assets/images/", true, /^\.\/img(.*)\.jpg$/i);
 import instructorImage from '../../assets/images/profile-team-ziad.jpg';
-
+import {CTAPrimaryLarge, CTASecondaryLarge} from '../buttons/buttons';
 
 const Courses = React.createClass({
     getInitialState() {
@@ -64,7 +63,7 @@ const Courses = React.createClass({
         return (
             <div>
                 <SecondaryNav display={this.state.secondaryNav}/>
-                <CourseHero ref={hero => {this._hero = hero}}/>
+                <CourseHero CTAP={CTAPrimaryLarge} CTAS={CTASecondaryLarge} ref={hero => {this._hero = hero}} moduleTitle={"web development"} jumboTitle={"bootcamp"} text={"INSERT TEXT HERE"} subText={"and some subtext"}/>
                 <CourseOverview/>
                 <CourseTuitionDates tuitionDates={tuitionDates}/>
                 <CourseCurriculum subjects={subjects}/>
@@ -76,7 +75,6 @@ const Courses = React.createClass({
                 <CourseCareerSupport/>
                 <CourseFAQ faq={faq}/>
                 <PartnersLogos/>
-                <Footer/>
             </div>
         );
     }
