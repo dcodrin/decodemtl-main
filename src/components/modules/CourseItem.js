@@ -28,7 +28,7 @@ const CourseItem = (props) => {
                                     <li>{course.nextSessions[1]}</li>
                                 </ul>
                             </div>
-                            <Link to={`/courses/${encodeURI(course.jumboTitle.replace(/ |&/g, ''))}`} className="cta btn-primary btn-small">Learn More</Link>
+                            <Link to={`/courses/${encodeURI(course.link)}`} className="cta btn-primary btn-small">Learn More</Link>
                         </aside>
                         {/*<!-- /.course-details -->*/}
                     </div>

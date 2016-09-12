@@ -1,14 +1,9 @@
 import React from 'react';
-import CourseHero from '../modules/CourseHero';
-import courses from '../../config/courses';
-import CourseItem from '../modules/CourseItem';
+import CourseHero from '../../modules/CourseHero';
+import courses from '../../../config/courses';
+import CourseItem from '../../modules/CourseItem';
 
-const AllCourses = React.createClass({
-    propTypes: {},
-    getDefaultProps () {
-        return {};
-    },
-    render() {
+const AllCourses = (props) => {
         function renderCourses() {
             return (
                 <div>
@@ -19,10 +14,13 @@ const AllCourses = React.createClass({
         }
         return (
             <div>
-                {this.props.children ? this.props.children : renderCourses()}
+                {props.children ? props.children : renderCourses()}
             </div>
         );
-    }
-});
+};
+
+AllCourses.propTypes = {
+    children: React.PropTypes.element
+};
 
 export default AllCourses;

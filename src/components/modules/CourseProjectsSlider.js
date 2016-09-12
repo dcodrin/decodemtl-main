@@ -1,11 +1,10 @@
 //TODO add proper id's to child elements once database is connected, usage of i is NOT recommended for keys
-//TODO INTEGRATE IMAGES WITH PROJECTS
+
 import React from 'react';
 
 const CourseProjectsSlider = React.createClass({
     propTypes: {
-        projects: React.PropTypes.array.isRequired,
-        req: React.PropTypes.func.isRequired
+        projects: React.PropTypes.array.isRequired
     },
     getInitialState(){
         return {
@@ -95,8 +94,8 @@ const CourseProjectsSlider = React.createClass({
         //req references a require.context function
         //to access the values array use req.keys()
         //to access a specific path use req(key)
-        const {projects, req} = this.props;
-        const images = req.keys();
+        const {projects} = this.props;
+        //const images = req.keys();
         const imageContainer = {
             position: 'relative',
             overflow: 'hidden'
@@ -120,15 +119,15 @@ const CourseProjectsSlider = React.createClass({
                     {/* /student-project-content */}
                     <figure className="student-project-content">
                         <div className="carousel-box">
-                            {images.map((item, i) => {
+                            {projects.map((item, i) => {
                                 return (
                                     <div
                                         style={imageContainer}
                                         key={i}
                                         className={slide === i + 1 ? "student-project-image visible" : "student-project-image"}>
-                                        {slidePosition > 0 ? <img style={imageSlide} src={req(images[nextSlide - 1])} alt=""/> : null}
-                                        <img style={currImage} src={req(item)} alt=""/>
-                                        {slidePosition < 0 ? <img style={imageSlide} src={req(images[prevSlide - 1])} alt=""/> : null}
+                                        {slidePosition > 0 ? <img style={imageSlide} src={projects[nextSlide - 1].img} alt=""/> : null}
+                                        <img style={currImage} src={item.img} alt=""/>
+                                        {slidePosition < 0 ? <img style={imageSlide} src={projects[prevSlide - 1].img} alt=""/> : null}
                                     </div>
                                 );
                             })}

@@ -42,7 +42,7 @@ const CourseFAQ = React.createClass({
         return (
             <section className="module module-course faq-course">
                 <div className="wrapper">
-                    <h2 className="module-title">Bootcamp FAQ</h2>
+                    <h2 className="module-title">Course FAQ</h2>
                     <ul className="petal-icon-list accordion-list">
                         {this.props.faq.map((q, i) => {
                             return (

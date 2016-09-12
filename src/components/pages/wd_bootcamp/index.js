@@ -1,32 +1,31 @@
 import React from 'react';
 
-import CourseHero from '../modules/CourseHero';
-import CourseOverview from '../modules/CourseOverview';
-import CourseTuitionDates from'../modules/CourseTuitionDates';
-import CourseCurriculum from '../modules/CourseCurriculum';
-import FormOptin from '../modules/FormOptin';
-import CourseInstructor from '../modules/CourseInstructor';
-import SecondaryNav from '../navigation/SecondaryNav';
-import CourseTestimonial from '../modules/CourseTestimonial';
-import CourseSchedule from '../modules/CourseSchedule';
-import CourseProjectsSlider from '../modules/CourseProjectsSlider';
-import CourseCareerSupport from '../modules/CourseCareerSupport';
-import CourseFAQ from '../modules/CourseFAQ';
-import PartnersLogos from '../modules/PartnersLogos';
+import CourseHero from '../../modules/CourseHero';
+import CourseOverview from '../../modules/CourseOverview';
+import CourseTuitionDates from'../../modules/CourseTuitionDates';
+import CourseCurriculum from '../../modules/CourseCurriculum';
+import FormOptin from '../../modules/FormOptin';
+import CourseInstructor from '../../modules/CourseInstructor';
+import SecondaryNav from '../../navigation/SecondaryNav';
+import CourseTestimonial from '../../modules/CourseTestimonial';
+import CourseSchedule from '../../modules/CourseSchedule';
+import CourseProjectsSlider from '../../modules/CourseProjectsSlider';
+import CourseCareerSupport from '../../modules/CourseCareerSupport';
+import CourseFAQ from '../../modules/CourseFAQ';
+import PartnersLogos from '../../modules/PartnersLogos';
 
-import tuitionDates from '../../config/tuitionDates';
-import subjects from '../../config/subjects';
-import instructors from '../../config/instructors';
-import testimonials from '../../config/testimonials';
-import projects from '../../config/projects';
-import faq from '../../config/FAQ';
-
+import tuitionDates from './tuitionDates';
+import subjects from './subjects';
+import instructors from './instructors';
+import testimonials from './testimonials';
+import projects from './projects';
+import faq from './FAQ';
+import overview from './courseOverview';
 
 //TODO REPLACE PLACEHOLDER IMAGES
 // /^\.\/img(.*)\.jpg$/i will match all files starting with img and ending with .jpg
-const req = require.context("../../assets/images/", true, /^\.\/img(.*)\.jpg$/i);
-import instructorImage from '../../assets/images/profile-team-ziad.jpg';
-import {CTAPrimaryLarge, CTASecondaryLarge} from '../buttons/buttons';
+const req = require.context("../../../assets/images/", true, /^\.\/project-wd-bootcamp(.*)\.jpg$/i);
+import {CTAPrimaryLarge, CTASecondaryLarge} from '../../buttons/buttons';
 
 const Courses = React.createClass({
     getInitialState() {
@@ -64,13 +63,13 @@ const Courses = React.createClass({
             <div>
                 <SecondaryNav display={this.state.secondaryNav}/>
                 <CourseHero CTAP={CTAPrimaryLarge} CTAS={CTASecondaryLarge} ref={hero => {this._hero = hero}} moduleTitle={"web development"} jumboTitle={"bootcamp"} text={"INSERT TEXT HERE"} subText={"and some subtext"}/>
-                <CourseOverview/>
+                <CourseOverview overview={overview}/>
                 <CourseTuitionDates tuitionDates={tuitionDates}/>
                 <CourseCurriculum subjects={subjects}/>
                 <FormOptin/>
-                <CourseTestimonial src={instructorImage} {...testimonials['Captain Planet']}/>
+                <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
                 <CourseSchedule/>
-                <CourseInstructor {...instructors['Ziad Saab']} src={instructorImage}/>
+                <CourseInstructor instructors={instructors}/>
                 <CourseProjectsSlider projects={projects} req={req}/>
                 <CourseCareerSupport/>
                 <CourseFAQ faq={faq}/>
