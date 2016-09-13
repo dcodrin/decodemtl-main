@@ -13,7 +13,7 @@ module.exports = [
     },
     {
         question: 'What are the payment deadlines and refund policy?',
-        answer: 'Pay.'
+        answer: 'Pay. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dignissimos eius eveniet illo, nam necessitatibus pariatur quis repudiandae. Alias cum dicta expedita facilis ipsum iusto minima provident reprehenderit unde voluptatem?'
     },
     {
         question: 'What is the application process?',
@@ -21,6 +21,6 @@ module.exports = [
     },
     {
         question: 'Do I get a certificate upon completion?',
-        answer: 'You get the wisdom of the universe.'
+        answer: 'You get the wisdom of the universe. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos error in incidunt nisi numquam, ullam vitae. Asperiores consequatur cumque dolore iusto magnam odit optio quisquam repellendus ut vitae, voluptatem voluptatum.'
     }
 ];

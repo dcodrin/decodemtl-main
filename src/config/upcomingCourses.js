@@ -1,14 +1,14 @@
-module.exports = [
+export default  [
     {
-        startDate: 'July 4th',
-        courseName: 'Full Stack Bootcamp',
+        startDate: 'January 9th',
+        courseName: 'Web Development Bootcamp',
         link: 'web-development-bootcamp',
         type: 'Full-time'
     },
     {
-        startDate: 'Sept 23rd',
-        courseName: 'Intro To Javascript',
-        link: 'javascript',
-        type: 'Part-time'
+        startDate: 'April 3rd',
+        courseName: 'Web Development Bootcamp',
+        link: 'web-development-bootcamp',
+        type: 'Full-time'
     }
 ];

@@ -1,11 +1,11 @@
-module.exports = [
+export default [
     {
-        text: "Good course. You learn much."
+        text: "10 Weeks, two nights per week"
     },
     {
-        text: "Many hours of pain!"
+        text: "Hands-on help from our awesome instructors"
     },
     {
-        text: "So much brain power!"
+        text: "Learn to build websites from scratch"
     }
 ];

@@ -63,10 +63,10 @@ const Courses = React.createClass({
             <div>
                 <SecondaryNav display={this.state.secondaryNav}/>
                 <CourseHero CTAP={CTAPrimaryLarge} CTAS={CTASecondaryLarge} ref={hero => {this._hero = hero}} moduleTitle={"web development"} jumboTitle={"bootcamp"} text={"INSERT TEXT HERE"} subText={"and some subtext"}/>
-                <CourseOverview overview={overview}/>
-                <CourseTuitionDates tuitionDates={tuitionDates}/>
-                <CourseCurriculum subjects={subjects}/>
-                <FormOptin/>
+                <CourseOverview ref={overview => {this._overview = overview}} overview={overview}/>
+                <CourseTuitionDates ref={tuitionDates => {this._tuitionDates = tuitionDates}} tuitionDates={tuitionDates}/>
+                <CourseCurriculum ref={curriculum => {this._curriculum = curriculum}} subjects={subjects}/>
+                <FormOptin />
                 <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
                 <CourseSchedule/>
                 <CourseInstructor instructors={instructors}/>

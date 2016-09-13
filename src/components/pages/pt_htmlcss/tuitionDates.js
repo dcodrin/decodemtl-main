@@ -1,18 +1,10 @@
-module.exports = [
+export default [
     {
-        startDate: 'July 4th',
-        endDate: 'Aug 26th',
-        days: 'Monday & Friday',
-        hours: '6:30pm-9:30pm',
-        price: 2000,
+        startDate: 'TBA',
+        endDate: '',
+        days: 'Tuesday & Thursday',
+        hours: '6:30PM-9:30PM',
+        price: 1500,
         courseName: 'htmlcss'
     },
-    {
-        startDate: 'Sept 18th',
-        endDate: 'Nov 26th',
-        days: 'Monday & Friday',
-        hours: '6:30pm-9:30pm',
-        price: 2000,
-        courseName: 'htmlcss'
-    }
 ];

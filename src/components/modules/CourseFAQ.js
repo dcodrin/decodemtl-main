@@ -31,13 +31,13 @@ const CourseFAQ = React.createClass({
             paddingBottom: 0,
             marginTop: 0,
             marginBottom: 0,
-            transition: 'all 0.3s ease-out'
+            transition: 'all 180ms ease-in-out'
 
         };
         const showStyle = {
             maxHeight: 500,
             overflow: 'hidden',
-            transition: 'all 0.5s ease-in'
+            transition: 'all 300ms ease-in-out'
         };
         return (
             <section className="module module-course faq-course">

@@ -160,7 +160,7 @@ const SiteNav = React.createClass({
                         </div>
                         {/* secondary menu */}
                         <ul className="nav-secondary-menu" role="menu">
-                            <li><Link to="/alumni">Alumni</Link></li>
+                            {/*<li><Link to="/alumni">Alumni</Link></li>*/}
                             <li><Link to="/employers">Employers</Link></li>
                             <li><Link to="/events">Events</Link></li>
                             <li><Link to="/faq">FAQ</Link></li>

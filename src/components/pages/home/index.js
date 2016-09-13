@@ -6,7 +6,6 @@ import CourseTestimonial from '../../modules/CourseTestimonial';
 import FormOptin from '../../modules/FormOptin';
 import UpcomingEvents from '../../modules/UpcomingEvents';
 import PartnersLogos from '../../modules/PartnersLogos';
-import MainFooter from '../../navigation/MainFooter';
 import HomeEvolving from '../../modules/HomeEvolving';
 import LocationSlider from '../../modules/LocationSlider';
 
@@ -35,7 +34,6 @@ const HomePage = React.createClass({
                 <LocationSlider req={req}/>
                 <UpcomingEvents events={events}/>
                 <PartnersLogos/>
-                <MainFooter/>
             </div>
         );
     }

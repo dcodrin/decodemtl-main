@@ -1,0 +1,37 @@
+// ===========================
+// video
+// ===========================
+
+// Video Controls ------------
+.video-controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  transition: opacity 200ms;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// Video Modal Transitions ------------
+.video-enter {
+  opacity: 0.01;
+}
+
+.video-enter.video-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.video-leave {
+  opacity: 1;
+}
+
+.video-leave.video-leave-active {
+  opacity: 0.01;
+  transition: opacity 200ms ease-out;
+}
+
+

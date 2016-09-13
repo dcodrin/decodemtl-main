@@ -18,7 +18,7 @@ const CourseItem = (props) => {
                                 <ul className="course-length">
                                     <li>{course.duration}</li>
                                     <li>{course.hours}</li>
-                                    <li>Monday-Friday</li>
+                                    <li>{course.days}</li>
                                 </ul>
                             </div>
                             <div className="course-details-block">

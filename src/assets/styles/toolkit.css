@@ -1487,4 +1487,28 @@ body.nav-container-active {
   .working-space-module .module-title-medium {
     margin-top: 0; }
 
+.video-controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  transition: opacity 200ms; }
+  .video-controls:hover {
+    opacity: 1; }
+
+.video-enter {
+  opacity: 0.01; }
+
+.video-enter.video-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in; }
+
+.video-leave {
+  opacity: 1; }
+
+.video-leave.video-leave-active {
+  opacity: 0.01;
+  transition: opacity 200ms ease-out; }
+
 /*# sourceMappingURL=toolkit.css.map */
