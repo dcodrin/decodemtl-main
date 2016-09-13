@@ -1,5 +1,5 @@
 import React from 'react';
-import CourseHero from '../../modules/CourseHero';
+import CourseHero from '../../modules/Hero';
 import courses from '../../../config/courses';
 import CourseItem from '../../modules/CourseItem';
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 //DO NOT CONVERT TO PRESENTATIONAL COMPONENT
 //to attach "ref" to component the component must have state
-const CourseHero = React.createClass({
+const Hero = React.createClass({
     propTypes: {
         CTAP: React.PropTypes.func,
         CTAS: React.PropTypes.func,
@@ -36,5 +36,5 @@ const CourseHero = React.createClass({
     }
 });
 
-export default CourseHero;
+export default Hero;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CourseHero from '../../modules/CourseHero';
+import CourseHero from '../../modules/Hero';
 import CourseOverview from '../../modules/CourseOverview';
 import CourseTuitionDates from'../../modules/CourseTuitionDates';
 import CourseCurriculum from '../../modules/CourseCurriculum';

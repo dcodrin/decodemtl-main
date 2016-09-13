@@ -108,9 +108,9 @@ const SiteNav = React.createClass({
                         {/* .site-header-nav */}
                         <nav className="site-header-nav" role="navigation">
                             <ul className="site-header-menu" role="menu">
-                                <li><Link activeClassName={this.props.activeClass} to="courses">Courses</Link></li>
-                                <li><Link activeClassName={this.props.activeClass} to="about">About</Link></li>
-                                <li><Link activeClassName={this.props.activeClass} to="schedule">Schedule a visit</Link></li>
+                                <li><Link activeClassName={this.props.activeClass} to="/courses">Courses</Link></li>
+                                <li><Link activeClassName={this.props.activeClass} to="/about">About</Link></li>
+                                <li><Link activeClassName={this.props.activeClass} to="/schedule">Schedule a visit</Link></li>
                                 <li className="lang-switcher"><Link to="#">fr</Link></li>
                             </ul>
                         </nav>
@@ -150,9 +150,9 @@ const SiteNav = React.createClass({
                     <nav className="nav-content" role="navigation">
                         {/* primary menu */}
                         <ul className="nav-primary-menu" role="menu">
-                            <li><Link to="courses">Courses</Link></li>
-                            <li><Link to="about">About</Link></li>
-                            <li><Link to="schedule">Schedule a visit</Link></li>
+                            <li><Link onClick={this._toggleNav} to="/courses">Courses</Link></li>
+                            <li><Link onClick={this._toggleNav} to="/about">About</Link></li>
+                            <li><Link onClick={this._toggleNav} to="/schedule">Schedule a visit</Link></li>
                         </ul>
                         {/* cta */}
                         <div className="nav-cta">
@@ -160,12 +160,12 @@ const SiteNav = React.createClass({
                         </div>
                         {/* secondary menu */}
                         <ul className="nav-secondary-menu" role="menu">
-                            <li><Link to="alumni">Alumni</Link></li>
-                            <li><Link to="employers">Employers</Link></li>
-                            <li><Link to="events">Events</Link></li>
-                            <li><Link to="faq">FAQ</Link></li>
-                            <li><Link to="blog">Blog</Link></li>
-                            <li><Link to="contact">Contact</Link></li>
+                            <li><Link to="/alumni">Alumni</Link></li>
+                            <li><Link to="/employers">Employers</Link></li>
+                            <li><Link to="/events">Events</Link></li>
+                            <li><Link to="/faq">FAQ</Link></li>
+                            <li><Link to="/blog">Blog</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
                         </ul>
                         {/* /.secondary-menu */}
                         {/* social list */}

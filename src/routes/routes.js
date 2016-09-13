@@ -7,6 +7,7 @@ import BootcampCourse from '../components/pages/wd_bootcamp/index';
 import HtmlCssCourse from '../components/pages/pt_htmlcss/index';
 import JavascriptCourse from '../components/pages/pt_javascript/index';
 import Home from '../components/pages/home/index';
+import About from '../components/pages/about/index';
 import AllCourses from '../components/pages/allCourses/AllCourses';
 
 
@@ -23,6 +24,7 @@ export default () => {
                     <Route path='javascript' component={JavascriptCourse}/>
                     <Route path='html-css' component={HtmlCssCourse}/>
                 </Route>
+                <Route path='about' components={About}/>
             </Route>
         </Router>
     );
