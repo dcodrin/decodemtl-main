@@ -1,6 +1,7 @@
 import React from 'react';
 
-import {Link} from 'react-router';
+import {Link} from 'react-scroll';
+
 
 const SecondaryNav = (props) => {
     return (
@@ -8,13 +9,20 @@ const SecondaryNav = (props) => {
             <div className="wrapper secondary-nav-container">
                 {/*<!-- Menu -->*/}
                 <ul className="secondary-nav-list" role="menu">
-                    <li><Link to="#">Overview</Link></li>
-                    <li><Link to="#">Tuition & Dates</Link></li>
-                    <li><Link to="#">Curriculum</Link></li>
-                    <li><Link className="current" to="#">Typical Day</Link></li>
-                    <li><Link to="#">Instructor</Link></li>
-                    <li><Link to="#">Careers</Link></li>
-                    <li><Link to="#">FAQ</Link></li>
+                    {props.links.map((link, i) => (
+                        <li key={i}>
+                            <Link
+                                activeClass="current"
+                                to={link.to}
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                                offset={-70}
+                                >
+                                {link.name}
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
                 {/*<!-- CTA -->*/}
                 <ul className="secondary-nav-cta">
@@ -27,7 +35,8 @@ const SecondaryNav = (props) => {
 };
 
 SecondaryNav.propTypes = {
-    display: React.PropTypes.bool.isRequired
+    display: React.PropTypes.bool.isRequired,
+    links: React.PropTypes.array.isRequired
 };
 
 export default SecondaryNav;

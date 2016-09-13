@@ -1,4 +1,5 @@
 import React from 'react';
+import {Element, scrollSpy} from 'react-scroll';
 
 import CourseHero from '../../modules/Hero';
 import CourseOverview from '../../modules/CourseOverview';
@@ -34,6 +35,7 @@ const Courses = React.createClass({
         };
     },
     componentDidMount() {
+        scrollSpy.update();
         window.addEventListener('scroll', this._handleScroll);
     },
     componentWillUnmount() {
@@ -42,13 +44,13 @@ const Courses = React.createClass({
     _handleScroll(e) {
         const headerWrapper = this._hero._headerWrapper;
         const scrollPosition = headerWrapper.offsetTop + headerWrapper.offsetHeight;
-        if(window.innerWidth < 800) {
+        if (window.innerWidth < 800) {
             this.setState({
                 secondaryNav: false
             });
             return;
         }
-        if(window.scrollY > scrollPosition && !this.state.secondaryNav) {
+        if (window.scrollY > scrollPosition && !this.state.secondaryNav) {
             this.setState({
                 secondaryNav: true
             })
@@ -59,26 +61,59 @@ const Courses = React.createClass({
         }
     },
     render() {
+        const secondaryLinks = [
+            {
+                to: 'overview', name: 'Overview'
+            }, {
+                to: 'tuition-dates', name: 'Tuition & Dates'
+            }, {
+                to: 'curriculum', name: "Curriculum"
+            }, {
+                to: 'schedule', name: 'Typical Day'
+            }, {
+                to: 'instructor', name: `Instructor${instructors.length > 0 ? 's' : null}`
+            }, {
+                to: 'careers', name: 'Careers'
+            }, {
+                to: 'faq', name: 'FAQ'
+            }
+        ];
         return (
             <div>
-                <SecondaryNav display={this.state.secondaryNav}/>
-                <CourseHero CTAP={CTAPrimaryLarge} CTAS={CTASecondaryLarge} ref={hero => {this._hero = hero}} moduleTitle={"web development"} jumboTitle={"bootcamp"} text={"INSERT TEXT HERE"} subText={"and some subtext"}/>
-                <CourseOverview ref={overview => {this._overview = overview}} overview={overview}/>
-                <CourseTuitionDates ref={tuitionDates => {this._tuitionDates = tuitionDates}} tuitionDates={tuitionDates}/>
-                <CourseCurriculum ref={curriculum => {this._curriculum = curriculum}} subjects={subjects}/>
+                <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}/>
+                <CourseHero CTAP={CTAPrimaryLarge} CTAS={CTASecondaryLarge} ref={hero => {
+                    this._hero = hero
+                }} moduleTitle={"web development"} jumboTitle={"bootcamp"} text={"INSERT TEXT HERE"}
+                            subText={"and some subtext"}/>
+                <Element name="overview" className="element">
+                    <CourseOverview overview={overview}/>
+                </Element>
+                <Element name="tuition-dates">
+                    <CourseTuitionDates tuitionDates={tuitionDates}/>
+                </Element>
+                <Element name="curriculum">
+                    <CourseCurriculum subjects={subjects}/>
+                </Element>
                 <FormOptin />
                 <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
-                <CourseSchedule/>
-                <CourseInstructor instructors={instructors}/>
+                <Element name="schedule">
+                    <CourseSchedule/>
+                </Element>
+                <Element name="instructor">
+                    <CourseInstructor instructors={instructors}/>
+                </Element>
                 <CourseProjectsSlider projects={projects} req={req}/>
-                <CourseCareerSupport/>
-                <CourseFAQ faq={faq}/>
+                <Element name="careers">
+                    <CourseCareerSupport/>
+                </Element>
+                <Element name="faq">
+                    <CourseFAQ faq={faq}/>
+                </Element>
                 <PartnersLogos/>
             </div>
         );
     }
 });
-
 
 
 export default Courses;
