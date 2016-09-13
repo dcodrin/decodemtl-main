@@ -71,7 +71,7 @@ const Courses = React.createClass({
             }, {
                 to: 'schedule', name: 'Typical Day'
             }, {
-                to: 'instructor', name: `Instructor${instructors.length > 0 ? 's' : null}`
+                to: 'instructor', name: `Instructor${instructors.length > 1 ? 's' : ''}`
             }, {
                 to: 'careers', name: 'Careers'
             }, {
@@ -94,11 +94,11 @@ const Courses = React.createClass({
                 <Element name="curriculum">
                     <CourseCurriculum subjects={subjects}/>
                 </Element>
-                <FormOptin />
-                <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
                 <Element name="schedule">
                     <CourseSchedule/>
                 </Element>
+                <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
+                <FormOptin />
                 <Element name="instructor">
                     <CourseInstructor instructors={instructors}/>
                 </Element>

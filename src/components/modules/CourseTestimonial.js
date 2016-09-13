@@ -9,8 +9,9 @@ export const CourseTestimonial = (props) => {
                             <img src={props.testimonial.img} alt=""/>
                         </div>
                         <blockquote className="img-text-details">
-                            <p>{props.testimonial.text}<span className="credit">{props.testimonial.fullName}</span>
+                            <p>{props.testimonial.text}
                             </p>
+                            <span className="credit">{props.testimonial.fullName}</span>
                             <div className="link-more">
                             </div>
                         </blockquote>

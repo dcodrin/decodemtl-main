@@ -1,4 +1,5 @@
 import React from 'react';
+import {Element, scrollSpy} from 'react-scroll';
 
 import CourseHero from '../../modules/Hero';
 import CourseOverview from '../../modules/CourseOverview';
@@ -8,11 +9,8 @@ import FormOptin from '../../modules/FormOptin';
 import CourseInstructor from '../../modules/CourseInstructor';
 import SecondaryNav from '../../navigation/SecondaryNav';
 import CourseTestimonial from '../../modules/CourseTestimonial';
-import CourseSchedule from '../../modules/CourseSchedule';
 import CourseProjectsSlider from '../../modules/CourseProjectsSlider';
-import CourseCareerSupport from '../../modules/CourseCareerSupport';
 import CourseFAQ from '../../modules/CourseFAQ';
-import PartnersLogos from '../../modules/PartnersLogos';
 
 import tuitionDates from './tuitionDates';
 import subjects from './subjects';
@@ -34,6 +32,7 @@ const Courses = React.createClass({
         };
     },
     componentDidMount() {
+        scrollSpy.update();
         window.addEventListener('scroll', this._handleScroll);
     },
     componentWillUnmount() {
@@ -59,21 +58,41 @@ const Courses = React.createClass({
         }
     },
     render() {
+        const secondaryLinks = [
+            {
+                to: 'overview', name: 'Overview'
+            }, {
+                to: 'tuition-dates', name: 'Tuition & Dates'
+            }, {
+                to: 'curriculum', name: "Curriculum"
+            }, {
+                to: 'instructor', name: `Instructor${instructors.length > 1 ? 's' : ''}`
+            }, {
+                to: 'faq', name: 'FAQ'
+            }
+        ];
         return (
             <div>
-                <SecondaryNav display={this.state.secondaryNav}/>
+                <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}/>
                 <CourseHero CTAP={CTAPrimaryLarge} CTAS={CTASecondaryLarge} ref={hero => {this._hero = hero}} moduleTitle={"introduction to"} jumboTitle={"javascript"} text={"You will learn abou them mysteries of the space"} subText={"and some javascript"}/>
-                <CourseOverview overview={overview}/>
-                <CourseTuitionDates tuitionDates={tuitionDates}/>
-                <CourseCurriculum subjects={subjects}/>
-                <FormOptin/>
+                <Element name="overview">
+                    <CourseOverview overview={overview}/>
+                </Element>
+                <Element name="tuition-dates">
+                    <CourseTuitionDates tuitionDates={tuitionDates}/>
+                </Element>
+                <Element name="curriculum">
+                    <CourseCurriculum subjects={subjects}/>
+                </Element>
                 <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
-                <CourseSchedule/>
-                <CourseInstructor instructors={instructors}/>
+                <FormOptin/>
                 <CourseProjectsSlider projects={projects} req={req}/>
-                <CourseCareerSupport/>
-                <CourseFAQ faq={faq}/>
-                <PartnersLogos/>
+                <Element name="instructor">
+                    <CourseInstructor instructors={instructors}/>
+                </Element>
+                <Element name="faq">
+                    <CourseFAQ faq={faq}/>
+                </Element>
             </div>
         );
     }

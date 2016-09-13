@@ -1,4 +1,5 @@
 import React from 'react';
+import {Element, scrollSpy} from 'react-scroll';
 
 import CourseHero from '../../modules/Hero';
 import CourseOverview from '../../modules/CourseOverview';
@@ -32,6 +33,7 @@ const Courses = React.createClass({
         };
     },
     componentDidMount() {
+        scrollSpy.update();
         window.addEventListener('scroll', this._handleScroll);
     },
     componentWillUnmount() {
@@ -57,18 +59,42 @@ const Courses = React.createClass({
         }
     },
     render() {
+        const secondaryLinks = [
+            {
+                to: 'overview', name: 'Overview'
+            }, {
+                to: 'tuition-dates', name: 'Tuition & Dates'
+            }, {
+                to: 'curriculum', name: "Curriculum"
+            }, {
+                to: 'instructor', name: `Instructor${instructors.length > 1 ? 's' : ''}`
+            }, {
+                to: 'faq', name: 'FAQ'
+            }
+        ];
+
         return (
             <div>
-                <SecondaryNav display={this.state.secondaryNav}/>
+                <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}/>
                 <CourseHero CTAP={CTAPrimaryLarge} CTAS={CTASecondaryLarge} ref={hero => {this._hero = hero}} moduleTitle={"introduction to"} jumboTitle={"html & css"} text={"You will learn to build an nuclear fusion reactor in your garage"} subText={"oh and some html css"}/>
-                <CourseOverview overview={overview}/>
-                <CourseTuitionDates tuitionDates={tuitionDates}/>
-                <CourseCurriculum subjects={subjects}/>
+                <Element name="overview">
+                    <CourseOverview overview={overview}/>
+                </Element>
+                <Element name="tuition-dates">
+                    <CourseTuitionDates tuitionDates={tuitionDates}/>
+                </Element>
+                <Element name="curriculum">
+                    <CourseCurriculum subjects={subjects}/>
+                </Element>
                 <FormOptin/>
                 <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
                 <CourseProjectsSlider projects={projects} req={req}/>
-                <CourseInstructor instructors={instructors}/>
-                <CourseFAQ faq={faq}/>
+                <Element name="instructor">
+                    <CourseInstructor instructors={instructors}/>
+                </Element>
+                <Element name="faq">
+                    <CourseFAQ faq={faq}/>
+                </Element>
             </div>
         );
     }
