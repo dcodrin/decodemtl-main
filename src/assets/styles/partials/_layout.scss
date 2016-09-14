@@ -1,16 +1,28 @@
 .wrapper {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 2vh;
-  @include breakpoint(mintablet) {
-    padding: 0 3vh;
-  }
-  @include breakpoint(minlaptop) {
-    padding: 0;
-  }
-  @include breakpoint(mindesktop) {
-    max-width: 1200px;
-  }
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 0 2vh;
+	@include breakpoint(mintablet) {
+		padding: 0 3vh;
+	}
+	@include breakpoint(minlaptop) {
+		padding: 0;
+	}
+	@include breakpoint(mindesktop) {
+		max-width: 1100px;
+	}
+	@include breakpoint(jumbo) {
+		max-width: 1300px;
+	}
+}
+
+// Full-width container
+// ------------------------
+.full-with-content p {
+	@include breakpoint(minlaptop) {
+		// width: 60vw;
+		max-width: 40em;
+	}
 }
 
 // ========================
@@ -18,46 +30,41 @@
 // ========================
 // All rows ---------------
 .row-container {
-  padding: calc(#{$module-vert-pd} / 2) 0;
-  @include breakpoint(mintablet) {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+	padding: calc(#{$module-vert-pd} / 2) 0;
+	@include breakpoint(mintablet) {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
 }
-
 // Two-third Columns -------
 .two-third-content {
-  @include breakpoint(mintablet) {
-    width: calc(70% - 1rem);
-  }
+	@include breakpoint(mintablet) {
+		width: calc(70% - 1rem);
+	}
 }
-
 // One-third Columns -------
 .one-third-content {
-  @include breakpoint(mintablet) {
-    width: calc(30% - 1rem);
-  }
+	@include breakpoint(mintablet) {
+		width: calc(30% - 1rem);
+	}
 }
-
 // One-half Columns -------
 .one-half-content {
-  @include breakpoint(mintablet) {
-    width: calc(50% - 1rem);
-  }
+	@include breakpoint(mintablet) {
+		width: calc(50% - 1rem);
+	}
 }
-
 // alternate col position ---
 .alternating:nth-of-type(even) .one-third-content,
 .alternating:nth-of-type(even) .one-half-content:nth-child(2) {
-  order: -1;
+	order: -1;
 }
-
 // Spacing for headers ------
 .row-container h1:first-of-type,
 .row-container h2:first-of-type,
 .row-container h3:first-of-type,
 .row-container h4:first-of-type,
 .row-container p:first-of-type {
-  margin-top: 0;
+	margin-top: 0;
 }
