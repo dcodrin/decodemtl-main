@@ -10,7 +10,7 @@ import CourseInstructor from '../../modules/CourseInstructor';
 import SecondaryNav from '../../navigation/SecondaryNav';
 import CourseTestimonial from '../../modules/CourseTestimonial';
 import CourseProjectsSlider from '../../modules/CourseProjectsSlider';
-import CourseFAQ from '../../modules/CourseFAQ';
+import CourseFAQ from '../../modules/FAQ';
 
 import tuitionDates from './tuitionDates';
 import subjects from './subjects';
@@ -95,7 +95,7 @@ const Courses = React.createClass({
                     <CourseInstructor instructors={instructors}/>
                 </Element>
                 <Element name="faq">
-                    <CourseFAQ faq={faq}/>
+                    <CourseFAQ title='Course FAQ' faq={faq}/>
                 </Element>
             </div>
         );

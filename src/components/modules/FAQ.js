@@ -3,9 +3,10 @@ import React from 'react';
 
 import {Link} from 'react-router';
 
-const CourseFAQ = React.createClass({
+const FAQ = React.createClass({
     propTypes: {
-        faq: React.PropTypes.array.isRequired
+        faq: React.PropTypes.array.isRequired,
+        title: React.PropTypes.string.isRequired
     },
     getInitialState() {
         return {
@@ -42,7 +43,7 @@ const CourseFAQ = React.createClass({
         return (
             <section className="module module-course faq-course">
                 <div className="wrapper">
-                    <h2 className="module-title">Course FAQ</h2>
+                    <h2 className="module-title">{this.props.title}</h2>
                     <ul className="petal-icon-list accordion-list">
                         {this.props.faq.map((q, i) => {
                             return (
@@ -74,4 +75,4 @@ const CourseFAQ = React.createClass({
     }
 });
 
-export default CourseFAQ;
+export default FAQ;
