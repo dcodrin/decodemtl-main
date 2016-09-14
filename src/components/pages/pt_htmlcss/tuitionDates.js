@@ -4,7 +4,7 @@ export default [
         endDate: '',
         days: 'Tuesday & Thursday',
         hours: '6:30PM-9:30PM',
-        price: 1500,
+        price: 1495,
         courseName: 'htmlcss'
     },
 ];
