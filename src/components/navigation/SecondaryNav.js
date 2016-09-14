@@ -1,6 +1,8 @@
 import React from 'react';
 
-import {Link} from 'react-scroll';
+//NOTE "Link" was used for scroll links "ReactLink" from navigation links
+import {Link as ScrollLink} from 'react-scroll';
+import {Link} from 'react-router';
 
 
 const SecondaryNav = (props) => {
@@ -11,7 +13,7 @@ const SecondaryNav = (props) => {
                 <ul className="secondary-nav-list" role="menu">
                     {props.links.map((link, i) => (
                         <li key={i}>
-                            <Link
+                            <ScrollLink
                                 activeClass="current"
                                 to={link.to}
                                 spy={true}
@@ -20,7 +22,7 @@ const SecondaryNav = (props) => {
                                 offset={-100}
                                 >
                                 {link.name}
-                            </Link>
+                            </ScrollLink>
                         </li>
                     ))}
                 </ul>

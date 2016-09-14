@@ -123,7 +123,7 @@ const SiteNav = React.createClass({
                 </header>
                 {/* /.site-header */}
                 {/* slideout nav */}
-                <div className="nav-overlay"></div>
+                <div onClick={this._toggleNav} className="nav-overlay"></div>
                 < div
                     className="nav-container">
                     {/* inner nav logo */}
@@ -161,11 +161,11 @@ const SiteNav = React.createClass({
                         {/* secondary menu */}
                         <ul className="nav-secondary-menu" role="menu">
                             {/*<li><Link to="/alumni">Alumni</Link></li>*/}
-                            <li><Link to="/employers">Employers</Link></li>
-                            <li><Link to="/events">Events</Link></li>
-                            <li><Link to="/faq">FAQ</Link></li>
-                            <li><Link to="/blog">Blog</Link></li>
-                            <li><Link to="/contact">Contact</Link></li>
+                            <li><Link onClick={this._toggleNav} to="/employers">Employers</Link></li>
+                            <li><Link onClick={this._toggleNav} to="/events">Events</Link></li>
+                            <li><Link onClick={this._toggleNav} to="/faq">FAQ</Link></li>
+                            <li><Link onClick={this._toggleNav} to="/blog">Blog</Link></li>
+                            <li><Link onClick={this._toggleNav} to="/contact">Contact</Link></li>
                         </ul>
                         {/* /.secondary-menu */}
                         {/* social list */}

@@ -16,15 +16,6 @@
 	}
 }
 
-// Full-width container
-// ------------------------
-.full-with-content p {
-	@include breakpoint(minlaptop) {
-		// width: 60vw;
-		max-width: 40em;
-	}
-}
-
 // ========================
 // Columns & Rows
 // ========================

@@ -1,8 +1,14 @@
+//TODO HANDLE FORM SUBMIT
 import React from 'react';
 
 import {Link} from 'react-router';
 
 const FormOptin = React.createClass({
+    propTypes: {
+        title: React.PropTypes.string.isRequired,
+        text: React.PropTypes.string.isRequired,
+        submitButton: React.PropTypes.string.isRequired
+    },
     _handleSubmit(e) {
         e.preventDefault();
         console.log(this.refs.email.value, 'FUTURE ACTION');
@@ -12,13 +18,12 @@ const FormOptin = React.createClass({
             <section className="module">
                 <div className="wrapper">
                     <div className="module-boxed">
-                        <p className="text-body-large">Get Instant access to our prep course material</p>
-                        <p>Discover the content our applicants must complete for admission, or start learning on your
-                            own!</p>
+                        <p className="text-body-large">{this.props.title}</p>
+                        <p>{this.props.text}</p>
                         <form className="optin-form" onSubmit={this._handleSubmit}>
                             <label htmlFor="email" className="visually-hidden">Email</label>
                             <input type="email" name="email" placeholder="Your email" ref="email"/>
-                            <input className="btn-large" type="submit" name="submit" value="Submit"/>
+                            <input className="btn-large" type="submit" name="submit" value={this.props.submitButton}/>
                             <div className="foot-note text-body-small text-subtle">
                                 By providing us with your email, you agree to the terms of our <Link to='#'>Privacy
                                 Policy</Link> and <Link to='#'>Terms of Service</Link>.

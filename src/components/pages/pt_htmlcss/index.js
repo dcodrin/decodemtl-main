@@ -73,6 +73,9 @@ const Courses = React.createClass({
             }
         ];
 
+        const formTitle = 'Get instant access to our prep course material',
+            formText = 'Discover the content our applicants must complete for admission, or start learning on your own!';
+
         return (
             <div>
                 <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}/>
@@ -86,7 +89,7 @@ const Courses = React.createClass({
                 <Element name="curriculum">
                     <CourseCurriculum subjects={subjects}/>
                 </Element>
-                <FormOptin/>
+                <FormOptin submitButton='Submit' title={formTitle} text={formText} />
                 <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
                 <CourseProjectsSlider projects={projects} req={req}/>
                 <Element name="instructor">

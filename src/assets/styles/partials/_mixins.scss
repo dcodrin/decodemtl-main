@@ -100,7 +100,7 @@
      @media (min-width: 87.5em) { @content ; } // 1400px +
   }
    @if $point == mindesktop {
-     @media (min-width: 80em) { @content ; } // 1280px +
+     @media (min-width: 81.25em) { @content ; } // 1300px +
   }
    @else if $point == laptop {
      @media (max-width: 64em) { @content ; } // 1024px -

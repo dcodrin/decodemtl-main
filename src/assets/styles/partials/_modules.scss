@@ -2,430 +2,398 @@
 // Modules general
 // =====================
 .module {
-  margin-bottom: 6rem;
+	margin-bottom: 6rem;
 }
-
 .module-full-width {
-  padding: $module-vert-pd 0;
+	padding: $module-vert-pd 0;
 }
-
 // modules with bg images
 .module-bg-img {
-  padding: 3em;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: #054851;
-  .module-title {
-    color: $grey;
-    margin-top: 0;
-  }
+	padding: 3em;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-color: #054851;
+	.module-title {
+		color: $grey;
+		margin-top: 0;
+	}
 }
-
 // Module in white boxes & border
 .module-boxed {
-  background: #FFF;
-  border: 1px solid $grey;
-  padding: 3em;
+	background: #FFF;
+	border: 1px solid $grey;
+	padding: 3em;
 }
-
 // Module in white boxes
 .module-boxed-light {
-  background: #FFF;
+	background: #FFF;
 }
-
-
 // Module in dark boxes
 .module-boxed-dark {
-  background: $black;
+	background: $black;
 }
-
 // Module in light grey boxes
 .module-boxed-medium {
-  background: $lightgrey;
+	background: $lightgrey;
 }
-
-// Two cta buttons
+// Two cta buttons 
 .cta-double {
-  .btn-large:not(:last-child) {
-    margin-right: 1em;
-  }
+	.btn-large:not(:last-child) {
+		margin-right: 1em;
+	}
 }
-
 // Module footers
 .module-footer {
-  text-align: center;
-  padding: 1em 0;
+	text-align: center;
+	padding: 1em 0;
 }
 
 // ========================
 // Tuition & Dates Module
 // ========================
 .tuition-dates {
-  .module-bg-img {
-    background-image: url('../images/module-bg-students-at-work.jpg');
-  }
-  .foot-note {
-    text-align: right;
-    color: $grey;
-    margin-bottom: 0;
-    @include breakpoint(tablet) {
-      text-align: left;
-    }
-  }
-  // Tuition dates table ---------
-  .multi-column-table {
-    background: transparentize($white, 0.1);
-  }
-  .row {
-    @include breakpoint(mintablet) {
-      padding: 1.2em;
-    }
-    &:not(:last-child) {
-      @include breakpoint(mintablet) {
-        border-color: $grey;
-      }
-      @include breakpoint(phablet) {
-        border-color: $grey;
-      }
-    }
-  }
-  .cell {
-    @include breakpoint(mintablet) {
-      &:first-child {
-        flex-basis: 30%;
-      }
-    }
-    &:last-child,
-    &:first-child {
-      font-family: $font-bold;
-    }
-  }
+	.module-bg-img {
+	background-image: url('../images/module-bg-students-at-work.jpg');
+	}
+	.foot-note {
+		text-align: right;
+		color: $grey;
+		margin-bottom: 0;
+		@include breakpoint(tablet) {
+			text-align: left;
+		}
+	}
+	// Tuition dates table ---------
+	.multi-column-table {
+		background: transparentize($white, 0.1);
+	}
+	.row {
+		@include breakpoint(mintablet) {
+			padding: 1.2em;
+		}
+		&:not(:last-child) {
+			@include breakpoint(mintablet) {
+				border-color: $grey;
+			}
+			@include breakpoint(phablet) {
+				border-color: $grey;
+			}
+		}
+	}
+	.cell {
+		@include breakpoint(mintablet) {
+			&:first-child {
+				flex-basis: 30%;
+			}
+		}
+		&:last-child,
+		&:first-child {
+			font-family: $font-bold;
+		}
+	}
 }
-
 // ========================
 // Daily Schedule Module
 // ========================
 .course-schedule {
-  color: $grey;
-  .module-bg-img {
-    background-image: url('../images/module-bg-wework-common.jpg');
-  }
-  // Schedule table
-  .two-col-table {
-    .row {
-      border-color: $blue;
-    }
-  }
+	color: $grey;
+	.module-bg-img {
+		background-image: url('../images/module-bg-wework-common.jpg');
+	}
+	// Schedule table
+	.two-col-table {
+		.row {
+			border-color: $blue;
+		}
+	}
 }
 
 // ========================
 // Student Project Module
 // ========================
 .student-project {
-  color: $midgrey;
-  padding: calc(#{$module-vert-pd} / 2) 0;
-  h4 {
-    text-align: center;
-    margin-bottom: $module-vert-pd;
-  }
-  .project-title {
-    font-family: $font_bold;
-  }
+	color: $midgrey;
+	padding: calc(#{$module-vert-pd} / 2) 0;
+	h4 {
+		text-align: center;
+		margin-bottom: $module-vert-pd;
+	}
+	.project-title {
+		font-family: $font_bold;
+	}
 }
-
 // container for image & details
 .student-project-content {
-  display: flex;
-  flex-flow: column nowrap;
-  @include breakpoint(laptop) {
-    max-width: 500px;
-    margin: auto;
-  }
-  @include breakpoint(minlaptop) {
-    flex-flow: row nowrap;
-    justify-content: space-between;
-  }
+	display: flex;
+	flex-flow: column nowrap;
+	@include breakpoint(laptop) {
+		max-width: 500px;
+		margin: auto;
+	}
+	@include breakpoint(minlaptop) {
+		flex-flow: row nowrap;
+		justify-content: space-between;
+	}
 }
-
 // slider image
 .student-project-image {
-  align-items: center;
-  max-width: 500px;
-  display: none;
-  img {
-    max-width: 100%;
-  }
+	display: flex;
+	align-items: center;
+	max-width: 500px;
+	display: none;
+	img {
+		max-width: 100%;
+	}
 }
-
 .student-project-image.visible {
-  display: block;
+	display: block;
 }
-
 // container for slider controls & caption
 .student-project-details {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  flex: 0 1 38%;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+	flex: 0 1 38%;
 }
-
 // controls
 .slider-controls {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin: $module-vert-pd 0;
-  padding: 0.5em 0;
-  border-top: 1px solid lighten($darkgrey, 5%);
-  border-bottom: 1px solid lighten($darkgrey, 5%);
-  line-height: 0;
-  @include breakpoint(laptop) {
-    margin: calc(#{$module-vert-pd} / 2) 0;
-  }
-  @include breakpoint(minlaptop) {
-    margin: 0;
-    order: 1;
-  }
-  .slider-current {
-    font-family: $font_cond_bold;
-    font-size: 2rem;
-  }
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	margin: $module-vert-pd 0;
+	padding: 0.5em 0;
+	border-top: 1px solid lighten($darkgrey, 5%);
+	border-bottom: 1px solid lighten($darkgrey, 5%);
+	line-height: 0;
+	@include breakpoint(laptop) {
+		margin: calc(#{$module-vert-pd} / 2) 0;
+	}
+	@include breakpoint(minlaptop) {
+		margin: 0;
+		order: 1;
+	}
+	.slider-current {
+		font-family: $font_cond_bold;
+		font-size: 2rem;
+	}
 }
-
 // ========================
 // Career Support Module
 // ========================
 .career-support {
-  .info-block {
-    display: flex;
-    flex-flow: row wrap;
-    > * {
-      margin: auto;
-    }
-  }
+	.info-block {
+		display: flex;
+		flex-flow: row wrap;
+		> * {
+			margin: auto;
+		}
+	}
 }
-
 // ========================
 // Employer CTA Module
 // ========================
 .employer-cta-module {
-  @include breakpoint(mintablet) {
-    text-align: center;
-  }
+	@include breakpoint(mintablet) {
+		text-align: center;
+	}
 }
-
 .skills-container {
-  text-align: left;
-  color: inherit;
-  margin: $module-vert-pd -3em;
-  padding: 1em 3em;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: flex-start;
-  @include breakpoint(mintablet) {
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+	text-align: left;
+	color: inherit;
+	margin: $module-vert-pd -3em;
+	padding: 1em 3em;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+	@include breakpoint(mintablet) {
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
 }
-
 .skill {
-  padding: 1em 0;
-  flex: 0 0 calc(30% - 1em);
+	padding: 1em 0;
+	flex: 0 0 calc(30% - 1em);
 }
-
 .skill-title {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  @media screen and (min-width: 50em) and (max-width: 56.25em) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .icon {
-    flex: 0 0 3rem;
-    margin-right: 1rem;
-  }
-  h4 {
-    margin: 0;
-  }
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	@media screen and (min-width: 50em) and (max-width: 56.25em) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.icon {
+		flex: 0 0 3rem;
+		margin-right: 1rem;
+	}
+	h4 {
+		margin: 0;
+	}
 }
-
 // ========================
 // Course item module
 // ========================
 .course-item {
-  .module-title {
-    font-size: 1.8rem;
-    letter-spacing: 0.04em;
-    margin-bottom: 1em;
-  }
-  .module-title-jumbo {
-    font-size: 2.5rem;
-    margin-top: 0;
-    line-height: 0.9;
-  }
+	.module-title {
+		font-size: 1.8rem;
+		letter-spacing: 0.04em;
+		margin-bottom: 1em;
+	}
+	.module-title-jumbo {
+		font-size: 2.5rem;
+		margin-top: 0;
+		line-height: 0.9;
+	}
 }
-
 .course-item-container {
-  padding: 0;
-  @include breakpoint(minphablet) {
-    display: flex;
-  }
+	padding: 0;
+	@include breakpoint(minphablet) {
+		display: flex;
+	}
 }
-
 .course-description {
-  padding: 2em;
-  p:last-child {
-    margin-bottom: 0;
-  }
+	padding: 2em;
+	p:last-child {
+		margin-bottom: 0;
+	}
 }
-
 .course-details {
-  font-size: 0.9rem;
-  text-align: center;
-  flex: 1 0 25%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  .course-details-block {
-    flex: 1 auto;
-    @include breakpoint(minphablet) {
-      flex: 100%;
-    }
-  }
-  h4 {
-    font-size: inherit;
-    margin: 0;
-    padding: 0.2em;
-    background: $grey;
-  }
-  ul {
-    color: $hardgrey;
-    list-style: none;
-  }
-  .btn-primary {
-    width: 100%;
-    align-self: flex-end;
-  }
+	font-size: 0.9rem;
+	text-align: center;
+	flex: 1 0 25%;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	.course-details-block {
+		flex: 1 auto;
+		@include breakpoint(minphablet) {
+			flex: 100%;
+		}
+	}
+	h4 {
+		font-size: inherit;
+		margin: 0;
+		padding: 0.2em;
+		background:$grey;
+	}
+	ul {
+		color: $hardgrey;
+		list-style: none;
+	}
+	.btn-primary {
+		width: 100%;
+		align-self: flex-end;
+	}
 }
-
 // ========================
 // Events Module
 // ========================
 .events-list {
-  margin: $module-vert-pd 0 calc(#{$module-vert-pd} / 2) 0;
-  list-style: none;
-  li {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    border-bottom: 1px solid $grey;
-    padding: 1em 0 1.1em 0;
-  }
-  .event-date {
-    margin-right: 40px;
-    font-family: $font_bold;
-    color: $midgrey;
-  }
-  .event-name {
-    flex: 0 0 80%;
-    @media screen and (min-width: 37.5em) and (max-width: 60em) {
-      flex: 0 0 90%;
-    }
-  }
-  .event-url a {
-    display: flex;
-    font-family: $font_bold;
-    color: $midgrey;
-    &::before {
-      content: none;
-    }
-    &:hover {
-      color: $red;
-    }
-  }
+	margin: $module-vert-pd 0 calc(#{$module-vert-pd} / 2) 0;
+	list-style: none;
+	li {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		border-bottom: 1px solid $grey;
+		padding: 1em 0 1.1em 0;
+	}
+	.event-date {
+		margin-right: 40px;
+		font-family: $font_bold;
+		color: $midgrey;
+	}
+	.event-name {
+		flex: 0 0 80%;
+		@media screen and (min-width: 37.5em) and (max-width: 60em){
+			flex: 0 0 90%;
+		}
+	}
+	.event-url a {
+		display: flex;
+		font-family: $font_bold;
+		color: $midgrey;
+		&::before {
+			content: none;
+		}
+		&:hover {
+			color: $red;
+		}
+	}
 }
-
 // ========================
 // Partner Logos Module
 // ========================
 .partner-logos-module {
-  padding: calc(#{$module-vert-pd} / 2) 0;
-  margin-bottom: 0;
-  h4 {
-    text-align: center;
-    color: $black;
-  }
-  .link-more {
-    text-align: center;
-  }
+	padding: calc(#{$module-vert-pd} / 2) 0;
+	margin-bottom: 0;
+	h4 {
+		text-align: center;
+		color: $black;
+	}
+	.link-more {
+		text-align: center;
+	}
 }
-
 .partner-logos-container {
-  margin: $module-vert-pd 0;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+	margin: $module-vert-pd 0;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
 }
-
 .partner-logo {
-  margin: 1rem auto;
-  height: 2.25rem;
-  width: 8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @include breakpoint(mintablet) {
-    width: 11.4rem;
-  }
-  img {
-    max-width: 80%;
-    max-height: 100%;
-  }
+	margin: 1rem auto;
+	height: 2.25rem;
+	width: 8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@include breakpoint(mintablet) {
+		width: 11.4rem;
+	}
+	img {
+		max-width: 80%;
+		max-height: 100% ;
+	}
 }
-
 // ========================
 // Home Hero Module
 // ========================
 .hero-content {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
 }
-
-.hero-text {
-  flex: 1 calc(50% - 50px);
-  margin-right: 50px;
+.hero-text{
+	flex: 1 calc(50% - 50px);
+	margin-right: 50px;
 }
-
 .hero-visual {
-  .video-trigger {
-    // max-height: 260px;
-    max-height: 13rem;
-    // max-width: 448px;
-    max-width: 22.4rem;
-  }
+	.video-trigger {
+		// max-height: 260px;
+		max-height: 13rem;
+		// max-width: 448px;
+		max-width: 22.4rem;
+	}
 }
-
 // ========================
 // Evolving Module
 // ========================
 .evolving-module {
-  .one-half-content:not(:last-child) {
-    @include breakpoint(tablet) {
-      margin-bottom: calc(#{$module-vert-pd} / 2);
-    }
-  }
+	.one-half-content:not(:last-child) {
+		@include breakpoint(tablet) {
+			margin-bottom: calc(#{$module-vert-pd} / 2);
+		}
+	}
 }
-
 // ========================
 // Working Space Module
-// ========================
+// ======================== 
 .working-space-module {
-  text-align: center;
-  .module-title-medium {
-    margin-top: 0;
-  }
+	text-align: center;
+	.module-title-medium {
+		margin-top: 0;
+	}
 }

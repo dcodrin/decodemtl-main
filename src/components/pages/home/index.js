@@ -30,9 +30,9 @@ const HomePage = React.createClass({
                 <HomeEvolving/>
                 <HomeUpcomingCourses upcomingCourses={upcomingCourses}/>
                 <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
-                <FormOptin/>
+                <FormOptin title="add some text here" text="and some of it here" submitButton="and submit"/>
                 <LocationSlider req={req}/>
-                <UpcomingEvents events={events}/>
+                <UpcomingEvents events={events} title='PUT SOME OPTIONAL TITLE' limit={5} text='OPTIONAL TEXT' filterOld={true}/>
                 <PartnersLogos/>
             </div>
         );

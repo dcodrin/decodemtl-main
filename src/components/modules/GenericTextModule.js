@@ -4,12 +4,10 @@ const GenericTextModule = (props) => {
     return (
         <section className="module">
             <div className="wrapper">
-                <div className="full-width-content">
-                    <h2 className="module-title">{props.title}<br />{props.subTitle}</h2>
-                    {props.paragraphs.map((p, i) => (
-                        <p key={i}>{p}</p>
-                    ))}
-                </div>
+                <h2 className="module-title">{props.title}<br />{props.subTitle}</h2>
+                {props.paragraphs.map((p, i) => (
+                    <p className="text-measure" key={i}>{p}</p>
+                ))}
             </div>
         </section>
     );

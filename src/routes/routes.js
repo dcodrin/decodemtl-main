@@ -9,7 +9,8 @@ import JavascriptCourse from '../components/pages/pt_javascript/index';
 import Home from '../components/pages/home/index';
 import About from '../components/pages/about/index';
 import AllCourses from '../components/pages/allCourses/AllCourses';
-
+import Employers from '../components/pages/employers/index';
+import Events from '../components/pages/events/index';
 
 
 //to pass optional params place router including "/" in parentheses --> /courses(/:courseName)
@@ -24,7 +25,9 @@ export default () => {
                     <Route path='javascript' component={JavascriptCourse}/>
                     <Route path='html-css' component={HtmlCssCourse}/>
                 </Route>
-                <Route path='about' components={About}/>
+                <Route path='about' component={About}/>
+                <Route path='employers' component={Employers}/>
+                <Route path='events' component={Events}/>
             </Route>
         </Router>
     );

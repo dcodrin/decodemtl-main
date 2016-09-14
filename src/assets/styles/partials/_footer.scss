@@ -2,84 +2,80 @@
 // Site Footer
 // ===================
 .site-footer {
-  padding: $module-vert-pd 0;
-  .decode-logo {
-    width: 40%;
-    height: auto;
-    margin-bottom: calc(#{$module-inner-vert-spacing} * 0.5);
-  }
+	padding: $module-vert-pd 0;
+	.decode-logo {
+		width: 40%;
+		height: auto;
+		margin-bottom: calc(#{$module-inner-vert-spacing} * 0.5);
+	}
 }
-
 .footer-content {
-  display: flex;
-  flex-flow: row wrap;
-  @include breakpoint(mintablet) {
-    flex-flow: row nowrap;
-  }
+	display: flex;
+	flex-flow: row wrap;
+	@include breakpoint(mintablet) {
+		flex-flow: row nowrap;
+	}
 }
 
 // footer contact ---------------
-.footer-contact {
-  @include breakpoint(mintablet) {
-    flex: 1 1 70%;
-    margin-right: 6rem;
-  }
+.footer-contact {	
+	@include breakpoint(mintablet) {
+		flex: 1 1 70%;
+		margin-right: 6rem;
+	}
 }
-
 .footer-contact-details {
-  list-style: none;
-  margin-bottom: $module-inner-vert-spacing;
-  li {
-    margin-bottom: 0.3em;
-  }
-  .fa-envelope {
-    font-size: 0.8em;
-    margin-right: 0.485714em;
-  }
+	list-style: none;
+	margin-bottom: $module-inner-vert-spacing;
+	li {
+		margin-bottom: 0.3em;
+	}
+	.fa-envelope {
+		font-size: 0.8em;
+		margin-right: 0.485714em;
+	}
 }
-
 // footer nav -----------
 .footer-nav {
-  display: flex;
-  flex: auto;
-  ul {
-    list-style: none;
-  }
-  @include breakpoint(mintablet) {
-    display: block;
-  }
+	display: flex;
+	flex: auto;
+	ul {
+		list-style: none;
+	}
+	@include breakpoint(mintablet) {
+		display: block;
+	}
+}
+.footer-nav-container {
+	flex: auto;
 }
 
-.footer-nav-container {
-  flex: auto;
-}
 
 // ===================
 // Site Credits
 // ===================
 .site-credits {
-  background: $darkgrey;
-  color: darken($midgrey, 20%);
-  font-size: 0.8rem;
-  a {
-    color: inherit;
-    transition: none;
-    &:not(:last-child):after {
-      content: "//";
-      display: inline-block;
-      margin: 0 0.5em;
-    }
-    &:hover {
-      color: $lightgrey;
-    }
-    &:hover:after {
-      color: darken($midgrey, 20%);
-    }
-  }
+	background:$darkgrey;
+	color:darken($midgrey, 20%);
+	font-size: 0.8rem;
+	a {
+		color: inherit;
+		transition: none;
+		&:not(:last-child):after {
+			content: "//";
+			display: inline-block;
+			margin: 0 0.5em;
+		}
+		&:hover {
+			color: $lightgrey;
+		}
+		&:hover:after {
+			color:darken($midgrey, 20%);
+		}
+	}
 }
-
 .site-credits-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
 }

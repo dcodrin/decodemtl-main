@@ -73,7 +73,7 @@ svg:not(:root) {
   overflow: hidden; }
 
 code, kbd, pre, samp {
-  font-family: monospace, monospace;
+  font-family: monospace,monospace;
   font-size: 1em; }
 
 figure {
@@ -173,9 +173,12 @@ html {
   @media (min-width: 64em) {
     .wrapper {
       padding: 0; } }
-  @media (min-width: 80em) {
+  @media (min-width: 81.25em) {
     .wrapper {
-      max-width: 1200px; } }
+      max-width: 1100px; } }
+  @media (min-width: 87.5em) {
+    .wrapper {
+      max-width: 1300px; } }
 
 .row-container {
   padding: calc(3rem / 2) 0; }
@@ -210,7 +213,7 @@ html {
 
 html {
   font-size: 125%; }
-  @media (min-width: 80em) {
+  @media (min-width: 81.25em) {
     html {
       font-size: 138%; } }
 
@@ -259,6 +262,12 @@ strong {
 
 .text-subtle {
   color: #666666; }
+
+.text-measure {
+  max-width: 40em; }
+
+.text-body-large.text-measure {
+  max-width: 30em; }
 
 .module-title {
   font-size: 3rem;
@@ -364,7 +373,8 @@ ol {
 .accordion-list .question {
   cursor: pointer; }
 .accordion-list .answer {
-  font-size: 0.9rem; }
+  font-size: 0.9rem;
+  max-width: 40em; }
 .accordion-list .rotate:before {
   transform: rotate(-90deg); }
 
@@ -468,7 +478,7 @@ ol {
 
 .img-text-details {
   flex: 70%; }
-  @media (min-width: 80em) {
+  @media (min-width: 81.25em) {
     .img-text-details {
       flex-grow: 0; } }
 
@@ -542,11 +552,7 @@ ol {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.9;
-  transition: opacity 200ms; }
-  .video-controls:hover {
-    opacity: 1; }
+  transform: translate(-50%, -50%); }
 
 .video-controls-play {
   fill: #FAFAFA; }
@@ -554,20 +560,6 @@ ol {
 .video-controls-background {
   fill: #999999;
   opacity: 0.8; }
-
-.video-enter {
-  opacity: 0.01; }
-
-.video-enter.video-enter-active {
-  opacity: 1;
-  transition: opacity 300ms ease-in; }
-
-.video-leave {
-  opacity: 1; }
-
-.video-leave.video-leave-active {
-  opacity: 0.01;
-  transition: opacity 200ms ease-out; }
 
 .carousel {
   margin-left: 0;
@@ -659,7 +651,7 @@ input[type="submit"] {
     justify-content: space-between; }
     .optin-footer input {
       padding: 0.5em; } }
-@media (min-width: 80em) {
+@media (min-width: 81.25em) {
   .optin-footer {
     max-width: 80%; } }
 
@@ -1078,7 +1070,8 @@ body.nav-container-active {
   flex: auto;
   justify-content: space-between; }
   .secondary-nav-list li a {
-    font-size: 0.8rem; }
+    font-size: 0.8rem;
+    cursor: pointer; }
     .secondary-nav-list li a:hover {
       color: #D6252C; }
 
@@ -1288,6 +1281,7 @@ body.nav-container-active {
       justify-content: space-between; } }
 
 .student-project-image {
+  display: flex;
   align-items: center;
   max-width: 500px;
   display: none; }
