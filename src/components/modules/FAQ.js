@@ -28,17 +28,13 @@ const FAQ = React.createClass({
         const hideStyle = {
             overflow: 'hidden',
             maxHeight: 0,
-            paddingTop: 0,
-            paddingBottom: 0,
-            marginTop: 0,
-            marginBottom: 0,
-            transition: 'all 180ms ease-in-out'
+            transition: 'max-height 0.5s ease-out'
 
         };
         const showStyle = {
             maxHeight: 500,
             overflow: 'hidden',
-            transition: 'all 300ms ease-in-out'
+            transition: 'max-height 1s ease-out'
         };
         return (
             <section className="module module-course faq-course">
@@ -57,6 +53,7 @@ const FAQ = React.createClass({
                                         {q.question}
                                     </li>
                                     <li
+                                        ref={q => {this[`_${this.props.title}_answer${i}`] = q}}
                                         style={this.state.active === q.question ? showStyle : hideStyle}
                                         className="answer">
                                         {q.answer}

@@ -11,7 +11,6 @@ const Faq = (props) => {
             <Hero moduleTitle="got questions?" jumboTitle="get answers"/>
             <FAQ title='bootcamp' faq={bootcampFaq} />
             <FAQ title='part time' faq={partTimeFaq} />
-            <FAQ title='bootcamp' faq={bootcampFaq} />
         </div>
     );
 };
