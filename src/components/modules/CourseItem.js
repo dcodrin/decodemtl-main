@@ -22,13 +22,13 @@ const CourseItem = (props) => {
                                 </ul>
                             </div>
                             <div className="course-details-block">
-                                <h4>Next Sessions</h4>
+                                <h4>Upcoming Courses</h4>
                                 <ul className="course-sessions">
                                     <li>{course.nextSessions[0]}</li>
                                     <li>{course.nextSessions[1]}</li>
                                 </ul>
                             </div>
-                            <Link to={`/courses/${encodeURI(course.link)}`} className="cta btn-primary btn-small">Learn More</Link>
+                            <Link to={`/courses/${encodeURI(course.link)}`} className="cta btn-primary btn-small">View Course</Link>
                         </aside>
                         {/*<!-- /.course-details -->*/}
                     </div>

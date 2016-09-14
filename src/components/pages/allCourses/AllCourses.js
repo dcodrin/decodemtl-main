@@ -7,7 +7,7 @@ const AllCourses = (props) => {
         function renderCourses() {
             return (
                 <div>
-                    <CourseHero moduleTitle={"web development"} jumboTitle={"courses"} text={"Welcome to the magical world of unicorns."}/>
+                    <CourseHero moduleTitle={"web development"} jumboTitle={"courses"} text={"Browse our upcoming Full-Time and Part-Time courses."}/>
                     <CourseItem courses={courses}/>
                 </div>
             );
