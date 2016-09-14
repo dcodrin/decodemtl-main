@@ -84,7 +84,7 @@ const Courses = React.createClass({
                 <CourseHero CTAP={CTAPrimaryLarge} CTAS={CTASecondaryLarge} ref={hero => {
                     this._hero = hero
                 }} moduleTitle={"web development"} jumboTitle={"bootcamp"} text={"INSERT TEXT HERE"}
-                            subText={"and some subtext"}/>
+                            subText={"####"}/>
                 <Element name="overview" className="element">
                     <CourseOverview overview={overview}/>
                 </Element>

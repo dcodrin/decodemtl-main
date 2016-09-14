@@ -1,9 +1,9 @@
-import ziad from '../../../assets/images/instructor-ziadsaab.jpg';
+import lucas from '../../../assets/images/instructor-lucaslemonnier.jpg';
 
 export default [
     {
-        fullName: 'Ziad Saab',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores aut blanditiis deserunt eos eum eveniet harum, illum libero modi molestiae quo repudiandae sapiente sequi sint temporibus ut vel voluptatem.',
-        img: ziad
+        fullName: 'Lucas Lemonnier',
+        description: 'Lucas is an independent front-end web developer, designer and instructor with over 10 years of experience. As a designer-turned-developer, Lucas is passionate about introducing beginners to CSS and spreading the word that coding is accessible to everyone.',
+        img: lucas
     }
 ];

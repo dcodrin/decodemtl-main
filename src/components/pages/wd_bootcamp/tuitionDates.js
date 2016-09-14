@@ -1,15 +1,15 @@
 export default  [
     {
-        startDate: 'January 9th, 2017',
-        endDate: 'March 3rd, 2017',
+        startDate: 'Jan 9th',
+        endDate: 'Mar 3rd',
         days: 'Monday—Friday',
         hours: '10AM—9PM',
         price: 5995,
         courseName: 'Bootcamp'
     },
     {
-        startDate: 'April 3rd, 2017',
-        endDate: 'May 26th, 2017',
+        startDate: 'Apr 3rd',
+        endDate: 'May 26th',
         days: 'Monday—Friday',
         hours: '10AM—9PM',
         price: 5995,
