@@ -11,7 +11,8 @@
     "react-dom": "^15.3.1",
     "react-easy-transition": "0.0.5",
     "react-router": "^2.7.0",
-    "react-router-scroll": "^0.3.2"
+    "react-router-scroll": "^0.3.2",
+    "react-scroll": "^1.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
