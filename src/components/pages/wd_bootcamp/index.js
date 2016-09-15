@@ -2,7 +2,7 @@ import React from 'react';
 import {Element, scrollSpy} from 'react-scroll';
 
 import CourseHero from '../../modules/Hero';
-import CourseOverview from '../../modules/CourseOverview';
+import CourseOverview from '../../modules/Overview';
 import CourseTuitionDates from'../../modules/CourseTuitionDates';
 import CourseCurriculum from '../../modules/CourseCurriculum';
 import FormOptin from '../../modules/FormOptin';
