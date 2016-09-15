@@ -83,13 +83,21 @@ const Courses = React.createClass({
 
         const formTitle = 'New to JavaScript? Get instant access to free JavaScript resources!',
             formText = 'Enter your email below and get instant access to our curated list of free JavaScript resources.';
-
         return (
             <div>
                 <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}/>
-                <CourseHero CTAP={CTAPrimaryLarge} CTAS={CTASecondaryLarge} ref={hero => {
-                    this._hero = hero
-                }} moduleTitle={"web development"} jumboTitle={"immersive"} text={"8 weeks of intensive learning. Gain enough practical experience to launch your new career or startup."}
+                <CourseHero CTAPText="Apply Now"
+                            CTASText="Syllabus"
+                            CTAPLink="/apply"
+                            CTASLink="/syllabus"
+                            CTAP={CTAPrimaryLarge}
+                            CTAS={CTASecondaryLarge}
+                            ref={hero => {
+                                this._hero = hero
+                            }}
+                            moduleTitle={"web development"}
+                            jumboTitle={"bootcamp"}
+                            text={"8 weeks of intensive learning. Gain enough practical experience to launch your new career or startup."}
                             subText={""}/>
                 <Element name="overview" className="element">
                     <CourseOverview overview={overview}/>

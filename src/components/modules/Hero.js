@@ -6,17 +6,21 @@ const Hero = React.createClass({
     propTypes: {
         CTAP: React.PropTypes.func,
         CTAS: React.PropTypes.func,
+        CTAPText: React.PropTypes.string,
+        CTASText: React.PropTypes.string,
+        CTAPLink: React.PropTypes.string,
+        CTASLink: React.PropTypes.string,
         moduleTitle: React.PropTypes.string.isRequired,
         jumboTitle: React.PropTypes.string.isRequired,
         text: React.PropTypes.string,
         subText: React.PropTypes.string
     },
     render() {
-        const {CTAP, CTAS, moduleTitle, jumboTitle, text, subText} = this.props;
+        const {CTAP, CTAPText, CTAS, CTASText,  moduleTitle, jumboTitle, text, subText, CTAPLink, CTASLink} = this.props;
         function renderButtons() {
             return (
                 <div className="cta-double">
-                    {CTAP ? <CTAP text="Apply Now" path="#"/> : null} {CTAS ? <CTAS path="#" text="Syllabus"/> : null}
+                    {CTAP ? <CTAP text={CTAPText} path={CTAPLink}/> : null} {CTAS ? <CTAS path={CTASLink} text={CTASText}/> : null}
                 </div>
             );
         }
