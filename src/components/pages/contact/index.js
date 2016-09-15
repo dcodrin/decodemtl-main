@@ -4,8 +4,6 @@ import Hero from '../../../components/modules/Hero';
 import ContactForm from '../../../components/modules/ContactForm';
 import OneHalfColumn from '../../../components/modules/OneHalfColumn';
 
-import map from '../../../assets/images/map.png';
-
 const Contact = (props) => {
 
     const columnLeft = (
@@ -33,7 +31,7 @@ const Contact = (props) => {
         </ul>);
 
     const columnRight = (
-        <img src={map} alt="" />
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.3982699850253!2d-73.571533684501!3d45.50206073893735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a568e238a1d%3A0xeb66b5f6ac0dd227!2sDecodeMTL!5e0!3m2!1sen!2sca!4v1473959702619" width="600" height="360" frameBorder="0" style={{border:0, pointerEvents: window.innerWidth < 800 ? 'none' : 'auto'}} allowFullScreen></iframe>
     );
     return (
         <div>
