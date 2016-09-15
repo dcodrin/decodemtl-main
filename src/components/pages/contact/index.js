@@ -6,7 +6,7 @@ import TwoThirdColumns from '../../../components/modules/TwoThirdColumns';
 
 import map from '../../../assets/images/map.png';
 
-const index = (props) => {
+const Contact = (props) => {
 
     //width was modified to make map larger
     const columns = [
@@ -50,6 +50,6 @@ const index = (props) => {
     );
 };
 
-index.propTypes = {};
+Contact.propTypes = {};
 
-export default index;
+export default Contact;

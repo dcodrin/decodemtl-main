@@ -1,3 +1,4 @@
+//TODO UNCOMMENT PROJECT SLIDER WHEN PROJECTS ARE AVAILABLE
 import React from 'react';
 import {Element, scrollSpy} from 'react-scroll';
 
@@ -9,20 +10,23 @@ import FormOptin from '../../modules/FormOptin';
 import CourseInstructor from '../../modules/CourseInstructor';
 import SecondaryNav from '../../navigation/SecondaryNav';
 import CourseTestimonial from '../../modules/CourseTestimonial';
-import CourseProjectsSlider from '../../modules/CourseProjectsSlider';
+//PROJECT SLIDER
+// import CourseProjectsSlider from '../../modules/CourseProjectsSlider';
 import CourseFAQ from '../../modules/FAQ';
 
 import tuitionDates from './tuitionDates';
 import subjects from './subjects';
 import instructors from './instructors';
 import testimonials from './testimonials';
-import projects from './projects';
+//PROJECT SLIDER
+// import projects from './projects';
 import faq from './FAQ';
 import overview from './courseOverview';
 
 //TODO REPLACE PLACEHOLDER IMAGES
 // /^\.\/img(.*)\.jpg$/i will match all files starting with img and ending with .jpg
-const req = require.context("../../../assets/images/", true, /^\.\/project-wd-bootcamp(.*)\.jpg$/i);
+//PROJECT SLIDER
+// const req = require.context("../../../assets/images/", true, /^\.\/project-wd-bootcamp(.*)\.jpg$/i);
 import {CTAPrimaryLarge, CTASecondaryLarge} from '../../buttons/buttons';
 
 const Courses = React.createClass({
@@ -90,7 +94,7 @@ const Courses = React.createClass({
                 </Element>
                 <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
                 <FormOptin submitButton='Submit' title={formTitle} text={formText}/>
-                <CourseProjectsSlider projects={projects} req={req}/>
+                {/*<CourseProjectsSlider projects={projects} req={req}/>*/}
                 <Element name="instructor">
                     <CourseInstructor instructors={instructors}/>
                 </Element>
