@@ -1,6 +1,6 @@
 //TODO CHECK IF NEEDS A GLOBAL CONFIG FOR FAQ
 import React from 'react';
-import {Link} from 'react-router';
+
 
 import Hero from '../../../components/modules/Hero';
 import FAQ from '../../../components/modules/FAQ';
@@ -12,9 +12,9 @@ import partTimeFaq from '../../pages/pt_htmlcss/FAQ';
 const Faq = (props) => {
     const paragraphs = [
         (
-            <p className="text-measure">No problem! If we missed something here just <Link to="/contact">shoot us an email</Link>
+            <p className="text-measure">No problem! If we missed something here just <span className="read-more"><a itemProp="email" href="mailto:hello@decodemtl.com">shoot us an email</a></span>
                 <br/>
-                or give us a toll-free call at 1-888-511-9155.
+                or give us a toll-free call at  <span className="read-more"><a itemProp="telephone" href="tel:1-888-511-9155">1-888-511-9155</a></span>.
             </p>
         )
     ];

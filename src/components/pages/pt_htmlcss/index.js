@@ -1,4 +1,4 @@
-//TODO UNCOMMENT PROJECT SLIDER ONCE PROJECTS ARE AVAILABLEE
+//TODO UNCOMMENT PROJECT SLIDER ONCE PROJECTS ARE AVAILABLE
 import React from 'react';
 import {Element, scrollSpy} from 'react-scroll';
 

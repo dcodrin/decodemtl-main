@@ -13,6 +13,7 @@ const App = (props) => {
                 initialStyle={{opacity: 0}}
                 transition="opacity 110ms ease-in"
                 finalStyle={{opacity: 1}}
+                className="main-content" role="main"
             >
                 {props.children}
             </RouteTransition>
