@@ -136,23 +136,23 @@ const MainFooter = React.createClass({
                             <div className="footer-nav-container">
                                 <h4>Courses</h4>
                                 <ul className="course-list" role="menu">
-                                    <li className="course-list-item"><Link to="#">Bootcamp</Link></li>
-                                    <li className="course-list-item"><Link to="#">Part-time Web Development</Link></li>
-                                    <li className="course-list-item"><Link to="#">Part-time JavaScript</Link></li>
-                                    <li className="course-list-item"><Link to="#">FAQ</Link></li>
+                                    <li className="course-list-item"><Link to="/courses/web-development-bootcamp">Bootcamp</Link></li>
+                                    <li className="course-list-item"><Link to="/courses/htmlcss">Part-time Web Development</Link></li>
+                                    <li className="course-list-item"><Link to="/courses/javascript">Part-time JavaScript</Link></li>
+                                    <li className="course-list-item"><Link to="/courses/faq">FAQ</Link></li>
                                     <li className="course-list-item"><Link to="#">Apply</Link></li>
                                 </ul>
                             </div>
                             <div className="footer-nav-container">
                                 <h4>DecodeMTL</h4>
                                 <ul className="about-list" role="menu">
-                                    <li className="about-list-item"><Link to="#">About</Link></li>
-                                    <li className="about-list-item"><Link to="#">Contact</Link></li>
-                                    <li className="about-list-item"><Link to="#">Employers</Link></li>
-                                    <li className="about-list-item"><Link to="#">Alumni</Link></li>
-                                    <li className="about-list-item"><Link to="#">Events</Link></li>
-                                    <li className="about-list-item"><Link to="#">WeWork</Link></li>
-                                    <li className="about-list-item"><Link to="#">Student Housing</Link></li>
+                                    <li className="about-list-item"><Link to="/about">About</Link></li>
+                                    <li className="about-list-item"><Link to="/contact">Contact</Link></li>
+                                    <li className="about-list-item"><Link to="/employers">Employers</Link></li>
+                                    {/*<li className="about-list-item"><Link to="#">Alumni</Link></li>*/}
+                                    <li className="about-list-item"><Link to="/events">Events</Link></li>
+                                    <li className="about-list-item"><Link to="/wework">WeWork</Link></li>
+                                    <li className="about-list-item"><Link to="/housing">Student Housing</Link></li>
                                 </ul>
                             </div>
                         </nav>

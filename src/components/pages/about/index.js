@@ -4,6 +4,7 @@ import Hero from '../../../components/modules/Hero';
 import GenericTextModule from '../../../components/modules/GenericTextModule';
 import OneHalfColumn from '../../../components/modules/OneHalfColumn';
 import QuoteModule from '../../../components/modules/QuoteModule';
+import Overview from '../../../components/modules/Overview';
 
 import quoteBackground from '../../../assets/images/module-bg-about-quote.jpg';
 
@@ -19,11 +20,12 @@ const About = React.createClass({
         ];
 
         const p2 = [
-            (<p className="text-measure">Quality over quantity</p>),
-            (<p className="text-measure">Passion (Both in our staff and our students)</p>),
-            (<p className="text-measure">Don’t take shit to seriously (You can learn, grow and have fun at the same time)</p>),
-            (<p className="text-measure">Outcomes (Your success is our priority)</p>),
-            (<p className="text-measure">Creativity, innovation, and hardwork</p>),
+
+            {text: 'Quality over quantity'},
+            {text: 'Passion (Both in our staff and our students)'},
+            {text: 'Don’t take shit to seriously (You can learn, grow and have fun at the same time)'},
+            {text: 'Outcomes (Your success is our priority)'},
+            {text: 'Creativity, innovation, and hardwork'},
         ];
 
         const p3 = [
@@ -46,10 +48,10 @@ const About = React.createClass({
         return (
             <div>
                 <Hero moduleTitle={'made in'} jumboTitle={'montreal'} text={"You will learn abou them mysteries of the space"} subText={''}/>
-                <GenericTextModule title={'Why we do it'} subTitle={''} paragraphs={p1}/>
-                <GenericTextModule title={'We Value'} paragraphs={p2}/>
-                 <QuoteModule background={quoteBackground}/>
                 <OneHalfColumn mainTitle={'teaching philosophy'} text={'Our goal is a good goal.'} contentLeft={contentLeft} contentRight={contentRight}/>
+                <GenericTextModule title={'Why we do it'} subTitle={''} paragraphs={p1}/>
+                <Overview overview={p2} title='WE VALUE'/>
+                 <QuoteModule background={quoteBackground}/>
                 <GenericTextModule title={'accessible staff'} paragraphs={p3}/>
             </div>
         );
