@@ -15,20 +15,20 @@ const About = React.createClass({
     render() {
 
         const p1 = [
-           ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur corporis cupiditate, deleniti deserunt ea eaque esse excepturi minima necessitatibus nobis obcaecati perspiciatis placeat repellat sequi sint temporibus vel voluptatum.',
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti distinctio eveniet modi nulla officia possimus soluta! Distinctio et eveniet harum, ipsum iste laudantium nihil, nostrum rerum soluta totam velit.',
-           ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur dolore exercitationem fuga numquam obcaecati quo, sed soluta tenetur velit? Ab aliquid eaque hic illo ipsum itaque, magni quam quidem voluptatem?'
+            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur corporis cupiditate, deleniti deserunt ea eaque esse excepturi minima necessitatibus nobis obcaecati perspiciatis placeat repellat sequi sint temporibus vel voluptatum.</p>),
+            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aperiam autem consequatur, consequuntur deleniti dolore est et eum facilis fugit, id laborum nam quidem quis quo soluta. Eum, vero.</p>),
+            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut maiores omnis porro qui. Delectus dolorem doloribus hic labore laudantium odit quaerat, quo sapiente suscipit tenetur unde voluptate? Exercitationem, laudantium quos!</p>)
         ];
 
         const p2 = [
-            ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur corporis cupiditate, deleniti deserunt ea eaque esse excepturi minima necessitatibus nobis obcaecati perspiciatis placeat repellat sequi sint temporibus vel voluptatum.',
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam deleniti distinctio eveniet modi nulla officia possimus soluta! Distinctio et eveniet harum, ipsum iste laudantium nihil, nostrum rerum soluta totam velit.',
-            ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur dolore exercitationem fuga numquam obcaecati quo, sed soluta tenetur velit? Ab aliquid eaque hic illo ipsum itaque, magni quam quidem voluptatem?'
+            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, asperiores autem, culpa cumque dolor enim ex excepturi itaque magnam nam natus nemo nihil numquam, sequi suscipit ut voluptates. Quis, tempore!</p>),
+            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur corporis cupiditate, deleniti deserunt ea eaque esse excepturi minima necessitatibus nobis obcaecati perspiciatis placeat repellat sequi sint temporibus vel voluptatum.</p>),
+            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur error obcaecati suscipit voluptates. Delectus, dicta eius ex praesentium quam quis repellendus reprehenderit sint veniam voluptatum? Architecto, enim, inventore. Iusto.</p>)
         ];
 
         const p3 = [
-           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aperiam, assumenda autem, eaque eos facilis laborum modi nam omnis quia quidem repellat reprehenderit tempora temporibus totam ullam. Labore, quis?',
-          'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi commodi deserunt dicta, dolores ducimus ex molestiae necessitatibus nihil numquam possimus quo, recusandae repellat repudiandae similique, sint veniam? Autem, fuga!'
+            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi cupiditate doloremque dolores doloribus ducimus enim, exercitationem fugiat inventore libero, maiores nostrum porro quae vitae voluptatem. Iusto laboriosam recusandae soluta?</p>),
+            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, aperiam, autem corporis cupiditate dicta dolorem ea fugit incidunt maxime nemo odio perspiciatis, porro quidem quis repellat soluta totam. Placeat, vel.</p>)
         ];
 
         const contentLeft = (
