@@ -62,8 +62,7 @@ const MainFooter = React.createClass({
 
                             {/* footer-optin */}
                             <h4>Join our growing community</h4>
-                            <p>Receive info about courses, workshops and events in our growing Montreal tech
-                                community.</p>
+                            <p>Enter your email to receive info about new courses, workshops and events.</p>
                             <form className="optin-form optin-footer" onSubmit={this._handleSubmit}>
                                 <label htmlFor="email" className="visually-hidden">Email</label>
                                 <input ref={email => {this._footerEmail = email}} type="email" name="email" placeholder="Your email"/>
@@ -78,14 +77,14 @@ const MainFooter = React.createClass({
                             {/* footer-contact-details */}
                             <ul className="footer-contact-details" itemScope itemType="http://schema.org/ContactPoint">
                                 <li>
-                                    <h4>Reach Out</h4>
+                                    <h4>Contact Us</h4>
                                 </li>
                                 <li itemScope itemType="schema.org/PostalAddress">
                                     <a href="https://goo.gl/maps/RmSE1PKEiXH2">
                                         <span className="fa fa-map-marker fa-fw" aria-hidden="true"/>
-                                        <span itemProp="streetAddress">3 Place Ville Marie,</span>
-                                        <span itemProp="addressLocality">Montréal,</span>
-                                        <span itemProp="addressRegion">Québec</span>
+                                        <span itemProp="streetAddress">4-3 Place Ville Marie, </span>
+                                        <span itemProp="addressLocality">Montréal, </span>
+                                        <span itemProp="addressRegion">Québec </span>
                                         <span itemProp="postalCode">H3B 2E3</span>
                                     </a>
                                 </li>
@@ -136,9 +135,9 @@ const MainFooter = React.createClass({
                             <div className="footer-nav-container">
                                 <h4>Courses</h4>
                                 <ul className="course-list" role="menu">
-                                    <li className="course-list-item"><Link to="/courses/web-development-bootcamp">Bootcamp</Link></li>
-                                    <li className="course-list-item"><Link to="/courses/htmlcss">Part-time Web Development</Link></li>
-                                    <li className="course-list-item"><Link to="/courses/javascript">Part-time JavaScript</Link></li>
+                                    <li className="course-list-item"><Link to="/courses/web-development-bootcamp">Immersive</Link></li>
+                                    <li className="course-list-item"><Link to="/courses/htmlcss">HTML & CSS</Link></li>
+                                    <li className="course-list-item"><Link to="/courses/javascript">JavaScript</Link></li>
                                     <li className="course-list-item"><Link to="/courses/faq">FAQ</Link></li>
                                     <li className="course-list-item"><Link to="#">Apply</Link></li>
                                 </ul>

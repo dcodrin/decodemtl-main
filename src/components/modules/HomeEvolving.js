@@ -8,7 +8,7 @@ const HomeEvolving = (props) => {
                     <h2 className="module-title">Modern Education</h2>
                     <div className="row-container one-half-container">
                         <div className="one-half-content">
-                            <p>We believe education should evolve with the times. Unlike traditional education institutions, we are in close contact with employers, ensuring the subjects we teach the most in-demand job skills of today.</p>
+                            <p>We believe education should evolve with the times. Unlike traditional education institutions, we are in close contact with employers, ensuring the subjects we teach are the most in-demand skills of today.</p>
                             <div className="link-more text-body-small">
                                 <a href="#">Read more about us here<span className="fa fa-caret-right" aria-hidden="true" /></a>
                             </div>

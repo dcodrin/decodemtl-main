@@ -76,8 +76,8 @@ const Courses = React.createClass({
             }
         ];
 
-        const formTitle = 'Get instant access to the course syllabus',
-            formText = 'Enter your email below to take a peak at our detailed course syllabus.';
+        const formTitle = 'Join our growing community',
+            formText = 'Enter your email to receive info about new courses, workshops and events.';
 
         return (
             <div>

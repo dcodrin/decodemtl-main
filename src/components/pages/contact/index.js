@@ -14,9 +14,9 @@ const Contact = (props) => {
             <li itemScope itemType="schema.org/PostalAddress">
                 <a href="https://goo.gl/maps/RmSE1PKEiXH2">
                     <span className="fa fa-map-marker fa-fw" aria-hidden="true"/>
-                    <span itemProp="streetAddress">3 Place Ville Marie,</span>
-                    <span itemProp="addressLocality">Montréal,</span>
-                    <span itemProp="addressRegion">Québec</span>
+                    <span itemProp="streetAddress">4-3 Place Ville Marie, </span>
+                    <span itemProp="addressLocality">Montréal, </span>
+                    <span itemProp="addressRegion">Québec </span>
                     <span itemProp="postalCode">H3B 2E3</span>
                 </a>
             </li>
@@ -35,7 +35,7 @@ const Contact = (props) => {
     );
     return (
         <div>
-            <Hero moduleTitle="we love it when folks" jumboTitle="reach out"/>
+            <Hero moduleTitle="Questions?" jumboTitle="Contact Us"/>
             <ContactForm/>
             <OneHalfColumn contentLeft={columnLeft} contentRight={columnRight}/>
         </div>

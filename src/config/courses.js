@@ -1,7 +1,7 @@
 export default [
     {
         title: "web development",
-        jumboTitle: "bootcamp",
+        jumboTitle: "immersive",
         text: '8 weeks of intensive learning. Gain enough practical experience to launch your new career or startup.',
         type: "Full-time",
         duration: "8 weeks",

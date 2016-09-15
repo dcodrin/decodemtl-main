@@ -9,16 +9,16 @@ const Employers = (props) => {
 
     //FormOptin data
     const heroSubText = 'DecodeMTL is growing the next group of diverse and gifted developers. Let us find the perfect candidate for your team!',
-        formTitle = 'Come see what our grands can do at Demo Day!',
-        formText = 'Curious about our program? Put more text......';
+        formTitle = 'Do you want to meet our graduates?',
+        formText = 'Enter your email below and get notified about our next hiring event.';
 
     //TwoThirdColumn data
     //USE className="row-container row-two-third-container alternating" FOR TOP LEVEL DIV
     const columns = [
         (<div className="row-container row-two-third-container alternating">
             <div className="two-third-content">
-                <h4>Rigor</h4>
-                <p>Each one of our grads has gone against the grain and made sacrifices in order to get through our program. They are ready and eager to take on the challenges your company has waiting for them.</p>
+                <h4>Aptitude</h4>
+                <p>Once accepted into our competitive program, our students are expected to push their limits by coding 10+ hours per day, 7 days a week. Their intelligence, mixed with a strong passion for technology and persistence enable them to thrive in our course. After graduating, they are eager to bring these skills to your company.</p>
             </div>
             <div className="one-third-content">
                 <img src="https://unsplash.it/600/360?image=0" alt="" />
@@ -26,8 +26,8 @@ const Employers = (props) => {
         </div>),
         (<div className="row-container row-two-third-container alternating">
             <div className="two-third-content">
-                <h4>Rigor</h4>
-                <p>Each one of our grads has gone against the grain and made sacrifices in order to get through our program. They are ready and eager to take on the challenges your company has waiting for them.</p>
+                <h4>Passion</h4>
+                <p>Our grads have been taught to think and learn like developers. New languages are not a barrier but rather an opportunity to grow their knowledge-base. In fact, many of our graduates go on to tackle new languages in their first weeks on the job.</p>
             </div>
             <div className="one-third-content">
                 <img src="https://unsplash.it/600/360?image=0" alt="" />
@@ -35,8 +35,8 @@ const Employers = (props) => {
         </div>),
         (<div className="row-container row-two-third-container alternating">
             <div className="two-third-content">
-                <h4>Rigor</h4>
-                <p>Each one of our grads has gone against the grain and made sacrifices in order to get through our program. They are ready and eager to take on the challenges your company has waiting for them.</p>
+                <h4>Team Players</h4>
+                <p>Coding skills are not enough. All of our students are selected as much for their personality and communications skills as their ability to learn and execute. We know that “fit" is the key to a successful team.</p>
             </div>
             <div className="one-third-content">
                 <img src="https://unsplash.it/600/360?image=0" alt="" />
@@ -51,7 +51,7 @@ const Employers = (props) => {
             <Hero moduleTitle="find your next" jumboTitle="web developer" subText={heroSubText}/>
             <EmployerCTA/>
             <TwoThirdColumns columns={columns} title="What Makes Our Grads Special?"/>
-            <FormOptin submitButton="Let me know" title={formTitle} text={formText} />
+            <FormOptin submitButton="Submit" title={formTitle} text={formText} />
             <PartnersLogos/>
         </div>
     );

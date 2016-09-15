@@ -200,10 +200,10 @@ const SiteNav = React.createClass({
                         <ul className="contact-details" itemScope itemType="http://schema.org/ContactPoint">
                             <li itemScope itemType="schema.org/PostalAddress">
                                 <a href="https://goo.gl/maps/RmSE1PKEiXH2">
-                                    <span itemProp="streetAddress">3 Place Ville Marie,</span>
+                                    <span itemProp="streetAddress">4-3 Place Ville Marie,</span>
                                     <br />
-                                    <span itemProp="addressLocality">Montréal,</span>
-                                    <span itemProp="addressRegion">Québec</span>
+                                    <span itemProp="addressLocality">Montréal, </span>
+                                    <span itemProp="addressRegion">Québec </span>
                                     <span itemProp="postalCode">H3B 2E3</span>
                                 </a>
                             </li>

@@ -89,7 +89,7 @@ const Courses = React.createClass({
                 <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}/>
                 <CourseHero CTAP={CTAPrimaryLarge} CTAS={CTASecondaryLarge} ref={hero => {
                     this._hero = hero
-                }} moduleTitle={"web development"} jumboTitle={"bootcamp"} text={"8 weeks of intensive learning. Gain enough practical experience to launch your new career or startup."}
+                }} moduleTitle={"web development"} jumboTitle={"immersive"} text={"8 weeks of intensive learning. Gain enough practical experience to launch your new career or startup."}
                             subText={""}/>
                 <Element name="overview" className="element">
                     <CourseOverview overview={overview}/>
