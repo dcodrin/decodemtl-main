@@ -15,15 +15,15 @@ const About = React.createClass({
     render() {
 
         const p1 = [
-            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur corporis cupiditate, deleniti deserunt ea eaque esse excepturi minima necessitatibus nobis obcaecati perspiciatis placeat repellat sequi sint temporibus vel voluptatum.</p>),
-            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias aperiam autem consequatur, consequuntur deleniti dolore est et eum facilis fugit, id laborum nam quidem quis quo soluta. Eum, vero.</p>),
-            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut maiores omnis porro qui. Delectus dolorem doloribus hic labore laudantium odit quaerat, quo sapiente suscipit tenetur unde voluptate? Exercitationem, laudantium quos!</p>)
+            (<p className="text-measure">Traditional schools teach in old ways, and we knew there was a better way. We want to inspire and motivate people to reach their potential, to step outside their comfort zone, and ultimately pursue work they love.</p>),
         ];
 
         const p2 = [
-            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, asperiores autem, culpa cumque dolor enim ex excepturi itaque magnam nam natus nemo nihil numquam, sequi suscipit ut voluptates. Quis, tempore!</p>),
-            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur corporis cupiditate, deleniti deserunt ea eaque esse excepturi minima necessitatibus nobis obcaecati perspiciatis placeat repellat sequi sint temporibus vel voluptatum.</p>),
-            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur error obcaecati suscipit voluptates. Delectus, dicta eius ex praesentium quam quis repellendus reprehenderit sint veniam voluptatum? Architecto, enim, inventore. Iusto.</p>)
+            (<p className="text-measure">Quality over quantity</p>),
+            (<p className="text-measure">Passion (Both in our staff and our students)</p>),
+            (<p className="text-measure">Don’t take shit to seriously (You can learn, grow and have fun at the same time)</p>),
+            (<p className="text-measure">Outcomes (Your success is our priority)</p>),
+            (<p className="text-measure">Creativity, innovation, and hardwork</p>),
         ];
 
         const p3 = [
@@ -46,8 +46,8 @@ const About = React.createClass({
         return (
             <div>
                 <Hero moduleTitle={'made in'} jumboTitle={'montreal'} text={"You will learn abou them mysteries of the space"} subText={''}/>
-                <GenericTextModule title={'bilingual roots'} subTitle={'multicultural present'} paragraphs={p1}/>
-                <GenericTextModule title={'keep it small & nimble'} paragraphs={p2}/>
+                <GenericTextModule title={'Why we do it'} subTitle={''} paragraphs={p1}/>
+                <GenericTextModule title={'We Value'} paragraphs={p2}/>
                  <QuoteModule background={quoteBackground}/>
                 <OneHalfColumn mainTitle={'teaching philosophy'} text={'Our goal is a good goal.'} contentLeft={contentLeft} contentRight={contentRight}/>
                 <GenericTextModule title={'accessible staff'} paragraphs={p3}/>
