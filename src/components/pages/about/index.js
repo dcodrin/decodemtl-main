@@ -23,23 +23,22 @@ const About = React.createClass({
 
             {text: 'Quality over quantity'},
             {text: 'Passion (Both in our staff and our students)'},
-            {text: 'Don’t take shit to seriously (You can learn, grow and have fun at the same time)'},
+            {text: 'Don’t take things to seriously (You can learn and have fun at the same time)'},
             {text: 'Outcomes (Your success is our priority)'},
             {text: 'Creativity, innovation, and hardwork'},
         ];
 
         const p3 = [
-            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi cupiditate doloremque dolores doloribus ducimus enim, exercitationem fugiat inventore libero, maiores nostrum porro quae vitae voluptatem. Iusto laboriosam recusandae soluta?</p>),
-            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, aperiam, autem corporis cupiditate dicta dolorem ea fugit incidunt maxime nemo odio perspiciatis, porro quidem quis repellat soluta totam. Placeat, vel.</p>)
+            <ul className="petal-icon-list">
+                <li><span className="petal-icon" aria-hidden="true" />Project based teaching</li>
+                <li><span className="petal-icon" aria-hidden="true" />No grades, tests, or exams</li>
+                <li><span className="petal-icon" aria-hidden="true" />Learn from your mistakes</li>
+                <li><span className="petal-icon" aria-hidden="true" />Your hardwork will pay off</li>
+            </ul>
         ];
 
         const contentLeft = (
-            <ul className="petal-icon-list">
-                <li><span className="petal-icon" aria-hidden="true" />450+ hours over 8 weeks</li>
-                <li><span className="petal-icon" aria-hidden="true" />Intensive project based learning approach</li>
-                <li><span className="petal-icon" aria-hidden="true" />Career support to get you working ASAP</li>
-                <li><span className="petal-icon" aria-hidden="true" />Career support to get you working ASAP</li>
-            </ul>
+            (<p className="text-measure">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, aperiam, autem corporis cupiditate dicta dolorem ea fugit incidunt maxime nemo odio perspiciatis, porro quidem quis repellat soluta totam. Placeat, vel.</p>)
         );
 
         const contentRight = (
@@ -47,12 +46,12 @@ const About = React.createClass({
         );
         return (
             <div>
-                <Hero moduleTitle={'made in'} jumboTitle={'montreal'} text={"You will learn abou them mysteries of the space"} subText={''}/>
-                <OneHalfColumn mainTitle={'teaching philosophy'} text={'Our goal is a good goal.'} contentLeft={contentLeft} contentRight={contentRight}/>
+                <Hero moduleTitle={'made in'} jumboTitle={'montreal'} text={""} subText={''}/>
+                <OneHalfColumn mainTitle={'How we started'} text={''} contentLeft={contentLeft} contentRight={contentRight}/>
                 <GenericTextModule title={'Why we do it'} subTitle={''} paragraphs={p1}/>
-                <Overview overview={p2} title='WE VALUE'/>
+                <Overview overview={p2} title='Our values'/>
                 <QuoteModule background={quoteBackground}/>
-                <GenericTextModule title={'accessible staff'} paragraphs={p3}/>
+                <GenericTextModule title={'Our teaching methodology'} paragraphs={p3}/>
             </div>
         );
     }
