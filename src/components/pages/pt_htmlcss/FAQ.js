@@ -1,19 +1,19 @@
 module.exports = [
     {
+        question: 'Why should I take this course?',
+        answer: 'HTML & CSS are two of the main languages powering the browser. Knowing these languages, will allow you to '
+    },
+    {
+        question: 'What do I need to bring?',
+        answer: 'Any fast laptop will do. MacOS, Linux, or Windows all work fine.'
+    },
+    {
         question: 'Do I need any prior knowledge to attend this course?',
-        answer: 'Only the knowledge of the universe! Also quantum physics helps.'
+        answer: 'None at all, this course is beginner friendly.'
     },
     {
-        question: 'What are the requirements to take part in this course?',
-        answer: 'Be cool, be very cool.'
-    },
-    {
-        question: 'What kind of job can I expect? How long will it take?',
-        answer: 'Death Star targeting interface developer.'
-    },
-    {
-        question: 'What are the payment deadlines and refund policy?',
-        answer: 'Pay. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dignissimos eius eveniet illo, nam necessitatibus pariatur quis repudiandae. Alias cum dicta expedita facilis ipsum iusto minima provident reprehenderit unde voluptatem?'
+        question: 'What do I need to bring?',
+        answer: 'Any fast laptop will do. MacOS, Linux, or Windows all work fine.'
     },
     {
         question: 'What is the application process?',

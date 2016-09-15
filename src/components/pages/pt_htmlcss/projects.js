@@ -1,4 +1,4 @@
-import p1 from '../../../assets/images/project-wd-bootcamp-1.jpg'
+import p1 from '../../../assets/images/project-pt-htmlcss-1.png'
 import p2 from '../../../assets/images/project-wd-bootcamp-2.jpg'
 import p3 from '../../../assets/images/project-wd-bootcamp-3.jpg'
 import p4 from '../../../assets/images/project-wd-bootcamp-4.jpg'

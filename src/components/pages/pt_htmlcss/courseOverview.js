@@ -1,11 +1,11 @@
 export default [
     {
-        text: "10 Weeks, two nights per week"
+        text: "60 hours over 10 weeks"
     },
     {
-        text: "Hands-on help from our awesome instructors"
+        text: "Learn the underlying languages that power the web"
     },
     {
-        text: "Learn to build websites from scratch"
+        text: "Build fully responsive websites from the ground up"
     }
 ];
