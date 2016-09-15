@@ -10,7 +10,7 @@ import HomeEvolving from '../../modules/HomeEvolving';
 import LocationSlider from '../../modules/LocationSlider';
 
 import upcomingCourses from '../../../config/upcomingCourses';
-import testimonials from '../../../config/testimonials';
+import testimonials from '../../pages/wd_bootcamp/testimonials';
 import events from '../../../config/events';
 
 //TODO CHANGE PLACEHOLDER IMAGES
