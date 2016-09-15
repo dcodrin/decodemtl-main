@@ -254,6 +254,14 @@ h4 {
 strong {
   font-family: "DIN Next W01 Bold"; }
 
+blockquote {
+  margin: 0; }
+  blockquote p {
+    font-family: "DIN Next W01 Italic"; }
+
+.credit::before {
+  content: '—'; }
+
 .text-body-large {
   font-size: 1.4rem; }
 
@@ -454,16 +462,10 @@ ol {
     margin-top: 0; }
   .img-text-container p:last-child {
     margin-bottom: 0; }
-  .img-text-container blockquote {
-    margin: 0; }
-    .img-text-container blockquote p {
-      font-family: "DIN Next W01 Italic"; }
   .img-text-container .credit {
+    font-family: "DIN Next W01 Bold";
     font-size: 0.8em;
-    margin-left: 0.5em;
-    font-family: "DIN Next W01 Bold"; }
-    .img-text-container .credit::before {
-      content: "—"; }
+    margin-left: 0.5em; }
   @media (min-width: 64em) {
     .img-text-container {
       align-items: center; } }
@@ -1061,6 +1063,9 @@ body.nav-container-active {
   .secondary-nav-list li,
   .secondary-nav-cta li {
     flex: 1 auto; }
+    .secondary-nav-list li a,
+    .secondary-nav-cta li a {
+      cursor: pointer; }
 
 .secondary-nav-cta .btn-small {
   font-size: 0.8rem;
@@ -1070,8 +1075,7 @@ body.nav-container-active {
   flex: auto;
   justify-content: space-between; }
   .secondary-nav-list li a {
-    font-size: 0.8rem;
-    cursor: pointer; }
+    font-size: 0.8rem; }
     .secondary-nav-list li a:hover {
       color: #D6252C; }
 
@@ -1200,9 +1204,9 @@ body.nav-container-active {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: #054851; }
+  background-color: #054851;
+  color: #D6D6D6; }
   .module-bg-img .module-title {
-    color: #D6D6D6;
     margin-top: 0; }
 
 .module-boxed {
@@ -1226,17 +1230,15 @@ body.nav-container-active {
   text-align: center;
   padding: 1em 0; }
 
-.tuition-dates .module-bg-img {
-  background-image: url("../images/module-bg-students-at-work.jpg"); }
 .tuition-dates .foot-note {
   text-align: right;
-  color: #D6D6D6;
   margin-bottom: 0; }
   @media (max-width: 50em) {
     .tuition-dates .foot-note {
       text-align: left; } }
 .tuition-dates .multi-column-table {
-  background: rgba(250, 250, 250, 0.9); }
+  background: rgba(250, 250, 250, 0.9);
+  color: #212121; }
 @media (min-width: 50em) {
   .tuition-dates .row {
     padding: 1.2em; } }
@@ -1252,12 +1254,8 @@ body.nav-container-active {
 .tuition-dates .cell:last-child, .tuition-dates .cell:first-child {
   font-family: "DIN Next W01 Bold"; }
 
-.course-schedule {
-  color: #D6D6D6; }
-  .course-schedule .module-bg-img {
-    background-image: url("../images/module-bg-wework-common.jpg"); }
-  .course-schedule .two-col-table .row {
-    border-color: #17BECF; }
+.course-schedule .two-col-table .row {
+  border-color: #17BECF; }
 
 .student-project {
   color: #999999;

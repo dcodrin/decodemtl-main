@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 const LocationSlider = React.createClass({
     propTypes: {
@@ -146,7 +147,7 @@ const LocationSlider = React.createClass({
                     </figure>
                     {/* /.carousel */}
                     <div className="link-more text-body-small">
-                        <a href="#">This is a block link<span className="fa fa-caret-right" aria-hidden="true" /></a>
+                        <Link to="/wework">Learn more about the WeWork experience<span className="fa fa-caret-right" aria-hidden="true" /></Link>
                     </div>
                 </div>
                 {/* /.wrapper */}

@@ -14,8 +14,9 @@
 	background-position: center;
 	background-size: cover;
 	background-color: #054851;
+	color: $grey;
 	.module-title {
-		color: $grey;
+		// color: $grey;
 		margin-top: 0;
 	}
 }
@@ -53,12 +54,9 @@
 // Tuition & Dates Module
 // ========================
 .tuition-dates {
-	.module-bg-img {
-	background-image: url('../images/module-bg-students-at-work.jpg');
-	}
 	.foot-note {
 		text-align: right;
-		color: $grey;
+		// color: $grey;
 		margin-bottom: 0;
 		@include breakpoint(tablet) {
 			text-align: left;
@@ -67,6 +65,7 @@
 	// Tuition dates table ---------
 	.multi-column-table {
 		background: transparentize($white, 0.1);
+		color: $black;
 	}
 	.row {
 		@include breakpoint(mintablet) {
@@ -97,11 +96,6 @@
 // Daily Schedule Module
 // ========================
 .course-schedule {
-	color: $grey;
-	.module-bg-img {
-		background-image: url('../images/module-bg-wework-common.jpg');
-	}
-	// Schedule table
 	.two-col-table {
 		.row {
 			border-color: $blue;
