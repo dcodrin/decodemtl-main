@@ -134,12 +134,12 @@ const CourseProjectsSlider = React.createClass({
                         </div>
                         <div className="student-project-details">
                             <div className="slider-controls buttons">
-                                <a className="slider-previous prev" onClick={this._handleSlide.bind(this, 'prev')}>
+                                <a className="slider-previous prev" onClick={this._handleSlide.bind(this, 'next')}>
                                     <i className="fa fa-chevron-circle-left" aria-hidden="true"
                                        title="Previous Project"/><span className="sr-only">Previous Project</span>
                                 </a>
                                 <div className="slider-current">{slide}</div>
-                                <a className="slider-next next" onClick={this._handleSlide.bind(this, 'next')}><i
+                                <a className="slider-next next" onClick={this._handleSlide.bind(this, 'prev')}><i
                                     className="fa fa-chevron-circle-right" aria-hidden="true"
                                     title="Next Project"/><span className="sr-only">Next Project</span></a>
                             </div>

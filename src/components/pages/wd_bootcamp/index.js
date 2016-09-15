@@ -12,7 +12,7 @@ import CourseTestimonial from '../../modules/CourseTestimonial';
 import CourseSchedule from '../../modules/CourseSchedule';
 import CourseProjectsSlider from '../../modules/CourseProjectsSlider';
 import CourseCareerSupport from '../../modules/CourseCareerSupport';
-import CourseFAQ from '../../modules/CourseFAQ';
+import CourseFAQ from '../../modules/FAQ';
 import PartnersLogos from '../../modules/PartnersLogos';
 
 import tuitionDates from './tuitionDates';
@@ -111,7 +111,7 @@ const Courses = React.createClass({
                     <CourseCareerSupport/>
                 </Element>
                 <Element name="faq">
-                    <CourseFAQ faq={faq}/>
+                    <CourseFAQ title='Course FAQ' faq={faq}/>
                 </Element>
                 <PartnersLogos/>
             </div>

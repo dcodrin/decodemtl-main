@@ -218,7 +218,7 @@ body.nav-container-active {
 		font-size: 1.1rem;
 	}
 }
-// Slideout social icons 
+// Slideout social icons
 .nav-content {
 	.social-list {
 		margin: 1em 0;
@@ -283,8 +283,11 @@ body.nav-container-active {
 	display: flex;
 	align-items: center;
 	li {
-		flex: 1 auto;
-	}
+    flex: 1 auto;
+    a {
+      cursor: pointer;
+    }
+  }
 }
 .secondary-nav-cta {
 	.btn-small {
@@ -297,7 +300,6 @@ body.nav-container-active {
 	justify-content: space-between;
 	li a {
 		font-size: 0.8rem;
-		cursor: pointer;
 		&:hover {
 			color: $red;
 		}

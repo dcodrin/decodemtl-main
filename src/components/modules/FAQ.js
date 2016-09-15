@@ -3,9 +3,10 @@ import React from 'react';
 
 import {Link} from 'react-router';
 
-const CourseFAQ = React.createClass({
+const FAQ = React.createClass({
     propTypes: {
-        faq: React.PropTypes.array.isRequired
+        faq: React.PropTypes.array.isRequired,
+        title: React.PropTypes.string.isRequired
     },
     getInitialState() {
         return {
@@ -27,22 +28,18 @@ const CourseFAQ = React.createClass({
         const hideStyle = {
             overflow: 'hidden',
             maxHeight: 0,
-            paddingTop: 0,
-            paddingBottom: 0,
-            marginTop: 0,
-            marginBottom: 0,
-            transition: 'all 180ms ease-in-out'
+            transition: 'max-height 0.5s ease-out'
 
         };
         const showStyle = {
             maxHeight: 500,
             overflow: 'hidden',
-            transition: 'all 300ms ease-in-out'
+            transition: 'max-height 1s ease-out'
         };
         return (
             <section className="module module-course faq-course">
                 <div className="wrapper">
-                    <h2 className="module-title">Course FAQ</h2>
+                    <h2 className="module-title">{this.props.title}</h2>
                     <ul className="petal-icon-list accordion-list">
                         {this.props.faq.map((q, i) => {
                             return (
@@ -56,6 +53,7 @@ const CourseFAQ = React.createClass({
                                         {q.question}
                                     </li>
                                     <li
+                                        ref={q => {this[`_${this.props.title}_answer${i}`] = q}}
                                         style={this.state.active === q.question ? showStyle : hideStyle}
                                         className="answer">
                                         {q.answer}
@@ -74,4 +72,4 @@ const CourseFAQ = React.createClass({
     }
 });
 
-export default CourseFAQ;
+export default FAQ;

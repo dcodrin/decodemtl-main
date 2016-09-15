@@ -164,7 +164,7 @@ const SiteNav = React.createClass({
                             <li><Link onClick={this._toggleNav} to="/employers">Employers</Link></li>
                             <li><Link onClick={this._toggleNav} to="/events">Events</Link></li>
                             <li><Link onClick={this._toggleNav} to="/faq">FAQ</Link></li>
-                            <li><Link onClick={this._toggleNav} to="/blog">Blog</Link></li>
+                            {/*<li><Link onClick={this._toggleNav} to="/blog">Blog</Link></li>*/}
                             <li><Link onClick={this._toggleNav} to="/contact">Contact</Link></li>
                         </ul>
                         {/* /.secondary-menu */}

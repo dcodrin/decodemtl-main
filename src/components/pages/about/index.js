@@ -1,7 +1,11 @@
 import React from 'react';
+
 import Hero from '../../../components/modules/Hero';
 import GenericTextModule from '../../../components/modules/GenericTextModule';
 import OneHalfColumn from '../../../components/modules/OneHalfColumn';
+import QuoteModule from '../../../components/modules/QuoteModule';
+
+import quoteBackground from '../../../assets/images/module-bg-about-quote.jpg';
 
 const About = React.createClass({
     propTypes: {},
@@ -44,6 +48,7 @@ const About = React.createClass({
                 <Hero moduleTitle={'montreal made'} jumboTitle={'montreal loved'} subText={'Feeding our city with tech talent'}/>
                 <GenericTextModule title={'bilingual roots'} subTitle={'multicultural present'} paragraphs={p1}/>
                 <GenericTextModule title={'keep it small & nimble'} paragraphs={p2}/>
+                 <QuoteModule background={quoteBackground}/>
                 <OneHalfColumn mainTitle={'teaching philosophy'} text={'Our goal is a good goal.'} contentLeft={contentLeft} contentRight={contentRight}/>
                 <GenericTextModule title={'accessible staff'} paragraphs={p3}/>
             </div>

@@ -62,6 +62,18 @@ h4 {
 strong {
 	font-family: $font_bold;
 }
+// Blockquote ----------------
+blockquote {
+	margin: 0;
+	p {
+		font-family: $font_italic;
+	}
+}
+.credit {
+	&::before {
+		content: '—';
+	}
+}
 
 // Body Utility classes ------
 .text-body-large {

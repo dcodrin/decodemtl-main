@@ -203,19 +203,10 @@ ol {
 	p:last-child {
 		margin-bottom: 0;
 	}
-	blockquote {
-		margin: 0;
-		p {
-			font-family: $font_italic;
-		}
-	}
 	.credit {
+		font-family: $font-bold;
 		font-size: 0.8em;
 		margin-left: 0.5em;
-		font-family: $font_bold;
-		&::before {
-			content: "—";
-		}
 	}
 	@include breakpoint(minlaptop) {
 		align-items: center;
