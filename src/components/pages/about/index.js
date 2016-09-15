@@ -49,7 +49,7 @@ const About = React.createClass({
                 <GenericTextModule title={'Why we do it'} subTitle={''} paragraphs={p1}/>
                 <GenericTextModule title={'We Value'} paragraphs={p2}/>
                  <QuoteModule background={quoteBackground}/>
-                <OneHalfColumn mainTitle={'teaching philosophy'} text={'Our goal is a good goal.'} contentLeft={contentLeft} contentRight={contentRight}/>
+                <OneHalfColumn mainTitle={'teaching philosophy'} text={''} contentLeft={contentLeft} contentRight={contentRight}/>
                 <GenericTextModule title={'accessible staff'} paragraphs={p3}/>
             </div>
         );
