@@ -1,7 +1,7 @@
 module.exports = [
     {
         question: 'Why should I take this course?',
-        answer: 'HTML & CSS are two of the main languages powering the browser. Knowing these languages, will allow you to '
+        answer: 'HTML & CSS are two of the main languages powering the web. Knowing these languages will open alot of doors. You will be able to build websites from scratch, customize existing websites, and build marketing material such as newsletter templates or landing pages.'
     },
     {
         question: 'What do I need to bring?',
@@ -12,15 +12,7 @@ module.exports = [
         answer: 'None at all, this course is beginner friendly.'
     },
     {
-        question: 'What do I need to bring?',
-        answer: 'Any fast laptop will do. MacOS, Linux, or Windows all work fine.'
-    },
-    {
-        question: 'What is the application process?',
-        answer: 'Climb Mount Everest. Go to Mars. Come back and save the planet from global warming and then maybe you might get an inteview. '
-    },
-    {
-        question: 'Do I get a certificate upon completion?',
-        answer: 'You get the wisdom of the universe. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos error in incidunt nisi numquam, ullam vitae. Asperiores consequatur cumque dolore iusto magnam odit optio quisquam repellendus ut vitae, voluptatem voluptatum.'
+        question: 'I have more questions, who can I ask?',
+        answer: 'You can contact us at any time by email, or schedule an in-person meeting and tour of our space.'
     }
 ];

@@ -18,7 +18,7 @@ export default [
         duration: "10 weeks",
         hours: "60 hours",
         days: 'Tuesday & Thursday',
-        nextSessions: ["TBA"],
+        nextSessions: ["January 9th, 2017", "April 3rd, 2017"],
         link: 'html-css'
     },
     {
@@ -29,7 +29,7 @@ export default [
         duration: "10 weeks",
         hours: "60 hours",
         days: 'Monday & Wednesday',
-        nextSessions: ["TBA"],
+        nextSessions: ["January 9th, 2017", "April 3rd, 2017"],
         link: 'javascript'
     }
 ];
