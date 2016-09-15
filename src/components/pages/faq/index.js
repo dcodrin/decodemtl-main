@@ -6,8 +6,7 @@ import Hero from '../../../components/modules/Hero';
 import FAQ from '../../../components/modules/FAQ';
 import GenericTextModule from '../../../components/modules/GenericTextModule';
 
-import bootcampFaq from '../../pages/wd_bootcamp/FAQ';
-import partTimeFaq from '../../pages/pt_htmlcss/FAQ';
+import {bootcampFAQ, partTimeFAQ} from '../../../config/globalFAQ';
 
 const Faq = (props) => {
     const paragraphs = [
@@ -21,8 +20,8 @@ const Faq = (props) => {
     return (
         <div>
             <Hero moduleTitle="got questions?" jumboTitle="get answers"/>
-            <FAQ title='bootcamp' faq={bootcampFaq} />
-            <FAQ title='part time' faq={partTimeFaq} />
+            <FAQ title='bootcamp' faq={bootcampFAQ} />
+            <FAQ title='part time' faq={partTimeFAQ} />
             <GenericTextModule title="wait i still have questions!" paragraphs={paragraphs}/>
         </div>
     );

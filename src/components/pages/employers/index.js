@@ -57,6 +57,8 @@ const Employers = (props) => {
     );
 };
 
+//todo EmployerCTA mail to decode, subject line, message line
+//todo link from logos same as above
 Employers.propTypes = {};
 
 export default Employers;

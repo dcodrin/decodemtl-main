@@ -42,6 +42,8 @@ const Contact = (props) => {
     );
 };
 
+//todo collect data send it to hello decode
+
 Contact.propTypes = {};
 
 export default Contact;

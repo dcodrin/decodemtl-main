@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Link} from 'react-router';
+
 const HomeEvolving = (props) => {
     return (
         <section className="module evolving-module">
@@ -10,7 +12,7 @@ const HomeEvolving = (props) => {
                         <div className="one-half-content">
                             <p>We believe education should evolve with the times. Unlike traditional education institutions, we are in close contact with employers, ensuring the subjects we teach the most in-demand job skills of today.</p>
                             <div className="link-more text-body-small">
-                                <a href="#">Read more about us here<span className="fa fa-caret-right" aria-hidden="true" /></a>
+                                <Link to="/about">Read more about us here<span className="fa fa-caret-right" aria-hidden="true" /></Link>
                             </div>
                         </div>
                         <div className="one-half-content">
