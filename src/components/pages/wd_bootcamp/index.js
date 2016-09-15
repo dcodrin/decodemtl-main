@@ -13,7 +13,9 @@ import CourseSchedule from '../../modules/CourseSchedule';
 import CourseProjectsSlider from '../../modules/CourseProjectsSlider';
 import CourseCareerSupport from '../../modules/CourseCareerSupport';
 import CourseFAQ from '../../modules/FAQ';
+
 import PartnersLogos from '../../modules/PartnersLogos';
+import scheduleBackground from '../../../assets/images/module-bg-wework-common.jpg'
 
 import tuitionDates from './tuitionDates';
 import subjects from './subjects';
@@ -99,7 +101,7 @@ const Courses = React.createClass({
                     <CourseCurriculum subjects={subjects}/>
                 </Element>
                 <Element name="schedule">
-                    <CourseSchedule/>
+                    <CourseSchedule background={scheduleBackground}/>
                 </Element>
                 <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
                 <FormOptin submitButton='Submit' title={formTitle} text={formText}/>

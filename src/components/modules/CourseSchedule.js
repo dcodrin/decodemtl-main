@@ -5,7 +5,7 @@ const CourseSchedule = (props) => {
     return (
         <section className="module module-course course-schedule">
             <div className="wrapper">
-                <div className="module-bg-img">
+                <div style={props.background ? {backgroundImage: 'url(' + props.background + ')'} : null} className="module-bg-img">
                     <h2 className="module-title">Typical Day</h2>
                     <p>By focusing as much as possible on project based learning, lecture time is kept to a minimum. You can expect the average day to unfold as follows:</p>
                     {/*!-- .two-col-table --*/}
@@ -37,6 +37,8 @@ const CourseSchedule = (props) => {
     );
 };
 
-CourseSchedule.propTypes = {};
+CourseSchedule.propTypes = {
+    background: React.PropTypes.string
+};
 
 export default CourseSchedule;
