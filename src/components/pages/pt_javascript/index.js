@@ -76,13 +76,13 @@ const Courses = React.createClass({
             }
         ];
 
-        const formTitle = 'Get instant access to our prep course material',
-            formText = 'Discover the content our applicants must complete for admission, or start learning on your own!';
+        const formTitle = 'Get instant access to the course syllabus',
+            formText = 'Enter your email below to take a peak at our detailed course syllabus.';
 
         return (
             <div>
                 <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}/>
-                <CourseHero CTAP={CTAPrimaryLarge} CTAS={CTASecondaryLarge} ref={hero => {this._hero = hero}} moduleTitle={"introduction to"} jumboTitle={"javascript"} text={"You will learn abou them mysteries of the space"} subText={"and some javascript"}/>
+                <CourseHero CTAP={CTAPrimaryLarge} CTAS={CTASecondaryLarge} ref={hero => {this._hero = hero}} moduleTitle={"Part-Time"} jumboTitle={"JavaScript"} text={"Learn the fundamentals of programming, as well as the fundamentals of JavaScript and its unique asynchronous programming model."} subText={""}/>
                 <Element name="overview">
                     <CourseOverview overview={overview}/>
                 </Element>

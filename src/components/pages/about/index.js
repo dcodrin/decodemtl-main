@@ -45,7 +45,7 @@ const About = React.createClass({
         );
         return (
             <div>
-                <Hero moduleTitle={'montreal made'} jumboTitle={'montreal loved'} subText={'Feeding our city with tech talent'}/>
+                <Hero moduleTitle={'made in'} jumboTitle={'montreal'} text={"You will learn abou them mysteries of the space"} subText={''}/>
                 <GenericTextModule title={'bilingual roots'} subTitle={'multicultural present'} paragraphs={p1}/>
                 <GenericTextModule title={'keep it small & nimble'} paragraphs={p2}/>
                  <QuoteModule background={quoteBackground}/>

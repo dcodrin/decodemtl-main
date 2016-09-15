@@ -1,11 +1,11 @@
 module.exports = [
     {
-        text: "Good course. You learn much."
+        text: "60 hours over 10 weeks"
     },
     {
-        text: "Many hours of pain!"
+        text: "Learn proper code structure and the importance of clean code"
     },
     {
-        text: "So much brain power!"
+        text: "Build interactive programs and apps"
     }
 ];

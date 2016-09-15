@@ -1,9 +1,9 @@
-import ziad from '../../../assets/images/instructor-ziadsaab.jpg';
+import anastasi from '../../../assets/images/instructor-anastasibakolias.jpg';
 
 export default [
     {
-        fullName: 'Ziad Saab',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto asperiores aut blanditiis deserunt eos eum eveniet harum, illum libero modi molestiae quo repudiandae sapiente sequi sint temporibus ut vel voluptatem.',
-        img: ziad
+        fullName: 'Anastasi Bakolias',
+        description: 'Anastasi is a software developer and co-founder at smooch.io. He fell deeply in love with programming, and wants to pass his knowledge onto the next generation of programmers.',
+        img: anastasi
     }
 ];
