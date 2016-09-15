@@ -5,13 +5,12 @@ const HomeEvolving = (props) => {
         <section className="module evolving-module">
             <div className="wrapper">
                 <div className="module-boxed">
-                    <h2 className="module-title">Constantly evolving</h2>
+                    <h2 className="module-title">Modern Education</h2>
                     <div className="row-container one-half-container">
                         <div className="one-half-content">
-                            <p>Our courses are created and continuously updated by our team of instructors who use the skills they teach everyday.</p>
-                            <p>Unlike traditional education institutions, we are in close contact with employers and their most pressing technical needs, ensuring that our grads are dream-team picks for the best jobs in Montreal.</p>
+                            <p>We believe education should evolve with the times. Unlike traditional education institutions, we are in close contact with employers, ensuring the subjects we teach the most in-demand job skills of today.</p>
                             <div className="link-more text-body-small">
-                                <a href="#">This is a block link<span className="fa fa-caret-right" aria-hidden="true" /></a>
+                                <a href="#">Read more about us here<span className="fa fa-caret-right" aria-hidden="true" /></a>
                             </div>
                         </div>
                         <div className="one-half-content">

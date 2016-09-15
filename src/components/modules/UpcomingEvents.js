@@ -28,7 +28,7 @@ const UpcomingEvents = (props) => {
                     </ul>
                     {/*<!-- /.events-list -->*/}
                     <div className="link-more text-body-small">
-                        <a href="#">This is a block link<span className="fa fa-caret-right" aria-hidden="true"/></a>
+                        <a href="#">View all events<span className="fa fa-caret-right" aria-hidden="true"/></a>
                     </div>
                 </div>
                 {/*<!-- /.wrapper -->*/}
