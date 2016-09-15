@@ -64,7 +64,7 @@ const FAQ = React.createClass({
 
                     </ul>
                     <div className="link-more text-body-small">
-                        <Link to="#">This is a block link<span className="fa fa-caret-right" aria-hidden="true"/></Link>
+                        <Link to="#">View all FAQs<span className="fa fa-caret-right" aria-hidden="true"/></Link>
                     </div>
                 </div>
             </section>

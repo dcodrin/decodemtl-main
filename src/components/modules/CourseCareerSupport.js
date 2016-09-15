@@ -10,7 +10,7 @@ const CourseCareerSupport = (props) => {
             <div className="wrapper">
                 <div className="module-boxed">
                     <h2 className="module-title">Career Support</h2>
-                    <p>Your path from beginner to employed web developer starts here. Whether you’re looking to jump into a career in tech, or level-up at your current job, our career services team will work with you from day one!</p>
+                    <p>Your path from beginner to employed web developer starts here. If you’re looking to jump into a career in tech our team will work with you from day one.</p>
 
                     <div className="img-text-container icon-block">
                         <div className="icon" aria-hidden="true">

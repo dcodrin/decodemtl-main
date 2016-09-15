@@ -21,7 +21,7 @@ const PartnersLogos = (props) => {
                 </div>
                 {/*<!-- /.partner-logo-container -->*/}
                 <div className="link-more text-body-small">
-                    <Link to="#">This is a block link<span className="fa fa-caret-right" aria-hidden="true" /></Link>
+                    <Link to="#">Join our growing network of hiring partners<span className="fa fa-caret-right" aria-hidden="true" /></Link>
                 </div>
             </div>
             {/* <!-- /.wrapper -->*/}

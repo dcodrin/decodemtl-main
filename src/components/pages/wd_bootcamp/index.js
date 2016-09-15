@@ -79,8 +79,8 @@ const Courses = React.createClass({
             }
         ];
 
-        const formTitle = 'Get instant access to our prep course material',
-            formText = 'Discover the content our applicants must complete for admission, or start learning on your own!';
+        const formTitle = 'New to JavaScript? Get instant access to free JavaScript resources!',
+            formText = 'Enter your email below and get instant access to our curated list of free JavaScript resources.';
 
         return (
             <div>
