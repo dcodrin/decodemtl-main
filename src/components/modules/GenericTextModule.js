@@ -1,12 +1,14 @@
 import React from 'react';
+//TODO MAKE THE TEXT-MEASURE CLASS STANDARD ON <P> ELEMENTS
 
+//any valid jsx can be passed to be rendered inside the <p> tags
 const GenericTextModule = (props) => {
     return (
         <section className="module">
             <div className="wrapper">
                 <h2 className="module-title">{props.title}<br />{props.subTitle}</h2>
                 {props.paragraphs.map((p, i) => (
-                    <p className="text-measure" key={i}>{p}</p>
+                    <div key={i}>{p}</div>
                 ))}
             </div>
         </section>
