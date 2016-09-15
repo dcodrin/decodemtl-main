@@ -5,7 +5,7 @@ import TuitionDates from '../tables/TuitionDates';
 const CourseTuitionDates = (props) => {
         return (
             <section className="module module-course tuition-dates">
-                <div className="wrapper module-bg-img">
+                <div style={props.background ? {backgroundImage: 'url(' + props.background + ')'} : null} className="wrapper module-bg-img">
                     <h2 className="module-title">Tuition & Dates</h2>
                     <div className="multi-column-table">
                         {props.tuitionDates.map((info, i) => <TuitionDates key={i} {...info} />)}
@@ -17,7 +17,8 @@ const CourseTuitionDates = (props) => {
 };
 
 CourseTuitionDates.propTypes ={
-    tuitionDates: React.PropTypes.array.isRequired
+    tuitionDates: React.PropTypes.array.isRequired,
+    background: React.PropTypes.string
 };
 
 export default CourseTuitionDates;

@@ -5,7 +5,7 @@ const CourseSchedule = (props) => {
     return (
         <section className="module module-course course-schedule">
             <div className="wrapper">
-                <div className="module-bg-img">
+                <div style={props.background ? {backgroundImage: 'url(' + props.background + ')'} : null} className="module-bg-img">
                     <h2 className="module-title">Typical Day</h2>
                     <p>On any given day, you can expect a mix of lectures, hands-on coding, teamwork, and events.</p>
                     {/*!-- .two-col-table --*/}
@@ -37,6 +37,8 @@ const CourseSchedule = (props) => {
     );
 };
 
-CourseSchedule.propTypes = {};
+CourseSchedule.propTypes = {
+    background: React.PropTypes.string
+};
 
 export default CourseSchedule;
