@@ -68,8 +68,8 @@ const MainFooter = React.createClass({
                                 <input ref={email => {this._footerEmail = email}} type="email" name="email" placeholder="Your email"/>
                                 <input type="submit" name="submit" value="Join"/>
                                 <div className="foot-note text-body-small text-subtle">
-                                    By providing us with your email, you agree to the terms of our <a href='#'>Privacy
-                                    Policy</a> and <a href="#">Terms of Service</a>.
+                                    By providing us with your email, you agree to the terms of our <Link to='/privacy'>Privacy
+                                    Policy</Link> and <Link to="/terms">Terms of Service</Link>.
                                 </div>
                             </form>
                             {/* /.footer-optin */}

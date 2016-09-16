@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 const ContactForm = React.createClass({
     propTypes: {},
@@ -35,8 +36,8 @@ const ContactForm = React.createClass({
                             <input className="btn-large" type="submit" name="submit" value="Submit"/>
 
                             <div className="foot-note text-body-small text-subtle">
-                                By providing us with your email, you agree to the terms of our <a href='#'>Privacy
-                                Policy</a> and <a href="#">Terms of Service</a>.
+                                By providing us with your email, you agree to the terms of our <Link to='/privacy'>Privacy
+                                Policy</Link> and <Link to="/terms">Terms of Service</Link>.
                             </div>
                         </form>
                         {/*<!-- /.contact-form -->*/}

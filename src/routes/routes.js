@@ -15,6 +15,9 @@ import Faq from '../components/pages/faq/index';
 import Contact from '../components/pages/contact/index';
 import WeWork from '../components/pages/wework/index';
 import Housing from '../components/pages/housing/index';
+import Privacy from '../components/pages/privacy_terms/Privacy';
+import Terms from '../components/pages/privacy_terms/Terms';
+
 
 
 //to pass optional params place router including "/" in parentheses --> /courses(/:courseName)
@@ -36,6 +39,8 @@ export default () => {
                 <Route path='contact' component={Contact}/>
                 <Route path='wework' component={WeWork}/>
                 <Route path='housing' component={Housing}/>
+                <Route path='privacy' component={Privacy}/>
+                <Route path='terms' component={Terms}/>
             </Route>
         </Router>
     );

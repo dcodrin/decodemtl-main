@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router';
 
 const UpcomingEvents = (props) => {
-        console.log(window.location);
         const filterDates = ({startDate}) => {
             return props.filterOld ? new Date(startDate).getTime() >= new Date().getTime() : startDate;
         };
