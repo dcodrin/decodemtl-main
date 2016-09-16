@@ -152,7 +152,7 @@ const SiteNav = React.createClass({
                         <ul className="nav-primary-menu" role="menu">
                             <li><Link onClick={this._toggleNav} to="/courses">Courses</Link></li>
                             <li><Link onClick={this._toggleNav} to="/about">About</Link></li>
-                            <li><Link onClick={this._toggleNav} to="/schedule">Schedule a visit</Link></li>
+                            <li><Link onClick={this._toggleNav} to="/visit">Schedule a visit</Link></li>
                         </ul>
                         {/* cta */}
                         <div className="nav-cta">

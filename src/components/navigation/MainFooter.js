@@ -138,7 +138,7 @@ const MainFooter = React.createClass({
                                     <li className="course-list-item"><Link to="/courses/web-development-immersive">Immersive</Link></li>
                                     <li className="course-list-item"><Link to="/courses/html-css">HTML & CSS</Link></li>
                                     <li className="course-list-item"><Link to="/courses/javascript">JavaScript</Link></li>
-                                    <li className="course-list-item"><Link to="/courses/faq">FAQ</Link></li>
+                                    <li className="course-list-item"><Link to="/faq">FAQ</Link></li>
                                     <li className="course-list-item"><Link to="/apply">Apply</Link></li>
                                 </ul>
                             </div>

@@ -1,7 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 const UpcomingEvents = (props) => {
-
+        console.log(window.location);
         const filterDates = ({startDate}) => {
             return props.filterOld ? new Date(startDate).getTime() >= new Date().getTime() : startDate;
         };
@@ -28,7 +29,7 @@ const UpcomingEvents = (props) => {
                     </ul>
                     {/*<!-- /.events-list -->*/}
                     <div className="link-more text-body-small">
-                        <a href="#">View all events<span className="fa fa-caret-right" aria-hidden="true"/></a>
+                        {window.location.pathname !== '/events' ? <Link to="/events">View all events<span className="fa fa-caret-right" aria-hidden="true"/></Link> : null}
                     </div>
                 </div>
                 {/*<!-- /.wrapper -->*/}
