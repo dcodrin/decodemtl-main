@@ -9,7 +9,7 @@ import CourseCurriculum from '../../modules/CourseCurriculum';
 import FormOptin from '../../modules/FormOptin';
 import CourseInstructor from '../../modules/CourseInstructor';
 import SecondaryNav from '../../navigation/SecondaryNav';
-import CourseTestimonial from '../../modules/CourseTestimonial';
+// import CourseTestimonial from '../../modules/CourseTestimonial';
 //PROJECT SLIDER
 // import CourseProjectsSlider from '../../modules/CourseProjectsSlider';
 import CourseFAQ from '../../modules/FAQ';
@@ -17,7 +17,7 @@ import CourseFAQ from '../../modules/FAQ';
 import tuitionDates from './tuitionDates';
 import subjects from './subjects';
 import instructors from './instructors';
-import testimonials from './testimonials';
+// import testimonials from './testimonials';
 //PROJECT SLIDER
 // import projects from './projects';
 import faq from './FAQ';
@@ -82,7 +82,18 @@ const Courses = React.createClass({
         return (
             <div>
                 <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}/>
-                <CourseHero CTAP={CTAPrimaryLarge} CTAS={CTASecondaryLarge} ref={hero => {this._hero = hero}} moduleTitle={"Part-Time"} jumboTitle={"JavaScript"} text={"Learn the fundamentals of programming, as well as the fundamentals of JavaScript and its unique asynchronous programming model."} subText={""}/>
+                <CourseHero
+                    CTAPText="Apply Now"
+                    CTASText="Syllabus"
+                    CTAPLink="/apply"
+                    CTASLink="/courses/javascript/syllabus.pdf"
+                    CTAP={CTAPrimaryLarge}
+                    CTAS={CTASecondaryLarge}
+                    ref={hero => {this._hero = hero}}
+                    moduleTitle={"Part-Time"}
+                    jumboTitle={"JavaScript"}
+                    text={"Learn the fundamentals of programming, as well as the fundamentals of JavaScript and its unique asynchronous programming model."}
+                    subText={""}/>
                 <Element name="overview">
                     <CourseOverview overview={overview}/>
                 </Element>
@@ -92,7 +103,7 @@ const Courses = React.createClass({
                 <Element name="curriculum">
                     <CourseCurriculum subjects={subjects}/>
                 </Element>
-                <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
+                {/*<CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>*/}
                 <FormOptin submitButton='Submit' title={formTitle} text={formText}/>
                 {/*<CourseProjectsSlider projects={projects} req={req}/>*/}
                 <Element name="instructor">

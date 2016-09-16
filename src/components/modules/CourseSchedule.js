@@ -30,7 +30,7 @@ const CourseSchedule = (props) => {
                     {/*!-- /.two-col-table --*/}
                 </div>
                 <div className="info-block info-block-blue info-block-centered">
-                    Read more about our <Link to="#">workspace</Link> and <Link to="#">student housing options</Link>
+                    Read more about our <Link to="/wework">workspace</Link> and <Link to="/housing">student housing options</Link>
                 </div>
             </div>
         </section>

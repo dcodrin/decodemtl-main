@@ -25,7 +25,7 @@ export default () => {
             <Route path='/' component={App}>
                 <IndexRoute component={Home}/>
                 <Route path='courses' component={AllCourses}>
-                    <Route path='web-development-bootcamp' component={BootcampCourse}/>
+                    <Route path='web-development-immersive' component={BootcampCourse}/>
                     <Route path='javascript' component={JavascriptCourse}/>
                     <Route path='html-css' component={HtmlCssCourse}/>
                 </Route>
