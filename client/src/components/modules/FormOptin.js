@@ -1,7 +1,7 @@
 //TODO HANDLE FORM SUBMIT
 import React from 'react';
-
 import {Link} from 'react-router';
+import axios from 'axios';
 
 const FormOptin = React.createClass({
     propTypes: {
@@ -11,7 +11,16 @@ const FormOptin = React.createClass({
     },
     _handleSubmit(e) {
         e.preventDefault();
-        console.log(this.refs.email.value, 'FUTURE ACTION');
+        const email = this.refs.email.value.trim().toLowerCase();
+        axios.post('http://localhost:3100/newsletter', {
+            email
+        }).then(({data: user}) => {
+            if (user.status === 'subscribed') {
+                console.log('Already subscribed!', user)
+            }
+        }).catch(err => {
+            console.log(err);
+        })
     },
     render() {
         return (

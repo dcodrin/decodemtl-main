@@ -1,7 +1,9 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-node_modules
+client/node_modules/react-scripts/node_modules/node-libs-browser/node_modules
+client/node_modules
+server/node_modules
 
 # production
 build

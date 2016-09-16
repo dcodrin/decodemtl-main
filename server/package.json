@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "DecodeMTL API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nf start -p 3000",
+    "server": "nodemon server.js --exec babel-node --presets es2015,stage-0"
+  },
+  "author": "Codrin Diaconu",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.14.0",
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "blueimp-md5": "^2.3.1",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "express-validator": "^2.20.8"
+  },
+  "devDependencies": {
+    "foreman": "^2.0.0",
+    "nodemon": "^1.10.2"
+  }
+}
