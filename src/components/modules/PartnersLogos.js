@@ -3,7 +3,6 @@ import React from 'react';
 //req.keys() is an array with all the relative paths of the images
 // req.keys().map(key => req(key)) --> require("../../assets/images/partner-logos/" + key);
 const req = require.context("../../assets/images/partner-logos", true, /^.*\.png$/i);
-import {Link} from 'react-router';
 
 const PartnersLogos = (props) => {
     return (
@@ -21,7 +20,9 @@ const PartnersLogos = (props) => {
                 </div>
                 {/*<!-- /.partner-logo-container -->*/}
                 <div className="link-more text-body-small">
-                    <Link to="#">Join our growing network of hiring partners<span className="fa fa-caret-right" aria-hidden="true" /></Link>
+                    <a href="mailto:hello@decodemtl.com?subject=Tell me more about your students!&body=Hello Decode! Please let me know more about your awesome students!">Join
+                        our growing network of hiring partners<span className="fa fa-caret-right"
+                                                                    aria-hidden="true"/></a>
                 </div>
             </div>
             {/* <!-- /.wrapper -->*/}

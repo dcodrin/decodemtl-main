@@ -89,14 +89,14 @@ const Courses = React.createClass({
                 <CourseHero CTAPText="Apply Now"
                             CTASText="Syllabus"
                             CTAPLink="/apply"
-                            CTASLink="/syllabus"
+                            CTASLink="/courses/web-development-immersive/syllabus.pdf"
                             CTAP={CTAPrimaryLarge}
                             CTAS={CTASecondaryLarge}
                             ref={hero => {
                                 this._hero = hero
                             }}
                             moduleTitle={"web development"}
-                            jumboTitle={"bootcamp"}
+                            jumboTitle={"immersive"}
                             text={"8 weeks of intensive learning. Gain enough practical experience to launch your new career or startup."}
                             subText={""}/>
                 <Element name="overview" className="element">

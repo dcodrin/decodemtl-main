@@ -25,8 +25,8 @@ const FormOptin = React.createClass({
                             <input type="email" name="email" placeholder="Your email" ref="email"/>
                             <input className="btn-large" type="submit" name="submit" value={this.props.submitButton}/>
                             <div className="foot-note text-body-small text-subtle">
-                                By providing us with your email, you agree to the terms of our <Link to='#'>Privacy
-                                Policy</Link> and <Link to='#'>Terms of Service</Link>.
+                                By providing us with your email, you agree to the terms of our <Link to='/privacy'>Privacy
+                                Policy</Link> and <Link to='/terms'>Terms of Service</Link>.
                             </div>
                         </form>
                         {/* /.optin-form */}

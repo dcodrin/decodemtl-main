@@ -68,8 +68,8 @@ const MainFooter = React.createClass({
                                 <input ref={email => {this._footerEmail = email}} type="email" name="email" placeholder="Your email"/>
                                 <input type="submit" name="submit" value="Join"/>
                                 <div className="foot-note text-body-small text-subtle">
-                                    By providing us with your email, you agree to the terms of our <a href='#'>Privacy
-                                    Policy</a> and <a href="#">Terms of Service</a>.
+                                    By providing us with your email, you agree to the terms of our <Link to='/privacy'>Privacy
+                                    Policy</Link> and <Link to="/terms">Terms of Service</Link>.
                                 </div>
                             </form>
                             {/* /.footer-optin */}
@@ -135,11 +135,11 @@ const MainFooter = React.createClass({
                             <div className="footer-nav-container">
                                 <h4>Courses</h4>
                                 <ul className="course-list" role="menu">
-                                    <li className="course-list-item"><Link to="/courses/web-development-bootcamp">Web Development</Link></li>
-                                    <li className="course-list-item"><Link to="/courses/htmlcss">HTML & CSS</Link></li>
+                                    <li className="course-list-item"><Link to="/courses/web-development-immersive">Immersive</Link></li>
+                                    <li className="course-list-item"><Link to="/courses/html-css">HTML & CSS</Link></li>
                                     <li className="course-list-item"><Link to="/courses/javascript">JavaScript</Link></li>
-                                    <li className="course-list-item"><Link to="/courses/faq">FAQ</Link></li>
-                                    <li className="course-list-item"><Link to="#">Apply</Link></li>
+                                    <li className="course-list-item"><Link to="/faq">FAQ</Link></li>
+                                    <li className="course-list-item"><Link to="/apply">Apply</Link></li>
                                 </ul>
                             </div>
                             <div className="footer-nav-container">

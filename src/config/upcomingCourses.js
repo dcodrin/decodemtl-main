@@ -2,7 +2,7 @@ export default  [
     {
         startDate: 'Jan. 9th',
         courseName: 'Web Development Immersive',
-        link: 'web-development-bootcamp',
+        link: 'web-development-immersive',
         type: 'Full-time'
     },
     {

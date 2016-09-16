@@ -29,7 +29,7 @@ const CourseProjectsSlider = React.createClass({
         });
         if (slideDirection === 'next') {
             this.setState({
-                slidePosition: -slideStartPosition
+                slidePosition: slideStartPosition
             });
             //500 % step === 0 must be TRUE
             this._animateSlide(slideStep, slideDirection, -slideStartPosition);
@@ -48,7 +48,7 @@ const CourseProjectsSlider = React.createClass({
             }
         } else if (slideDirection === 'prev') {
             this.setState({
-                slidePosition: slideStartPosition
+                slidePosition: -slideStartPosition
             });
             //500 % step === 0 must be TRUE
             this._animateSlide(slideStep, slideDirection, slideStartPosition);
@@ -75,10 +75,10 @@ const CourseProjectsSlider = React.createClass({
     },
     _animateSlide(step, slideDirection, slideStartPos) {
         this.animate = setInterval(() => {
-            if (slideDirection === 'next' && this.state.slidePosition < 0) {
-                this._moveSlide(step, slideStartPos);
-            } else if (slideDirection === 'prev' && this.state.slidePosition > 0) {
+            if (slideDirection === 'next' && this.state.slidePosition > 0) {
                 this._moveSlide(-step, slideStartPos);
+            } else if (slideDirection === 'prev' && this.state.slidePosition < 0) {
+                this._moveSlide(step, slideStartPos);
             } else {
                 clearInterval(this.animate);
                 this.animate = null;
@@ -125,21 +125,21 @@ const CourseProjectsSlider = React.createClass({
                                         style={imageContainer}
                                         key={i}
                                         className={slide === i + 1 ? "student-project-image visible" : "student-project-image"}>
-                                        {slidePosition > 0 ? <img style={imageSlide} src={projects[nextSlide - 1].img} alt=""/> : null}
+                                        {slidePosition < 0 ? <img style={imageSlide} src={projects[nextSlide - 1].img} alt=""/> : null}
                                         <img style={currImage} src={item.img} alt=""/>
-                                        {slidePosition < 0 ? <img style={imageSlide} src={projects[prevSlide - 1].img} alt=""/> : null}
+                                        {slidePosition > 0 ? <img style={imageSlide} src={projects[prevSlide - 1].img} alt=""/> : null}
                                     </div>
                                 );
                             })}
                         </div>
                         <div className="student-project-details">
                             <div className="slider-controls buttons">
-                                <a className="slider-previous prev" onClick={this._handleSlide.bind(this, 'next')}>
+                                <a className="slider-previous prev" onClick={this._handleSlide.bind(this, 'prev')}>
                                     <i className="fa fa-chevron-circle-left" aria-hidden="true"
                                        title="Previous Project"/><span className="sr-only">Previous Project</span>
                                 </a>
                                 <div className="slider-current">{slide}</div>
-                                <a className="slider-next next" onClick={this._handleSlide.bind(this, 'prev')}><i
+                                <a className="slider-next next" onClick={this._handleSlide.bind(this, 'next')}><i
                                     className="fa fa-chevron-circle-right" aria-hidden="true"
                                     title="Next Project"/><span className="sr-only">Next Project</span></a>
                             </div>

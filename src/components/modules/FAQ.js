@@ -64,7 +64,7 @@ const FAQ = React.createClass({
 
                     </ul>
                     <div className="link-more text-body-small">
-                        <Link to="#">View all FAQs<span className="fa fa-caret-right" aria-hidden="true"/></Link>
+                        {window.location.pathname !== '/faq' ? <Link to="/faq">View all FAQs<span className="fa fa-caret-right" aria-hidden="true"/></Link> : null}
                     </div>
                 </div>
             </section>

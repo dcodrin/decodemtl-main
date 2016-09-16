@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 
 export const CTASecondaryLarge = (props) => {
     return (
-        <Link to={props.path} className="btn-secondary btn-large">{props.text}</Link>
+        <a href={props.path} className="btn-secondary btn-large" download={true}>{props.text}</a>
     );
 };
 

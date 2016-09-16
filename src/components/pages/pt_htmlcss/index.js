@@ -83,7 +83,18 @@ const Courses = React.createClass({
         return (
             <div>
                 <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}/>
-                <CourseHero CTAP={CTAPrimaryLarge} CTAS={CTASecondaryLarge} ref={hero => {this._hero = hero}} moduleTitle={"Part-Time"} jumboTitle={"HTML & CSS"} text={"Learn to write clean, standards-complient code, and become aquainted with the fundamentals of web design."} subText={""}/>
+                <CourseHero
+                    CTAPText="Apply Now"
+                    CTASText="Syllabus"
+                    CTAPLink="/apply"
+                    CTASLink="/courses/html-css/syllabus.pdf"
+                    CTAP={CTAPrimaryLarge}
+                    CTAS={CTASecondaryLarge}
+                    ref={hero => {this._hero = hero}}
+                    moduleTitle={"Part-Time"}
+                    jumboTitle={"HTML & CSS"}
+                    text={"Learn to write clean, standards-complient code, and become aquainted with the fundamentals of web design."}
+                    subText={""}/>
                 <Element name="overview">
                     <CourseOverview overview={overview}/>
                 </Element>

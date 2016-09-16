@@ -8,7 +8,7 @@ export default [
         hours: "400 hours",
         days: 'Monday - Friday',
         nextSessions: ["January 9th, 2017", "April 3rd, 2017"],
-        link: 'web-development-bootcamp'
+        link: 'web-development-immersive'
     },
     {
         title: "part-time",
