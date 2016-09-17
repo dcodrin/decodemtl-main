@@ -18,7 +18,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(expressValidator());
 
-
 app.set('port', (process.env.PORT || 3001));
 
 app.post('/newsletter', function (req, res) {

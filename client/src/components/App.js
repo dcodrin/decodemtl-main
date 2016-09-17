@@ -9,9 +9,9 @@ const App = (props) => {
         <div className="App">
             <SiteNav />
             <RouteTransition
-                path={props.location.pathname}
+                path={location.pathname}
                 initialStyle={{opacity: 0}}
-                transition="opacity 110ms ease-in"
+                transition="opacity 150ms ease-in"
                 finalStyle={{opacity: 1}}
                 className="main-content" role="main"
             >
