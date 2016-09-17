@@ -17,7 +17,7 @@ const AllCourses = (props) => {
         return (
             <div>
                 <RouteTransition
-                    path={location.pathname}
+                    path={props.location.pathname}
                     initialStyle={{opacity: 0}}
                     transition="opacity 300ms ease-in"
                     finalStyle={{opacity: 1}}
