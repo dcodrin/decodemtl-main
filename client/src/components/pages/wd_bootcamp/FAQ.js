@@ -13,10 +13,18 @@ module.exports = [
     },
     {
         question: 'What are the non technical qualifications?',
-        answer: 'Passion is a key component for successful students. You also need a clear purpose for why you want to take the bootcamp.'
+        answer: 'You need passion, and lots of it! Passion is the recurring characteristic we find in all successful students. If you love what you do, you will ultimately be successful.'
     },
     {
-        question: 'What do I need?',
+        question: 'Will I build an App in this course?',
+        answer: 'Absolutely! In the last two weeks of the course, you will be placed in a team and tasked to build a web based application from the ground up. This capstone project will then be presented to a large audience on the last day of the course. This Demo Day event will serve as a way to network with potential employers who will be in the room watching your presentation.'
+    },
+    {
+        question: 'I am an international student, do you offer housing?',
+        answer: 'We have partnered with EVO, a student residence just down the street from us. You can read more about EVO here.'
+    },
+    {
+        question: 'What do I need to bring with me?',
         answer: 'Any fast laptop will do. MacOS, Linux, or Windows all work fine.'
     },
     {
@@ -25,6 +33,6 @@ module.exports = [
     },
     {
         question: 'I have more questions, who can I ask?',
-        answer: 'You can contact us at any time by email, or schedule an in-person meeting and tour of our space.'
+        answer: 'The best way to contact us is to send an email to hello@decodemtl.com.'
     },
 ];

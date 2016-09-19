@@ -4,7 +4,8 @@ import Hero from '../../../components/modules/Hero';
 import OneHalfColumn from '../../../components/modules/OneHalfColumn';
 import GenericTextModule from '../../../components/modules/GenericTextModule';
 
-import img1 from '../../../assets/images/wework1.jpg';
+import img1 from '../../../assets/images/wework6.jpg';
+import img2 from '../../../assets/images/wework7.jpg';
 
 
 const WeWork = (props) => {
@@ -13,7 +14,7 @@ const WeWork = (props) => {
         <p>Be part of the largest co-working space in Montreal. The space is buzzing with entrepreneurs, startups, and tech companies. Take part in weekly lunch and learns or network at one of the many nightly events. You may just end up meeting your future employer or business partner.</p>
     );
     const firstRowContentRight = (
-        <img src={img1} alt=""/>
+        <img src={img2} alt=""/>
     );
 
     const secondRowParagraphs = [

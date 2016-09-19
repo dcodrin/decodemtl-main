@@ -11,7 +11,7 @@ import {generalFAQ, financialsFAQ, immersiveFAQ, partTimeFAQ} from '../../../con
 const Faq = (props) => {
     const paragraphs = [
         (
-            <p className="text-measure">No problem! If we missed something here just <span className="read-more"><a itemProp="email" href="mailto:hello@decodemtl.com">shoot us an email</a></span>
+            <p className="text-measure">No problem! If you have additional questions <span className="read-more"><a itemProp="email" href="mailto:hello@decodemtl.com">shoot us an email</a></span>
                 <br/>
                 or give us a toll-free call at  <span className="read-more"><a itemProp="telephone" href="tel:1-888-511-9155">1-888-511-9155</a></span>.
             </p>

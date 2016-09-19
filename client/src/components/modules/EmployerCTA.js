@@ -7,7 +7,7 @@ const EmployerCTA = (props) => {
         <section className="module employer-cta-module">
             <div className="wrapper">
                 <div className="module-boxed">
-                    <p>Graduates from our full-stack curriculum are ready for careers as junior web developers</p>
+                    <p>Graduates from our full-stack curriculum are ready for careers as web developers.</p>
 
                     <div className="skills-container module-boxed-medium">
                         <div className="skill">
