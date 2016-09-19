@@ -20,7 +20,8 @@
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
     "express": "^4.14.0",
-    "express-validator": "^2.20.8"
+    "express-validator": "^2.20.8",
+    "nodemailer": "^2.6.0"
   },
   "devDependencies": {
     "foreman": "^2.0.0",

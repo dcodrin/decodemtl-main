@@ -218,6 +218,7 @@ body.nav-container-active {
 		font-size: 1.1rem;
 	}
 }
+
 // Slideout social icons
 .nav-content {
 	.social-list {
@@ -283,11 +284,11 @@ body.nav-container-active {
 	display: flex;
 	align-items: center;
 	li {
-    flex: 1 auto;
-    a {
-      cursor: pointer;
+      flex: 1 auto;
+      a {
+        cursor: pointer;
+      }
     }
-  }
 }
 .secondary-nav-cta {
 	.btn-small {

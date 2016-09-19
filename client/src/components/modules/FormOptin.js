@@ -12,15 +12,18 @@ const FormOptin = React.createClass({
     _handleSubmit(e) {
         e.preventDefault();
         const email = this.refs.email.value.trim().toLowerCase();
-        axios.post('http://localhost:3100/newsletter', {
-            email
-        }).then(({data: user}) => {
-            if (user.status === 'subscribed') {
-                console.log('Already subscribed!', user)
-            }
-        }).catch(err => {
-            console.log(err);
-        })
+        axios.post('http://localhost:3100/newsletter', {email})
+            .then(({data: response}) => {
+                if (response.status === 'subscribed') {
+                    console.log('Already subscribed!', response)
+                }
+
+                //The user was not found!
+                console.log(response, 'THE ERROR')
+            })
+            .catch(err => {
+                console.log(err);
+            })
     },
     render() {
         return (

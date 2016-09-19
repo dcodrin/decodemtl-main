@@ -156,7 +156,8 @@ const SiteNav = React.createClass({
                         </ul>
                         {/* cta */}
                         <div className="nav-cta">
-                            <a href="#" className="btn-primary btn-small">Apply now</a>
+                            <Link onClick={this._toggleNav} to="/apply" className="btn-primary btn-small">Apply
+                                now</Link>
                         </div>
                         {/* secondary menu */}
                         <ul className="nav-secondary-menu" role="menu">
