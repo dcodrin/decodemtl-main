@@ -11,7 +11,10 @@ import img2 from '../../../assets/images/wework7.jpg';
 const WeWork = (props) => {
 
     const firstRowContentLeft = (
-        <p>Be part of the largest co-working space in Montreal. The space is buzzing with entrepreneurs, startups, and tech companies. Take part in weekly lunch and learns or network at one of the many nightly events. You may just end up meeting your future employer or business partner.</p>
+        <div>
+            <p>Be a part of the largest co-working space in Montreal. The space is buzzing with entrepreneurs, startups, and tech companies. Take part in weekly lunch and learns or network at one of the many nightly events. You may just end up meeting your future employer or business partner.</p>
+            <p>DecodeMTL is strategically located inside of WeWork for these reasons. We want you to be a part of the Montreal startup and technology ecosystem, and build as many connections in the community as possible.</p>
+        </div>
     );
     const firstRowContentRight = (
         <img src={img2} alt=""/>
@@ -27,7 +30,11 @@ const WeWork = (props) => {
     ];
 
     const thirdRowContentRight = (
-        <p>You will have access to two kitchens which include unlimited free micro roasted coffee, tea, fruit water, and beer on tap. There are phone booths to make private calls, spacious common areas and lounges, and a shuffle-board table for when you need a break.</p>
+        <div>
+            <p>You will have access to two kitchens which include unlimited free micro roasted coffee, tea, fruit water, and beer on tap. There are phone booths to make private calls, spacious common areas and lounges, and a shuffle-board table for when you need a break.</p>
+            <p>As a student, you will be given 24/7 access to the space. If you like to come in on weekends, or stay late in the evenings, we encourage you to do so!</p>
+            <p>To learn more about WeWork you can check out their website at <a href="http://www.wework.com" target="_blank"> WeWork.com</a>.</p>
+        </div>
     );
     const thirdRowContentLeft = (
         <img src={img1} alt=""/>
