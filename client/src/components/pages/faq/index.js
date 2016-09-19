@@ -6,7 +6,7 @@ import Hero from '../../../components/modules/Hero';
 import FAQ from '../../../components/modules/FAQ';
 import GenericTextModule from '../../../components/modules/GenericTextModule';
 
-import {bootcampFAQ, partTimeFAQ} from '../../../config/globalFAQ';
+import {generalFAQ, financialsFAQ, immersiveFAQ, partTimeFAQ} from '../../../config/globalFAQ';
 
 const Faq = (props) => {
     const paragraphs = [
@@ -19,8 +19,10 @@ const Faq = (props) => {
     ];
     return (
         <div>
-            <Hero moduleTitle="got questions?" jumboTitle="get answers"/>
-            <FAQ title='bootcamp' faq={bootcampFAQ} />
+            <Hero moduleTitle="Frequently Asked" jumboTitle="Questions"/>
+            <FAQ title='general' faq={generalFAQ} />
+            <FAQ title='financials' faq={financialsFAQ} />
+            <FAQ title='immersive' faq={immersiveFAQ} />
             <FAQ title='part time' faq={partTimeFAQ} />
             <GenericTextModule title="wait i still have questions!" paragraphs={paragraphs}/>
         </div>
