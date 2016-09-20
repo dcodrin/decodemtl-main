@@ -42,8 +42,8 @@ const EmployerCTA = (props) => {
                     <a
                         className="btn-primary btn-large"
                         itemProp="email"
-                        href="mailto:hello@decodemtl.com?subject=Tell me more about your students!&body=Hello Decode! Please let me know more about your awesome students!"
-                    >Introduce me</a>
+                        href="mailto:hello@decodemtl.com?subject=Tell me more about your students!&body=Hello DecodeMTL! Please let me know more about your awesome students!"
+                    >Get introduced to talent</a>
                     <p className="text-body-large">or call us toll free : <a className="phone-link" itemProp="telephone" href="tel:1-888-511-9155">1-888-511-9155</a></p>
                 </div>
                 {/* /.module-boxed */}

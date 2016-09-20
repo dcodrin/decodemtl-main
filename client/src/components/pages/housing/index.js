@@ -11,7 +11,10 @@ import img2 from '../../../assets/images/student-housing-2.jpg';
 const Housing = (props) => {
 
     const firstRowContentLeft = (
-        <p>We've partnered with Evo, Montreal's leader in student housing to offer our students a place to stay while in Montreal. Evo offers fully furnished and move in ready rooms at very affordable rates. If you wish to learn more about Evo, you can visit their <a href="http://www.evomontreal.com" target="_blank">website</a>. Simply mention you are a DecodeMTL student and receive a special discount.</p>
+        <div>
+            <p>We've partnered with Evo, Montreal's leader in student housing to offer our students a place to stay while in Montreal. Evo offers fully furnished and move in ready rooms at very affordable rates. If you wish to learn more about Evo, you can visit their website at <a href="http://www.evomontreal.com" target="_blank">EvoMontreal.com</a>.</p>
+            <p>As a DecodeMTL student, you will receive a special discounted rate on both double and single occupancy rooms. Simply mention you are a DecodeMTL student when booking.</p>
+        </div>
     );
     const firstRowContentRight = (
         <img src={img1} alt=""/>

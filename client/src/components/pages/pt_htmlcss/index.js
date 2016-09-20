@@ -77,8 +77,8 @@ const Courses = React.createClass({
             }
         ];
 
-        const formTitle = 'Join our growing community',
-            formText = 'Enter your email to receive info about new courses, workshops and events.';
+        const formTitle = 'Convince your employer to sponsor your tuition!',
+            formText = 'Enter your email to download our free PDF guide and share it with your employer.';
 
         return (
             <div>
