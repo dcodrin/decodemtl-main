@@ -135,7 +135,7 @@ const MainFooter = React.createClass({
                             <div className="footer-nav-container">
                                 <h4>Courses</h4>
                                 <ul className="course-list" role="menu">
-                                    <li className="course-list-item"><Link to="/courses/web-development-immersive">Immersive</Link></li>
+                                    <li className="course-list-item"><Link to="/courses/web-development-immersive">Web Development</Link></li>
                                     <li className="course-list-item"><Link to="/courses/html-css">HTML & CSS</Link></li>
                                     <li className="course-list-item"><Link to="/courses/javascript">JavaScript</Link></li>
                                     <li className="course-list-item"><Link to="/faq">FAQ</Link></li>

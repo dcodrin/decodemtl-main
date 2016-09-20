@@ -115,7 +115,7 @@ const CourseProjectsSlider = React.createClass({
         return (
             <section className="module module-course student-project module-boxed-dark">
                 <div className="wrapper">
-                    <h4>Gain the skills to build projects like these!</h4>
+                    <h4>Learn the skills needed to build projects like these!</h4>
                     {/* /student-project-content */}
                     <figure className="student-project-content">
                         <div className="carousel-box">

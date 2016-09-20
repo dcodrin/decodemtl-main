@@ -7,6 +7,7 @@ import QuoteModule from '../../../components/modules/QuoteModule';
 import Overview from '../../../components/modules/Overview';
 
 import quoteBackground from '../../../assets/images/module-bg-about-quote.jpg';
+import founders from '../../../assets/images/founders.jpg';
 
 const About = React.createClass({
     propTypes: {},
@@ -48,8 +49,8 @@ const About = React.createClass({
             </div>
         );
 
-        const contentRight = (
-            <img src="https://unsplash.it/900/540?image=0" alt=""/>
+            const contentRight = (
+                <img src={founders} alt="Founders"/>
         );
         return (
             <div>

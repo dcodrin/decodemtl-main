@@ -4,29 +4,37 @@ import Hero from '../../../components/modules/Hero';
 import OneHalfColumn from '../../../components/modules/OneHalfColumn';
 import GenericTextModule from '../../../components/modules/GenericTextModule';
 
-import img1 from '../../../assets/images/wework1.jpg';
+import img1 from '../../../assets/images/wework6.jpg';
+import img2 from '../../../assets/images/wework7.jpg';
 
 
 const WeWork = (props) => {
 
     const firstRowContentLeft = (
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at consequatur, earum esse eum ex iusto natus, nulla quod sequi tenetur ut veniam? Earum fugit quisquam similique. Maxime, vitae voluptas.</p>
+        <div>
+            <p>Be a part of the largest co-working space in Montreal. The space is buzzing with entrepreneurs, startups, and tech companies. Take part in weekly lunch and learns or network at one of the many nightly events. You may just end up meeting your future employer or business partner.</p>
+            <p>DecodeMTL is strategically located inside of WeWork for these reasons. We want you to be a part of the Montreal startup and technology ecosystem, and build as many connections in the community as possible.</p>
+        </div>
     );
     const firstRowContentRight = (
-        <img src={img1} alt=""/>
+        <img src={img2} alt=""/>
     );
 
     const secondRowParagraphs = [
         (<p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae deserunt dignissimos, ducimus et in incidunt inventore ipsum laborum libero odit officiis omnis quaerat quidem repellendus saepe ullam vel voluptate.
+            WeWork's prime location in Place Ville Marie makes it extremely accessible. By metro, we are connected to both the McGill and Bonaventure stations. By train, we are connected to central station. Private bike storage and indoor parking are also available for a fee.
         </p>),
         (<p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto beatae deserunt dignissimos, ducimus et in incidunt inventore ipsum laborum libero odit officiis omnis quaerat quidem repellendus saepe ullam vel voluptate.
+            Being in the heart of downtown, you will be within walking distance from an abundance of restaurants, shopping and entertainment. We are also connected to the underground city, so you can avoid stepping outside in the middle of winter!
         </p>)
     ];
 
     const thirdRowContentRight = (
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at consequatur, earum esse eum ex iusto natus, nulla quod sequi tenetur ut veniam? Earum fugit quisquam similique. Maxime, vitae voluptas.</p>
+        <div>
+            <p>You will have access to two kitchens which include unlimited free micro roasted coffee, tea, fruit water, and beer on tap. There are phone booths to make private calls, spacious common areas and lounges, and a shuffle-board table for when you need a break.</p>
+            <p>As a student, you will be given 24/7 access to the space. If you like to come in on weekends, or stay late in the evenings, we encourage you to do so!</p>
+            <p>To learn more about WeWork you can check out their website at <a href="http://www.wework.com" target="_blank"> WeWork.com</a>.</p>
+        </div>
     );
     const thirdRowContentLeft = (
         <img src={img1} alt=""/>
@@ -34,10 +42,10 @@ const WeWork = (props) => {
 
     return (
         <div>
-            <Hero moduleTitle="we're going" jumboTitle="downtown"/>
-            <OneHalfColumn mainTitle='your text here' contentLeft={firstRowContentLeft} contentRight={firstRowContentRight}/>
-            <GenericTextModule title="some sort of title here" paragraphs={secondRowParagraphs}/>
-            <OneHalfColumn mainTitle="put the title on" contentLeft={thirdRowContentLeft} contentRight={thirdRowContentRight}/>
+            <Hero moduleTitle="WeWork" jumboTitle="Montreal"/>
+            <OneHalfColumn mainTitle='Community' contentLeft={firstRowContentLeft} contentRight={firstRowContentRight}/>
+            <GenericTextModule title="Location" paragraphs={secondRowParagraphs}/>
+            <OneHalfColumn mainTitle="Amenities" contentLeft={thirdRowContentLeft} contentRight={thirdRowContentRight}/>
         </div>
     );
 };

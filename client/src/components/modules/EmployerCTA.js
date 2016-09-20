@@ -7,7 +7,7 @@ const EmployerCTA = (props) => {
         <section className="module employer-cta-module">
             <div className="wrapper">
                 <div className="module-boxed">
-                    <p>Graduates from our full-stack curriculum are ready for careers as junior web developers</p>
+                    <p>Graduates from our full-stack curriculum are ready for careers as web developers.</p>
 
                     <div className="skills-container module-boxed-medium">
                         <div className="skill">
@@ -42,8 +42,8 @@ const EmployerCTA = (props) => {
                     <a
                         className="btn-primary btn-large"
                         itemProp="email"
-                        href="mailto:hello@decodemtl.com?subject=Tell me more about your students!&body=Hello Decode! Please let me know more about your awesome students!"
-                    >Introduce me</a>
+                        href="mailto:hello@decodemtl.com?subject=Tell me more about your students!&body=Hello DecodeMTL! Please let me know more about your awesome students!"
+                    >Get introduced to talent</a>
                     <p className="text-body-large">or call us toll free : <a className="phone-link" itemProp="telephone" href="tel:1-888-511-9155">1-888-511-9155</a></p>
                 </div>
                 {/* /.module-boxed */}
