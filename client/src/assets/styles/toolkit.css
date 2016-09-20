@@ -507,7 +507,6 @@ ol {
   stroke-width: 5; }
 
 .cta-widget {
-  background: #F0F0F0;
   text-align: center;
   padding: 1rem 0.5rem; }
   .cta-widget .cta {
@@ -536,8 +535,8 @@ ol {
   position: relative; }
 
 .modal-dark {
-  background: rgba(0, 0, 0, 0.9);
-  color: #D6D6D6; }
+    background: rgba(0, 0, 0, 0.9);
+}
 
 .video-trigger {
   overflow: hidden;
@@ -729,23 +728,19 @@ input[type="checkbox"]:checked + label {
 form .contact-details-section input {
     width: 100%;
 }
-
 @media (min-width: 50em) {
     form .contact-details-section {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
     }
-
     form .contact-details-section div, form .contact-details-section input {
         flex: 0 1 calc(50% - 0.5em);
     }
 }
-
 form .submit-section .optin-checkbox {
     margin: 1rem 0;
 }
-
 form .module-title-medium {
     width: 100%;
 }
@@ -758,7 +753,6 @@ form .module-title-medium {
           width: 60%;
       }
   }
-
 @media (min-width: 50em) {
     .application-form section:not(.contact-details-section):not(.submit-section) {
         max-width: 80%;
@@ -1491,28 +1485,72 @@ body.nav-container-active {
   margin: 3rem 0 calc(3rem / 2) 0;
   list-style: none; }
   .events-list li {
+      border-bottom: 1px solid #D6D6D6;
+  }
+
+.events-list .event-url {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    border-bottom: 1px solid #D6D6D6;
-    padding: 1em 0 1.1em 0; }
+    flex-flow: column;
+    padding: 1em 0.5em 1.1em 0.5em;
+}
+
+.events-list .event-url::before {
+    content: none;
+}
+
+.events-list .event-url:hover {
+    background: #F0F0F0;
+}
+
+.events-list .event-url:hover .event-arrow {
+    color: #212121;
+}
+
+@media (min-width: 50em) {
+    .events-list .event-url {
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+}
   .events-list .event-date {
-    margin-right: 40px;
     font-family: "DIN Next W01 Bold";
     color: #999999; }
   .events-list .event-name {
-    flex: 0 0 80%; }
-    @media screen and (min-width: 37.5em) and (max-width: 60em) {
+      font-family: "DIN Next W01 Medium";
+  }
+
+@media (min-width: 50em) {
       .events-list .event-name {
-        flex: 0 0 90%; } }
-  .events-list .event-url a {
+          margin-left: auto;
+          flex: 0 1 20%;
+      }
+}
+
+.events-list .event-description {
     display: flex;
-    font-family: "DIN Next W01 Bold";
-    color: #999999; }
-    .events-list .event-url a::before {
-      content: none; }
-    .events-list .event-url a:hover {
-      color: #D6252C; }
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    flex: 0 1 60%;
+}
+
+@media (min-width: 50em) {
+    .events-list .event-description {
+        margin-left: auto;
+    }
+}
+
+.events-list .event-arrow {
+    flex: 0 0 10%;
+    text-align: right;
+    color: #999999;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+
+.events-list .event-arrow::before {
+    font-size: 1.4rem;
+}
 
 .partner-logos-module {
   padding: calc(3rem / 2) 0;

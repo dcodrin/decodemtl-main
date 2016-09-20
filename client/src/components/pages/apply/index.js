@@ -8,11 +8,15 @@ const Apply = React.createClass({
         e.preventDefault();
         const data = formSerialize(e.target, {hash: true});
         axios.post('http://localhost:3100/apply', data)
-            .then(({data: {status}}) => {
-                if (status === 'ok') {
-                    console.log('Application sent success! Redirect to "Thank you page"')
+            .then(({response}) => {
+                if (response.status === 'success') {
+                    console.log('Application sent success! Redirect to "Thank you page"');
+                    console.log('No subscription');
+                } else if (response.status === 400 && response.status.title === 'Member Exists') {
+                    console.log('Application sent. User already subscribed.', response)
+                } else {
+                    console.log('Application failed to send', response);
                 }
-
             })
             .catch(err => {
                 console.log(err);
