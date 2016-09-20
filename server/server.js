@@ -21,10 +21,14 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // parse application/json
 app.use(bodyParser.json());
+
 // validate user input
 app.use(expressValidator());
 
 app.set('port', (process.env.PORT || 3001));
+
+// Downloads virtual path
+app.use('/downloads', express.static(__dirname + '/public'));
 
 // returns promise
 const subscribeUser = (email) => {
@@ -60,8 +64,14 @@ app.post('/apply', (req, res) => {
             pass: GMAIL_PASS
         }
     };
+
+    // create reusable transporter object using the default SMTP transport
     const transporter = nodemailer.createTransport(smtpConfig);
+
+    //User input data
     const data = req.body;
+
+    //User data validation
     req.checkBody({
         'first-name': {
             notEmpty: true,
@@ -95,8 +105,6 @@ app.post('/apply', (req, res) => {
     if (errors) {
         return res.json(errors);
     }
-
-    // create reusable transporter object using the default SMTP transport
 
     // setup e-mail data
     //proceed editing at own risk

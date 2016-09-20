@@ -87,7 +87,7 @@ const Courses = React.createClass({
                     CTAPText="Apply Now"
                     CTASText="Syllabus"
                     CTAPLink="/apply"
-                    CTASLink="/courses/html-css/syllabus.pdf"
+                    CTASLink="http://localhost:3100/downloads/htmlcss_syllabus.pdf"
                     CTAP={CTAPrimaryLarge}
                     CTAS={CTASecondaryLarge}
                     ref={hero => {this._hero = hero}}
