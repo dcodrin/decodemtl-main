@@ -28,8 +28,8 @@ const SecondaryNav = (props) => {
                 </ul>
                 {/*<!-- CTA -->*/}
                 <ul className="secondary-nav-cta">
-                    <li><Link to="#" className="btn-primary btn-small">Apply Now</Link></li>
-                    <li><Link to="#" className="btn-secondary btn-small">Syllabus</Link></li>
+                    <li><Link to="/apply" className="btn-primary btn-small">Apply Now</Link></li>
+                    <li><a href={props.syllabus} className="btn-secondary btn-small" download={true}>Syllabus</a></li>
                 </ul>
             </div>
         </nav>
@@ -38,7 +38,8 @@ const SecondaryNav = (props) => {
 
 SecondaryNav.propTypes = {
     display: React.PropTypes.bool.isRequired,
-    links: React.PropTypes.array.isRequired
+    links: React.PropTypes.array.isRequired,
+    syllabus: React.PropTypes.string.isRequired
 };
 
 export default SecondaryNav;

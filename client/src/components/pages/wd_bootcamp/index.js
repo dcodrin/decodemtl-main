@@ -37,6 +37,7 @@ const Courses = React.createClass({
         };
     },
     componentWillMount() {
+        //Necessary for smooth fade transitions when routing from parent component.
         window.scrollTo(0, 0);
     },
     componentDidMount() {
@@ -88,7 +89,8 @@ const Courses = React.createClass({
             formText = 'Enter your email below and get instant access to our curated list of free JavaScript resources.';
         return (
             <div>
-                <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}/>
+                <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}
+                              syllabus='http://localhost:3100/downloads/immersive_syllabus.pdf'/>
                 <CourseHero CTAPText="Apply Now"
                             CTASText="Syllabus"
                             CTAPLink="/apply"

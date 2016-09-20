@@ -1,5 +1,4 @@
 import React from 'react';
-import RouteTransition from'react-easy-transition';
 
 import CourseHero from '../../modules/Hero';
 import courses from '../../../config/courses';

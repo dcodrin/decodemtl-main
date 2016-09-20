@@ -36,6 +36,7 @@ const Courses = React.createClass({
         };
     },
     componentWillMount() {
+        //Necessary for smooth fade transitions when routing from parent component.
         window.scrollTo(0, 0);
     },
     componentDidMount() {
@@ -84,7 +85,8 @@ const Courses = React.createClass({
 
         return (
             <div>
-                <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}/>
+                <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}
+                              syllabus='http://localhost:3100/downloads/javascript_syllabus.pdf'/>
                 <CourseHero
                     CTAPText="Apply Now"
                     CTASText="Syllabus"

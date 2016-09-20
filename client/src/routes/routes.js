@@ -18,6 +18,7 @@ import Housing from '../components/pages/housing/index';
 import Privacy from '../components/pages/privacy_terms/Privacy';
 import Terms from '../components/pages/privacy_terms/Terms';
 import Apply from '../components/pages/apply/index';
+import Confirmation from '../components/pages/confirmation/index';
 
 //to pass optional params place router including "/" in parentheses --> /courses(/:courseName)
 //IMPORTANT: to scroll to top upon rendering children components --> useScroll
@@ -48,6 +49,7 @@ export default () => {
                 <Route path='privacy' component={Privacy}/>
                 <Route path='terms' component={Terms}/>
                 <Route path='apply' component={Apply}/>
+                <Route path='confirmation' component={Confirmation}/>
             </Route>
         </Router>
     );
