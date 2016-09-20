@@ -11,7 +11,7 @@ const App = (props) => {
             <RouteTransition
                 path={props.location.pathname}
                 initialStyle={{opacity: 0}}
-                transition="opacity 110ms ease-in"
+                transition="opacity 150ms ease-in"
                 finalStyle={{opacity: 1}}
                 className="main-content" role="main"
             >

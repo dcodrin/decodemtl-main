@@ -173,9 +173,6 @@ html {
   @media (min-width: 64em) {
     .wrapper {
       padding: 0; } }
-  @media (min-width: 81.25em) {
-    .wrapper {
-      max-width: 1100px; } }
   @media (min-width: 87.5em) {
     .wrapper {
       max-width: 1300px; } }
@@ -599,11 +596,77 @@ ol {
     color: #212121; }
 
 input,
+select,
+fieldset,
 textarea {
   border: 0;
   background: #F0F0F0;
   padding: 1em;
-  margin: 0.5em 0; }
+    margin: 0.5em 0;
+    border-radius: 0;
+    max-width: 100%;
+}
+
+textarea {
+    width: 100%;
+    min-height: 10rem;
+}
+
+input:focus,
+textarea:focus {
+    outline-color: #17BECF;
+    border: none;
+    background: #FAFAFA;
+}
+
+select {
+    appearance: none;
+    outline: none;
+    display: block;
+    background: url("../../assets/images/select-chevron.svg") 95% 48% no-repeat #F0F0F0;
+    padding-right: 2.8em;
+    border: none;
+    color: #6F6F6F;
+}
+
+fieldset {
+    border: none;
+    color: #666666;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 0.3em;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    position: relative;
+    top: -0.06em;
+}
+
+div.required::before,
+span.required {
+    color: #D6252C;
+    line-height: 0;
+    font-family: inherit;
+    font-size: 1.9rem;
+}
+
+div.required {
+    position: relative;
+}
+
+div.required::before {
+    position: absolute;
+    top: 45%;
+    right: 3%;
+    content: '*';
+}
+
+span.required {
+    margin-left: 0.2em;
+}
 
 button,
 input[type="button"],
@@ -625,6 +688,12 @@ input[type="submit"] {
   input[type="submit"]:hover,
   input[type="submit"]:active {
     background: #c02128; }
+
+input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label {
+    color: #212121;
+    font-family: "DIN Next W01 Medium";
+}
 
 .optin-form {
   display: flex;
@@ -657,27 +726,44 @@ input[type="submit"] {
   .optin-footer {
     max-width: 80%; } }
 
-.contact-form {
-  display: flex;
-  flex-flow: column wrap; }
-  .contact-form textarea {
-    min-height: 10rem; }
-  .contact-form .optin-checkbox {
-    margin: 1rem 0; }
+form .contact-details-section input {
+    width: 100%;
+}
+
+@media (min-width: 50em) {
+    form .contact-details-section {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    form .contact-details-section div, form .contact-details-section input {
+        flex: 0 1 calc(50% - 0.5em);
+    }
+}
+
+form .submit-section .optin-checkbox {
+    margin: 1rem 0;
+}
+
+form .module-title-medium {
+    width: 100%;
+}
+
+.application-form select {
+    width: 100%;
+}
   @media (min-width: 50em) {
-    .contact-form {
-      flex-flow: row wrap;
-      justify-content: space-between; }
-      .contact-form input:not([type="submit"]) {
-        flex: 0 1 calc(50% - 0.5em); }
-      .contact-form textarea {
-        flex-basis: 100%; }
-      .contact-form .foot-note {
-        text-align: right;
-        flex-basis: 100%; }
-      .contact-form input[type="submit"],
-      .contact-form .optin-checkbox {
-        margin-left: auto; } }
+      .application-form select {
+          width: 60%;
+      }
+  }
+
+@media (min-width: 50em) {
+    .application-form section:not(.contact-details-section):not(.submit-section) {
+        max-width: 80%;
+    }
+}
 
 a {
   color: #212121;
