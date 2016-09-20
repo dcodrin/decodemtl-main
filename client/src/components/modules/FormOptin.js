@@ -7,10 +7,14 @@ const FormOptin = React.createClass({
     propTypes: {
         title: React.PropTypes.string.isRequired,
         text: React.PropTypes.string.isRequired,
-        submitButton: React.PropTypes.string.isRequired
+        submitButton: React.PropTypes.string.isRequired,
+        handleClick: React.PropTypes.func
     },
     _handleSubmit(e) {
         e.preventDefault();
+        if (this.props.handleClick) {
+            this.props.handleClick();
+        }
         const email = this.refs.email.value.trim().toLowerCase();
         axios.post('http://localhost:3100/newsletter', {email})
             .then(({data: response}) => {

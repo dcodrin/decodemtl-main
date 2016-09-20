@@ -16,7 +16,7 @@ const HomeEvolving = (props) => {
                             </div>
                         </div>
                         <div className="one-half-content">
-                            <div className="cta-widget">
+                            <div className="cta-widget module-boxed">
                                 <div className="text-body-small">Want to learn more about life as a DecodeMTL student?</div>
                                 <div className="cta cta-single">
                                     <a href="#" className="btn-primary btn-small">Schedule a visit</a>

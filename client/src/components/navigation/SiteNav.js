@@ -110,7 +110,9 @@ const SiteNav = React.createClass({
                             <ul className="site-header-menu" role="menu">
                                 <li><Link activeClassName={this.props.activeClass} to="/courses">Courses</Link></li>
                                 <li><Link activeClassName={this.props.activeClass} to="/about">About</Link></li>
-                                <li><Link activeClassName={this.props.activeClass} to="/schedule">Schedule a visit</Link></li>
+                                <li><Link onClick={this.props.handleScheduleVisit}
+                                          activeClassName={this.props.activeClass} to="/schedule">Schedule a
+                                    visit</Link></li>
                                 <li className="lang-switcher"><Link to="#">fr</Link></li>
                             </ul>
                         </nav>

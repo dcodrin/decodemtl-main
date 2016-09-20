@@ -136,10 +136,10 @@ app.post('/apply', (req, res) => {
         if (req.body['list-optin'] && req.body['list-optin'] === 'yes') {
             return subscribeUser(data.email)
                 .then(response => {
-                    res.json(response);
+                    res.json({status: 'success', sub_status: 'success'});
                 })
                 .catch(err => {
-                    res.json(err);
+                    res.json({status: 'success', sub_status: 'failed'});
                 });
         }
         res.json({status: 'success'})

@@ -21,7 +21,7 @@ const HomeHero = React.createClass({
             if (this.state.videoModal) {
                 return (
                     <div style={{display: 'block'}}
-                         className="video-modal modal modal-dark"
+                         className="modal modal-dark"
                          onClick={this._toggleModal}>
                         <div className="close-btn">
                             <svg onClick={this._toggleModal} id="close-x" className="close-x"

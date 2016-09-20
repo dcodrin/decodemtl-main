@@ -3,19 +3,21 @@ import formSerialize from 'form-serialize';
 import axios from 'axios';
 
 const Apply = React.createClass({
-    propTypes: {},
+    contextTypes: {
+        router: React.PropTypes.object.isRequired
+    },
     _handleSubmit(e) {
         e.preventDefault();
         const data = formSerialize(e.target, {hash: true});
         axios.post('http://localhost:3100/apply', data)
-            .then(({response}) => {
+            .then(({data: response}) => {
+                //Multiple response options available
                 if (response.status === 'success') {
-                    console.log('Application sent success! Redirect to "Thank you page"');
-                    console.log('No subscription');
-                } else if (response.status === 400 && response.status.title === 'Member Exists') {
-                    console.log('Application sent. User already subscribed.', response)
+                    //success, no subscription
+                    this.context.router.push('confirmation');
+                    console.log(response)
                 } else {
-                    console.log('Application failed to send', response);
+                    console.log('Application failed!')
                 }
             })
             .catch(err => {
@@ -27,7 +29,6 @@ const Apply = React.createClass({
             <section className="module">
                 <div className="wrapper">
                     <div className="module-boxed">
-
                         <form onSubmit={this._handleSubmit} className="application-form" action="" method="post">
                             {/* ======== contact details ======== */}
                             <section className="contact-details-section">
