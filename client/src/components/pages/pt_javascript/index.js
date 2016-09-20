@@ -35,6 +35,9 @@ const Courses = React.createClass({
             secondaryNav: false
         };
     },
+    componentWillMount() {
+        window.scrollTo(0, 0);
+    },
     componentDidMount() {
         scrollSpy.update();
         window.addEventListener('scroll', this._handleScroll);

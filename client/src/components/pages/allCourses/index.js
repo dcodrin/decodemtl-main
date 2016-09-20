@@ -16,14 +16,7 @@ const AllCourses = (props) => {
         }
         return (
             <div>
-                <RouteTransition
-                    path={props.location.pathname}
-                    initialStyle={{opacity: 0}}
-                    transition="opacity 300ms ease-in"
-                    finalStyle={{opacity: 1}}
-                >
-                    {props.children ? props.children : renderCourses()}
-                </RouteTransition>
+                {props.children ? props.children : renderCourses()}
             </div>
         );
 };
