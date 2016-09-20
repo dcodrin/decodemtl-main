@@ -1,14 +1,15 @@
 //TODO Clean up email html
 const express = require('express'),
-    md5 = require('blueimp-md5'),
     expressValidator = require('express-validator'),
     bodyParser = require('body-parser'),
     cors = require('cors'),
     axios = require('axios'),
     nodemailer = require('nodemailer');
 
+//NOTE: Mailchimp uses HTTP Basic Auth. Set 'username' as any string ex: 'apiKey', 'helloWorld'
 const MAIL_CHIMP_API = require('./mailchimp_api');
 const GMAIL_PASS = require('./decode_gmail');
+const ROOT_URL = `https://us9.api.mailchimp.com/3.0/lists/47aff20fae/members`;
 
 const app = express();
 
@@ -20,31 +21,30 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // parse application/json
 app.use(bodyParser.json());
+// validate user input
 app.use(expressValidator());
 
 app.set('port', (process.env.PORT || 3001));
 
-//helper function, returns promise
-const subscribe = ({email, api}) => {
-    const ROOT_URL = `https://us9.api.mailchimp.com/3.0/lists/47aff20fae/members`;
-    //mailchimp expects emails to be in the md5 format
-    const hash = md5(email);
-    //mailchimp uses HTTP Basic authorization.
-    //we have to manually set the Authorization headers.
-    //NOTE: the api key bust be base64 encoded and it's in the format of 'apikey:' + api key
-    axios.defaults.headers.common['Authorization'] = 'Basic ' + api;
+// returns promise
+const subscribeUser = (email) => {
     return new Promise((resolve, reject) => { // eslint-disable-line no-undef
         axios({
-            method: 'get',
-            url: `${ROOT_URL}/${hash}`
+            method: 'post',
+            url: `${ROOT_URL}/`,
+            data: {
+                email_address: email,
+                status: 'subscribed'
+            },
+            auth: {
+                username: 'apiKey',
+                password: MAIL_CHIMP_API
+            }
         })
             .then(({data: user}) => {
                 resolve(user);
             })
             .catch(({response: {data: err}}) => {
-
-
-                //The user was not found. Proceed to register the user.
                 reject(err);
             });
     });
@@ -62,7 +62,6 @@ app.post('/apply', (req, res) => {
     };
     const transporter = nodemailer.createTransport(smtpConfig);
     const data = req.body;
-    console.log(data);
     req.checkBody({
         'first-name': {
             notEmpty: true,
@@ -127,15 +126,15 @@ app.post('/apply', (req, res) => {
         }
         console.log('Message sent: ' + info.response);
         if (req.body['list-optin'] && req.body['list-optin'] === 'yes') {
-            subscribe({email: req.body.email, api: MAIL_CHIMP_API})
-                .then(user => {
-                    res.json(user);
+            return subscribeUser(data.email)
+                .then(response => {
+                    res.json(response);
                 })
                 .catch(err => {
                     res.json(err);
-                })
+                });
         }
-        res.json({status: 'ok'})
+        res.json({status: 'success'})
     });
 });
 
@@ -154,13 +153,14 @@ app.post('/newsletter', (req, res) => {
         return;
     }
     const {email} = req.body;
-    subscribe({email, api: MAIL_CHIMP_API})
-        .then(user => {
-            res.json(user);
+
+    subscribeUser(email)
+        .then(response => {
+            res.json(response);
         })
         .catch(err => {
             res.json(err);
-        })
+        });
 });
 
 app.listen(app.get('port'), () => {

@@ -288,32 +288,53 @@
 	margin: $module-vert-pd 0 calc(#{$module-vert-pd} / 2) 0;
 	list-style: none;
 	li {
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-between;
 		border-bottom: 1px solid $grey;
-		padding: 1em 0 1.1em 0;
 	}
-	.event-date {
-		margin-right: 40px;
-		font-family: $font_bold;
-		color: $midgrey;
-	}
-	.event-name {
-		flex: 0 0 80%;
-		@media screen and (min-width: 37.5em) and (max-width: 60em){
-			flex: 0 0 90%;
-		}
-	}
-	.event-url a {
+	.event-url {
 		display: flex;
-		font-family: $font_bold;
-		color: $midgrey;
+		flex-flow: column;
+		padding: 1em 0.5em 1.1em 0.5em;
 		&::before {
 			content: none;
 		}
 		&:hover {
-			color: $red;
+			background: $lightgrey;
+			.event-arrow {
+				color: $black;
+			}
+		}
+		@include breakpoint(mintablet) {
+			flex-flow: row wrap;
+			justify-content: space-between;
+		}
+	}
+	.event-date {
+		font-family: $font_bold;
+		color: $midgrey;
+	}
+	.event-name {
+		font-family: $font_medium;
+		@include breakpoint(mintablet) {
+			margin-left: auto;
+			flex: 0 1 20%;
+		}
+	}
+	.event-description {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		flex: 0 1 60%;
+		@include breakpoint(mintablet) {
+			margin-left: auto;
+		}
+	}
+	.event-arrow {
+		flex: 0 0 10%;
+		text-align: right;
+		color: $midgrey;
+		@include transition-all;
+		&::before {
+			font-size: 1.4rem;
 		}
 	}
 }

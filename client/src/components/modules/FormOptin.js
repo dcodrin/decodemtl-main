@@ -14,12 +14,12 @@ const FormOptin = React.createClass({
         const email = this.refs.email.value.trim().toLowerCase();
         axios.post('http://localhost:3100/newsletter', {email})
             .then(({data: response}) => {
-                if (response.status === 'subscribed') {
+                if (response.status === 400 && response.title === 'Member Exists') {
                     console.log('Already subscribed!', response)
+                } else if (response.status === 'subscribed') {
+                    //The user was not found!
+                    console.log(response, 'THE ERROR')
                 }
-
-                //The user was not found!
-                console.log(response, 'THE ERROR')
             })
             .catch(err => {
                 console.log(err);
