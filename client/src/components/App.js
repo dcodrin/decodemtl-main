@@ -20,7 +20,6 @@ const App = React.createClass({
     },
     _toggleModal(e) {
         e.preventDefault();
-        console.log(this.state.modal);
         this.setState({
             modal: !this.state.modal,
             confirm: false
@@ -38,7 +37,9 @@ const App = React.createClass({
                     transitionName="video"
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={300}>
-                    {this.state.modal ? <ConfirmModal form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>}
+                    {this.state.modal ?
+                        <ConfirmModal
+                            form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>}
                                                       toggleModal={this._toggleModal}/> : null}
                 </ReactCSSTransitionGroup>
                 <SiteNav handleScheduleVisit={this._toggleModal} ref={siteNav => {
@@ -49,8 +50,7 @@ const App = React.createClass({
                         path={this.props.location.pathname}
                         initialStyle={{opacity: 0}}
                         transition="opacity 150ms ease-in"
-                        finalStyle={{opacity: 1}}
-                    >
+                        finalStyle={{opacity: 1}}>
                         {this.props.children}
                     </RouteTransition>
                 </main>
