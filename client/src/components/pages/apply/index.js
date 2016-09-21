@@ -153,8 +153,8 @@ const Apply = React.createClass({
                                 </div>
                                 <input className="btn-large" type="submit" name="submit" value="Submit"/>
                                 <div className="foot-note text-body-small text-subtle">
-                                    By providing us with your email, you agree to the terms of our <a href='#'>Privacy
-                                    Policy</a> and <a href="#">Terms of Service</a>.
+                                    By providing us with your email, you agree to the terms of our <a href='/privacy'>Privacy
+                                    Policy</a> and <a href="/terms">Terms of Service</a>.
                                 </div>
                             </section>
                             {/* /.submit-section */}
