@@ -1,4 +1,5 @@
 import rachel from '../../../assets/images/testimonial-rachel-pariente.jpg';
+import myriam from '../../../assets/images/testimonial-myriam-gariepy.jpg';
 export default [
     {
         fullName: 'Rachel Pariente',
@@ -8,6 +9,6 @@ export default [
     {
         fullName: 'Myriam Gariépy',
         text: '10 weeks ago, I didn\'t even know how to open a zip file! Now, I can make a multi-page, responsive website with forms, links, videos, nice design, etc!',
-        img: rachel
+        img: myriam
     },
 ];
