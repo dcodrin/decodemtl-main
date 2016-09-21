@@ -44,7 +44,7 @@ const App = React.createClass({
                         </div>
                         <div className="modal-content">
                             {this.state.confirm ? <p>THANK YOU!</p> :
-                                <FormOptin handleClick={this._confirm} title="Schedule a visit on your terms"
+                                <FormOptin handleClick={this._confirm} title="Take a tour of our space and meet with our team."
                                            text="You will receive a link to pick a date and time of that works for you."
                                            submitButton="Submit"/>}
                         </div>
