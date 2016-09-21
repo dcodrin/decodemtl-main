@@ -12,7 +12,7 @@ const ConfirmModal = React.createClass({
     },
     _confirm() {
         this.setState({
-            confirm: false
+            confirm: true
         })
     },
     render() {
@@ -32,7 +32,7 @@ const ConfirmModal = React.createClass({
         };
         return (
             <div style={{display: 'block'}}
-                 className="modal modal-dark"
+                 className="modal modal-light"
             >
                 <div className="close-btn">
                     <svg onClick={this.props.toggleModal} id="close-x" className="close-x"

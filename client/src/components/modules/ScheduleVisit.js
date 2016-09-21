@@ -11,7 +11,6 @@ const ScheduleVisit = React.createClass({
     },
     _handleSubmit(e) {
         e.preventDefault();
-        console.log('THIS IS CALLED!')
         if (this.props.handleClick) {
             this.props.handleClick();
         }

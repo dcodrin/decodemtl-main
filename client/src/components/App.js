@@ -32,62 +32,28 @@ const App = React.createClass({
         });
     },
     render() {
-
-        // const renderConfirm = () => {
-        //     return (
-        //         <section className="module">
-        //             <div className="wrapper">
-        //                 <div className="module-boxed">
-        //                     <p className="text-body-large">Thank you!</p>
-        //                     <p>Thank you ver very much!</p>
-        //                 </div>
-        //                 {/* /.module-boxed */}
-        //             </div>
-        //             {/* /.wrapper */}
-        //         </section>
-        //     );
-        // };
-        //
-        // const renderModal = () => {
-        //     if (this.state.modal) {
-        //         return (
-        //             <div style={{display: 'block'}}
-        //                  className="modal modal-dark"
-        //             >
-        //                 <div className="close-btn">
-        //                     <svg onClick={this._toggleModal} id="close-x" className="close-x"
-        //                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
-        //                         <path d="M 10,10 L 30,30 M 30,10 L 10,30"/>
-        //                     </svg>
-        //                 </div>
-        //                 <div className="modal-content">
-        //                     {this.state.confirm ? renderConfirm() : <ScheduleVisit handleClick={this._confirm} title="Schedule a visit" text="Please"/> }
-        //                 </div>
-        //             </div>
-        //         );
-        //     }
-        // };
-
         return (
             <div className="App">
                 <ReactCSSTransitionGroup
                     transitionName="video"
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={300}>
-                    {/*{this.state.modal ? renderModal() : null}*/}
-                    {this.state.modal ? <ConfirmModal form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>} toggleModal={this._toggleModal}/> : null}
+                    {this.state.modal ? <ConfirmModal form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>}
+                                                      toggleModal={this._toggleModal}/> : null}
                 </ReactCSSTransitionGroup>
                 <SiteNav handleScheduleVisit={this._toggleModal} ref={siteNav => {
                     this._siteNav = siteNav
                 }}/>
-                <RouteTransition
-                    path={this.props.location.pathname}
-                    initialStyle={{opacity: 0}}
-                    transition="opacity 150ms ease-in"
-                    finalStyle={{opacity: 1}}
-                >
-                    {this.props.children}
-                </RouteTransition>
+                <main className="main-content">
+                    <RouteTransition
+                        path={this.props.location.pathname}
+                        initialStyle={{opacity: 0}}
+                        transition="opacity 150ms ease-in"
+                        finalStyle={{opacity: 1}}
+                    >
+                        {this.props.children}
+                    </RouteTransition>
+                </main>
                 <Footer/>
             </div>
         );
