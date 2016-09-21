@@ -35,7 +35,7 @@ const Housing = (props) => {
 
     return (
         <div>
-            <Hero moduleTitle="Student" jumboTitle="Housing"/>
+            <Hero styles={{marginBottom: '3rem'}} moduleTitle="Student" jumboTitle="Housing"/>
             <OneHalfColumn mainTitle='Move-in ready housing' contentLeft={firstRowContentLeft} contentRight={firstRowContentRight}/>
             <GenericTextModule title="Walking distance from WeWork" paragraphs={secondRowParagraphs}/>
             <OneHalfColumn mainTitle="Tons of amenities" contentLeft={thirdRowContentLeft} contentRight={thirdRowContentRight}/>

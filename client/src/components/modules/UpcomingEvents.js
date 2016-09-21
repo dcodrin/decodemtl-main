@@ -16,7 +16,7 @@ const UpcomingEvents = (props) => {
 
                     {props.events.filter(filterDates).slice(0, props.limit ? props.limit : props.events.length).map((event, i) => (
                         <li key={i} className="text-body-small" itemScope itemType="http://schema.org/Event">
-                            <a className="event-url" href={event.url} itemProp="url">
+                            <a className="event-url" href={event.url} itemProp="url" target="_blank">
                                 <div className="event-date" itemProp="startDate">{event.startDate}</div>
                                 <div className="event-name" itemProp="name">{event.eventName}</div>
 

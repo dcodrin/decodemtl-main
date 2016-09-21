@@ -49,13 +49,13 @@ const Courses = React.createClass({
     _handleScroll(e) {
         const headerWrapper = this._hero._headerWrapper;
         const scrollPosition = headerWrapper.offsetTop + headerWrapper.offsetHeight;
-        if(window.innerWidth < 800) {
+        if (window.innerWidth < 800) {
             this.setState({
                 secondaryNav: false
             });
             return;
         }
-        if(window.scrollY > scrollPosition && !this.state.secondaryNav) {
+        if (window.scrollY > scrollPosition && !this.state.secondaryNav) {
             this.setState({
                 secondaryNav: true
             })
@@ -94,7 +94,9 @@ const Courses = React.createClass({
                     CTASLink="http://localhost:3100/downloads/javascript_syllabus.pdf"
                     CTAP={CTAPrimaryLarge}
                     CTAS={CTASecondaryLarge}
-                    ref={hero => {this._hero = hero}}
+                    ref={hero => {
+                        this._hero = hero
+                    }}
                     moduleTitle={"Part-Time"}
                     jumboTitle={"JavaScript"}
                     text={"Develop a strong base in programming and master JavaScript fundamentals like object prototypes, higher order functions, and programming with asynchronous callbacks."}
@@ -121,7 +123,6 @@ const Courses = React.createClass({
         );
     }
 });
-
 
 
 export default Courses;

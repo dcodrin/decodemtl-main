@@ -535,8 +535,7 @@ ol {
   position: relative; }
 
 .modal-dark {
-    background: rgba(0, 0, 0, 0.9);
-}
+  background: rgba(0, 0, 0, 0.9); }
 
 .video-trigger {
   overflow: hidden;
@@ -601,71 +600,59 @@ textarea {
   border: 0;
   background: #F0F0F0;
   padding: 1em;
-    margin: 0.5em 0;
-    border-radius: 0;
-    max-width: 100%;
-}
+  margin: 0.5em 0;
+  border-radius: 0;
+  max-width: 100%; }
 
 textarea {
-    width: 100%;
-    min-height: 10rem;
-}
+  width: 100%;
+  min-height: 10rem; }
 
 input:focus,
 textarea:focus {
-    outline-color: #17BECF;
-    border: none;
-    background: #FAFAFA;
-}
+  outline-color: #17BECF;
+  border: none;
+  background: #FAFAFA; }
 
 select {
-    appearance: none;
-    outline: none;
-    display: block;
-    background: url("../../assets/images/select-chevron.svg") 95% 48% no-repeat #F0F0F0;
-    padding-right: 2.8em;
-    border: none;
-    color: #6F6F6F;
-}
+  appearance: none;
+  outline: none;
+  display: block;
+  background: url("../../assets/images/select-chevron.svg") 95% 48% no-repeat #F0F0F0;
+  padding-right: 2.8em;
+  border: none;
+  color: #6F6F6F; }
 
 fieldset {
-    border: none;
-    color: #666666;
-}
+  border: none;
+  color: #666666; }
 
 input[type="checkbox"],
 input[type="radio"] {
-    margin-right: 0.3em;
-}
+  margin-right: 0.3em; }
 
 input[type="radio"],
 input[type="checkbox"] {
-    position: relative;
-    top: -0.06em;
-}
+  position: relative;
+  top: -0.06em; }
 
 div.required::before,
 span.required {
-    color: #D6252C;
-    line-height: 0;
-    font-family: inherit;
-    font-size: 1.9rem;
-}
+  color: #D6252C;
+  line-height: 0;
+  font-family: inherit;
+  font-size: 1.9rem; }
 
 div.required {
-    position: relative;
-}
-
-div.required::before {
+  position: relative; }
+  div.required::before {
     position: absolute;
     top: 45%;
     right: 3%;
-    content: '*';
-}
+    content: '*'; }
 
 span.required {
-    margin-left: 0.2em;
-}
+  margin-left: 0.2em; }
 
 button,
 input[type="button"],
@@ -690,9 +677,8 @@ input[type="submit"] {
 
 input[type="radio"]:checked + label,
 input[type="checkbox"]:checked + label {
-    color: #212121;
-    font-family: "DIN Next W01 Medium";
-}
+  color: #212121;
+  font-family: "DIN Next W01 Medium"; }
 
 .optin-form {
   display: flex;
@@ -726,38 +712,27 @@ input[type="checkbox"]:checked + label {
     max-width: 80%; } }
 
 form .contact-details-section input {
-    width: 100%;
-}
+  width: 100%; }
 @media (min-width: 50em) {
-    form .contact-details-section {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-    }
+  form .contact-details-section {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; }
     form .contact-details-section div, form .contact-details-section input {
-        flex: 0 1 calc(50% - 0.5em);
-    }
-}
+      flex: 0 1 calc(50% - 0.5em); } }
 form .submit-section .optin-checkbox {
-    margin: 1rem 0;
-}
+  margin: 1rem 0; }
 form .module-title-medium {
-    width: 100%;
-}
+  width: 100%; }
 
 .application-form select {
-    width: 100%;
-}
+  width: 100%; }
   @media (min-width: 50em) {
-      .application-form select {
-          width: 60%;
-      }
-  }
+    .application-form select {
+      width: 60%; } }
 @media (min-width: 50em) {
-    .application-form section:not(.contact-details-section):not(.submit-section) {
-        max-width: 80%;
-    }
-}
+  .application-form section:not(.contact-details-section):not(.submit-section) {
+    max-width: 80%; } }
 
 a {
   color: #212121;
@@ -1333,6 +1308,8 @@ body.nav-container-active {
     flex-basis: 30%; } }
 .tuition-dates .cell:last-child, .tuition-dates .cell:first-child {
   font-family: "DIN Next W01 Bold"; }
+.tuition-dates .full {
+  color: #999999; }
 
 .course-schedule .two-col-table .row {
   border-color: #17BECF; }
@@ -1485,72 +1462,47 @@ body.nav-container-active {
   margin: 3rem 0 calc(3rem / 2) 0;
   list-style: none; }
   .events-list li {
-      border-bottom: 1px solid #D6D6D6;
-  }
-
-.events-list .event-url {
+    border-bottom: 1px solid #D6D6D6; }
+  .events-list .event-url {
     display: flex;
     flex-flow: column;
-    padding: 1em 0.5em 1.1em 0.5em;
-}
-
-.events-list .event-url::before {
-    content: none;
-}
-
-.events-list .event-url:hover {
-    background: #F0F0F0;
-}
-
-.events-list .event-url:hover .event-arrow {
-    color: #212121;
-}
-
-@media (min-width: 50em) {
-    .events-list .event-url {
+    padding: 1em 0.5em 1.1em 0.5em; }
+    .events-list .event-url::before {
+      content: none; }
+    .events-list .event-url:hover {
+      background: #F0F0F0; }
+      .events-list .event-url:hover .event-arrow {
+        color: #212121; }
+    @media (min-width: 50em) {
+      .events-list .event-url {
         flex-flow: row wrap;
-        justify-content: space-between;
-    }
-}
+        justify-content: space-between; } }
   .events-list .event-date {
     font-family: "DIN Next W01 Bold";
     color: #999999; }
   .events-list .event-name {
-      font-family: "DIN Next W01 Medium";
-  }
-
-@media (min-width: 50em) {
+    font-family: "DIN Next W01 Medium"; }
+    @media (min-width: 50em) {
       .events-list .event-name {
-          margin-left: auto;
-          flex: 0 1 20%;
-      }
-}
-
-.events-list .event-description {
+        margin-left: auto;
+        flex: 0 1 20%; } }
+  .events-list .event-description {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    flex: 0 1 60%;
-}
-
-@media (min-width: 50em) {
-    .events-list .event-description {
-        margin-left: auto;
-    }
-}
-
-.events-list .event-arrow {
+    flex: 0 1 60%; }
+    @media (min-width: 50em) {
+      .events-list .event-description {
+        margin-left: auto; } }
+  .events-list .event-arrow {
     flex: 0 0 10%;
     text-align: right;
     color: #999999;
     transition-property: all;
     transition-duration: 0.2s;
-    transition-timing-function: ease;
-}
-
-.events-list .event-arrow::before {
-    font-size: 1.4rem;
-}
+    transition-timing-function: ease; }
+    .events-list .event-arrow::before {
+      font-size: 1.4rem; }
 
 .partner-logos-module {
   padding: calc(3rem / 2) 0;
@@ -1597,6 +1549,10 @@ body.nav-container-active {
 @media (max-width: 50em) {
   .evolving-module .one-half-content:not(:last-child) {
     margin-bottom: calc(3rem / 2); } }
+@media (min-width: 50em) {
+  .evolving-module .cta-widget {
+    max-width: 426px;
+    margin: auto; } }
 
 .working-space-module {
   text-align: center; }

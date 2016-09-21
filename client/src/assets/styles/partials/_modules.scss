@@ -91,6 +91,9 @@
 			font-family: $font-bold;
 		}
 	}
+	.full {
+		color: $midgrey;
+	}
 }
 // ========================
 // Daily Schedule Module
@@ -298,7 +301,7 @@
 			content: none;
 		}
 		&:hover {
-			background: $lightgrey;
+			background:$lightgrey;
 			.event-arrow {
 				color: $black;
 			}
@@ -400,6 +403,12 @@
 	.one-half-content:not(:last-child) {
 		@include breakpoint(tablet) {
 			margin-bottom: calc(#{$module-vert-pd} / 2);
+		}
+	}
+	.cta-widget {
+		@include breakpoint(mintablet) {
+			max-width: 426px;
+			margin: auto;
 		}
 	}
 }

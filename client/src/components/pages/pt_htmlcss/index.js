@@ -50,13 +50,13 @@ const Courses = React.createClass({
     _handleScroll(e) {
         const headerWrapper = this._hero._headerWrapper;
         const scrollPosition = headerWrapper.offsetTop + headerWrapper.offsetHeight;
-        if(window.innerWidth < 800) {
+        if (window.innerWidth < 800) {
             this.setState({
                 secondaryNav: false
             });
             return;
         }
-        if(window.scrollY > scrollPosition && !this.state.secondaryNav) {
+        if (window.scrollY > scrollPosition && !this.state.secondaryNav) {
             this.setState({
                 secondaryNav: true
             })
@@ -95,7 +95,9 @@ const Courses = React.createClass({
                     CTASLink="http://localhost:3100/downloads/htmlcss_syllabus.pdf"
                     CTAP={CTAPrimaryLarge}
                     CTAS={CTASecondaryLarge}
-                    ref={hero => {this._hero = hero}}
+                    ref={hero => {
+                        this._hero = hero
+                    }}
                     moduleTitle={"Part-Time"}
                     jumboTitle={"HTML & CSS"}
                     text={"Learn to write clean, standards-complient code, and become aquainted with the fundamentals of web design."}
@@ -109,7 +111,7 @@ const Courses = React.createClass({
                 <Element name="curriculum">
                     <CourseCurriculum subjects={subjects}/>
                 </Element>
-                <FormOptin submitButton='Submit' title={formTitle} text={formText} />
+                <FormOptin submitButton='Submit' title={formTitle} text={formText}/>
                 <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
                 {/*<CourseProjectsSlider projects={projects} req={req}/>*/}
                 <Element name="instructor">
@@ -122,7 +124,6 @@ const Courses = React.createClass({
         );
     }
 });
-
 
 
 export default Courses;

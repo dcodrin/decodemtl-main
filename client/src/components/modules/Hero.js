@@ -25,7 +25,7 @@ const Hero = React.createClass({
             );
         }
         return (
-            <header className="module module-course hero-course">
+            <header style={this.props.styles || null} className="module module-course hero-course">
                 <div ref={wrapper => {
                     this._headerWrapper = wrapper
                 }} className="wrapper">

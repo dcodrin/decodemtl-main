@@ -5,7 +5,8 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import SiteNav from './navigation/SiteNav';
 import Footer from './navigation/MainFooter';
-import FormOptin from './modules/FormOptin';
+import ScheduleVisit from './modules/ScheduleVisit';
+import ConfirmModal from './modules/ConfirmModal';
 
 const App = React.createClass({
     propTypes: {
@@ -19,9 +20,9 @@ const App = React.createClass({
     },
     _toggleModal(e) {
         e.preventDefault();
-        console.log(this.state.modal);
         this.setState({
-            modal: !this.state.modal
+            modal: !this.state.modal,
+            confirm: false
         })
     },
     _confirm() {
@@ -30,50 +31,29 @@ const App = React.createClass({
         });
     },
     render() {
-        const renderModal = () => {
-            if (this.state.modal) {
-                return (
-                    <div style={{display: 'block'}}
-                         className="modal modal-dark"
-                    >
-                        <div className="close-btn">
-                            <svg onClick={this._toggleModal} id="close-x" className="close-x"
-                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
-                                <path d="M 10,10 L 30,30 M 30,10 L 10,30"/>
-                            </svg>
-                        </div>
-                        <div className="modal-content">
-                            {this.state.confirm ? <p>THANK YOU!</p> :
-                                <FormOptin handleClick={this._confirm} title="Take a tour of our space and meet with our team."
-                                           text="You will receive a link to pick a date and time of that works for you."
-                                           submitButton="Submit"/>}
-                        </div>
-                    </div>
-                );
-            }
-            return null;
-        };
-
         return (
             <div className="App">
                 <ReactCSSTransitionGroup
                     transitionName="video"
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={300}>
-                    {this.state.modal ? renderModal() : null}
+                    {this.state.modal ?
+                        <ConfirmModal
+                            form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>}
+                                                      toggleModal={this._toggleModal}/> : null}
                 </ReactCSSTransitionGroup>
                 <SiteNav handleScheduleVisit={this._toggleModal} ref={siteNav => {
                     this._siteNav = siteNav
                 }}/>
-                <RouteTransition
-                    path={this.props.location.pathname}
-                    initialStyle={{opacity: 0}}
-                    transition="opacity 150ms ease-in"
-                    finalStyle={{opacity: 1}}
-                    className="main-content" role="main"
-                >
-                    {this.props.children}
-                </RouteTransition>
+                <main className="main-content">
+                    <RouteTransition
+                        path={this.props.location.pathname}
+                        initialStyle={{opacity: 0}}
+                        transition="opacity 150ms ease-in"
+                        finalStyle={{opacity: 1}}>
+                        {this.props.children}
+                    </RouteTransition>
+                </main>
                 <Footer/>
             </div>
         );
