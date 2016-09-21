@@ -29,7 +29,7 @@ export default [
         duration: "10 weeks",
         hours: "60 hours",
         days: 'Monday & Wednesday',
-        nextSessions: ["January 9th, 2017", "April 3rd, 2017"],
+        nextSessions: ["February 13th, 2017", "May 15th, 2017"],
         link: 'javascript'
     }
 ];

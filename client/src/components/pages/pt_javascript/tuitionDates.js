@@ -1,18 +1,18 @@
 module.exports = [
     {
-        startDate: 'July 4th',
-        endDate: 'Aug 26th',
+        startDate: 'Feb 13th',
+        endDate: 'Apr 19th',
         days: 'Mon—Fri',
         hours: '10am—6pm',
-        price: 5999,
+        price: 1495,
         courseName: 'Bootcamp'
     },
     {
-        startDate: 'Sept 18th',
-        endDate: 'Nov 26th',
+        startDate: 'May 15th',
+        endDate: 'Jul 19th',
         days: 'Mon—Fri',
         hours: '10am—6pm',
-        price: 5999,
+        price: 1495,
         courseName: 'Bootcamp'
     }
 ];
