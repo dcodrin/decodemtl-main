@@ -1,15 +1,15 @@
 export default [
     {
-        startDate: 'May 2nd',
-        endDate: 'July 6th',
+        startDate: 'Jan 17th',
+        endDate: 'Mar 23rd',
         days: 'Tue. & Thu.',
         hours: '6:30PM-9:30PM',
         price: 1495,
         courseName: 'htmlcss'
     },
     {
-        startDate: 'Aug 14th',
-        endDate: 'Sept 21st',
+        startDate: 'Apr 18th',
+        endDate: 'Jun 23rd',
         days: 'Tue. & Thu.',
         hours: '6:30PM-9:30PM',
         price: 1495,

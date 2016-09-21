@@ -18,13 +18,13 @@ export default [
         duration: "10 weeks",
         hours: "60 hours",
         days: 'Tuesday & Thursday',
-        nextSessions: ["January 9th, 2017", "April 3rd, 2017"],
+        nextSessions: ["January 17th, 2017", "April 18th, 2017"],
         link: 'html-css'
     },
     {
         title: "part-time",
         jumboTitle: "javascript",
-        text: 'Learn the fundamentals of programming, as well as the fundamentals of JavaScript and its unique asynchronous programming model.',
+        text: 'Develop a strong base in programming and master JavaScript fundamentals like object prototypes, higher order functions, and programming with asynchronous callbacks.',
         type: "Part-time",
         duration: "10 weeks",
         hours: "60 hours",

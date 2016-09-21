@@ -97,7 +97,7 @@ const Courses = React.createClass({
                     ref={hero => {this._hero = hero}}
                     moduleTitle={"Part-Time"}
                     jumboTitle={"JavaScript"}
-                    text={"Learn the fundamentals of programming, as well as the fundamentals of JavaScript and its unique asynchronous programming model."}
+                    text={"Develop a strong base in programming and master JavaScript fundamentals like object prototypes, higher order functions, and programming with asynchronous callbacks."}
                     subText={""}/>
                 <Element name="overview">
                     <CourseOverview overview={overview}/>
