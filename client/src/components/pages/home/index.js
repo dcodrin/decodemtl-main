@@ -8,6 +8,9 @@ import UpcomingEvents from '../../modules/UpcomingEvents';
 import PartnersLogos from '../../modules/PartnersLogos';
 import HomeEvolving from '../../modules/HomeEvolving';
 import LocationSlider from '../../modules/LocationSlider';
+import ConfirmModal from '../../modules/ConfirmModal';
+import ScheduleVisit from '../../modules/ScheduleVisit';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import upcomingCourses from '../../../config/upcomingCourses';
 import testimonials from '../../pages/wd_bootcamp/testimonials';
@@ -17,17 +20,38 @@ import events from '../../../config/events';
 // /^\.\/wework(.*)\.jpg$/i will match all files starting with wework and ending with .jpg
 var req = require.context('../../../assets/images', true, /^\.\/wework(.*)\.jpg$/i);
 
-
 const HomePage = React.createClass({
     propTypes: {},
-    getDefaultProps () {
-        return {};
+    getInitialState(){
+        return {
+            modal: false,
+            confirm: false
+        };
+    },
+    _toggleModal(e) {
+        e.preventDefault();
+        this.setState({
+            modal: !this.state.modal,
+            confirm: false
+        })
+    },
+    _confirm() {
+        this.setState({
+            confirm: true
+        });
     },
     render() {
         return (
             <div>
                 <HomeHero/>
-                <HomeEvolving/>
+                <HomeEvolving handleClick={this._toggleModal}/>
+                <ReactCSSTransitionGroup
+                    transitionName="video"
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={300}>
+                    {this.state.modal ? <ConfirmModal form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>}
+                                                      toggleModal={this._toggleModal}/> : null}
+                </ReactCSSTransitionGroup>
                 <HomeUpcomingCourses upcomingCourses={upcomingCourses}/>
                 <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
                 <FormOptin title="Join our growing community" text="Enter your email to receive info about new courses, workshops and events." submitButton="Submit"/>

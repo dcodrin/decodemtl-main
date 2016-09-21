@@ -18,7 +18,8 @@ const HomeEvolving = (props) => {
                             <div className="cta-widget module-boxed">
                                 <div className="text-body-small">Want to learn more about life as a DecodeMTL student?</div>
                                 <div className="cta cta-single">
-                                    <a href="#" className="btn-primary btn-small">Schedule a visit</a>
+                                    <a onClick={props.handleClick} href="#" className="btn-primary btn-small">Schedule a
+                                        visit</a>
                                 </div>
                                 <div className="text-body-small"><a className="phone-link" itemProp="telephone" href="tel:1-888-511-9155">Or Give us a call: 1-888-551-9155</a></div>
                             </div>
@@ -33,6 +34,8 @@ const HomeEvolving = (props) => {
     );
 };
 
-HomeEvolving.propTypes = {};
+HomeEvolving.propTypes = {
+    handleClick: React.PropTypes.func.isRequired
+};
 
 export default HomeEvolving;
