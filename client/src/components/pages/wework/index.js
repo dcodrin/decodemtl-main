@@ -33,7 +33,7 @@ const WeWork = (props) => {
         <div>
             <p>You will have access to two kitchens which include unlimited free micro roasted coffee, tea, fruit water, and beer on tap. There are phone booths to make private calls, spacious common areas and lounges, and a shuffle-board table for when you need a break.</p>
             <p>As a student, you will be given 24/7 access to the space. If you like to come in on weekends, or stay late in the evenings, we encourage you to do so!</p>
-            <p>To learn more about WeWork you can check out their website at <a href="http://www.wework.com" target="_blank"> WeWork.com</a>.</p>
+            <p>To learn more about WeWork you can check out their website at <a href="https://www.wework.com/" target="_blank"> WeWork.com</a>.</p>
         </div>
     );
     const thirdRowContentLeft = (
