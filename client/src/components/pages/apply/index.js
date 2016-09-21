@@ -155,21 +155,6 @@ const Apply = React.createClass({
                                 </section>
                                 {/* /.about-section */}
 
-<<<<<<< HEAD
-                            {/* ======== submit ======== */}
-                            <section className="submit-section">
-                                <div className="optin-checkbox">
-                                    <input type="checkbox" name="list-optin" id="list-optin" value="yes"/>
-                                    <label htmlFor="list-optin">Send me info about new courses, workshops, and events.</label>
-                                </div>
-                                <input className="btn-large" type="submit" name="submit" value="Submit"/>
-                                <div className="foot-note text-body-small text-subtle">
-                                    By providing us with your email, you agree to the terms of our <a href='/privacy'>Privacy
-                                    Policy</a> and <a href="/terms">Terms of Service</a>.
-                                </div>
-                            </section>
-                            {/* /.submit-section */}
-=======
                                 {/* ======== submit ======== */}
                                 <section className="submit-section">
                                     <div className="optin-checkbox">
@@ -185,8 +170,6 @@ const Apply = React.createClass({
                                     </div>
                                 </section>
                                 {/* /.submit-section */}
->>>>>>> master
-
                             </form>
                             {/* /.contact-form */}
                         </div>
