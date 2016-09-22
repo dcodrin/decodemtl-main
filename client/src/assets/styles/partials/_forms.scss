@@ -172,3 +172,27 @@ form {
 		}
 	}
 }
+
+// =====================
+// Confirmation messages
+// =====================
+.message-container.module-boxed {
+	text-align: center;
+	border: 2px solid;
+}
+
+.message-icon::before {
+	font-size: 2rem;
+}
+
+// Success
+.message-container.message-container-success {
+	border-color: $black;
+	color: $black;
+}
+
+// Error
+.message-container.message-container-error {
+	border-color: $red;
+	color: $red
+}
