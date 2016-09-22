@@ -8,7 +8,6 @@ const express = require('express'),
 
 //NOTE: Mailchimp uses HTTP Basic Auth. Set 'username' as any string ex: 'apiKey', 'helloWorld'
 
-
 const app = express();
 
 //TODO Remove in production
@@ -63,11 +62,11 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post('/apply', (req, res) => {
-    //User input data
-    const data = req.body;
-
     //Sanitize user input
     Object.keys(req.body).forEach(input => req.sanitize(input).escape());
+
+    //User input data
+    const data = req.body;
 
     // setup e-mail data
     //proceed editing at own risk
@@ -110,19 +109,9 @@ app.post('/apply', (req, res) => {
 });
 
 app.post('/newsletter', (req, res) => {
-    req.checkBody({
-        'email': {
-            notEmpty: true,
-            isEmail: {
-                errorMessage: 'Invalid Email'
-            }
-        }
-    });
-    const errors = req.validationErrors();
-    if (errors) {
-        res.json(errors[0]);
-        return;
-    }
+
+    req.sanitize('email').sanitize();
+
     const {email} = req.body;
 
     subscribeUser(email)
@@ -135,19 +124,9 @@ app.post('/newsletter', (req, res) => {
 });
 
 app.post('/visit', (req, res) => {
-    req.checkBody({
-        'email': {
-            notEmpty: true,
-            isEmail: {
-                errorMessage: 'Invalid Email'
-            }
-        }
-    });
-    const errors = req.validationErrors();
-    if (errors) {
-        res.json(errors[0]);
-        return;
-    }
+
+    req.sanitize('email').sanitize();
+
     const {email} = req.body;
 
     // setup e-mail data
@@ -172,12 +151,11 @@ app.post('/visit', (req, res) => {
 });
 
 app.post('/contact', (req, res) => {
-    // User input data
-    const data = req.body;
-    //User data validation
-
     //Sanitize user input
     Object.keys(req.body).forEach(input => req.sanitize(input).escape());
+
+    // User input data
+    const data = req.body;
 
     // setup e-mail data
     const mailOptions = {
