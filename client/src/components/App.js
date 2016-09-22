@@ -15,21 +15,14 @@ const App = React.createClass({
     },
     getInitialState(){
         return {
-            modal: false,
-            confirm: false
+            modal: false
         };
     },
     _toggleModal(e) {
         e.preventDefault();
         this.setState({
-            modal: !this.state.modal,
-            confirm: false
+            modal: !this.state.modal
         })
-    },
-    _confirm() {
-        this.setState({
-            confirm: true
-        });
     },
     render() {
         return (
@@ -38,10 +31,12 @@ const App = React.createClass({
                     transitionName="video"
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={300}>
-                    {this.state.modal ?
-                        <ConfirmModal
-                            form={<ScheduleVisit title="Come meet us in person!" text="Enter your email and we will contact you back asap to schedule a visit."/>}
-                                                      toggleModal={this._toggleModal}/> : null}
+                    {this.state.modal
+                        ? <ConfirmModal
+                        modalType="visit"
+                        form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>}
+                        toggleModal={this._toggleModal}/>
+                        : null}
                 </ReactCSSTransitionGroup>
                 <SiteNav handleScheduleVisit={this._toggleModal} ref={siteNav => {
                     this._siteNav = siteNav

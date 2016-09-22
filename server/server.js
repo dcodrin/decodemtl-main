@@ -8,7 +8,6 @@ const express = require('express'),
 
 //NOTE: Mailchimp uses HTTP Basic Auth. Set 'username' as any string ex: 'apiKey', 'helloWorld'
 
-
 const app = express();
 
 //TODO Remove in production
@@ -63,43 +62,11 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post('/apply', (req, res) => {
+    //Sanitize user input
+    Object.keys(req.body).forEach(input => req.sanitize(input).escape());
+
     //User input data
     const data = req.body;
-
-    //User data validation
-    req.checkBody({
-        'first-name': {
-            notEmpty: true,
-            isAlpha: {
-                errorMessage: 'Invalid Name'
-            }
-        },
-        'last-name': {
-            notEmpty: true,
-            isAlpha: {
-                errorMessage: 'Invalid Name'
-            }
-        },
-        'tel': {
-            notEmpty: true
-        },
-        'email': {
-            notEmpty: true,
-            isEmail: {
-                errorMessage: 'Invalid Email'
-            }
-        },
-        'course': {
-            notEmpty: true
-        },
-        'tech-background': {
-            notEmpty: true
-        }
-    });
-    const errors = req.validationErrors();
-    if (errors) {
-        return res.json(errors);
-    }
 
     // setup e-mail data
     //proceed editing at own risk
@@ -142,24 +109,14 @@ app.post('/apply', (req, res) => {
 });
 
 app.post('/newsletter', (req, res) => {
-    req.checkBody({
-        'email': {
-            notEmpty: true,
-            isEmail: {
-                errorMessage: 'Invalid Email'
-            }
-        }
-    });
-    const errors = req.validationErrors();
-    if (errors) {
-        res.json(errors[0]);
-        return;
-    }
+
+    req.sanitize('email').escape();
+
     const {email} = req.body;
 
     subscribeUser(email)
         .then(response => {
-            res.json(response);
+            res.json({status: 'success'});
         })
         .catch(err => {
             res.json(err);
@@ -167,19 +124,9 @@ app.post('/newsletter', (req, res) => {
 });
 
 app.post('/visit', (req, res) => {
-    req.checkBody({
-        'email': {
-            notEmpty: true,
-            isEmail: {
-                errorMessage: 'Invalid Email'
-            }
-        }
-    });
-    const errors = req.validationErrors();
-    if (errors) {
-        res.json(errors[0]);
-        return;
-    }
+
+    req.sanitize('email').escape();
+
     const {email} = req.body;
 
     // setup e-mail data
@@ -204,36 +151,11 @@ app.post('/visit', (req, res) => {
 });
 
 app.post('/contact', (req, res) => {
+    //Sanitize user input
+    Object.keys(req.body).forEach(input => req.sanitize(input).escape());
+
     // User input data
     const data = req.body;
-    //User data validation
-    req.checkBody({
-        'first-name': {
-            notEmpty: true,
-            isAlpha: {
-                errorMessage: 'Invalid Name'
-            }
-        },
-        'last-name': {
-            notEmpty: true,
-            isAlpha: {
-                errorMessage: 'Invalid Name'
-            }
-        },
-        'tel': {
-            notEmpty: true
-        },
-        'email': {
-            notEmpty: true,
-            isEmail: {
-                errorMessage: 'Invalid Email'
-            }
-        }
-    });
-    const errors = req.validationErrors();
-    if (errors) {
-        return res.json(errors);
-    }
 
     // setup e-mail data
     const mailOptions = {

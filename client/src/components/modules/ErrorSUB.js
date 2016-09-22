@@ -6,14 +6,17 @@ const ErrorSUB = (props) => {
             <div className="wrapper">
                 <div className="module-boxed message-container message-container-error">
                     <i className="fa fa-exclamation-circle message-icon" aria-hidden="true"/>
-                    <p className="text-body-large message message-error">Uh-oh an error occurred.</p>
-                    <p>Please try again or contact <a href="mailto:hello@decodemtl.com">hello@decodemtl.com</a></p>
+                    <p className="text-body-large message message-error">{props.title}</p>
+                    <p>{props.text}</p>
                 </div>
             </div>
         </section>
     );
 };
 
-ErrorSUB.propTypes = {};
+ErrorSUB.propTypes = {
+    title: React.PropTypes.string.isRequired,
+    text: React.PropTypes.string.isRequired
+};
 
 export default ErrorSUB;

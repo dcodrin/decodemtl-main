@@ -24,21 +24,14 @@ const HomePage = React.createClass({
     propTypes: {},
     getInitialState(){
         return {
-            modal: false,
-            confirm: false
+            modal: false
         };
     },
     _toggleModal(e) {
         e.preventDefault();
         this.setState({
-            modal: !this.state.modal,
-            confirm: false
+            modal: !this.state.modal
         })
-    },
-    _confirm() {
-        this.setState({
-            confirm: true
-        });
     },
     render() {
         return (
@@ -49,12 +42,18 @@ const HomePage = React.createClass({
                     transitionName="video"
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={300}>
-                    {this.state.modal ? <ConfirmModal form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>}
-                                                      toggleModal={this._toggleModal}/> : null}
+                    {this.state.modal
+                        ? <ConfirmModal
+                        modalType='visit'
+                        form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>}
+                        toggleModal={this._toggleModal}/>
+                        : null}
                 </ReactCSSTransitionGroup>
                 <HomeUpcomingCourses upcomingCourses={upcomingCourses}/>
                 <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
-                <FormOptin title="Join our growing community" text="Enter your email to receive info about new courses, workshops and events." submitButton="Submit"/>
+                <FormOptin title="Join our growing community"
+                           text="Enter your email to receive info about new courses, workshops and events."
+                           submitButton="Submit"/>
                 <LocationSlider req={req}/>
                 <UpcomingEvents events={events} title='Upcoming Events' limit={5} text='' filterOld={true}/>
                 <PartnersLogos/>
