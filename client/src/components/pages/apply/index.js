@@ -29,7 +29,7 @@ const Apply = React.createClass({
     render() {
         return (
             <div>
-                <Hero moduleTitle="Apply" jumboTitle="Please do!"/>
+                <Hero moduleTitle="Submit your" jumboTitle="Application"/>
                 <section className="module">
                     <div className="wrapper">
                         <div className="module-boxed">

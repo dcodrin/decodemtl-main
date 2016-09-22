@@ -9,7 +9,7 @@ import UpcomingEvents from '../../../components/modules/UpcomingEvents';
 import events from '../../../config/events';
 
 const Events = (props) => {
-    const formTitle = 'Don\'t miss a single event.git co',
+    const formTitle = 'Don\'t miss a single event.',
         formText = 'Enter your email below to sign up for our newsletter.';
 
     return (
