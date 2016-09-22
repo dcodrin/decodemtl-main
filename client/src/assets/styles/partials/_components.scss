@@ -293,7 +293,11 @@ ol {
 	position: relative;
 }
 .modal-dark {
-	background:transparentize(#000, 0.1);
+  background: transparentize(#000, 0.15);
+}
+
+.modal-light {
+  background: $white;
 }
 // ================================
 // Videos

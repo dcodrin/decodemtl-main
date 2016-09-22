@@ -1,5 +1,9 @@
 import React from 'react';
 
+
+import ErrorSub from '../modules/ErrorSUB';
+import SuccessSub from '../modules/SuccessSUB';
+
 const ConfirmModal = React.createClass({
     propTypes: {
         form: React.PropTypes.element.isRequired,
@@ -10,26 +14,19 @@ const ConfirmModal = React.createClass({
             confirm: false
         }
     },
-    _confirm() {
+    _confirm({status}) {
+        if (status === 'success') {
+            return this.setState({
+                confirm: true,
+                status: true
+            })
+        }
         this.setState({
-            confirm: true
+            confirm: true,
+            status: false
         })
     },
     render() {
-        const renderConfirm = () => {
-            return (
-                <section className="module">
-                    <div className="wrapper">
-                        <div className="module-boxed">
-                            <p className="text-body-large">Thank you!</p>
-                            <p>Thank you ver very much!</p>
-                        </div>
-                        {/* /.module-boxed */}
-                    </div>
-                    {/* /.wrapper */}
-                </section>
-            );
-        };
         return (
             <div style={{display: 'block'}}
                  className="modal modal-light"
@@ -41,7 +38,9 @@ const ConfirmModal = React.createClass({
                     </svg>
                 </div>
                 <div className="modal-content">
-                    {this.state.confirm ? renderConfirm() : React.cloneElement(this.props.form, {handleClick: this._confirm}) }
+                    {(this.state.confirm && this.state.status) ?
+                        <SuccessSub /> : (this.state.confirm && !this.state.status) ?
+                        <ErrorSub /> : React.cloneElement(this.props.form, {handleClick: this._confirm}) }
                 </div>
             </div>
         );

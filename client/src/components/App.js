@@ -40,7 +40,7 @@ const App = React.createClass({
                     {this.state.modal ?
                         <ConfirmModal
                             form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>}
-                                                      toggleModal={this._toggleModal}/> : null}
+                            toggleModal={this._toggleModal}/> : null}
                 </ReactCSSTransitionGroup>
                 <SiteNav handleScheduleVisit={this._toggleModal} ref={siteNav => {
                     this._siteNav = siteNav

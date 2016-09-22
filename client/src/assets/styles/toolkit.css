@@ -535,7 +535,12 @@ ol {
   position: relative; }
 
 .modal-dark {
-  background: rgba(0, 0, 0, 0.9); }
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.modal-light {
+  background: #FAFAFA;
+}
 
 .video-trigger {
   overflow: hidden;
@@ -733,6 +738,25 @@ form .module-title-medium {
 @media (min-width: 50em) {
   .application-form section:not(.contact-details-section):not(.submit-section) {
     max-width: 80%; } }
+
+.message-container.module-boxed {
+  text-align: center;
+  border: 2px solid;
+}
+
+.message-icon::before {
+  font-size: 2rem;
+}
+
+.message-container.message-container-success {
+  border-color: #212121;
+  color: #212121;
+}
+
+.message-container.message-container-error {
+  border-color: #D6252C;
+  color: #D6252C;
+}
 
 a {
   color: #212121;

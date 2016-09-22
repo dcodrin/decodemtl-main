@@ -11,16 +11,18 @@ const ScheduleVisit = React.createClass({
     },
     _handleSubmit(e) {
         e.preventDefault();
-        if (this.props.handleClick) {
-            this.props.handleClick();
-        }
+
         const email = this.refs.email.value.trim().toLowerCase();
         axios.post('http://localhost:3100/visit', {email})
             .then(({data: response}) => {
-                console.log(response);
+                if (this.props.handleClick) {
+                    this.props.handleClick(response);
+                }
             })
             .catch(err => {
-                console.log(err);
+                if (this.props.handleClick) {
+                    this.props.handleClick(err);
+                }
             })
     },
     render() {
