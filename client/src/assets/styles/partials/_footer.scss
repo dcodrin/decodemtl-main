@@ -25,10 +25,9 @@
 	}
 }
 .footer-contact-details {
-	list-style: none;
 	margin-bottom: $module-inner-vert-spacing;
-	li {
-		margin-bottom: 0.3em;
+	li a:hover {
+		color: $lightgrey;
 	}
 	.fa-envelope {
 		font-size: 0.8em;

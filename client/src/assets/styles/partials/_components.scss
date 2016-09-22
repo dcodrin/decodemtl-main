@@ -95,6 +95,20 @@ ol {
   transform: rotate(-90deg);
   }
 }
+
+.contact-details-list {
+	list-style: none;
+	li {
+		padding: 0.2em 0;
+		a:hover {
+			color: $red;
+		}
+		a::before {
+			content: none;
+		}
+	}
+}
+
 // ================================
 // Accessability
 // ================================
@@ -293,11 +307,10 @@ ol {
 	position: relative;
 }
 .modal-dark {
-  background: transparentize(#000, 0.15);
+	background: transparentize(#000, 0.15);
 }
-
 .modal-light {
-  background: $white;
+	background: $white;
 }
 // ================================
 // Videos

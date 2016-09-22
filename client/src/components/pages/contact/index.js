@@ -7,7 +7,7 @@ import OneHalfColumn from '../../../components/modules/OneHalfColumn';
 const Contact = (props) => {
 
     const columnLeft = (
-        <ul className="footer-contact-details" itemScope itemType="http://schema.org/ContactPoint">
+        <ul className="contact-details-list" itemScope itemType="http://schema.org/ContactPoint">
             <li>
                 <h3 className="module-title-medium">OPERATING OUT OF WEWORK<br/>MONTREAL'S ICONIC PLACE VILLE MARIE</h3>
             </li>
