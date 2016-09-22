@@ -2,6 +2,9 @@
 import React from 'react';
 import {Link} from 'react-router';
 import axios from 'axios';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
+import ConfirmModal from '../modules/ConfirmModal';
 
 const FormOptin = React.createClass({
     propTypes: {
@@ -9,6 +12,17 @@ const FormOptin = React.createClass({
         text: React.PropTypes.string.isRequired,
         submitButton: React.PropTypes.string.isRequired,
         handleClick: React.PropTypes.func
+    },
+    getInitialState(){
+        return {
+            modal: false,
+            status: false
+        }
+    },
+    _toggleModal() {
+        this.setState({
+            modal: false
+        })
     },
     _handleSubmit(e) {
         e.preventDefault();
@@ -18,12 +32,17 @@ const FormOptin = React.createClass({
         const email = this.refs.email.value.trim().toLowerCase();
         axios.post('http://localhost:3100/newsletter', {email})
             .then(({data: response}) => {
-                if (response.status === 400 && response.title === 'Member Exists') {
-                    console.log('Already subscribed!', response)
-                } else if (response.status === 'subscribed') {
-                    //The user was not found!
-                    console.log(response, 'THE ERROR')
+                console.log(response);
+                if (response.status === 'success') {
+                    return this.setState({
+                        modal: true,
+                        status: true
+                    })
                 }
+                this.setState({
+                    modal: true,
+                    status: false
+                })
             })
             .catch(err => {
                 console.log(err);
@@ -32,6 +51,17 @@ const FormOptin = React.createClass({
     render() {
         return (
             <section className="module">
+                <ReactCSSTransitionGroup
+                    transitionName="video"
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={300}>
+                    {this.state.modal
+                        ? <ConfirmModal
+                        status={this.state.status}
+                        modalType='subscribe'
+                        toggleModal={this._toggleModal}/>
+                        : null}
+                </ReactCSSTransitionGroup>
                 <div className="wrapper">
                     <div className="module-boxed">
                         <p className="text-body-large">{this.props.title}</p>

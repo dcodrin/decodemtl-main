@@ -116,7 +116,7 @@ app.post('/newsletter', (req, res) => {
 
     subscribeUser(email)
         .then(response => {
-            res.json(response);
+            res.json({status: 'success'});
         })
         .catch(err => {
             res.json(err);

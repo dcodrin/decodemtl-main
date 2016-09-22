@@ -6,13 +6,15 @@ import SuccessSub from '../modules/SuccessSUB';
 
 const ConfirmModal = React.createClass({
     propTypes: {
-        form: React.PropTypes.element.isRequired,
+        form: React.PropTypes.element,
         toggleModal: React.PropTypes.func.isRequired,
-        modal: React.PropTypes.string
+        modalType: React.PropTypes.string,
+        status: React.PropTypes.bool
     },
     getInitialState(){
         return {
-            confirm: false
+            confirm: this.props.status,
+            status: this.props.status
         }
     },
     _confirm({status}) {
@@ -29,7 +31,7 @@ const ConfirmModal = React.createClass({
     },
     render() {
         let title, text, titleError, textError;
-        switch (this.props.modal) {
+        switch (this.props.modalType) {
             case 'visit':
                 title = 'Thank you!';
                 text = 'Someone will get in touch to schedule a visit.';
@@ -45,8 +47,8 @@ const ConfirmModal = React.createClass({
             default:
                 title = 'Thank you!';
                 text = 'You\'re beautiful!';
-                titleError = '';
-                textError = ''
+                titleError = 'These are not the error messages you are looking for.';
+                textError = 'Jedi mind tricks!'
         }
 
         return (
@@ -60,10 +62,12 @@ const ConfirmModal = React.createClass({
                     </svg>
                 </div>
                 <div className="modal-content">
-                    {(this.state.confirm && this.state.status) ?
-                        <SuccessSub title={title} text={text}/> : (this.state.confirm && !this.state.status) ?
-                        <ErrorSub title={titleError}
-                                  text={textError}/> : React.cloneElement(this.props.form, {handleClick: this._confirm}) }
+                    {(this.state.confirm && this.state.status)
+                        ? <SuccessSub title={title} text={text}/>
+                        : (this.state.confirm && !this.state.status)
+                        ? <ErrorSub title={titleError} text={textError}/>
+                        : this.props.form ? React.cloneElement(this.props.form, {handleClick: this._confirm})
+                        : <ErrorSub title={titleError} text={textError}/> }
                 </div>
             </div>
         );
