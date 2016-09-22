@@ -110,7 +110,7 @@ app.post('/apply', (req, res) => {
 
 app.post('/newsletter', (req, res) => {
 
-    req.sanitize('email').sanitize();
+    req.sanitize('email').escape();
 
     const {email} = req.body;
 
@@ -125,7 +125,7 @@ app.post('/newsletter', (req, res) => {
 
 app.post('/visit', (req, res) => {
 
-    req.sanitize('email').sanitize();
+    req.sanitize('email').escape();
 
     const {email} = req.body;
 

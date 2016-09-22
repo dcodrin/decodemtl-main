@@ -49,8 +49,9 @@ const HomePage = React.createClass({
                     transitionName="video"
                     transitionEnterTimeout={500}
                     transitionLeaveTimeout={300}>
-                    {this.state.modal ? <ConfirmModal form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>}
-                                                      toggleModal={this._toggleModal}/> : null}
+                    {this.state.modal ?
+                        <ConfirmModal modal='visit' form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>}
+                                      toggleModal={this._toggleModal}/> : null}
                 </ReactCSSTransitionGroup>
                 <HomeUpcomingCourses upcomingCourses={upcomingCourses}/>
                 <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>

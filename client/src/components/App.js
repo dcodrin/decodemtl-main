@@ -39,6 +39,7 @@ const App = React.createClass({
                     transitionLeaveTimeout={300}>
                     {this.state.modal ?
                         <ConfirmModal
+                            modal="visit"
                             form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>}
                             toggleModal={this._toggleModal}/> : null}
                 </ReactCSSTransitionGroup>
