@@ -5,23 +5,28 @@ import iconLearn from '../../../assets/icons/icon-learn.svg';
 
 export default [
     {
-        title: 'JavaScript',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium at distinctio earum iusto nihil numquam perferendis similique voluptatem. Debitis, ipsa maxime nisi possimus quae quaerat reiciendis totam voluptatibus? Nisi, quia?',
+        title: 'Programming Fundamentals',
+        text: 'Explore the core syntax of JavaScript, and learn how to write and execute your first application. Review loops, conditions, variables, expressions, and how to write clean, modular code.',
         icon: iconApi
     },
     {
-        title: 'HTML/CSS',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores excepturi maiores quae totam voluptate! Alias asperiores, corporis expedita iste porro reiciendis saepe similique! Assumenda fugit ipsam labore repudiandae sint ullam.',
+        title: 'Databases',
+        text: 'Master data modelling by building your own SQL database. Learn to model, store, and query your applications data, and how to integrate these into your applications.',
         icon: iconLearn
     },
     {
-        title: 'MySQL',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur explicabo molestiae odio praesentium. Adipisci aliquam at, blanditiis dicta eius labore libero, officia omnis pariatur quidem ratione rem repellat repellendus tempore!',
+        title: 'Back-End Web Development',
+        text: 'Using Node.js and a variety of other JavaScript libraries and APIs, you will continue writting JavaScript code to build data driven applications.',
         icon: iconStrategy
     },
     {
-        title: 'NodeJs',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium ad dolorum est odio? A autem cum, dignissimos et harum itaque numquam odio voluptatem. A facere illum maxime nostrum voluptas.',
+        title: 'Front-End Web Development',
+        text: 'Learn modern Front-End languages such as HTML5 and CSS, as well as advanced frameworks like React.',
+        icon: iconTeam
+    },
+    {
+        title: 'Build an MVP',
+        text: 'In the last two weeks of the course, you will be tasked to build a web application from the ground-up.',
         icon: iconTeam
     }
 ];

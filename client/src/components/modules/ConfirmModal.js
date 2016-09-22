@@ -22,7 +22,7 @@ const ConfirmModal = React.createClass({
                     <div className="wrapper">
                         <div className="module-boxed">
                             <p className="text-body-large">Thank you!</p>
-                            <p>Thank you ver very much!</p>
+                            <p>A member of our team will get back to you within 24 hours or the next business day.</p>
                         </div>
                         {/* /.module-boxed */}
                     </div>

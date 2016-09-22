@@ -1,4 +1,5 @@
 //TODO implement custom schedule a visit form
+//TODO bug fix --> Privacy policy & terms links should close modal upon click
 import React from 'react';
 import RouteTransition from 'react-easy-transition';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
@@ -39,7 +40,7 @@ const App = React.createClass({
                     transitionLeaveTimeout={300}>
                     {this.state.modal ?
                         <ConfirmModal
-                            form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>}
+                            form={<ScheduleVisit title="Come meet us in person!" text="Enter your email and we will contact you back asap to schedule a visit."/>}
                                                       toggleModal={this._toggleModal}/> : null}
                 </ReactCSSTransitionGroup>
                 <SiteNav handleScheduleVisit={this._toggleModal} ref={siteNav => {
