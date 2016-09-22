@@ -1,4 +1,4 @@
-git adimport React from 'react';
+import React from 'react';
 
 const ErrorSUB = (props) => {
     return (
@@ -6,8 +6,8 @@ const ErrorSUB = (props) => {
             <div className="wrapper">
                 <div className="module-boxed message-container message-container-error">
                     <i className="fa fa-exclamation-circle message-icon" aria-hidden="true"/>
-                    <p className="text-body-large message message-error">Uh-oh somehting bad happened.</p>
-                    <p>Optional additional message…</p>
+                    <p className="text-body-large message message-error">Uh-oh an error occurred.</p>
+                    <p>Please try again or contact <a href="mailto:hello@decodemtl.com">hello@decodemtl.com</a></p>
                 </div>
             </div>
         </section>
