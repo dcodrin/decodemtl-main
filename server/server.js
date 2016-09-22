@@ -66,40 +66,8 @@ app.post('/apply', (req, res) => {
     //User input data
     const data = req.body;
 
-    //User data validation
-    req.checkBody({
-        'first-name': {
-            notEmpty: true,
-            isAlpha: {
-                errorMessage: 'Invalid Name'
-            }
-        },
-        'last-name': {
-            notEmpty: true,
-            isAlpha: {
-                errorMessage: 'Invalid Name'
-            }
-        },
-        'tel': {
-            notEmpty: true
-        },
-        'email': {
-            notEmpty: true,
-            isEmail: {
-                errorMessage: 'Invalid Email'
-            }
-        },
-        'course': {
-            notEmpty: true
-        },
-        'tech-background': {
-            notEmpty: true
-        }
-    });
-    const errors = req.validationErrors();
-    if (errors) {
-        return res.json(errors);
-    }
+    //Sanitize user input
+    Object.keys(req.body).forEach(input => req.sanitize(input).escape());
 
     // setup e-mail data
     //proceed editing at own risk
@@ -207,33 +175,9 @@ app.post('/contact', (req, res) => {
     // User input data
     const data = req.body;
     //User data validation
-    req.checkBody({
-        'first-name': {
-            notEmpty: true,
-            isAlpha: {
-                errorMessage: 'Invalid Name'
-            }
-        },
-        'last-name': {
-            notEmpty: true,
-            isAlpha: {
-                errorMessage: 'Invalid Name'
-            }
-        },
-        'tel': {
-            notEmpty: true
-        },
-        'email': {
-            notEmpty: true,
-            isEmail: {
-                errorMessage: 'Invalid Email'
-            }
-        }
-    });
-    const errors = req.validationErrors();
-    if (errors) {
-        return res.json(errors);
-    }
+
+    //Sanitize user input
+    Object.keys(req.body).forEach(input => req.sanitize(input).escape());
 
     // setup e-mail data
     const mailOptions = {
