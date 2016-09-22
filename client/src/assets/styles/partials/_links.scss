@@ -8,6 +8,7 @@ a {
 // generic content links -------
 .main-content a {
 	position: relative;
+	display: inline-block;
 	&:before {
     position: absolute;
     bottom: 0;

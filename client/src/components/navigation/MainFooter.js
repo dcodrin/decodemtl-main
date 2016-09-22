@@ -75,7 +75,8 @@ const MainFooter = React.createClass({
                             {/* /.footer-optin */}
 
                             {/* footer-contact-details */}
-                            <ul className="footer-contact-details" itemScope itemType="http://schema.org/ContactPoint">
+                            <ul className="footer-contact-details contact-details-list" itemScope
+                                itemType="http://schema.org/ContactPoint">
                                 <li>
                                     <h4>Contact Us</h4>
                                 </li>

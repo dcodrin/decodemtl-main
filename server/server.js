@@ -203,6 +203,74 @@ app.post('/visit', (req, res) => {
     });
 });
 
+app.post('/contact', (req, res) => {
+    // User input data
+    const data = req.body;
+    //User data validation
+    req.checkBody({
+        'first-name': {
+            notEmpty: true,
+            isAlpha: {
+                errorMessage: 'Invalid Name'
+            }
+        },
+        'last-name': {
+            notEmpty: true,
+            isAlpha: {
+                errorMessage: 'Invalid Name'
+            }
+        },
+        'tel': {
+            notEmpty: true
+        },
+        'email': {
+            notEmpty: true,
+            isEmail: {
+                errorMessage: 'Invalid Email'
+            }
+        }
+    });
+    const errors = req.validationErrors();
+    if (errors) {
+        return res.json(errors);
+    }
+
+    // setup e-mail data
+    const mailOptions = {
+        from: '"DecodeMTL Bot "<decodemtl@gmail.com>', // sender address
+        to: 'hello@decodemtl.com', // list of receivers
+        subject: 'New Message from ' + data['first-name'] + ' ' + data['last-name'] + '', // Subject line
+        text: 'New Message', // plaintext body
+        html: `<div>
+                <p>First Name: ${data['first-name']}</p>
+                <p>Last Name: ${data['last-name']}</p>
+                <p>Email: ${data['email']}</p>
+                <p>Phone: ${data['tel']}</p>
+                <p>Message: ${data['message']}</p>
+               </div>` // html body
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+            return res.json({error});
+        }
+        console.log('Message sent: ' + info.response);
+        if (req.body['list-optin'] && req.body['list-optin'] === 'yes') {
+            return subscribeUser(data.email)
+                .then(response => {
+                    res.json({status: 'success', sub_status: 'success'});
+                })
+                .catch(err => {
+                    res.json({status: 'success', sub_status: 'failed'});
+                });
+        }
+        res.json({status: 'success'})
+    });
+
+});
+
 app.listen(app.get('port'), () => {
     console.log(`API server running on port ${app.get('port')}`); // eslint-disable-line no-console
 });
