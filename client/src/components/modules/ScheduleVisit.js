@@ -11,13 +11,14 @@ const ScheduleVisit = React.createClass({
     },
     _handleSubmit(e) {
         e.preventDefault();
-        const email = this.refs.email.value.trim().toLowerCase();
-        this._email.value = '';
+        const email = this._email.value.trim().toLowerCase();
         visit(email)
             .then(() => {
+                this._email.value = '';
                 this.props.handleClick({status: 'success'})
             })
             .catch(() => {
+                this._email.value = '';
                 this.props.handleClick({status: 'failed'})
             });
     },
