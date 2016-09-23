@@ -1,10 +1,10 @@
 //TODO HANDLE FORM SUBMIT
 import React from 'react';
 import {Link} from 'react-router';
-import axios from 'axios';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import ConfirmModal from '../modules/ConfirmModal';
+import {subscribe} from '../../api/api';
 
 const FormOptin = React.createClass({
     propTypes: {
@@ -29,24 +29,21 @@ const FormOptin = React.createClass({
         if (this.props.handleClick) {
             this.props.handleClick();
         }
-        const email = this.refs.email.value.trim().toLowerCase();
-        axios.post('http://localhost:3100/newsletter', {email})
-            .then(({data: response}) => {
-                console.log(response);
-                if (response.status === 'success') {
-                    return this.setState({
-                        modal: true,
-                        status: true
-                    })
-                }
+        const email = this._email.value.trim().toLowerCase();
+
+        subscribe(email)
+            .then(() => {
+                this.setState({
+                    modal: true,
+                    status: true
+                })
+            })
+            .catch(() => {
                 this.setState({
                     modal: true,
                     status: false
                 })
-            })
-            .catch(err => {
-                console.log(err);
-            })
+            });
     },
     render() {
         return (
@@ -68,7 +65,9 @@ const FormOptin = React.createClass({
                         <p>{this.props.text}</p>
                         <form className="optin-form" onSubmit={this._handleSubmit}>
                             <label htmlFor="email" className="visually-hidden">Email</label>
-                            <input type="email" name="email" placeholder="Your email" ref="email"/>
+                            <input type="email" name="email" placeholder="Your email" ref={email => {
+                                this._email = email
+                            }}/>
                             <input className="btn-large" type="submit" name="submit" value={this.props.submitButton}/>
                             <div className="foot-note text-body-small text-subtle">
                                 By providing us with your email, you agree to the terms of our <Link to='/privacy'>Privacy

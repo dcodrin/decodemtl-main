@@ -1,37 +1,31 @@
 //TODO HANDLE FORM SUBMIT
 import React from 'react';
 import {Link} from 'react-router';
-import axios from 'axios';
+
+import {visit} from '../../api/api';
 
 const ScheduleVisit = React.createClass({
     propTypes: {
-        title: React.PropTypes.string.isRequired,
-        text: React.PropTypes.string.isRequired,
-        handleClick: React.PropTypes.func
+        handleClick: React.PropTypes.func.isRequired
     },
     _handleSubmit(e) {
         e.preventDefault();
-
         const email = this.refs.email.value.trim().toLowerCase();
-        axios.post('http://localhost:3100/visit', {email})
-            .then(({data: response}) => {
-                if (this.props.handleClick) {
-                    this.props.handleClick(response);
-                }
+        visit(email)
+            .then(() => {
+                this.props.handleClick({status: 'success'})
             })
-            .catch(err => {
-                if (this.props.handleClick) {
-                    this.props.handleClick(err);
-                }
-            })
+            .catch(() => {
+                this.props.handleClick({status: 'failed'})
+            });
     },
     render() {
         return (
             <section className="module">
                 <div className="wrapper">
                     <div className="module-boxed">
-                        <p className="text-body-large">{this.props.title}</p>
-                        <p>{this.props.text}</p>
+                        <p className="text-body-large">Let's schedule a visit!</p>
+                        <p>Some one will get in touch with you!</p>
                         <form className="optin-form" onSubmit={this._handleSubmit}>
                             <label htmlFor="email" className="visually-hidden">Email</label>
                             <input type="email" name="email" placeholder="Your email" ref="email"/>
