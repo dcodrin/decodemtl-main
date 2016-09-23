@@ -12,6 +12,7 @@ const ScheduleVisit = React.createClass({
     _handleSubmit(e) {
         e.preventDefault();
         const email = this.refs.email.value.trim().toLowerCase();
+        this._email.value = '';
         visit(email)
             .then(() => {
                 this.props.handleClick({status: 'success'})
@@ -21,7 +22,6 @@ const ScheduleVisit = React.createClass({
             });
     },
     render() {
-        console.log('called from Schedule a Visit');
         return (
             <section className="module">
                 <div className="wrapper">
@@ -30,7 +30,9 @@ const ScheduleVisit = React.createClass({
                         <p>Some one will get in touch with you!</p>
                         <form className="optin-form" onSubmit={this._handleSubmit}>
                             <label htmlFor="email" className="visually-hidden">Email</label>
-                            <input type="email" name="email" placeholder="Your email" ref="email"/>
+                            <input type="email" name="email" placeholder="Your email" ref={email => {
+                                this._email = email
+                            }}/>
                             <input className="btn-large" type="submit" name="submit" value="Submit"/>
                             <div className="foot-note text-body-small text-subtle">
                                 By providing us with your email, you agree to the terms of our <Link to='/privacy'>Privacy

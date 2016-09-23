@@ -119,6 +119,9 @@ app.post('/newsletter', (req, res) => {
             res.json({status: 'success'});
         })
         .catch(error => {
+            if (error.title === 'Member Exists') {
+                return res.json({status: 'success'});
+            }
             res.json({status: 'failed', error});
         });
 });
