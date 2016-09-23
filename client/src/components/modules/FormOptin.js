@@ -30,7 +30,7 @@ const FormOptin = React.createClass({
             this.props.handleClick();
         }
         const email = this._email.value.trim().toLowerCase();
-
+        this._email.value = '';
         subscribe(email)
             .then(() => {
                 this.setState({
