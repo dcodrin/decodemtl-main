@@ -1,12 +1,13 @@
 import React from 'react';
 import formSerialize from 'form-serialize';
 import axios from 'axios';
+import {withRouter} from 'react-router';
 
 import Hero from '../../modules/Hero';
 import courses from '../../../config/courses';
 
 const Apply = React.createClass({
-    contextTypes: {
+    propTypes: {
         router: React.PropTypes.object.isRequired
     },
     _handleSubmit(e) {
@@ -17,14 +18,13 @@ const Apply = React.createClass({
                 //Multiple response options available
                 if (response.status === 'success') {
                     //success, no subscription
-                    this.context.router.push('confirmation');
-                    console.log(response)
+                    this.props.router.push({pathname: '/confirmation', query: {status: 'success'}})
                 } else {
-                    console.log('Application failed!')
+                    this.props.router.push({pathname: '/confirmation', query: {status: 'failed'}})
                 }
             })
             .catch(err => {
-                console.log(err);
+                this.props.router.push({pathname: '/confirmation', query: {status: 'failed'}})
             })
     },
     render() {
@@ -76,14 +76,15 @@ const Apply = React.createClass({
                                 {/* ======== course selection ======== */}
                                 <section className="course-selection-section">
                                     <h3 className="module-title-medium">Course Selection</h3>
-                                    <label htmlFor="course-selection">Which course are you applying for:<span
+                                    <label htmlFor="course-selection">Which course are you applying to:<span
                                         className="required">*</span></label>
                                     <fieldset className="course-selection" aria-required={true}>
                                         {courses.map((course, i) => {
                                             return course.nextSessions.map(session => {
                                                 return (
                                                     <div key={i + session}>
-                                                        <input type="radio" name="course" value={course.jumboTitle}
+                                                        <input type="radio" name="course"
+                                                               value={course.title + ' ' + course.jumboTitle + ' ' + session}
                                                                id={course.jumboTitle + session}
                                                                required/>
                                                         <label
@@ -106,11 +107,12 @@ const Apply = React.createClass({
                                             className="required">*</span></label>
                                     <select name="tech-background" id="tech-background" aria-required={true} required>
                                         <option value="">-- select --</option>
-                                        <option value="starter">Just getting started</option>
-                                        <option value="dabbler">Dabbled with a few tutorials</option>
-                                        <option value="builder">Built an app or website</option>
-                                        <option value="programmer">Understand OO programming</option>
-                                        <option value="pro">Professional Developer</option>
+                                        <option value="Just getting started">Just getting started</option>
+                                        <option value="Dabbled with a few tutorials">Dabbled with a few tutorials
+                                        </option>
+                                        <option value="Built an app or website">Built an app or website</option>
+                                        <option value="Understand OO programming">Understand OO programming</option>
+                                        <option value="Professional Developer">Professional Developer</option>
                                     </select>
                                     {/* /.technical dropdown */}
                                 </section>
@@ -122,20 +124,23 @@ const Apply = React.createClass({
                                     <label htmlFor="hopes">What do you hope to achieve after the program?</label>
                                     <fieldset className="hopes">
                                         <div>
-                                            <input type="checkbox" name="hope" value="new-job" id="new-job"/>
+                                            <input type="checkbox" name="hope" value="Get a job as a developer"
+                                                   id="new-job"/>
                                             <label htmlFor="new-job">Get a job as a developer</label>
                                         </div>
                                         <div>
-                                            <input type="checkbox" name="hope" value="old-job" id="old-job"/>
+                                            <input type="checkbox" name="hope" value="Return to a previous job/company"
+                                                   id="old-job"/>
                                             <label htmlFor="old-job">Return to a previous job/company</label>
                                         </div>
                                         <div>
-                                            <input type="checkbox" name="hope" value="start-company"
+                                            <input type="checkbox" name="hope" value="Start a company"
                                                    id="start-company"/>
                                             <label htmlFor="start-company">Start a company</label>
                                         </div>
                                         <div>
-                                            <input type="checkbox" name="hope" value="learn" id="learn"/>
+                                            <input type="checkbox" name="hope"
+                                                   value="Go back to school / continue learning" id="learn"/>
                                             <label htmlFor="learn">Go back to school / continue learning</label>
                                         </div>
                                         <div>
@@ -184,4 +189,4 @@ const Apply = React.createClass({
 });
 
 
-export default Apply;
+export default withRouter(Apply);

@@ -67,7 +67,7 @@ app.post('/apply', (req, res) => {
 
     //User input data
     const data = req.body;
-
+    console.log(data);
     // setup e-mail data
     //proceed editing at own risk
     const mailOptions = {
