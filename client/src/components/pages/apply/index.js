@@ -3,6 +3,7 @@ import formSerialize from 'form-serialize';
 import axios from 'axios';
 
 import Hero from '../../modules/Hero';
+import courses from '../../../config/courses';
 
 const Apply = React.createClass({
     contextTypes: {
@@ -78,20 +79,20 @@ const Apply = React.createClass({
                                     <label htmlFor="course-selection">Which course are you applying for:<span
                                         className="required">*</span></label>
                                     <fieldset className="course-selection" aria-required={true}>
-                                        <div>
-                                            <input type="radio" name="course" value="immersive" id="immersive"
-                                                   required/>
-                                            <label htmlFor="immersive">Web development immersive (full-time)</label>
-                                        </div>
-                                        <div>
-                                            <input type="radio" name="course" value="html-css" id="html-css" required/>
-                                            <label htmlFor="html-css">Intro to HTML/CSS (part-time)</label>
-                                        </div>
-                                        <div>
-                                            <input type="radio" name="course" value="javascript" id="javascript"
-                                                   required/>
-                                            <label htmlFor="javascript">Intro to JavaScript (part-time)</label>
-                                        </div>
+                                        {courses.map((course, i) => {
+                                            return course.nextSessions.map(session => {
+                                                return (
+                                                    <div key={i + session}>
+                                                        <input type="radio" name="course" value={course.jumboTitle}
+                                                               id={course.jumboTitle + session}
+                                                               required/>
+                                                        <label
+                                                            htmlFor={course.jumboTitle + session}>{course.title} {course.jumboTitle}
+                                                            ({session})</label>
+                                                    </div>
+                                                );
+                                            });
+                                        })}
                                     </fieldset>
                                     {/* /.course-selection */}
                                 </section>

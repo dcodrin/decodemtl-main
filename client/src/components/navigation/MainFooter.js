@@ -18,12 +18,14 @@ const MainFooter = React.createClass({
         const email = this._footerEmail.value.trim().toLowerCase();
         subscribe(email)
             .then(() => {
+                this._footerEmail.value = '';
                 this.setState({
                     modal: true,
                     status: true
                 })
             })
             .catch(() => {
+                this._footerEmail.value = '';
                 this.setState({
                     modal: true,
                     status: false
