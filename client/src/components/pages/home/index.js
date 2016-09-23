@@ -45,7 +45,7 @@ const HomePage = React.createClass({
                     {this.state.modal
                         ? <ConfirmModal
                         modalType='visit'
-                        form={<ScheduleVisit title="Schedule a visit yo!" text="test"/>}
+                        form={ScheduleVisit}
                         toggleModal={this._toggleModal}/>
                         : null}
                 </ReactCSSTransitionGroup>

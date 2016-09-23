@@ -1,12 +1,12 @@
 import React from 'react';
 
-
 import ErrorSub from '../modules/ErrorSUB';
 import SuccessSub from '../modules/SuccessSUB';
 
 const ConfirmModal = React.createClass({
+    //NOTE: form has to be an uncalled react element
     propTypes: {
-        form: React.PropTypes.element,
+        form: React.PropTypes.func,
         toggleModal: React.PropTypes.func.isRequired,
         modalType: React.PropTypes.string,
         status: React.PropTypes.bool
@@ -51,6 +51,16 @@ const ConfirmModal = React.createClass({
                 textError = 'Jedi mind tricks!'
         }
 
+        const renderModalContent = () => {
+            if (this.state.confirm && this.state.status) {
+                return <SuccessSub title={title} text={text}/>
+            } else if (this.props.form) {
+                const Form = this.props.form;
+                return <Form handleClick={this._confirm}/>
+            }
+            return <ErrorSub title={titleError} text={textError}/>
+        };
+
         return (
             <div style={{display: 'block'}}
                  className="modal modal-light"
@@ -62,12 +72,7 @@ const ConfirmModal = React.createClass({
                     </svg>
                 </div>
                 <div className="modal-content">
-                    {(this.state.confirm && this.state.status)
-                        ? <SuccessSub title={title} text={text}/>
-                        : (this.state.confirm && !this.state.status)
-                        ? <ErrorSub title={titleError} text={textError}/>
-                        : this.props.form ? React.cloneElement(this.props.form, {handleClick: this._confirm})
-                        : <ErrorSub title={titleError} text={textError}/> }
+                    {renderModalContent()}
                 </div>
             </div>
         );

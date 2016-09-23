@@ -1,14 +1,12 @@
 import React from 'react';
 import formSerialize from 'form-serialize';
-import axios from 'axios';
 import {withRouter} from 'react-router';
 
-// import SuccessSub from '../modules/SuccessSUB';
-// import ErrorSub from '../modules/ErrorSUB';
+import {contact} from '../../api/api';
 
 const ContactForm = React.createClass({
     propTypes: {
-        router: React.PropTypes.object.isRequired
+        router: React.PropTypes.object
     },
     getInitialState(){
         return {
@@ -19,20 +17,15 @@ const ContactForm = React.createClass({
     _handleSubmit(e) {
         e.preventDefault();
         const userData = formSerialize(e.target, {hash: true});
-        axios.post('http://localhost:3100/contact', userData)
-            .then(({data: response}) => {
-                if (response.status === 'success') {
-                    return this.props.router.push({pathname: '/confirmation', query: {status: 'success'}})
-                }
-                this.props.router.push({pathname: '/confirmation', query: {status: 'failed'}})
+        contact(userData)
+            .then(() => {
+                this.props.router.push({pathname: '/confirmation', query: {status: 'success'}})
             })
-            .catch(err => {
-                console.log(err);
+            .catch(() => {
+                this.props.router.push({pathname: '/confirmation', query: {status: 'failed'}})
             });
     },
     render() {
-
-
         return (
             <section className="module">
                 <div className="wrapper">
@@ -71,8 +64,7 @@ const ContactForm = React.createClass({
                             <section className="submit-section">
                                 <div className="optin-checkbox">
                                     <input type="checkbox" name="list-optin" id="list-optin" value="yes"/>
-                                    <label htmlFor="list-optin">Send me info about courses, workshops and events
-                                        in our
+                                    <label htmlFor="list-optin">Send me info about courses, workshops and events in our
                                         growing Montreal tech community.</label>
                                 </div>
                                 <input className="btn-large" type="submit" name="submit" value="Submit"/>

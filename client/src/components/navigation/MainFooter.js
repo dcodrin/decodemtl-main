@@ -1,21 +1,54 @@
 import React from 'react';
-
 import {Link} from 'react-router';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
+import ConfirmModal from '../modules/ConfirmModal';
+import {subscribe} from '../../api/api';
 
 
 const MainFooter = React.createClass({
     propTypes: {},
-    getDefaultProps () {
-        return {};
+    getInitialState() {
+        return {
+            modal: false
+        }
     },
     _handleSubmit(e) {
         e.preventDefault();
-        console.log(this._footerEmail.value);
-        console.log('Thank you! Post request needs implementation.');
+        const email = this._footerEmail.value.trim().toLowerCase();
+        subscribe(email)
+            .then(() => {
+                this.setState({
+                    modal: true,
+                    status: true
+                })
+            })
+            .catch(() => {
+                this.setState({
+                    modal: true,
+                    status: false
+                })
+            })
+    },
+    _toggleModal() {
+        this.setState({
+            modal: false
+        })
     },
     render() {
         return (
             <footer className="site-footer module-boxed-dark">
+                <ReactCSSTransitionGroup
+                    transitionName="video"
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={300}>
+                    {this.state.modal
+                        ? <ConfirmModal
+                        status={this.state.status}
+                        modalType='subscribe'
+                        toggleModal={this._toggleModal}/>
+                        : null}
+                </ReactCSSTransitionGroup>
                 <div className="wrapper">
 
                     {/* footer-logo */}
