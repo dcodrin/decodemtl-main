@@ -55,8 +55,8 @@ const ConfirmModal = React.createClass({
             if (this.state.confirm && this.state.status) {
                 return <SuccessSub title={title} text={text}/>
             } else if (this.props.form && this.state.status !== false) {
-                const Form = this.props.form;
-                return <Form handleClick={this._confirm}/>
+                const ScheduleVisit = this.props.form;
+                return <ScheduleVisit handleClick={this._confirm} toggleModal={this.props.toggleModal}/>
             }
             return <ErrorSub title={titleError} text={textError}/>
         };

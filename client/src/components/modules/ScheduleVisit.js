@@ -6,7 +6,8 @@ import {visit} from '../../api/api';
 
 const ScheduleVisit = React.createClass({
     propTypes: {
-        handleClick: React.PropTypes.func.isRequired
+        handleClick: React.PropTypes.func.isRequired,
+        toggleModal: React.PropTypes.func
     },
     _handleSubmit(e) {
         e.preventDefault();
@@ -20,6 +21,7 @@ const ScheduleVisit = React.createClass({
             });
     },
     render() {
+        console.log('called from Schedule a Visit');
         return (
             <section className="module">
                 <div className="wrapper">
