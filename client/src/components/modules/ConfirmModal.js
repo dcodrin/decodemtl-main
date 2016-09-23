@@ -54,12 +54,13 @@ const ConfirmModal = React.createClass({
         const renderModalContent = () => {
             if (this.state.confirm && this.state.status) {
                 return <SuccessSub title={title} text={text}/>
-            } else if (this.props.form) {
+            } else if (this.props.form && this.state.status !== false) {
                 const Form = this.props.form;
                 return <Form handleClick={this._confirm}/>
             }
             return <ErrorSub title={titleError} text={textError}/>
         };
+
 
         return (
             <div style={{display: 'block'}}

@@ -92,7 +92,7 @@ app.post('/apply', (req, res) => {
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error);
-            return res.json({error});
+            return res.json({status: 'failed', error});
         }
         console.log('Message sent: ' + info.response);
         if (req.body['list-optin'] && req.body['list-optin'] === 'yes') {
@@ -118,8 +118,8 @@ app.post('/newsletter', (req, res) => {
         .then(response => {
             res.json({status: 'success'});
         })
-        .catch(err => {
-            res.json(err);
+        .catch(error => {
+            res.json({status: 'failed', error});
         });
 });
 
@@ -143,7 +143,7 @@ app.post('/visit', (req, res) => {
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error);
-            return res.json({error});
+            return res.json({error, status: 'failed'});
         }
         console.log('Message sent: ' + info.response);
         res.json({status: 'success'})
@@ -176,7 +176,7 @@ app.post('/contact', (req, res) => {
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error);
-            return res.json({error});
+            return res.json({error, status: 'failed'});
         }
         console.log('Message sent: ' + info.response);
         if (req.body['list-optin'] && req.body['list-optin'] === 'yes') {
