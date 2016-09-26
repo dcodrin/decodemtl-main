@@ -35,6 +35,12 @@ const ScheduleVisit = React.createClass({
                                 this._email = email
                             }}/>
                             <input className="btn-large" type="submit" name="submit" value="Submit"/>
+                            <div className="optin-checkbox">
+                                <input type="checkbox" name="list-optin" id="list-optin" value="yes"/>
+                                <label htmlFor="list-optin">Send me info about courses, workshops and events in
+                                    our
+                                    growing Montreal tech community.</label>
+                            </div>
                             <div className="foot-note text-body-small text-subtle">
                                 By providing us with your email, you agree to the terms of our <Link to='/privacy'>Privacy
                                 Policy</Link> and <Link to='/terms'>Terms of Service</Link>.
