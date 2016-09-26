@@ -11,7 +11,8 @@ const FormOptin = React.createClass({
         title: React.PropTypes.string.isRequired,
         text: React.PropTypes.string.isRequired,
         submitButton: React.PropTypes.string.isRequired,
-        handleClick: React.PropTypes.func
+        handleClick: React.PropTypes.func,
+        interests: React.PropTypes.object
     },
     getInitialState(){
         return {
@@ -30,7 +31,7 @@ const FormOptin = React.createClass({
             this.props.handleClick();
         }
         const email = this._email.value.trim().toLowerCase();
-        subscribe(email)
+        subscribe(email, this.props.interests)
             .then(() => {
                 this._email.value = '';
                 this.setState({
