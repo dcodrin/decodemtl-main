@@ -111,7 +111,7 @@ const Courses = React.createClass({
                 <Element name="curriculum">
                     <CourseCurriculum subjects={subjects}/>
                 </Element>
-                <FormOptin submitButton='Submit' title={formTitle} text={formText}/>
+                <FormOptin submitButton='Submit' title={formTitle} text={formText} interests={{'3782834739': true}}/>
                 <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
                 {/*<CourseProjectsSlider projects={projects} req={req}/>*/}
                 <Element name="instructor">
