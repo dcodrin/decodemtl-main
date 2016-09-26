@@ -35,7 +35,8 @@ const subscribeUser = (email) => {
             url: `${process.env.MAIL_CHIMP_ROOT_URL}/`,
             data: {
                 email_address: email,
-                status: 'subscribed'
+                status: 'subscribed',
+                interests: {'7561ee16e5': true}
             },
             auth: {
                 username: 'apiKey',
@@ -46,6 +47,7 @@ const subscribeUser = (email) => {
                 resolve(user);
             })
             .catch(({response: {data: err}}) => {
+                console.log(err);
                 reject(err);
             });
     });
