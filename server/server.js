@@ -158,7 +158,6 @@ app.post('/newsletter', (req, res) => {
     req.sanitize('email').escape();
     const email = req.body.email.trim().toLowerCase();
     const interests = req.body.interests || {};
-
     checkSubscription(email)
         .then(response => {
             // if subscribed already update interests
