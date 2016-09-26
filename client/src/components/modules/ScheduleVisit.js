@@ -1,6 +1,6 @@
 //TODO HANDLE FORM SUBMIT
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, withRouter} from 'react-router';
 
 import {visit} from '../../api/api';
 
@@ -45,8 +45,10 @@ const ScheduleVisit = React.createClass({
                                     growing Montreal tech community.</label>
                             </div>
                             <div className="foot-note text-body-small text-subtle">
-                                By providing us with your email, you agree to the terms of our <Link to='/privacy'>Privacy
-                                Policy</Link> and <Link to='/terms'>Terms of Service</Link>.
+                                By providing us with your email, you agree to the terms of our <Link
+                                onClick={this.props.toggleModal.bind(null, true)} to='/privacy'>Privacy
+                                Policy</Link> and <Link onClick={this.props.toggleModal.bind(null, true)} to='/terms'>Terms
+                                of Service</Link>.
                             </div>
                         </form>
                         {/* /.optin-form */}
@@ -59,4 +61,4 @@ const ScheduleVisit = React.createClass({
     }
 });
 
-export default ScheduleVisit;
+export default withRouter(ScheduleVisit);

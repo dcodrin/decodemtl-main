@@ -18,9 +18,13 @@ const App = React.createClass({
             modal: false
         };
     },
-    _toggleModal(e) {
-        e.preventDefault();
-        console.log(this.state.modal);
+    _toggleModal(prevent, e) {
+        //Fixes issue when toggling the modal from Links that redirect and the modal is not closing
+        // Need to pass prevent (true||false) in order to prevent the redirect or to allow it
+        if (!e) {
+            e = prevent;
+            e.preventDefault();
+        }
         this.setState({
             modal: !this.state.modal
         })
