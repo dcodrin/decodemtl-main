@@ -20,6 +20,7 @@ const App = React.createClass({
     },
     _toggleModal(e) {
         e.preventDefault();
+        console.log(this.state.modal);
         this.setState({
             modal: !this.state.modal
         })

@@ -32,9 +32,9 @@ export const contact = (userData) => {
     })
 };
 
-export const visit = (email) => {
+export const visit = (email, optin) => {
     return new Promise((resolve, reject) => {
-        axios.post('http://localhost:3100/visit', {email})
+        axios.post('http://localhost:3100/visit', {email, optin})
             .then(({data: response}) => {
                 if (response.status === 'success') {
                     resolve();

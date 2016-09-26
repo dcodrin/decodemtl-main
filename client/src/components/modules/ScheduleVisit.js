@@ -12,7 +12,8 @@ const ScheduleVisit = React.createClass({
     _handleSubmit(e) {
         e.preventDefault();
         const email = this._email.value.trim().toLowerCase();
-        visit(email)
+        const optin = this._optin.checked;
+        visit(email, optin)
             .then(() => {
                 this._email.value = '';
                 this.props.handleClick({status: 'success'})
@@ -36,7 +37,9 @@ const ScheduleVisit = React.createClass({
                             }}/>
                             <input className="btn-large" type="submit" name="submit" value="Submit"/>
                             <div className="optin-checkbox">
-                                <input type="checkbox" name="list-optin" id="list-optin" value="yes"/>
+                                <input type="checkbox" name="list-optin" id="list-optin" value="yes" ref={optin => {
+                                    this._optin = optin
+                                }}/>
                                 <label htmlFor="list-optin">Send me info about courses, workshops and events in
                                     our
                                     growing Montreal tech community.</label>

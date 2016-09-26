@@ -186,8 +186,7 @@ app.post('/visit', (req, res) => {
 
     req.sanitize('email').escape();
 
-    const {email} = req.body;
-
+    const email = req.body.email.trim().toLowerCase();
     // setup e-mail data
     //proceed editing at own risk
     const mailOptions = {
@@ -203,6 +202,15 @@ app.post('/visit', (req, res) => {
         if (error) {
             console.log(error);
             return res.json({error, status: 'failed'});
+        }
+        if (req.body.optin) {
+            return subscribeUser(email)
+                .then(response => {
+                    res.json({status: 'success', sub_status: 'success'});
+                })
+                .catch(err => {
+                    res.json({status: 'success', sub_status: 'failed'});
+                });
         }
         console.log('Message sent: ' + info.response);
         res.json({status: 'success'})
