@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
 const Confirmation = (props) => {
     const status = props.location.query.status;
@@ -17,6 +18,11 @@ const Confirmation = (props) => {
     }
     return (
         <section className="module">
+            <Helmet
+                title="Confirmation"
+                meta={[
+                    {property: 'description', content: 'Confirmation'},
+                ]}/>
             <div className="wrapper">
                 <h2 className="module-title">Something went wrong!</h2>
                 <p>Please try again!</p>

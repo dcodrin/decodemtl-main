@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
 import Hero from '../../../components/modules/Hero';
 import ContactForm from '../../../components/modules/ContactForm';
@@ -35,6 +36,11 @@ const Contact = (props) => {
     );
     return (
         <div>
+            <Helmet
+                title="Contact"
+                meta={[
+                    {property: 'description', content: 'Contact'},
+                ]}/>
             <Hero moduleTitle="Questions?" jumboTitle="Contact Us"/>
             <ContactForm/>
             <OneHalfColumn contentLeft={columnLeft} contentRight={columnRight}/>

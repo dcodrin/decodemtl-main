@@ -1,5 +1,6 @@
 //TODO UNCOMMENT PROJECT SLIDER ONCE PROJECTS ARE AVAILABLE
 import React from 'react';
+import Helmet from 'react-helmet';
 import {Element, scrollSpy} from 'react-scroll';
 
 import CourseHero from '../../modules/Hero';
@@ -86,6 +87,11 @@ const Courses = React.createClass({
 
         return (
             <div>
+                <Helmet
+                    title="HTML & CSS Part-Time"
+                    meta={[
+                        {property: 'description', content: 'HTML & CSS Part-Time'},
+                    ]}/>
                 <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}
                               syllabus='http://localhost:3100/downloads/htmlcss_syllabus.pdf'/>
                 <CourseHero

@@ -2,6 +2,7 @@ import React from 'react';
 import formSerialize from 'form-serialize';
 import axios from 'axios';
 import {withRouter} from 'react-router';
+import Helmet from 'react-helmet';
 
 import Hero from '../../modules/Hero';
 import courses from '../../../config/courses';
@@ -30,6 +31,11 @@ const Apply = React.createClass({
     render() {
         return (
             <div>
+                <Helmet
+                    title="Apply"
+                    meta={[
+                        {property: 'description', content: 'Apply'},
+                    ]}/>
                 <Hero moduleTitle="Submit your" jumboTitle="Application"/>
                 <section className="module">
                     <div className="wrapper">

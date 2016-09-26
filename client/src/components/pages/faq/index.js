@@ -1,10 +1,11 @@
 //TODO CHECK IF NEEDS A GLOBAL CONFIG FOR FAQ
 import React from 'react';
-
+import Helmet from 'react-helmet';
 
 import Hero from '../../../components/modules/Hero';
 import FAQ from '../../../components/modules/FAQ';
 import GenericTextModule from '../../../components/modules/GenericTextModule';
+
 
 import {generalFAQ, financialsFAQ, immersiveFAQ, partTimeFAQ} from '../../../config/globalFAQ';
 
@@ -19,6 +20,11 @@ const Faq = (props) => {
     ];
     return (
         <div>
+            <Helmet
+                title="FAQ!"
+                meta={[
+                    {property: 'description', content: 'FAQ'},
+                ]}/>
             <Hero moduleTitle="Frequently Asked" jumboTitle="Questions"/>
             <FAQ title='general' faq={generalFAQ} />
             <FAQ title='financials' faq={financialsFAQ} />

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Helmet from 'react-helmet';
 import Hero from '../../../components/modules/Hero';
 import OneHalfColumn from '../../../components/modules/OneHalfColumn';
 import GenericTextModule from '../../../components/modules/GenericTextModule';
@@ -35,6 +35,11 @@ const Housing = (props) => {
 
     return (
         <div>
+            <Helmet
+                title="Housing"
+                meta={[
+                    {property: 'description', content: 'Housing'},
+                ]}/>
             <Hero styles={{marginBottom: '3rem'}} moduleTitle="Student" jumboTitle="Housing"/>
             <OneHalfColumn mainTitle='Move-in ready housing' contentLeft={firstRowContentLeft} contentRight={firstRowContentRight}/>
             <GenericTextModule title="Walking distance from WeWork" paragraphs={secondRowParagraphs}/>

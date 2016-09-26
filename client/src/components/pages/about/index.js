@@ -5,6 +5,7 @@ import GenericTextModule from '../../../components/modules/GenericTextModule';
 import OneHalfColumn from '../../../components/modules/OneHalfColumn';
 import QuoteModule from '../../../components/modules/QuoteModule';
 import Overview from '../../../components/modules/Overview';
+import Helmet from 'react-helmet';
 
 import quoteBackground from '../../../assets/images/module-bg-about-quote.jpg';
 import founders from '../../../assets/images/founders.jpg';
@@ -54,6 +55,11 @@ const About = React.createClass({
         );
         return (
             <div>
+                <Helmet
+                    title="About"
+                    meta={[
+                        {property: 'description', content: 'About'},
+                    ]}/>
                 <Hero moduleTitle={'made in'} jumboTitle={'montreal'} text={""} subText={''}/>
                 <OneHalfColumn mainTitle={'How we started'} text={''} contentLeft={contentLeft} contentRight={contentRight}/>
                 <GenericTextModule title={'Why we do it'} subTitle={''} paragraphs={p1}/>
