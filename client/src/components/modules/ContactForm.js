@@ -64,8 +64,8 @@ const ContactForm = React.createClass({
                             <section className="submit-section">
                                 <div className="optin-checkbox">
                                     <input type="checkbox" name="list-optin" id="list-optin" value="yes"/>
-                                    <label htmlFor="list-optin">Send me info about courses, workshops and events in our
-                                        growing Montreal tech community.</label>
+                                    <label htmlFor="list-optin">I want to receive info about new courses, workshops
+                                        and events.</label>
                                 </div>
                                 <input className="btn-large" type="submit" name="submit" value="Submit"/>
                                 <div className="foot-note text-body-small text-subtle">

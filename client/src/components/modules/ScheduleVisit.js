@@ -28,8 +28,8 @@ const ScheduleVisit = React.createClass({
             <section className="module">
                 <div className="wrapper">
                     <div className="module-boxed">
-                        <p className="text-body-large">Let's schedule a visit!</p>
-                        <p>Some one will get in touch with you!</p>
+                        <p className="text-body-large">Want to see if DecodeMTL is right for you?</p>
+                        <p>Enter your email and we will get back to you asap to schedule a visit.</p>
                         <form className="optin-form" onSubmit={this._handleSubmit}>
                             <label htmlFor="email" className="visually-hidden">Email</label>
                             <input type="email" name="email" placeholder="Your email" ref={email => {
@@ -40,9 +40,8 @@ const ScheduleVisit = React.createClass({
                                 <input type="checkbox" name="list-optin" id="list-optin" value="yes" ref={optin => {
                                     this._optin = optin
                                 }}/>
-                                <label htmlFor="list-optin">Send me info about courses, workshops and events in
-                                    our
-                                    growing Montreal tech community.</label>
+                                <label htmlFor="list-optin">I want to receive info about new courses, workshops and
+                                    events.</label>
                             </div>
                             <div className="foot-note text-body-small text-subtle">
                                 By providing us with your email, you agree to the terms of our <Link
