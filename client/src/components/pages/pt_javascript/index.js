@@ -87,9 +87,9 @@ const Courses = React.createClass({
         return (
             <div>
                 <Helmet
-                    title="Javascript Part-Time"
+                    title="Part-Time JavaScript Course | DecodeMTL"
                     meta={[
-                        {property: 'description', content: 'Javascript Part-Time'},
+                        {property: 'description', content: 'In this course you will learn the fundamentals of programming, as well as the fundamentals of JavaScript and its unique asynchronous programming model.'},
                     ]}/>
                 <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}
                               syllabus='http://localhost:3100/downloads/javascript_syllabus.pdf'/>

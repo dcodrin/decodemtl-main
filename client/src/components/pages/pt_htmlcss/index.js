@@ -88,9 +88,9 @@ const Courses = React.createClass({
         return (
             <div>
                 <Helmet
-                    title="HTML & CSS Part-Time"
+                    title="Part-Time HTML & CSS Course | DecodeMTL"
                     meta={[
-                        {property: 'description', content: 'HTML & CSS Part-Time'},
+                        {property: 'description', content: 'Learn to write clean, standards-complient HTML & CSS, and become aquainted with the fundamentals of web design.'},
                     ]}/>
                 <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}
                               syllabus='http://localhost:3100/downloads/htmlcss_syllabus.pdf'/>

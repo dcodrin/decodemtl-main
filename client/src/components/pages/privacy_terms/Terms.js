@@ -8,9 +8,9 @@ const Terms = (props) => {
     const termsBody = [(
         <div>
             <Helmet
-                title="Terms"
+                title="Terms of Service | DecodeMTL"
                 meta={[
-                    {property: 'description', content: 'Terms'},
+                    {property: 'description', content: ''},
                 ]}/>
             <h2>1. Introduction</h2>
             <p>The following terms and conditions are the Terms of Use for our website: www.decodemtl.com (the “Site”)

@@ -16,9 +16,9 @@ const Events = (props) => {
     return (
         <div>
             <Helmet
-                title="Events"
+                title="Events | DecodeMTL"
                 meta={[
-                    {property: 'description', content: 'Events'},
+                    {property: 'description', content: 'Browse upcoming events at DecodeMTL here.'},
                 ]}/>
             <Hero moduleTitle="decodemtl" jumboTitle="events" text="Browse our upcoming events."/>
             <UpcomingEvents events={events} />

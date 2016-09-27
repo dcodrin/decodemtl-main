@@ -55,9 +55,9 @@ const Employers = (props) => {
     return (
         <div>
             <Helmet
-                title="Employers"
+                title="Employers | DecodeMTL"
                 meta={[
-                    {property: 'description', content: 'Employers'},
+                    {property: 'description', content: 'Web Developers for hire! Find your next programmer at DecodeMTL! Hire our graduates as contract or full-time employees.'},
                 ]}/>
             <Hero moduleTitle="find your next" jumboTitle="web developer" subText={heroSubText}/>
             <EmployerCTA/>

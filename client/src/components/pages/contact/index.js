@@ -37,9 +37,9 @@ const Contact = (props) => {
     return (
         <div>
             <Helmet
-                title="Contact"
+                title="Contact | DecodeMTL"
                 meta={[
-                    {property: 'description', content: 'Contact'},
+                    {property: 'description', content: 'Contact DecodeMTL here.'},
                 ]}/>
             <Hero moduleTitle="Questions?" jumboTitle="Contact Us"/>
             <ContactForm/>

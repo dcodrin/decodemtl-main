@@ -7,9 +7,9 @@ const Privacy = (props) => {
     const privacyBody = [(
         <div>
             <Helmet
-                title="Privacy"
+                title="Privacy Policy | DecodeMTL"
                 meta={[
-                    {property: 'description', content: 'Privacy'},
+                    {property: 'description', content: ''},
                 ]}/>
             <p>The following policy outlines how 9320-7223 Québec inc. (the “Company”) will collect, use, protect and
                 disclose personal information. Please note that this policy also applies to Internet and e-mail use by

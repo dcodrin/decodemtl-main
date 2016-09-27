@@ -44,9 +44,9 @@ const WeWork = (props) => {
     return (
         <div>
             <Helmet
-                title="WeWork"
+                title="WeWork | DecodeMTL"
                 meta={[
-                    {property: 'description', content: 'WeWork'}
+                    {property: 'description', content: 'Get information about WeWork, DecodeMTL\'s location partner.'}
                 ]}/>
             <Hero moduleTitle="WeWork" jumboTitle="Montreal"/>
             <OneHalfColumn mainTitle='Community' contentLeft={firstRowContentLeft} contentRight={firstRowContentRight}/>

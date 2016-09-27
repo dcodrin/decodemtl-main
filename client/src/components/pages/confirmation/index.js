@@ -19,13 +19,13 @@ const Confirmation = (props) => {
     return (
         <section className="module">
             <Helmet
-                title="Confirmation"
+                title="Confirmation | DecodeMTL"
                 meta={[
-                    {property: 'description', content: 'Confirmation'},
+                    {property: 'description', content: ''},
                 ]}/>
             <div className="wrapper">
                 <h2 className="module-title">Something went wrong!</h2>
-                <p>Please try again!</p>
+                <p>Please try again! If the problem persists, please contact hello@decodemtl.com.</p>
             </div>
         </section>
     );

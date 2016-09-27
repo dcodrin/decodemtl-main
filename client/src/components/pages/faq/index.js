@@ -21,9 +21,9 @@ const Faq = (props) => {
     return (
         <div>
             <Helmet
-                title="FAQ!"
+                title="FAQ | DecodeMTL"
                 meta={[
-                    {property: 'description', content: 'FAQ'},
+                    {property: 'description', content: 'View DecodeMTL\'s frequently asked questions here.'},
                 ]}/>
             <Hero moduleTitle="Frequently Asked" jumboTitle="Questions"/>
             <FAQ title='general' faq={generalFAQ} />
