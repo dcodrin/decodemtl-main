@@ -1,7 +1,7 @@
 export default [
     {
-        title: "web development",
-        jumboTitle: "immersive",
+        title: "Web Development",
+        jumboTitle: "Immersive",
         text: '8 weeks of intensive learning. Gain enough practical experience to launch your new career or startup.',
         type: "Full-time",
         duration: "8 weeks",
@@ -11,8 +11,8 @@ export default [
         link: 'web-development-immersive'
     },
     {
-        title: "part-time",
-        jumboTitle: "html & css",
+        title: "Part-Time",
+        jumboTitle: "HTML & CSS",
         text: 'Learn to write clean, standards-complient code, and become aquainted with the fundamentals of web design.',
         type: "Part-time",
         duration: "10 weeks",
@@ -22,8 +22,8 @@ export default [
         link: 'html-css'
     },
     {
-        title: "part-time",
-        jumboTitle: "javascript",
+        title: "Part-Time",
+        jumboTitle: "JavaScript",
         text: 'Develop a strong base in programming and master JavaScript fundamentals like object prototypes, higher order functions, and programming with asynchronous callbacks.',
         type: "Part-time",
         duration: "10 weeks",

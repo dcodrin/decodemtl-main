@@ -38,9 +38,9 @@ const HomePage = React.createClass({
         return (
             <div>
                 <Helmet
-                    title="Home!"
+                    title="Learn to Code in Montreal | DecodeMTL"
                     meta={[
-                        {property: 'description', content: 'Home'},
+                        {property: 'description', content: 'Become a web developer, launch a start-up, or add a new skill to your resume with DecodeMTL’s coding courses. Click to learn more.'},
                     ]}/>
                 <HomeHero/>
                 <HomeEvolving handleClick={this._toggleModal}/>

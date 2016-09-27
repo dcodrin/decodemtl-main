@@ -34,15 +34,15 @@ const ConfirmModal = React.createClass({
         switch (this.props.modalType) {
             case 'visit':
                 title = 'Thank you!';
-                text = 'Someone will get in touch to schedule a visit.';
-                titleError = 'Oops! Sorry about that!';
-                textError = 'Something went wrong. Please try so schedule a visit one more time!';
+                text = 'We will be in touch within 24 hours or by the next working day to schedule your visit.';
+                titleError = 'Oops! Something went wrong!';
+                textError = 'Please try again. If the issue persists, you can email us at hello@decodemtl.com.';
                 break;
             case 'subscribe':
                 title = 'Thank you for subscribing';
-                text = 'You will be getting cool emails soon.';
+                text = 'You will start receiving our awesome emails shortly.';
                 titleError = 'Oops! Sorry about that!';
-                textError = 'We were unable to subscribe you. Please try again!';
+                textError = 'We were unable to subscribe you. Please try again.';
                 break;
             default:
                 title = 'Thank you!';
