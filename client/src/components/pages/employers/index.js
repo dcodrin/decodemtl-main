@@ -1,9 +1,12 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+
 import Hero from '../../../components/modules/Hero';
 import EmployerCTA from '../../../components/modules/EmployerCTA';
 import TwoThirdColumns from '../../../components/modules/TwoThirdColumns';
 import FormOptin from '../../../components/modules/FormOptin';
 import PartnersLogos from '../../../components/modules/PartnersLogos';
+
 import p1 from '../../../assets/images/employers-1.jpg'
 import p2 from '../../../assets/images/employers-2.jpg'
 import p3 from '../../../assets/images/employers-3.jpg'
@@ -51,10 +54,15 @@ const Employers = (props) => {
 
     return (
         <div>
+            <Helmet
+                title="Employers"
+                meta={[
+                    {property: 'description', content: 'Employers'},
+                ]}/>
             <Hero moduleTitle="find your next" jumboTitle="web developer" subText={heroSubText}/>
             <EmployerCTA/>
             <TwoThirdColumns columns={columns} title="What Makes Our Grads Special?"/>
-            <FormOptin submitButton="Submit" title={formTitle} text={formText} />
+            <FormOptin submitButton="Submit" title={formTitle} text={formText} interests={{'367df3e84b': true}}/>
             <PartnersLogos/>
         </div>
     );

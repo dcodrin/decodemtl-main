@@ -21,7 +21,14 @@ const SiteNav = React.createClass({
     componentWillUnmount() {
         window.removeEventListener('keyup', this._toggleNav);
     },
-    _toggleNav(e) {
+    _toggleNav(modal, e) {
+        if (!e) {
+            e = modal;
+        }
+        if (modal && typeof modal === 'boolean') {
+            e.preventDefault();
+            this.props.handleScheduleVisit(e);
+        }
         if(e.keyCode && e.keyCode === 27) {
             document.body.classList.remove('nav-container-active');
             this.setState({
@@ -154,7 +161,8 @@ const SiteNav = React.createClass({
                         <ul className="nav-primary-menu" role="menu">
                             <li><Link onClick={this._toggleNav} to="/courses">Courses</Link></li>
                             <li><Link onClick={this._toggleNav} to="/about">About</Link></li>
-                            <li><Link onClick={this._toggleNav} to="/visit">Schedule a visit</Link></li>
+                            <li><Link onClick={this._toggleNav.bind(this, true)} to="/schedule">Schedule a visit</Link>
+                            </li>
                         </ul>
                         {/* cta */}
                         <div className="nav-cta">

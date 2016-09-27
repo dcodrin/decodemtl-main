@@ -4,7 +4,8 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     cors = require('cors'),
     axios = require('axios'),
-    nodemailer = require('nodemailer');
+    nodemailer = require('nodemailer'),
+    md5 = require('js-md5');
 
 //NOTE: Mailchimp uses HTTP Basic Auth. Set 'username' as any string ex: 'apiKey', 'helloWorld'
 
@@ -28,14 +29,16 @@ app.set('port', (process.env.PORT || 3001));
 app.use('/downloads', express.static(__dirname + '/public'));
 
 // returns promise
-const subscribeUser = (email) => {
+//interests: {'7561ee16e5': true}
+const subscribeUser = (email, interests = {}) => {
     return new Promise((resolve, reject) => { // eslint-disable-line no-undef
         axios({
             method: 'post',
             url: `${process.env.MAIL_CHIMP_ROOT_URL}/`,
             data: {
                 email_address: email,
-                status: 'subscribed'
+                status: 'subscribed',
+                interests
             },
             auth: {
                 username: 'apiKey',
@@ -47,6 +50,49 @@ const subscribeUser = (email) => {
             })
             .catch(({response: {data: err}}) => {
                 reject(err);
+            });
+    });
+};
+const updateSubscriptionInterests = (email, interests = {}) => {
+    const hash = md5(email);
+    return new Promise((resolve, reject) => { // eslint-disable-line no-undef
+        axios({
+            method: 'put',
+            url: `${process.env.MAIL_CHIMP_ROOT_URL}/${hash}`,
+            data: {
+                email_address: email,
+                status: 'subscribed',
+                interests
+            },
+            auth: {
+                username: 'apiKey',
+                password: process.env.MAIL_CHIMP_API
+            }
+        })
+            .then(({data: user}) => {
+                resolve(user);
+            })
+            .catch(({response: {data: err}}) => {
+                reject(err);
+            });
+    });
+};
+const checkSubscription = (email) => {
+    const hash = md5(email);
+    return new Promise((resolve, reject) => { // eslint-disable-line no-undef
+        axios({
+            method: 'get',
+            url: `${process.env.MAIL_CHIMP_ROOT_URL}/${hash}`,
+            auth: {
+                username: 'apiKey',
+                password: process.env.MAIL_CHIMP_API
+            }
+        })
+            .then(({data}) => {
+                resolve(data);
+            })
+            .catch(({response: {data}}) => {
+                reject(data);
             });
     });
 };
@@ -67,7 +113,7 @@ app.post('/apply', (req, res) => {
 
     //User input data
     const data = req.body;
-
+    console.log(data);
     // setup e-mail data
     //proceed editing at own risk
     const mailOptions = {
@@ -109,17 +155,30 @@ app.post('/apply', (req, res) => {
 });
 
 app.post('/newsletter', (req, res) => {
-
     req.sanitize('email').escape();
-
-    const {email} = req.body;
-
-    subscribeUser(email)
+    const email = req.body.email.trim().toLowerCase();
+    const interests = req.body.interests || {};
+    checkSubscription(email)
         .then(response => {
-            res.json({status: 'success'});
+            // if subscribed already update interests
+            updateSubscriptionInterests(email, interests)
+                .then(response => {
+                    res.json({status: 'success'});
+                }).catch(error => {
+                res.json({status: 'failed', error});
+            })
         })
         .catch(error => {
-            res.json({status: 'failed', error});
+            if (error.status === 404) {
+                // if not subscribed, subscribe user and add interests
+                subscribeUser(email, interests)
+                    .then(response => {
+                        res.json({status: 'success'});
+                    })
+                    .catch(error => {
+                        res.json({status: 'failed', error})
+                    })
+            }
         });
 });
 
@@ -127,8 +186,7 @@ app.post('/visit', (req, res) => {
 
     req.sanitize('email').escape();
 
-    const {email} = req.body;
-
+    const email = req.body.email.trim().toLowerCase();
     // setup e-mail data
     //proceed editing at own risk
     const mailOptions = {
@@ -144,6 +202,15 @@ app.post('/visit', (req, res) => {
         if (error) {
             console.log(error);
             return res.json({error, status: 'failed'});
+        }
+        if (req.body.optin) {
+            return subscribeUser(email)
+                .then(response => {
+                    res.json({status: 'success', sub_status: 'success'});
+                })
+                .catch(err => {
+                    res.json({status: 'success', sub_status: 'failed'});
+                });
         }
         console.log('Message sent: ' + info.response);
         res.json({status: 'success'})

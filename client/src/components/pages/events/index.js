@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
 import Hero from '../../../components/modules/Hero';
 import FormOptin from '../../../components/modules/FormOptin';
@@ -14,6 +15,11 @@ const Events = (props) => {
 
     return (
         <div>
+            <Helmet
+                title="Events"
+                meta={[
+                    {property: 'description', content: 'Events'},
+                ]}/>
             <Hero moduleTitle="decodemtl" jumboTitle="events" text="Browse our upcoming events."/>
             <UpcomingEvents events={events} />
             <FormOptin submitButton="Submit" title={formTitle} text={formText} />

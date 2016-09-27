@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import {Element, scrollSpy} from 'react-scroll';
 
 import CourseHero from '../../modules/Hero';
@@ -89,6 +90,11 @@ const Courses = React.createClass({
             formText = 'Enter your email below and get instant access to our curated list of free JavaScript resources.';
         return (
             <div>
+                <Helmet
+                    title="Immersive"
+                    meta={[
+                        {property: 'description', content: 'Immersive'},
+                    ]}/>
                 <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}
                               syllabus='http://localhost:3100/downloads/immersive_syllabus.pdf'/>
                 <CourseHero CTAPText="Apply Now"
@@ -117,7 +123,7 @@ const Courses = React.createClass({
                     <CourseSchedule background={scheduleBackground}/>
                 </Element>
                 <CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>
-                <FormOptin submitButton='Submit' title={formTitle} text={formText}/>
+                <FormOptin submitButton='Submit' title={formTitle} text={formText} interests={{"7561ee16e5": true}}/>
                 <Element name="instructor">
                     <CourseInstructor instructors={instructors}/>
                 </Element>

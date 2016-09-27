@@ -1,6 +1,7 @@
 //TODO UNCOMMENT PROJECT SLIDER WHEN PROJECTS ARE AVAILABLE
 import React from 'react';
 import {Element, scrollSpy} from 'react-scroll';
+import Helmet from 'react-helmet';
 
 import CourseHero from '../../modules/Hero';
 import CourseOverview from '../../modules/Overview';
@@ -85,6 +86,11 @@ const Courses = React.createClass({
 
         return (
             <div>
+                <Helmet
+                    title="Javascript Part-Time"
+                    meta={[
+                        {property: 'description', content: 'Javascript Part-Time'},
+                    ]}/>
                 <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}
                               syllabus='http://localhost:3100/downloads/javascript_syllabus.pdf'/>
                 <CourseHero
@@ -111,7 +117,7 @@ const Courses = React.createClass({
                     <CourseCurriculum subjects={subjects}/>
                 </Element>
                 {/*<CourseTestimonial testimonial={testimonials[Math.floor(Math.random() * testimonials.length)]}/>*/}
-                <FormOptin submitButton='Submit' title={formTitle} text={formText}/>
+                <FormOptin submitButton='Submit' title={formTitle} text={formText} interests={{"3782834739": true}}/>
                 {/*<CourseProjectsSlider projects={projects} req={req}/>*/}
                 <Element name="instructor">
                     <CourseInstructor instructors={instructors}/>

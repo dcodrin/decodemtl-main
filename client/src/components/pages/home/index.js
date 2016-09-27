@@ -10,6 +10,7 @@ import HomeEvolving from '../../modules/HomeEvolving';
 import LocationSlider from '../../modules/LocationSlider';
 import ConfirmModal from '../../modules/ConfirmModal';
 import ScheduleVisit from '../../modules/ScheduleVisit';
+import Helmet from 'react-helmet';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import upcomingCourses from '../../../config/upcomingCourses';
@@ -36,6 +37,11 @@ const HomePage = React.createClass({
     render() {
         return (
             <div>
+                <Helmet
+                    title="Home!"
+                    meta={[
+                        {property: 'description', content: 'Home'},
+                    ]}/>
                 <HomeHero/>
                 <HomeEvolving handleClick={this._toggleModal}/>
                 <ReactCSSTransitionGroup

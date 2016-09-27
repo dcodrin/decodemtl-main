@@ -1,9 +1,16 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+
 import GenericTextModule from '../../../components/modules/GenericTextModule';
 
 const Privacy = (props) => {
     const privacyBody = [(
         <div>
+            <Helmet
+                title="Privacy"
+                meta={[
+                    {property: 'description', content: 'Privacy'},
+                ]}/>
             <p>The following policy outlines how 9320-7223 Québec inc. (the “Company”) will collect, use, protect and
                 disclose personal information. Please note that this policy also applies to Internet and e-mail use by
                 the

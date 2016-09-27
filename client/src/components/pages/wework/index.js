@@ -1,11 +1,12 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
 import Hero from '../../../components/modules/Hero';
 import OneHalfColumn from '../../../components/modules/OneHalfColumn';
 import GenericTextModule from '../../../components/modules/GenericTextModule';
 
-import img1 from '../../../assets/images/wework6.jpg';
-import img2 from '../../../assets/images/wework7.jpg';
+import img1 from '../../../assets/images/about_wework1.jpg';
+import img2 from '../../../assets/images/about_wework2.jpg';
 
 
 const WeWork = (props) => {
@@ -42,6 +43,11 @@ const WeWork = (props) => {
 
     return (
         <div>
+            <Helmet
+                title="WeWork"
+                meta={[
+                    {property: 'description', content: 'WeWork'}
+                ]}/>
             <Hero moduleTitle="WeWork" jumboTitle="Montreal"/>
             <OneHalfColumn mainTitle='Community' contentLeft={firstRowContentLeft} contentRight={firstRowContentRight}/>
             <GenericTextModule title="Location" paragraphs={secondRowParagraphs}/>

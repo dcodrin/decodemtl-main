@@ -18,12 +18,14 @@ const MainFooter = React.createClass({
         const email = this._footerEmail.value.trim().toLowerCase();
         subscribe(email)
             .then(() => {
+                this._footerEmail.value = '';
                 this.setState({
                     modal: true,
                     status: true
                 })
             })
             .catch(() => {
+                this._footerEmail.value = '';
                 this.setState({
                     modal: true,
                     status: false
@@ -52,8 +54,9 @@ const MainFooter = React.createClass({
                 <div className="wrapper">
 
                     {/* footer-logo */}
-                    <svg className="decode-logo reversed" id="decode-logo" xmlns="http://www.w3.org/2000/svg"
-                         width="426" height="64" viewBox="0 0 426 64">
+                    <Link to="/">
+                        <svg className="decode-logo reversed" id="decode-logo" xmlns="http://www.w3.org/2000/svg"
+                             width="426" height="64" viewBox="0 0 426 64">
                         <g className="mtl" id="mtl">
                             <path id="L"
                                   d="M397.345 11.79c0-.42.21-.63.63-.63h6.174c.42 0 .63.21.63.63v35.153c0 .252.125.38.377.38h19.656c.42 0 .63.21.63.63v5.417c0 .42-.21.63-.63.63h-26.838c-.42 0-.63-.21-.63-.63V11.79z"/>
@@ -86,7 +89,8 @@ const MainFooter = React.createClass({
                             <path className="petal-generic petal-top" id="petal-top"
                                   d="M15.46 11.657C10.78 4.26 20.044-3.55 26.33 2.707c1.807 1.798 2.675 5.6.69 8.688-1.665 2.59-.846 5.63.838 7.096 2.688 2.34 5.537 1.384 6.898-.04 1.452-1.52 2.705-4.117.863-7.022-2.376-3.752-.837-7.753 1.48-9.45 7.61-5.576 15.643 4.59 8.856 10.93C42.94 15.73 31.27 27.27 31.27 27.27S17.243 13.83 15.46 11.66"/>
                         </g>
-                    </svg>
+                        </svg>
+                    </Link>
                     {/* /.footer-logo */}
 
                     {/* footer-content */}

@@ -1,10 +1,17 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+
 import GenericTextModule from '../../../components/modules/GenericTextModule';
 
 const Terms = (props) => {
 
     const termsBody = [(
         <div>
+            <Helmet
+                title="Terms"
+                meta={[
+                    {property: 'description', content: 'Terms'},
+                ]}/>
             <h2>1. Introduction</h2>
             <p>The following terms and conditions are the Terms of Use for our website: www.decodemtl.com (the “Site”)
                 made available by 9320-7223 Québec inc. (“9320-7223 Québec inc.”, “we”, “us” or “our”).</p>
