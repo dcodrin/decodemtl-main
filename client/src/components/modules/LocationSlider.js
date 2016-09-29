@@ -111,10 +111,18 @@ const LocationSlider = React.createClass({
 
         const imageSlide = {
             position: 'absolute',
-            opacity: 1 - slideOpacity,
+            opacity: 1 - slideOpacity >= 0 ? 1 - slideOpacity : 0,
             // left: slidePosition > 0 ? slidePosition - slideStartPosition : slidePosition + slideStartPosition,
             top: 0
         };
+
+        const getSource = (slidePosition) => {
+            if (slidePosition < 0) return req(images[prevSlide - 1]);
+            if (slidePosition > 0) return req(images[nextSlide - 1]);
+            return req(images[slide - 1]);
+        };
+
+        console.log(imageSlide,);
 
         return (
             <section className="module module-full-width module-boxed-light working-space-module">
@@ -126,18 +134,13 @@ const LocationSlider = React.createClass({
                         </div>
                         {/* /.carousel-control */}
                         <div className="carousel-box">
-                            {images.map((item, i) => {
-                                return (
-                                    <div
-                                        style={imageContainer}
-                                        key={i}
-                                        className={slide === i + 1 ? "carousel-img visible" : "carousel-img"}>
-                                        {slidePosition > 0 ? <img style={imageSlide} src={req(images[nextSlide - 1])} alt=""/> : null}
-                                        <img style={currImage} src={req(item)} alt=""/>
-                                        {slidePosition < 0 ?  <img style={imageSlide} src={req(images[prevSlide - 1])} alt=""/> : null}
-                                    </div>
-                                );
-                            })}
+                            <div
+                                style={imageContainer}
+                                className="carousel-img visible">
+                                {/*NOTE: This cause pictures to flash in Safari*/}
+                                <img style={imageSlide} src={getSource(slidePosition)} alt=""/>
+                                <img style={currImage} src={req(images[slide - 1])} alt=""/>
+                            </div>
                         </div>
                         {/* /.carousel-box */}
                         <div className="carousel-control carousel-next">
