@@ -137,7 +137,7 @@ const LocationSlider = React.createClass({
                             <div
                                 style={imageContainer}
                                 className="carousel-img visible">
-                                {/*NOTE: This cause pictures to flash in Safari*/}
+                                {/*NOTE: The image overlay is necessary to avoid flashes in Safari*/}
                                 <img style={imageSlide} src={getSource(slidePosition)} alt=""/>
                                 <img style={currImage} src={req(images[slide - 1])} alt=""/>
                             </div>

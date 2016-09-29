@@ -108,8 +108,14 @@ const CourseProjectsSlider = React.createClass({
 
         const imageSlide = {
             position: 'absolute',
-            opacity: 1 - slideOpacity,
+            opacity: 1 - slideOpacity >= 0 ? 1 - slideOpacity : 0,
             left: slidePosition > 0 ? slidePosition - slideStartPosition : slidePosition + slideStartPosition
+        };
+
+        const getSource = (slidePosition) => {
+            if (slidePosition > 0) return projects[prevSlide - 1].img;
+            if (slidePosition < 0) return projects[nextSlide - 1].img;
+            return projects[slide - 1].img;
         };
 
         return (
@@ -119,18 +125,25 @@ const CourseProjectsSlider = React.createClass({
                     {/* /student-project-content */}
                     <figure className="student-project-content">
                         <div className="carousel-box">
-                            {projects.map((item, i) => {
-                                return (
-                                    <div
-                                        style={imageContainer}
-                                        key={i}
-                                        className={slide === i + 1 ? "student-project-image visible" : "student-project-image"}>
-                                        {slidePosition < 0 ? <img style={imageSlide} src={projects[nextSlide - 1].img} alt=""/> : null}
-                                        <img style={currImage} src={item.img} alt=""/>
-                                        {slidePosition > 0 ? <img style={imageSlide} src={projects[prevSlide - 1].img} alt=""/> : null}
-                                    </div>
-                                );
-                            })}
+                            <div
+                                style={imageContainer}
+                                className="student-project-image visible">
+                                {/*NOTE: The image overlay is necessary to avoid flashes in Safari*/}
+                                <img style={imageSlide} src={getSource(slidePosition)} alt=""/>
+                                <img style={currImage} src={projects[slide - 1].img} alt=""/>
+                            </div>
+                            {/*{projects.map((item, i) => {*/}
+                            {/*return (*/}
+                            {/*<div*/}
+                            {/*style={imageContainer}*/}
+                            {/*key={i}*/}
+                            {/*className={slide === i + 1 ? "student-project-image visible" : "student-project-image"}>*/}
+                            {/*{slidePosition < 0 ? <img style={imageSlide} src={projects[nextSlide - 1].img} alt=""/> : null}*/}
+                            {/*<img style={currImage} src={item.img} alt=""/>*/}
+                            {/*{slidePosition > 0 ? <img style={imageSlide} src={projects[prevSlide - 1].img} alt=""/> : null}*/}
+                            {/*</div>*/}
+                            {/*);*/}
+                            {/*})}*/}
                         </div>
                         <div className="student-project-details">
                             <div className="slider-controls buttons">
