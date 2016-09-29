@@ -18,7 +18,7 @@ const WeWork = (props) => {
         </div>
     );
     const firstRowContentRight = (
-        <img src={img2} alt=""/>
+        <img src={img2} alt="DecodeMTL at WeWork"/>
     );
 
     const secondRowParagraphs = [
@@ -38,7 +38,7 @@ const WeWork = (props) => {
         </div>
     );
     const thirdRowContentLeft = (
-        <img src={img1} alt=""/>
+        <img src={img1} alt="DecodeMTL at WeWork"/>
     );
 
     return (

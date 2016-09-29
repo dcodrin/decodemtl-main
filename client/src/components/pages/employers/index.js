@@ -27,7 +27,7 @@ const Employers = (props) => {
                 <p>Once accepted into our competitive program, our students are expected to push their limits by coding 10+ hours per day, 7 days a week. Their intelligence, mixed with a strong passion for technology and persistence enable them to thrive in our course. After graduating, they are eager to bring these skills to your company.</p>
             </div>
             <div className="one-third-content">
-                <img src={p2} alt=""/>
+                <img src={p2} alt="DecodeMTL Alumni Panel"/>
             </div>
         </div>),
         (<div className="row-container row-two-third-container alternating">
@@ -36,7 +36,7 @@ const Employers = (props) => {
                 <p>Our grads have been taught to think and learn like developers. New languages are not a barrier but rather an opportunity to grow their knowledge-base. In fact, many of our graduates go on to tackle new languages in their first weeks on the job.</p>
             </div>
             <div className="one-third-content">
-                <img src={p3} alt=""/>
+                <img src={p3} alt="DecodeMTL Teacher Helping Student"/>
             </div>
         </div>),
         (<div className="row-container row-two-third-container alternating">
@@ -45,7 +45,7 @@ const Employers = (props) => {
                 <p>Coding skills are not enough. All of our students are selected as much for their personality and communications skills as their ability to learn and execute. We know that “fit" is the key to a successful team.</p>
             </div>
             <div className="one-third-content">
-                <img src={p1} alt=""/>
+                <img src={p1} alt="DecodeMTL Students Working"/>
             </div>
         </div>)
 

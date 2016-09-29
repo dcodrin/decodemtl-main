@@ -51,7 +51,7 @@ const About = React.createClass({
         );
 
             const contentRight = (
-                <img src={founders} alt="Founders"/>
+                <img src={founders} alt="DecodeMTL Founders"/>
         );
         return (
             <div>
