@@ -19,10 +19,10 @@ const ContactForm = React.createClass({
         const userData = formSerialize(e.target, {hash: true});
         contact(userData)
             .then(() => {
-                this.props.router.push({pathname: '/confirmation', query: {status: 'success'}})
+                this.props.router.push({pathname: '/success', query: {status: 'success'}})
             })
             .catch(() => {
-                this.props.router.push({pathname: '/confirmation', query: {status: 'failed'}})
+                this.props.router.push({pathname: '/success', query: {status: 'failed'}})
             });
     },
     render() {
