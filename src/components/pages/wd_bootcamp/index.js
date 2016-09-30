@@ -63,7 +63,6 @@ const Courses = React.createClass({
         }
     },
     render() {
-        console.log(this.state, this.props);
         const secondaryLinks = [
             {
                 to: 'overview', name: 'Overview'
