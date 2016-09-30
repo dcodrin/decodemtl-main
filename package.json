@@ -49,6 +49,5 @@
   "devDependencies": {
     "nodemon": "^1.10.2",
     "react-scripts": "0.2.3"
-  },
-  "proxy": "http://localhost:3100/"
+  }
 }
