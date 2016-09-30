@@ -128,7 +128,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-app.post('api/apply', (req, res) => {
+app.post('/api/apply', (req, res) => {
     //Sanitize user input
     Object.keys(req.body).forEach(input => req.sanitize(input).escape());
 
@@ -174,7 +174,7 @@ app.post('api/apply', (req, res) => {
     });
 });
 
-app.post('api/newsletter', (req, res) => {
+app.post('/api/newsletter', (req, res) => {
     req.sanitize('email').escape();
     const email = req.body.email.trim().toLowerCase();
     const interests = req.body.interests || {};
@@ -202,7 +202,7 @@ app.post('api/newsletter', (req, res) => {
         });
 });
 
-app.post('api/visit', (req, res) => {
+app.post('/api/visit', (req, res) => {
 
     req.sanitize('email').escape();
 
@@ -237,7 +237,7 @@ app.post('api/visit', (req, res) => {
     });
 });
 
-app.post('api/contact', (req, res) => {
+app.post('/api/contact', (req, res) => {
     //Sanitize user input
     Object.keys(req.body).forEach(input => req.sanitize(input).escape());
 
