@@ -3,13 +3,7 @@
 # dependencies
 node_modules
 
-# production
-
-
 # misc
 .DS_Store
 npm-debug.log
 /.idea
-
-#confidential
-.env
