@@ -9,7 +9,7 @@
     "server": "node server_cluster.js --exec babel-node --presets es2015,stage-0",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "dev": "nf start client server",
+    "dev": "nf start --port 3000 client server",
     "dev_client": "react-scripts start",
     "dev_server": "nodemon server_cluster.js --exec babel-node -r dotenv/config --presets es2015,stage-0"
   },

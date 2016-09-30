@@ -28,7 +28,7 @@ const FAQ = React.createClass({
         const hideStyle = {
             overflow: 'hidden',
             maxHeight: 0,
-            transition: 'max-height 0.5s ease-out'
+            transition: 'max-height 0.5s ease'
 
         };
         const showStyle = {
