@@ -14,7 +14,7 @@ const Apply = React.createClass({
     _handleSubmit(e) {
         e.preventDefault();
         const data = formSerialize(e.target, {hash: true});
-        axios.post('http://localhost:3100/apply', data)
+        axios.post('https://decode-main.herokuapp.com/apply', data)
             .then(({data: response}) => {
                 //Multiple response options available
                 if (response.status === 'success') {

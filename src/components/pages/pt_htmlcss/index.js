@@ -88,12 +88,12 @@ const Courses = React.createClass({
                         {property: 'description', content: 'Learn to write clean, standards-complient HTML & CSS, and become aquainted with the fundamentals of web design.'},
                     ]}/>
                 <SecondaryNav display={this.state.secondaryNav} links={secondaryLinks}
-                              syllabus='http://localhost:3100/downloads/htmlcss_syllabus.pdf'/>
+                              syllabus='https://decode-main.herokuapp.com/downloads/htmlcss_syllabus.pdf'/>
                 <CourseHero
                     CTAPText="Apply Now"
                     CTASText="Syllabus"
                     CTAPLink="/apply"
-                    CTASLink="http://localhost:3100/downloads/htmlcss_syllabus.pdf"
+                    CTASLink="https://decode-main.herokuapp.com/downloads/htmlcss_syllabus.pdf"
                     CTAP={CTAPrimaryLarge}
                     CTAS={CTASecondaryLarge}
                     ref={hero => {
