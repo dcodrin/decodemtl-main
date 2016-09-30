@@ -51,12 +51,7 @@ const Courses = React.createClass({
     _handleScroll(e) {
         const headerWrapper = this._hero._headerWrapper;
         const scrollPosition = headerWrapper.offsetTop + headerWrapper.offsetHeight;
-        if (window.innerWidth < 800) {
-            this.setState({
-                secondaryNav: false
-            });
-            return;
-        }
+
         if (window.scrollY > scrollPosition && !this.state.secondaryNav) {
             this.setState({
                 secondaryNav: true

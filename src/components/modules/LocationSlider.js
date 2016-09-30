@@ -122,8 +122,6 @@ const LocationSlider = React.createClass({
             return req(images[slide - 1]);
         };
 
-        console.log(imageSlide,);
-
         return (
             <section className="module module-full-width module-boxed-light working-space-module">
                 <div className="wrapper">

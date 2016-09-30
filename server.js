@@ -7,7 +7,8 @@ const express = require('express'),
     axios = require('axios'),
     nodemailer = require('nodemailer'),
     cluster = require('cluster'),
-    md5 = require('js-md5');
+    md5 = require('js-md5'),
+    path = require('path');
 
 //NOTE: Mailchimp uses HTTP Basic Auth. Set 'username' as any string ex: 'apiKey', 'helloWorld'
 
@@ -40,6 +41,14 @@ app.use((req, res, next) => {
 
 // Downloads virtual path
 app.use('/downloads', express.static(__dirname + '/public'));
+
+// Server initial index file
+app.use(express.static(__dirname + '/build'));
+
+app.get('/*', (req, res) => {
+    console.log('CATCH ALL');
+    res.sendFile(path.resolve(__dirname + '/build', 'index.html'));
+});
 
 // returns promises
 const subscribeUser = (email, interests = {}) => {
