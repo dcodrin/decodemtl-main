@@ -4,7 +4,7 @@
   "description": "DecodeMTL API",
   "main": "server_cluster.js",
   "scripts": {
-    "deploy_heroku": "npm run build && git add . && git commit -m \"Deploy Build\" && git push heroku cluster_server:master",
+    "deploy_heroku": "npm run build && git add . && git commit -m \"Deploy Build\" && git push heroku master",
     "start": "nf start web",
     "server": "node server_cluster.js --exec babel-node --presets es2015,stage-0",
     "build": "react-scripts build",
