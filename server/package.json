@@ -2,14 +2,19 @@
   "name": "server",
   "version": "1.0.0",
   "description": "DecodeMTL API",
-  "main": "server.js",
+  "main": "server_cluster.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nf --port 3000 start",
-    "server": "nodemon server_cluster.js --exec babel-node -r dotenv/config --presets es2015,stage-0"
+    "start": "nf start api",
+    "dev": "nf start web api",
+    "server": "node server_cluster.js --exec babel-node --presets es2015,stage-0",
+    "dev_server": "nodemon server_cluster.js --exec babel-node -r dotenv/config --presets es2015,stage-0"
   },
   "author": "Codrin Diaconu",
   "license": "ISC",
+  "engines": {
+    "node": "6.2.2"
+  },
   "dependencies": {
     "axios": "^0.14.0",
     "babel-cli": "^6.14.0",
@@ -21,11 +26,11 @@
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "express-validator": "^2.20.8",
+    "foreman": "^2.0.0",
     "js-md5": "^0.4.1",
     "nodemailer": "^2.6.0"
   },
   "devDependencies": {
-    "foreman": "^2.0.0",
     "morgan": "^1.7.0",
     "nodemon": "^1.10.2"
   }
