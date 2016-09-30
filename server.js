@@ -46,7 +46,6 @@ app.use('/downloads', express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/build'));
 
 app.get('/*', (req, res) => {
-    console.log('CATCH ALL');
     res.sendFile(path.resolve(__dirname + '/build', 'index.html'));
 });
 
@@ -129,7 +128,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-app.post('/apply', (req, res) => {
+app.post('api/apply', (req, res) => {
     //Sanitize user input
     Object.keys(req.body).forEach(input => req.sanitize(input).escape());
 
@@ -175,7 +174,7 @@ app.post('/apply', (req, res) => {
     });
 });
 
-app.post('/newsletter', (req, res) => {
+app.post('api/newsletter', (req, res) => {
     req.sanitize('email').escape();
     const email = req.body.email.trim().toLowerCase();
     const interests = req.body.interests || {};
@@ -203,7 +202,7 @@ app.post('/newsletter', (req, res) => {
         });
 });
 
-app.post('/visit', (req, res) => {
+app.post('api/visit', (req, res) => {
 
     req.sanitize('email').escape();
 
@@ -238,7 +237,7 @@ app.post('/visit', (req, res) => {
     });
 });
 
-app.post('/contact', (req, res) => {
+app.post('api/contact', (req, res) => {
     //Sanitize user input
     Object.keys(req.body).forEach(input => req.sanitize(input).escape());
 
