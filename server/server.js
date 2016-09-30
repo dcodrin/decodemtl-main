@@ -1,10 +1,12 @@
 //TODO Clean up email html
 const express = require('express'),
+    morgan = require('morgan'),
     expressValidator = require('express-validator'),
     bodyParser = require('body-parser'),
     cors = require('cors'),
     axios = require('axios'),
     nodemailer = require('nodemailer'),
+    cluster = require('cluster'),
     md5 = require('js-md5');
 
 //NOTE: Mailchimp uses HTTP Basic Auth. Set 'username' as any string ex: 'apiKey', 'helloWorld'
@@ -25,11 +27,21 @@ app.use(expressValidator());
 
 app.set('port', (process.env.PORT || 3001));
 
+//log requests
+app.use(morgan('dev'));
+
+//cluster middleware to check which worker is handling request
+app.use((req, res, next) => {
+    if (cluster.isWorker) {
+        console.log(`Worker ${cluster.worker.id} received request.`)
+    }
+    next();
+});
+
 // Downloads virtual path
 app.use('/downloads', express.static(__dirname + '/public'));
 
-// returns promise
-//interests: {'7561ee16e5': true}
+// returns promises
 const subscribeUser = (email, interests = {}) => {
     return new Promise((resolve, reject) => { // eslint-disable-line no-undef
         axios({
@@ -96,6 +108,7 @@ const checkSubscription = (email) => {
             });
     });
 };
+
 // create reusable transporter object using the default SMTP transport
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -113,7 +126,6 @@ app.post('/apply', (req, res) => {
 
     //User input data
     const data = req.body;
-    console.log(data);
     // setup e-mail data
     //proceed editing at own risk
     const mailOptions = {
@@ -260,6 +272,17 @@ app.post('/contact', (req, res) => {
 
 });
 
-app.listen(app.get('port'), () => {
-    console.log(`API server running on port ${app.get('port')}`); // eslint-disable-line no-console
-});
+
+const startServer = () => {
+    return app.listen(app.get('port'), () => {
+        console.log(`Express server started in ${app.get('env')} mode on port ${app.get('port')}`); // eslint-disable-line no-console
+    });
+};
+
+// check to see if module is run directly as node server.js or is required in another module
+if (require.main === module) {
+    startServer();
+} else {
+    module.exports = startServer;
+}
+

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nf --port 3000 start",
-    "server": "nodemon server.js --exec babel-node -r dotenv/config --presets es2015,stage-0"
+    "server": "nodemon server_cluster.js --exec babel-node -r dotenv/config --presets es2015,stage-0"
   },
   "author": "Codrin Diaconu",
   "license": "ISC",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "foreman": "^2.0.0",
+    "morgan": "^1.7.0",
     "nodemon": "^1.10.2"
   }
 }
