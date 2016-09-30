@@ -46,6 +46,7 @@ app.use('/downloads', express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/build'));
 
 app.get('/*', (req, res) => {
+    console.log(process.env);
     res.sendFile(path.resolve(__dirname + '/build', 'index.html'));
 });
 
