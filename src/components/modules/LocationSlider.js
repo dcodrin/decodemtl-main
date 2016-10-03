@@ -127,8 +127,10 @@ const LocationSlider = React.createClass({
                 <div className="wrapper">
                     <h4 className="module-title-medium">Learn at the Best Location in Montreal</h4>
                     <figure className="carousel">
-                        <div className="carousel-control carousel-previous">
-                            <i className="fa fa-angle-left" aria-hidden="true" title="Previous Image" onClick={this._handleSlide.bind(this, 'prev')}/><span className="sr-only">Previous Project</span>
+                        <div className="carousel-control carousel-previous"
+                             onClick={this._handleSlide.bind(this, 'prev')}>
+                            <i className="fa fa-angle-left" aria-hidden="true" title="Previous Image"/><span
+                            className="sr-only">Previous Project</span>
                         </div>
                         {/* /.carousel-control */}
                         <div className="carousel-box">
@@ -141,8 +143,9 @@ const LocationSlider = React.createClass({
                             </div>
                         </div>
                         {/* /.carousel-box */}
-                        <div className="carousel-control carousel-next">
-                            <i className="fa fa-angle-right" aria-hidden="true" title="Next Image" onClick={this._handleSlide.bind(this, 'next')}/><span className="sr-only">Next Project</span>
+                        <div className="carousel-control carousel-next" onClick={this._handleSlide.bind(this, 'next')}>
+                            <i className="fa fa-angle-right" aria-hidden="true" title="Next Image"/><span
+                            className="sr-only">Next Project</span>
                         </div>
                         {/* /.carousel-control */}
                     </figure>
