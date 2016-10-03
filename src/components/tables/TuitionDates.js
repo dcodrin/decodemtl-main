@@ -15,7 +15,8 @@ const TuitionDates = React.createClass({
         return (
             <div className={this.props.price ? 'row' : 'row full'}>
                 <div
-                    className="cell">{this.props.startDate.replace(/[a-z]+$/i, '')}<sup>{this.props.startDate.match(/\d+(.*)/)[1]}</sup>-{this.props.endDate.replace(/[a-z]+$/i, '')}<sup>{this.props.endDate.match(/\d+(.*)/)[1]}</sup>
+                    className="cell">{this.props.startDate.replace(/[a-z]+$/i, '')}<sup>{this.props.startDate.match(/\d+(.*)/)[1]}</sup>
+                    - {this.props.endDate.replace(/[a-z]+$/i, '')}<sup>{this.props.endDate.match(/\d+(.*)/)[1]}</sup>
                 </div>
                 <div className="cell">{this.props.days}</div>
                 <div className="cell">{this.props.hours}</div>
