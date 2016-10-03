@@ -10,7 +10,6 @@ const CourseTuitionDates = (props) => {
                     <div className="multi-column-table">
                         {props.tuitionDates.map((info, i) => <TuitionDates key={i} {...info} />)}
                     </div>
-                    <p className="foot-note text-body-small">We accept students on a rolling basis. Classes always fill up so don't wait to apply.</p>
                 </div>
             </section>
         );
