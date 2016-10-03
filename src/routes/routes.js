@@ -1,6 +1,5 @@
 import React from 'react';
-import {Route, IndexRoute, Router, browserHistory, applyRouterMiddleware} from 'react-router';
-import useScroll from 'react-router-scroll/lib/useScroll';
+import {Route, IndexRoute, Router, browserHistory} from 'react-router';
 
 import App from '../components/App';
 import BootcampCourse from '../components/pages/wd_bootcamp/index';
@@ -21,8 +20,6 @@ import Apply from '../components/pages/apply/index';
 import Confirmation from '../components/pages/confirmation/index';
 import Success from '../components/pages/success/index';
 
-//to pass optional params place router including "/" in parentheses --> /courses(/:courseName)
-//IMPORTANT: to scroll to top upon rendering children components --> useScroll
 export default () => {
     return (
         <Router history={browserHistory}>
@@ -50,13 +47,3 @@ export default () => {
         </Router>
     );
 };
-
-
-// render={applyRouterMiddleware(useScroll((prevRouterProps, currRouterProps) => {
-//
-//     //NOTE: In order to correctly handle nested child routes fading in and out we need to make sure
-//     // that useScroll is only active on top level paths.
-//     const prevPathname = prevRouterProps && prevRouterProps.location.pathname,
-//         currPathname = currRouterProps.location.pathname;
-//     return prevPathname && !(currPathname.includes(prevPathname) && prevPathname !== '/');
-// }))}
