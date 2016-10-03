@@ -5,7 +5,8 @@ export default  [
         days: 'Monday—Friday',
         hours: '10AM—9PM',
         price: 5995,
-        courseName: 'Bootcamp'
+        courseName: 'Bootcamp',
+        earlyBird: false
     },
     {
         startDate: 'Apr 3rd',
@@ -13,6 +14,7 @@ export default  [
         days: 'Monday—Friday',
         hours: '10AM—9PM',
         price: 5995,
-        courseName: 'Bootcamp'
+        courseName: 'Bootcamp',
+        earlyBird: true
     }
 ];

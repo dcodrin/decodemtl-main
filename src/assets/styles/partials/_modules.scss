@@ -2,7 +2,10 @@
 // Modules general
 // =====================
 .module {
-	margin-bottom: 6rem;
+	margin-bottom: 4rem;
+	@include breakpoint(jumbo) {
+		margin-bottom: 6rem;
+	}
 }
 .module-full-width {
 	padding: $module-vert-pd 0;
@@ -83,16 +86,22 @@
 	.cell {
 		@include breakpoint(mintablet) {
 			&:first-child {
-				flex-basis: 30%;
+				flex-basis: 25%;
 			}
 		}
 		&:last-child,
 		&:first-child {
 			font-family: $font-bold;
 		}
+		&:last-child {
+			flex: 1 1 10%;
+		}
 	}
 	.full {
 		color: $midgrey;
+	}
+	.fa {
+		color: $red;
 	}
 }
 // ========================
@@ -359,10 +368,10 @@
 	margin: $module-vert-pd 0;
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-between;
+	justify-content: center;
 }
 .partner-logo {
-	margin: 1rem auto;
+	margin: 1rem 0;
 	height: 2.25rem;
 	width: 8rem;
 	display: flex;

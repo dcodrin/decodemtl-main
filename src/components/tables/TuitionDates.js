@@ -9,19 +9,39 @@ const TuitionDates = React.createClass({
         price: React.PropTypes.number.isRequired
     },
     _formatPrice(num) {
-       return '$' + num.toString().replace(/(\d)(?=(\d{3})+$)/g, "$1,");
+        return '$' + num.toString().replace(/(\d)(?=(\d{3})+$)/g, "$1,");
     },
     render() {
         return (
-            <div className={this.props.price ? 'row' : 'row full'}>
-                <div
-                    className="cell">{this.props.startDate.replace(/[a-z]+$/i, '')}<sup>{this.props.startDate.match(/\d+(.*)/)[1]}</sup>
-                    - {this.props.endDate.replace(/[a-z]+$/i, '')}<sup>{this.props.endDate.match(/\d+(.*)/)[1]}</sup>
+            <div>
+                <div className={this.props.price ? 'row' : 'row full'}>
+                    <div className="cell">
+                        {this.props.startDate.replace(/[a-z]+$/i, '')}<sup>{this.props.startDate.match(/\d+(.*)/)[1]}</sup>
+                        &nbsp;- &nbsp;
+                        {this.props.endDate.replace(/[a-z]+$/i, '')}<sup>{this.props.endDate.match(/\d+(.*)/)[1]}</sup>
+                    </div>
+                    <div className="cell">{this.props.days}</div>
+                    <div className="cell">{this.props.hours}</div>
+                    <div className="cell">
+                        {this.props.price ? this._formatPrice(this.props.price) : 'Full'}
+                        {this.props.earlyBird ?
+                            <span>
+                            <span className="fa fa-bolt" aria-hidden="true"/>
+                            <span className="sr-only">Early bird price</span>
+                        </span>
+                            : null}
+                    </div>
                 </div>
-                <div className="cell">{this.props.days}</div>
-                <div className="cell">{this.props.hours}</div>
-                <div className="cell">{this.props.price ? this._formatPrice(this.props.price) : 'Full'}</div>
+                {this.props.earlyBird ?
+                    <div className="row">
+                        <div className="table-footnote text-subtle">
+                            <span className="fa fa-bolt" aria-hidden="true" title="Early bird pricing"/>
+                            &nbsp;= Early bird pricing available up to 30 days before start date. Regular price: $7,995
+                        </div>
+                    </div> :
+                    null}
             </div>
+
         );
     }
 });

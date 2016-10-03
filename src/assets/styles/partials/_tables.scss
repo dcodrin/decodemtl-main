@@ -30,6 +30,10 @@
 	.cell {
 		padding: 0.3em 0;
 		flex: 1 1 15%;
+      &:nth-of-type(odd) {
+      }
+      &:nth-of-type(even) {
+      }
 		@include breakpoint(mintablet) {
 			&:not(:first-child) {
 				padding-left: 1em;
@@ -38,10 +42,13 @@
 				text-align: left;
 			}
 			&:last-child {
-				flex: 0 2 10%;
+              text-align: right;
 			}
 		}
 	}
+  .fa {
+    padding-left: 0.5em;
+  }
 }
 // ========================
 // Two Column Table
@@ -70,4 +77,10 @@
   	padding-right: 1em;
     margin-top: 0;
   }
+}
+
+.table-footnote {
+  font-size: 0.8rem;
+  width: 100%;
+  text-align: right;
 }

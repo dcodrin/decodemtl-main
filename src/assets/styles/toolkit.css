@@ -384,19 +384,19 @@ ol {
   transform: rotate(-90deg); }
 
 .contact-details-list {
-  list-style: none;
+    list-style: none;
 }
 
 .contact-details-list li {
-  padding: 0.2em 0;
+    padding: 0.2em 0;
 }
 
 .contact-details-list li a:hover {
-  color: #D6252C;
+    color: #D6252C;
 }
 
 .contact-details-list li a::before {
-  content: none;
+    content: none;
 }
 
 .visually-hidden {
@@ -551,11 +551,11 @@ ol {
   position: relative; }
 
 .modal-dark {
-  background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.85);
 }
 
 .modal-light {
-  background: #FAFAFA;
+    background: #FAFAFA;
 }
 
 .video-trigger {
@@ -741,8 +741,11 @@ form .contact-details-section input {
     justify-content: space-between; }
     form .contact-details-section div, form .contact-details-section input {
       flex: 0 1 calc(50% - 0.5em); } }
-form .submit-section .optin-checkbox {
-  margin: 1rem 0; }
+
+form .optin-checkbox {
+    margin: 1rem 0;
+    width: 100%;
+}
 form .module-title-medium {
   width: 100%; }
 
@@ -757,21 +760,21 @@ form .module-title-medium {
 
 .message-container.module-boxed {
   text-align: center;
-  border: 2px solid;
+    border: 2px solid;
 }
 
 .message-icon::before {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 .message-container.message-container-success {
   border-color: #212121;
-  color: #212121;
+    color: #212121;
 }
 
 .message-container.message-container-error {
   border-color: #D6252C;
-  color: #D6252C;
+    color: #D6252C;
 }
 
 a {
@@ -783,7 +786,7 @@ a {
 
 .main-content a {
   position: relative;
-  display: inline-block;
+    display: inline-block;
 }
   .main-content a:before {
     position: absolute;
@@ -1122,14 +1125,14 @@ body.nav-container-active {
   margin: 0; }
 
 .slideout-contact-details li {
-  font-size: 0.8rem;
+    font-size: 0.8rem;
 }
 
 .slideout-contact-details li:first-child a {
       color: #999999; }
 
 .slideout-contact-details li:first-child a:hover {
-  color: #D6252C;
+    color: #D6252C;
 }
 
 .slideout-contact-details li:last-child {
@@ -1172,7 +1175,7 @@ body.nav-container-active {
 
 .secondary-nav-list li a::before,
 .secondary-nav-cta li a::before {
-  content: none;
+    content: none;
 }
 
 .secondary-nav-cta .btn-small {
@@ -1210,7 +1213,7 @@ body.nav-container-active {
   margin-bottom: 3rem; }
 
 .footer-contact-details li a:hover {
-  color: #F0F0F0;
+    color: #F0F0F0;
 }
   .footer-contact-details .fa-envelope {
     font-size: 0.8em;
@@ -1281,7 +1284,13 @@ body.nav-container-active {
       .multi-column-table .cell:first-child {
         text-align: left; }
       .multi-column-table .cell:last-child {
-        flex: 0 2 10%; } }
+          text-align: right;
+      }
+    }
+
+.multi-column-table .fa {
+    padding-left: 0.5em;
+}
 
 .two-col-table .row {
   border-bottom: 1px solid;
@@ -1302,8 +1311,21 @@ body.nav-container-active {
   padding-right: 1em;
   margin-top: 0; }
 
+.table-footnote {
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: right;
+}
+
 .module {
-  margin-bottom: 6rem; }
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 87.5em) {
+    .module {
+        margin-bottom: 6rem;
+    }
+}
 
 .module-full-width {
   padding: 3rem 0; }
@@ -1359,11 +1381,21 @@ body.nav-container-active {
     border-color: #D6D6D6; } }
 @media (min-width: 50em) {
   .tuition-dates .cell:first-child {
-    flex-basis: 30%; } }
+      flex-basis: 25%;
+  }
+}
 .tuition-dates .cell:last-child, .tuition-dates .cell:first-child {
   font-family: "DIN Next W01 Bold"; }
+
+.tuition-dates .cell:last-child {
+    flex: 1 1 10%;
+}
 .tuition-dates .full {
   color: #999999; }
+
+.tuition-dates .fa {
+    color: #D6252C;
+}
 
 .course-schedule .two-col-table .row {
   border-color: #17BECF; }
@@ -1571,10 +1603,11 @@ body.nav-container-active {
   margin: 3rem 0;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between; }
+    justify-content: center;
+}
 
 .partner-logo {
-  margin: 1rem auto;
+    margin: 1rem 0;
   height: 2.25rem;
   width: 8rem;
   display: flex;
