@@ -34,6 +34,10 @@ const HomePage = React.createClass({
             modal: !this.state.modal
         })
     },
+    componentWillMount() {
+        //Necessary for smooth fade transitions when routing from parent component.
+        window.scrollTo(0, 0);
+    },
     render() {
         return (
             <div>

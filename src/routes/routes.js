@@ -25,14 +25,7 @@ import Success from '../components/pages/success/index';
 //IMPORTANT: to scroll to top upon rendering children components --> useScroll
 export default () => {
     return (
-        <Router history={browserHistory} render={applyRouterMiddleware(useScroll((prevRouterProps, currRouterProps) => {
-
-            //NOTE: In order to correctly handle nested child routes fading in and out we need to make sure
-            // that useScroll is only active on top level paths.
-            const prevPathname = prevRouterProps && prevRouterProps.location.pathname,
-                currPathname = currRouterProps.location.pathname;
-            return prevPathname && !(currPathname.includes(prevPathname) && prevPathname !== '/');
-        }))}>
+        <Router history={browserHistory}>
             <Route path='/' component={App}>
                 <IndexRoute component={Home}/>
                 <Route path='courses'>
@@ -57,3 +50,13 @@ export default () => {
         </Router>
     );
 };
+
+
+// render={applyRouterMiddleware(useScroll((prevRouterProps, currRouterProps) => {
+//
+//     //NOTE: In order to correctly handle nested child routes fading in and out we need to make sure
+//     // that useScroll is only active on top level paths.
+//     const prevPathname = prevRouterProps && prevRouterProps.location.pathname,
+//         currPathname = currRouterProps.location.pathname;
+//     return prevPathname && !(currPathname.includes(prevPathname) && prevPathname !== '/');
+// }))}

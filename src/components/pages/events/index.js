@@ -9,25 +9,29 @@ import UpcomingEvents from '../../../components/modules/UpcomingEvents';
 // import bannerBackground from '../../../assets/images/module-bg-wework-common.jpg';
 import events from '../../../config/events';
 
-const Events = (props) => {
-    const formTitle = 'Don\'t miss a single event.',
-        formText = 'Enter your email below to sign up for our newsletter.';
+const Events = React.createClass({
+    componentWillMount() {
+        //Necessary for smooth fade transitions when routing from parent component.
+        window.scrollTo(0, 0);
+    },
+    render() {
+        const formTitle = 'Don\'t miss a single event.',
+            formText = 'Enter your email below to sign up for our newsletter.';
 
-    return (
-        <div>
-            <Helmet
-                title="Events | DecodeMTL"
-                meta={[
-                    {property: 'description', content: 'Browse upcoming events at DecodeMTL here.'},
-                ]}/>
-            <Hero moduleTitle="decodemtl" jumboTitle="events" text="Browse our upcoming events."/>
-            <UpcomingEvents events={events} />
-            <FormOptin submitButton="Submit" title={formTitle} text={formText} />
-            {/*<GreenImageBanner background={bannerBackground} title='looking to host an event?' text='Collaboration is within the nation!' />*/}
-        </div>
-    );
-};
-
-Events.propTypes = {};
+        return (
+            <div>
+                <Helmet
+                    title="Events | DecodeMTL"
+                    meta={[
+                        {property: 'description', content: 'Browse upcoming events at DecodeMTL here.'},
+                    ]}/>
+                <Hero moduleTitle="decodemtl" jumboTitle="events" text="Browse our upcoming events."/>
+                <UpcomingEvents events={events}/>
+                <FormOptin submitButton="Submit" title={formTitle} text={formText}/>
+                {/*<GreenImageBanner background={bannerBackground} title='looking to host an event?' text='Collaboration is within the nation!' />*/}
+            </div>
+        );
+    }
+});
 
 export default Events;

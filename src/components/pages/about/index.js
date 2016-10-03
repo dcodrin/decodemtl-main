@@ -15,6 +15,10 @@ const About = React.createClass({
     getDefaultProps () {
         return {};
     },
+    componentWillMount() {
+        //Necessary for smooth fade transitions when routing from parent component.
+        window.scrollTo(0, 0);
+    },
     render() {
 
         const p1 = [
