@@ -23,7 +23,11 @@ const TuitionDates = React.createClass({
                     <div className="cell">{this.props.days}</div>
                     <div className="cell">{this.props.hours}</div>
                     <div className="cell">
-                        {this.props.price ? this._formatPrice(this.props.price) : 'Full'}
+                        {this.props.price ?
+                            this.props.earlyBird ?
+                                this._formatPrice(this.props.price - 500) :
+                                this._formatPrice(this.props.price) :
+                            'Full'}
                         {this.props.earlyBird ?
                             <span>
                             <span className="fa fa-bolt" aria-hidden="true"/>
@@ -36,7 +40,8 @@ const TuitionDates = React.createClass({
                     <div className="row">
                         <div className="table-footnote text-subtle">
                             <span className="fa fa-bolt" aria-hidden="true" title="Early bird pricing"/>
-                            &nbsp;= Early bird pricing available up to 30 days before start date. Regular price: $7,995
+                            &nbsp;= Early bird pricing available up to 30 days before start date. Regular
+                            price: {this._formatPrice(this.props.price)}
                         </div>
                     </div> :
                     null}
