@@ -57,6 +57,7 @@ const FAQ = React.createClass({
                                         style={this.state.active === q.question ? showStyle : hideStyle}
                                         className="answer">
                                         {q.answer}
+                                        {q.test ? q.test : null}
                                     </li>
                                 </div>
                             );

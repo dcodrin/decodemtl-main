@@ -1,3 +1,5 @@
+import React from 'react';
+
 module.exports = [
     {
         question: 'Why Should I attend DecodeMTL?',
@@ -33,6 +35,6 @@ module.exports = [
     },
     {
         question: 'I have more questions, who can I ask?',
-        answer: 'The best way to contact us is to send an email to hello@decodemtl.com.'
+        answer: (<div>The best way to contact us is to send an email to <a href="#">hello@decodemtl.com</a>.</div>)
     },
 ];
