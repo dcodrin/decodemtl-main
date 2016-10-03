@@ -8,7 +8,7 @@ const startWorker = () => {
 };
 
 if (cluster.isMaster) {
-    return;
+    return 42;
     cpus.forEach(() => {
         startWorker();
     });
