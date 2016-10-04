@@ -48,27 +48,35 @@ class TransitionChild extends Component {
         this.page.style.transition = this.props.transition
         Object.assign(this.page.style, this.props.finalStyle)
         let transitionsRemaining = this.props.transition.split(',').length
-        this.page.addEventListener("transitionend", (event) => {
+        console.log('Fade in transitionend. Remaining BEFORE CALLBACK2w: ', transitionsRemaining);
+
+        let x = (event) => {
             transitionsRemaining--
             console.log('Fade in transitionend. Remaining: ', transitionsRemaining);
             if (transitionsRemaining) return
             callback()
-        }, false)
+            this.page.removeEventListener("transitionend", x);
+        };
+        this.page.addEventListener("transitionend", x, false)
     }
     componentWillLeave(callback) {
         let leaveStyle = this.props.leaveStyle ? this.props.leaveStyle : this.props.initialStyle
         Object.assign(this.page.style, leaveStyle)
         let transitionsRemaining = this.props.transition.split(',').length
-        this.page.addEventListener("transitionend", (event) => {
+
+        let x = (event) => {
             transitionsRemaining--
-            console.log('Fade out transitionend. Remaining: ', transitionsRemaining);
+            //console.log('Fade out transitionend. Remaining: ', transitionsRemaining);
             if (transitionsRemaining) return
             callback()
             this.props.childDidLeave()
-        }, false)
+            this.page.removeEventListener("transitionend", x);
+        };
+
+        this.page.addEventListener("transitionend", x, false)
     }
     render() {
-        return <div ref={(ref) => this.page = ref} style={this.props.initialStyle}>
+        return <div ref={(ref) => ref && (this.page = ref)} style={this.props.initialStyle}>
             {this.props.children}
         </div>
     }
