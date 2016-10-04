@@ -1,5 +1,6 @@
 import React from 'react';
-import {Route, IndexRoute, Router, browserHistory} from 'react-router';
+import {Route, IndexRoute, Router, browserHistory, applyRouterMiddleware} from 'react-router';
+import {useScroll} from 'react-router-scroll'
 
 import App from '../components/App';
 import BootcampCourse from '../components/pages/wd_bootcamp/index';
@@ -22,7 +23,14 @@ import Success from '../components/pages/success/index';
 
 export default () => {
     return (
-        <Router history={browserHistory}>
+        <Router history={browserHistory} render={applyRouterMiddleware(useScroll((prevRouterProps, currRouterProps) => {
+
+            //NOTE: In order to correctly handle nested child routes fading in and out we need to make sure
+            // that useScroll is only active on top level paths.
+            const prevPathname = prevRouterProps && prevRouterProps.location.pathname,
+                currPathname = currRouterProps.location.pathname;
+            return prevPathname && !(currPathname.includes(prevPathname) && prevPathname !== '/');
+        }))}>
             <Route path='/' component={App}>
                 <IndexRoute component={Home}/>
                 <Route path='courses'>
