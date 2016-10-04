@@ -1,4 +1,3 @@
-'use strict'
 import React, { Component, PropTypes } from 'react'
 import ReactTransitionGroup from 'react-addons-transition-group'
 
@@ -24,6 +23,7 @@ export default class EasyTransition extends Component {
         })
     }
     render() {
+        console.log(this.props);
         return (
             <ReactTransitionGroup transitionName="fade" component="div">
                 {this.state.visible &&
