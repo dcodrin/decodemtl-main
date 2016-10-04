@@ -134,12 +134,14 @@
 	display: flex;
 	flex-flow: column nowrap;
 	@include breakpoint(laptop) {
-		max-width: 500px;
+		max-width: 25em;
 		margin: auto;
 	}
 	@include breakpoint(minlaptop) {
 		flex-flow: row nowrap;
 		justify-content: space-between;
+		max-width: 50em;
+		margin: auto;
 	}
 }
 // slider image
@@ -159,8 +161,11 @@
 .student-project-details {
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: space-between;
-	flex: 0 1 38%;
+	justify-content: space-around;
+	@include breakpoint(minlaptop) {
+		flex: 1 1 35%;
+    max-width: 40%;
+	}
 }
 // controls
 .slider-controls {

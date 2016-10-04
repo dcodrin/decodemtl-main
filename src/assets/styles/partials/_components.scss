@@ -97,12 +97,12 @@ ol {
 }
 .contact-details-list {
 	list-style: none;
-	li {
-		padding: 0.2em 0;
-		a:hover {
-			color: $red;
-		}
-		a::before {
+		li {
+			padding: 0.2em 0;
+			a:hover {
+				color: $red;
+			}
+			a::before {
 			content: none;
 		}
 	}
@@ -306,7 +306,7 @@ ol {
 	position: relative;
 }
 .modal-dark {
-	background: transparentize(#000, 0.15);
+	background:transparentize(#000, 0.15);
 }
 .modal-light {
 	background: $white;
@@ -349,7 +349,8 @@ ol {
 	justify-content: space-between;
 }
 .carousel-box {
-	width: calc(44em - 6rem);
+	max-width: calc(44em - 6rem);
+	flex: 1 1 45%;
 }
 .carousel-img {
 	display: none;

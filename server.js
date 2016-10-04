@@ -45,10 +45,6 @@ app.use('/downloads', express.static(__dirname + '/public'));
 // Server initial index file
 app.use(express.static(__dirname + '/build'));
 
-app.get('/*', (req, res) => {
-    res.sendFile(path.resolve(__dirname + '/build', 'index.html'));
-});
-
 // returns promises
 const subscribeUser = (email, interests = {}) => {
     return new Promise((resolve, reject) => { // eslint-disable-line no-undef
@@ -280,6 +276,9 @@ app.post('/api/contact', (req, res) => {
 
 });
 
+app.get('/*', (req, res) => {
+    res.sendFile(path.resolve(__dirname + '/build', 'index.html'));
+});
 
 const startServer = () => {
     return app.listen(app.get('port'), () => {

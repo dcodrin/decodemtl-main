@@ -11,10 +11,6 @@ const Apply = React.createClass({
     propTypes: {
         router: React.PropTypes.object.isRequired
     },
-    componentWillMount() {
-        //Necessary for smooth fade transitions when routing from parent component.
-        window.scrollTo(0, 0);
-    },
     _handleSubmit(e) {
         e.preventDefault();
         const data = formSerialize(e.target, {hash: true});

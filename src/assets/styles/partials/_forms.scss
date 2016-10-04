@@ -114,14 +114,16 @@ input[type="checkbox"]:checked + label {
 			opacity: 1;
 		}
 	}
-	input[type="submit"] {
-		flex: 0 0 22%;
-	}
-	@include breakpoint(minlaptop) {
+	// @include breakpoint(mintablet) {
+	// 	input[type="submit"] {
+	// 		flex: 0 0 22%;
+	// 	}
+	// }
+	@include breakpoint(mintablet) {
 		flex-flow: row wrap;
 		justify-content: space-between;
-		input {
-			padding: 0.5em;
+		input[type="submit"] {
+			flex: 0 0 22%;
 		}
 	}
 	@include breakpoint(mindesktop) {
@@ -146,9 +148,9 @@ form {
 			}
 		}
 	}
-  .optin-checkbox {
-    margin: 1rem 0;
-    width: 100%;
+	.optin-checkbox {
+		margin: 1rem 0;
+		width: 100%;
 	}
 	.module-title-medium {
 		width: 100%;
@@ -190,5 +192,5 @@ form {
 // Error
 .message-container.message-container-error {
 	border-color: $red;
-  color: $red
+	color:$red
 }
