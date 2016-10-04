@@ -47,13 +47,14 @@ const App = React.createClass({
                     this._siteNav = siteNav
                 }}/>
                 <main className="main-content">
-                    <RouteTransition
-                        path={this.props.location.pathname}
-                        initialStyle={{opacity: 0}}
-                        transition="opacity 150ms ease-in"
-                        finalStyle={{opacity: 1}}>
-                        {this.props.children}
-                    </RouteTransition>
+                    {/*<RouteTransition*/}
+                        {/*path={this.props.location.pathname}*/}
+                        {/*initialStyle={{opacity: 0}}*/}
+                        {/*transition="opacity 150ms ease-in"*/}
+                        {/*finalStyle={{opacity: 1}}>*/}
+                      {/**/}
+                    {/*</RouteTransition>*/}
+                    {this.props.children}
                 </main>
                 <Footer/>
             </div>
