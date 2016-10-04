@@ -1,7 +1,7 @@
 //TODO implement custom schedule a visit form
 //TODO bug fix --> Privacy policy & terms links should close modal upon click
 import React from 'react';
-import RouteTransition from 'react-easy-transition';
+import RouteTransition from './RouteTransition';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import SiteNav from './navigation/SiteNav';
@@ -47,14 +47,13 @@ const App = React.createClass({
                     this._siteNav = siteNav
                 }}/>
                 <main className="main-content">
-                    {/*<RouteTransition*/}
-                        {/*path={this.props.location.pathname}*/}
-                        {/*initialStyle={{opacity: 0}}*/}
-                        {/*transition="opacity 150ms ease-in"*/}
-                        {/*finalStyle={{opacity: 1}}>*/}
-                      {/**/}
-                    {/*</RouteTransition>*/}
-                    {this.props.children}
+                    <RouteTransition
+                        path={this.props.location.pathname}
+                        initialStyle={{opacity: 0}}
+                        transition="opacity 150ms ease-in"
+                        finalStyle={{opacity: 1}}>
+                        {this.props.children}
+                    </RouteTransition>
                 </main>
                 <Footer/>
             </div>
