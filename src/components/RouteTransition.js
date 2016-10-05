@@ -37,9 +37,11 @@ export default class EasyTransition extends Component {
 
 class TransitionChild extends Component {
     componentWillAppear(callback) {
+        console.log('Component appeared');
         this.componentFadeIn(callback)
     }
     componentWillEnter(callback) {
+        console.log('Component entered');
         this.componentFadeIn(callback)
     }
     componentFadeIn(callback) {
@@ -47,13 +49,7 @@ class TransitionChild extends Component {
         Object.keys(this.props.initialStyle).forEach(property => window.getComputedStyle(this.page)[property])
         this.page.style.transition = this.props.transition
         Object.assign(this.page.style, this.props.finalStyle)
-        // let transitionsRemaining = this.props.transition.split(',').length
-        // console.log('Fade in transitionend. Remaining BEFORE CALLBACK2w: ', transitionsRemaining);
-
         let x = (event) => {
-            // transitionsRemaining--
-            // console.log('Fade in transitionend. Remaining: ', transitionsRemaining);
-            // if (transitionsRemaining) return
             callback()
             this.page.removeEventListener("transitionend", x);
             this.page.removeEventListener("webkitTransitionEnd", x, false)
@@ -64,12 +60,7 @@ class TransitionChild extends Component {
     componentWillLeave(callback) {
         let leaveStyle = this.props.leaveStyle ? this.props.leaveStyle : this.props.initialStyle
         Object.assign(this.page.style, leaveStyle)
-        // let transitionsRemaining = this.props.transition.split(',').length
-
         let x = (event) => {
-            // transitionsRemaining--
-            //console.log('Fade out transitionend. Remaining: ', transitionsRemaining);
-            // if (transitionsRemaining) return
             callback()
             this.props.childDidLeave()
             this.page.removeEventListener("transitionend", x);
