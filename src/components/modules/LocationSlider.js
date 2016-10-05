@@ -59,13 +59,17 @@ const LocationSlider = React.createClass({
                     slide: slide - 1,
                     nextSlide: slide,
                     prevSlide: (slide - 2) === 0 ? images.length : slide - 2
-                })
+                });
+                // this.props.req(images[slide]);
+                // this.props.req(images[ (slide - 2) === 0 ? images.length : slide - 2])
             } else {
                 this.setState({
                     slide: images.length,
                     nextSlide: 1,
                     prevSlide: images.length - 1
-                })
+                });
+                // this.props.req(images[1]);
+                // this.props.req(images[images.length - 1])
             }
         }
     },

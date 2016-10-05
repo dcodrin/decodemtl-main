@@ -23,7 +23,6 @@ export default class EasyTransition extends Component {
         })
     }
     render() {
-        console.log(this.props);
         return (
             <ReactTransitionGroup transitionName="fade" component="div">
                 {this.state.visible &&
@@ -37,11 +36,9 @@ export default class EasyTransition extends Component {
 
 class TransitionChild extends Component {
     componentDidAppear() {
-        console.log('Component entered');
         this.componentFadeIn()
     }
     componentWillEnter(callback) {
-        console.log('Component entered');
         this.componentFadeIn(callback)
     }
     componentFadeIn(callback) {
