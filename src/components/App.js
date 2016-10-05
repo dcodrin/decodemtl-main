@@ -29,6 +29,11 @@ const App = React.createClass({
             modal: !this.state.modal
         })
     },
+    componentDidMount() {
+        const evt = document.createEvent("HTMLEvents");
+        evt.initEvent('resize', true, false);
+        window.dispatchEvent(evt);
+    },
     render() {
         return (
             <div className="App">
