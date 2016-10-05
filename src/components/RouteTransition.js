@@ -40,7 +40,7 @@ class TransitionChild extends Component {
         console.log('Component entered');
         this.componentFadeIn(callback)
     }
-    componentDidEnter(callback) {
+    componentWillEnter(callback) {
         console.log('Component entered');
         this.componentFadeIn(callback)
     }
