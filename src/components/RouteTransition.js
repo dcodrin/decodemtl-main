@@ -50,10 +50,7 @@ class TransitionChild extends Component {
         this.page.style.transition = this.props.transition
         Object.assign(this.page.style, this.props.finalStyle)
         let x = (event) => {
-            callback();
-            if(event && callback) {
-
-            }
+            callback && callback();
             this.page.removeEventListener("transitionend", x);
         };
         this.page.addEventListener("transitionend", x, false);
