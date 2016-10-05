@@ -29,11 +29,6 @@ const App = React.createClass({
             modal: !this.state.modal
         })
     },
-    componentDidMount() {
-      setImmediate(() => {
-            this.forceUpdate()
-      })
-    },
     render() {
         return (
             <div className="App">

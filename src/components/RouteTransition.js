@@ -56,8 +56,10 @@ class TransitionChild extends Component {
             if (transitionsRemaining) return
             callback()
             this.page.removeEventListener("transitionend", x);
+            this.page.removeEventListener("webkitTransitionEnd", x, false)
         };
-        this.page.addEventListener("transitionend", x, false)
+        this.page.addEventListener("transitionend", x, false);
+        this.page.addEventListener("webkitTransitionEnd", x, false)
     }
     componentWillLeave(callback) {
         let leaveStyle = this.props.leaveStyle ? this.props.leaveStyle : this.props.initialStyle
@@ -71,9 +73,11 @@ class TransitionChild extends Component {
             callback()
             this.props.childDidLeave()
             this.page.removeEventListener("transitionend", x);
+            this.page.removeEventListener("webkitTransitionEnd", x, false);
         };
 
-        this.page.addEventListener("transitionend", x, false)
+        this.page.addEventListener("transitionend", x, false);
+        this.page.addEventListener("webkitTransitionEnd", x, false);
     }
     render() {
         return <div ref={(ref) => ref && (this.page = ref)} style={this.props.initialStyle}>
