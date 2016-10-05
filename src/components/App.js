@@ -30,9 +30,9 @@ const App = React.createClass({
         })
     },
     componentDidMount() {
-        const evt = document.createEvent("HTMLEvents");
-        evt.initEvent('resize', true, false);
-        window.dispatchEvent(evt);
+      setImmediate(() => {
+            this.forceUpdate()
+      })
     },
     render() {
         return (
