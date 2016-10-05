@@ -36,11 +36,11 @@ export default class EasyTransition extends Component {
 }
 
 class TransitionChild extends Component {
-    componentWillAppear(callback) {
-        this.componentWillEnter();
+    componentDidAppear(callback) {
+        console.log('Component entered');
         this.componentFadeIn(callback)
     }
-    componentWillEnter(callback) {
+    componentDidEnter(callback) {
         console.log('Component entered');
         this.componentFadeIn(callback)
     }
