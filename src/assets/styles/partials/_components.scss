@@ -172,6 +172,37 @@ ol {
 	}
 }
 // ================================
+// Loader
+// ================================
+.loader-container {
+	background: $white;
+	@include overlay;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	z-index: 70;
+	padding-top: 6em;
+	@include breakpoint (mintablet) {
+		padding-top: 8em;
+	}
+	.decode-badge-reversed {
+	  width: 5em;
+	  height: 5em;
+	}
+	.petal {
+	  animation: blink 0.5s step-end infinite alternate;
+	}
+	.petal-bottom {
+	  animation-delay: 0.125s;
+	}
+	.petal-left {
+	  animation-delay: 0.25s;
+	}
+	.petal-top {
+	  animation-delay: 0.375s;
+	}
+}
+// ================================
 // Info Blocks
 // ================================
 .info-block {
@@ -351,6 +382,7 @@ ol {
 .carousel-box {
 	max-width: calc(44em - 6rem);
 	flex: 1 1 45%;
+	// flex-basis: initial;
 }
 .carousel-img {
 	display: none;

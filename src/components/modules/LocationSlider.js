@@ -5,16 +5,14 @@ const LocationSlider = React.createClass({
     propTypes: {
         req: React.PropTypes.func.isRequired
     },
-    getDefaultProps () {
-        return {};
-    },
     getInitialState() {
         return {
             slide: 1,
             slidePosition: 0,
             slideOpacity: 1,
             slideStartPosition: 500,
-            slideStep: 25
+            slideStep: 25,
+            images: this.props.req.keys()
         };
     },
     _handleSlide(slideDirection){
@@ -91,15 +89,17 @@ const LocationSlider = React.createClass({
             }
         }, 20);
     },
+    componentWillMount() {
+      this.props.req.keys().forEach(img => this.props.req(img));
+    },
     componentWillUnmount() {
         clearInterval(this.animate);
         this.animate = null;
     },
     render() {
         //TODO REMOVE ESLINT EXCEPTION ONCE REFACTORED
-        const {slidePosition, slideOpacity, slideStartPosition, nextSlide, prevSlide, slide} = this.state; // eslint-disable-line no-unused-vars
+        const {slidePosition, slideOpacity, nextSlide, prevSlide, slide, images} = this.state; // eslint-disable-line no-unused-vars
         const req = this.props.req;
-        const images = req.keys();
 
         const imageContainer = {
             position: 'relative',
@@ -109,14 +109,12 @@ const LocationSlider = React.createClass({
 
         const currImage = {
             position: 'relative',
-            //left: slidePosition, SLIDE DISABLED
             opacity: slideOpacity
         };
 
         const imageSlide = {
             position: 'absolute',
             opacity: 1 - slideOpacity >= 0 ? 1 - slideOpacity : 0,
-            // left: slidePosition > 0 ? slidePosition - slideStartPosition : slidePosition + slideStartPosition,
             top: 0
         };
 
@@ -142,7 +140,7 @@ const LocationSlider = React.createClass({
                                 style={imageContainer}
                                 className="carousel-img visible">
                                 {/*NOTE: The image overlay is necessary to avoid flashes in Safari*/}
-                                <img style={imageSlide} src={getSource(slidePosition)} alt=""/>
+                                {/*<img style={imageSlide} src={getSource(slidePosition)} alt=""/>*/}
                                 <img style={currImage} src={req(images[slide - 1])} alt=""/>
                             </div>
                         </div>
@@ -155,7 +153,8 @@ const LocationSlider = React.createClass({
                     </figure>
                     {/* /.carousel */}
                     <div className="link-more text-body-small">
-                        <Link to="/wework">Learn more about the WeWork experience<span className="fa fa-caret-right" aria-hidden="true" /></Link>
+                        <Link to="/wework">Learn more about the WeWork experience<span className="fa fa-caret-right"
+                                                                                       aria-hidden="true"/></Link>
                     </div>
                 </div>
                 {/* /.wrapper */}

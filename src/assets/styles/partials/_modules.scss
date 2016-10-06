@@ -12,12 +12,15 @@
 }
 // modules with bg images
 .module-bg-img {
-	padding: 3em;
+	padding: 1em;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	background-color: #054851;
 	color: $grey;
+	@include breakpoint(minphablet) {
+		padding: 3em;
+	}
 	.module-title {
 		// color: $grey;
 		margin-top: 0;
@@ -27,7 +30,10 @@
 .module-boxed {
 	background: #FFF;
 	border: 1px solid $grey;
-	padding: 3em;
+	padding: 1em; 
+	@include breakpoint(minphablet) {
+		padding: 3em;
+	}
 }
 // Module in white boxes
 .module-boxed-light {
@@ -143,6 +149,9 @@
 		max-width: 50em;
 		margin: auto;
 	}
+	.carousel-box {
+		flex-basis: initial;
+	}
 }
 // slider image
 .student-project-image {
@@ -162,9 +171,11 @@
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: space-around;
+	flex-shrink: 0;
+	flex-basis: auto;
 	@include breakpoint(minlaptop) {
-		flex: 1 1 35%;
     max-width: 40%;
+		flex: 1 1 35%;
 	}
 }
 // controls

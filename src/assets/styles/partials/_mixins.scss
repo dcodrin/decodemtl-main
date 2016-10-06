@@ -83,6 +83,11 @@
   0% { opacity: 1; }
   100% { opacity: 0; }
 }
+@keyframes blink {
+  0% { fill: $black; }
+  50% { fill: $red; }
+  100% { fill: $black; }
+}
 
 // Typography
 // -------------------------

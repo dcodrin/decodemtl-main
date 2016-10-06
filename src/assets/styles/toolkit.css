@@ -163,6 +163,13 @@ html {
     opacity: 1; }
   100% {
     opacity: 0; } }
+@keyframes blink {
+  0% {
+    fill: #212121; }
+  50% {
+    fill: #D6252C; }
+  100% {
+    fill: #212121; } }
 .wrapper {
   max-width: 980px;
   margin: 0 auto;
@@ -201,21 +208,17 @@ html {
 .alternating:nth-of-type(even) .one-half-content:nth-child(2) {
   order: -1; }
 
-.row-container h1:first-of-type,
-.row-container h2:first-of-type,
-.row-container h3:first-of-type,
-.row-container h4:first-of-type,
-.row-container p:first-of-type {
-  margin-top: 0; }
-
 html {
-  font-size: 125%; }
+  font-size: 100%; }
+  @media (min-width: 37.5em) {
+    html {
+      font-size: 125%; } }
   @media (min-width: 81.25em) {
     html {
       font-size: 138%; } }
 
 body {
-  font-family: "DIN Next W01 Regular", sans-serif;
+  font-family: "DIN Next W01 Regular", "Verdana", "Helvetica Neue", "Arial", sans-serif, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: #212121;
@@ -226,7 +229,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "DIN Next W01 Bold";
+  font-family: "DIN Next W01 Bold", sans-serif;
   font-weight: normal;
   line-height: 1.2; }
 
@@ -243,18 +246,18 @@ h3 {
   margin-bottom: 0.5em; }
 
 h4 {
-  font-family: "DIN Next W01 Medium";
+  font-family: "DIN Next W01 Medium", "Verdana", "Helvetica Neue", "Arial", sans-serif;
   font-weight: normal;
   font-size: 1.2rem;
   margin-bottom: 0.5em; }
 
 strong {
-  font-family: "DIN Next W01 Bold"; }
+  font-family: "DIN Next W01 Bold", sans-serif; }
 
 blockquote {
   margin: 0; }
   blockquote p {
-    font-family: "DIN Next W01 Italic"; }
+    font-family: "DIN Next W01 Italic", "Verdana", "Helvetica Neue", "Arial", sans-serif; }
 
 .credit::before {
   content: '—'; }
@@ -278,22 +281,22 @@ blockquote {
   font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: 0.025em;
-  font-family: "DINNextW01-CondensedBol"; }
+  font-family: "DINNextW01-CondensedBol", "Verdana", "Helvetica Neue", "Arial", sans-serif; }
 
 .module-title-medium {
   font-size: 1.6rem;
   text-transform: uppercase;
   letter-spacing: 0.025em;
-  font-family: "DINNextW01-CondensedBol"; }
+  font-family: "DINNextW01-CondensedBol", "Verdana", "Helvetica Neue", "Arial", sans-serif; }
 
 .module-title-small {
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.025em;
-  font-family: "DINNextW01-CondensedBol"; }
+  font-family: "DINNextW01-CondensedBol", "Verdana", "Helvetica Neue", "Arial", sans-serif; }
 
 .module-title-jumbo {
-  font-family: "DIN Next W01 Bold";
+  font-family: "DIN Next W01 Bold", sans-serif;
   margin-top: -0.2em;
   display: block;
   font-size: 2em;
@@ -306,6 +309,16 @@ blockquote {
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto; }
+
+.module-boxed .module-title:first-of-type {
+  margin-top: 0.2em; }
+
+.row-container h1:first-of-type,
+.row-container h2:first-of-type,
+.row-container h3:first-of-type,
+.row-container h4:first-of-type,
+.row-container p:first-of-type {
+  margin-top: 0; }
 
 .site-footer {
   color: #999999; }
@@ -434,6 +447,33 @@ ol {
 .decode-badge-reversed .petal-special {
   fill: #D6252C; }
 
+.loader-container {
+  background: #FAFAFA;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  z-index: 70;
+  padding-top: 6em; }
+  @media (min-width: 50em) {
+    .loader-container {
+      padding-top: 8em; } }
+  .loader-container .decode-badge-reversed {
+    width: 5em;
+    height: 5em; }
+  .loader-container .petal {
+    animation: blink 0.5s step-end infinite alternate; }
+  .loader-container .petal-bottom {
+    animation-delay: 0.125s; }
+  .loader-container .petal-left {
+    animation-delay: 0.25s; }
+  .loader-container .petal-top {
+    animation-delay: 0.375s; }
+
 .info-block {
   padding: 0.8em;
   background: #F0F0F0; }
@@ -449,7 +489,7 @@ ol {
 .info-block-red,
 .info-block-blue {
   color: #FAFAFA;
-  font-family: "DIN Next W01 Medium"; }
+  font-family: "DIN Next W01 Medium", "Verdana", "Helvetica Neue", "Arial", sans-serif; }
 
 .info-block-red {
   background: #D6252C; }
@@ -469,7 +509,7 @@ ol {
   .img-text-container p:last-child {
     margin-bottom: 0; }
   .img-text-container .credit {
-    font-family: "DIN Next W01 Bold";
+    font-family: "DIN Next W01 Bold", sans-serif;
     font-size: 0.8em;
     margin-left: 0.5em; }
   @media (min-width: 64em) {
@@ -498,7 +538,7 @@ ol {
     width: 100%; }
 
 .foot-note {
-  font-family: "DIN Next W01 Italic";
+  font-family: "DIN Next W01 Italic", "Verdana", "Helvetica Neue", "Arial", sans-serif;
   margin: 1rem 0; }
 
 .close-btn {
@@ -691,7 +731,7 @@ input[type="submit"] {
 input[type="radio"]:checked + label,
 input[type="checkbox"]:checked + label {
   color: #212121;
-  font-family: "DIN Next W01 Medium"; }
+  font-family: "DIN Next W01 Medium", "Verdana", "Helvetica Neue", "Arial", sans-serif; }
 
 .optin-form {
   display: flex;
@@ -857,13 +897,13 @@ a {
 
 .btn-large {
   display: inline-block;
-  font-family: "DIN Next W01 Medium";
+  font-family: "DIN Next W01 Medium", "Verdana", "Helvetica Neue", "Arial", sans-serif;
   font-size: 1rem;
   padding: 1em 3em; }
 
 .btn-small {
   display: inline-block;
-  font-family: "DIN Next W01 Medium";
+  font-family: "DIN Next W01 Medium", "Verdana", "Helvetica Neue", "Arial", sans-serif;
   font-size: 0.9rem;
   padding: 0.5em; }
 
@@ -891,7 +931,7 @@ a {
 
 .career-support .phone-link {
   border: none;
-  font-family: "DINNextW01-CondensedBol";
+  font-family: "DINNextW01-CondensedBol", "Verdana", "Helvetica Neue", "Arial", sans-serif;
   font-size: 2rem; }
   .career-support .phone-link:before {
     content: none; }
@@ -965,7 +1005,7 @@ a {
   list-style: none;
   justify-content: space-between; }
   .site-header-menu li a {
-    font-family: "DIN Next W01 Medium"; }
+    font-family: "DIN Next W01 Medium", "Verdana", "Helvetica Neue", "Arial", sans-serif; }
     .site-header-menu li a:hover {
       color: #D6252C; }
 
@@ -1088,7 +1128,7 @@ body.nav-container-active {
 .nav-primary-menu {
   margin: 2em 0; }
   .nav-primary-menu li a {
-    font-family: "DIN Next W01 Medium";
+    font-family: "DIN Next W01 Medium", "Verdana", "Helvetica Neue", "Arial", sans-serif;
     font-size: 1.4rem; }
 
 .nav-secondary-menu {
@@ -1248,7 +1288,8 @@ body.nav-container-active {
         border-bottom: 1px solid; } }
   .multi-column-table .cell {
     padding: 0.3em 0;
-    flex: 1 1 15%; }
+    flex-grow: 1;
+    flex-shrink: 1; }
     @media (min-width: 50em) {
       .multi-column-table .cell:not(:first-child) {
         padding-left: 1em; }
@@ -1280,8 +1321,10 @@ body.nav-container-active {
 
 .table-footnote {
   font-size: 0.8rem;
-  width: 100%;
-  text-align: right; }
+  width: 100%; }
+  @media (min-width: 37.5em) {
+    .table-footnote {
+      text-align: right; } }
 
 .module {
   margin-bottom: 4rem; }
@@ -1293,19 +1336,25 @@ body.nav-container-active {
   padding: 3rem 0; }
 
 .module-bg-img {
-  padding: 3em;
+  padding: 1em;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-color: #054851;
   color: #D6D6D6; }
+  @media (min-width: 37.5em) {
+    .module-bg-img {
+      padding: 3em; } }
   .module-bg-img .module-title {
     margin-top: 0; }
 
 .module-boxed {
   background: #FFF;
   border: 1px solid #D6D6D6;
-  padding: 3em; }
+  padding: 1em; }
+  @media (min-width: 37.5em) {
+    .module-boxed {
+      padding: 3em; } }
 
 .module-boxed-light {
   background: #FFF; }
@@ -1345,7 +1394,7 @@ body.nav-container-active {
   .tuition-dates .cell:first-child {
     flex-basis: 25%; } }
 .tuition-dates .cell:last-child, .tuition-dates .cell:first-child {
-  font-family: "DIN Next W01 Bold"; }
+  font-family: "DIN Next W01 Bold", sans-serif; }
 .tuition-dates .cell:last-child {
   flex: 1 1 10%; }
 .tuition-dates .full {
@@ -1363,7 +1412,7 @@ body.nav-container-active {
     text-align: center;
     margin-bottom: 3rem; }
   .student-project .project-title {
-    font-family: "DIN Next W01 Bold"; }
+    font-family: "DIN Next W01 Bold", sans-serif; }
 
 .student-project-content {
   display: flex;
@@ -1378,6 +1427,8 @@ body.nav-container-active {
       justify-content: space-between;
       max-width: 50em;
       margin: auto; } }
+  .student-project-content .carousel-box {
+    flex-basis: initial; }
 
 .student-project-image {
   display: flex;
@@ -1393,11 +1444,13 @@ body.nav-container-active {
 .student-project-details {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-around; }
+  justify-content: space-around;
+  flex-shrink: 0;
+  flex-basis: auto; }
   @media (min-width: 64em) {
     .student-project-details {
-      flex: 1 1 35%;
-      max-width: 40%; } }
+      max-width: 40%;
+      flex: 1 1 35%; } }
 
 .slider-controls {
   display: flex;
@@ -1416,7 +1469,7 @@ body.nav-container-active {
       margin: 0;
       order: 1; } }
   .slider-controls .slider-current {
-    font-family: "DINNextW01-CondensedBol";
+    font-family: "DINNextW01-CondensedBol", "Verdana", "Helvetica Neue", "Arial", sans-serif;
     font-size: 2rem; }
 
 .career-support .info-block {
@@ -1525,10 +1578,10 @@ body.nav-container-active {
         flex-flow: row wrap;
         justify-content: space-between; } }
   .events-list .event-date {
-    font-family: "DIN Next W01 Bold";
+    font-family: "DIN Next W01 Bold", sans-serif;
     color: #999999; }
   .events-list .event-name {
-    font-family: "DIN Next W01 Medium"; }
+    font-family: "DIN Next W01 Medium", "Verdana", "Helvetica Neue", "Arial", sans-serif; }
     @media (min-width: 50em) {
       .events-list .event-name {
         margin-left: auto;

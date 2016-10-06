@@ -114,11 +114,6 @@ input[type="checkbox"]:checked + label {
 			opacity: 1;
 		}
 	}
-	// @include breakpoint(mintablet) {
-	// 	input[type="submit"] {
-	// 		flex: 0 0 22%;
-	// 	}
-	// }
 	@include breakpoint(mintablet) {
 		flex-flow: row wrap;
 		justify-content: space-between;

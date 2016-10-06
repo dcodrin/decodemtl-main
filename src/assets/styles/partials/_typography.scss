@@ -18,9 +18,12 @@
 // Global
 // ===================
 html {
-	font-size: 125%; // 20px
+	font-size: 100%; // 16px
+	@include breakpoint(minphablet) {
+		font-size: 125%; // 20px
+	}
 	@include breakpoint(mindesktop) {
-		font-size: 138%;
+		font-size: 138%; // 22px
 	}
 }
 body {
@@ -110,6 +113,17 @@ blockquote {
 	font-size: 2em;
 	color: $red;
 	@include word-wrap;
+}
+.module-boxed .module-title:first-of-type {
+	margin-top: 0.2em;
+}
+// Spacing for headers in row layouts ------
+.row-container h1:first-of-type,
+.row-container h2:first-of-type,
+.row-container h3:first-of-type,
+.row-container h4:first-of-type,
+.row-container p:first-of-type {
+	margin-top: 0;
 }
 
 // ===================

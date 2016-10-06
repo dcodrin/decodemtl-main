@@ -1,10 +1,10 @@
 // Typography 
 // ------------------------------
-$font_regular:'DIN Next W01 Regular';
-$font_medium:'DIN Next W01 Medium';
-$font_bold:'DIN Next W01 Bold';
-$font_cond_bold:'DINNextW01-CondensedBol';
-$font_italic:'DIN Next W01 Italic';
+$font_regular:'DIN Next W01 Regular', 'Verdana', 'Helvetica Neue', 'Arial', sans-serif;
+$font_medium:'DIN Next W01 Medium', 'Verdana', 'Helvetica Neue', 'Arial', sans-serif;
+$font_bold:'DIN Next W01 Bold', sans-serif;
+$font_cond_bold:'DINNextW01-CondensedBol', 'Verdana', 'Helvetica Neue', 'Arial', sans-serif;
+$font_italic:'DIN Next W01 Italic', 'Verdana', 'Helvetica Neue', 'Arial', sans-serif;
 $font_decode: 'icomoon';
 
 // Decode icons
