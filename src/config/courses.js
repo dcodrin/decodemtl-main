@@ -13,7 +13,7 @@ export default [
     {
         title: "Part-Time",
         jumboTitle: "HTML & CSS",
-        text: 'Learn to write clean, standards-complient code, and become aquainted with the fundamentals of web design.',
+        text: 'Learn to write clean, standards-complient code, and become acquainted with the fundamentals of web design.',
         type: "Part-time",
         duration: "10 weeks",
         hours: "60 hours",

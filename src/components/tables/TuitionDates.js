@@ -40,7 +40,7 @@ const TuitionDates = React.createClass({
                     <div className="row">
                         <div className="table-footnote text-subtle">
                             <span className="fa fa-bolt" aria-hidden="true" title="Early bird pricing"/>
-                            &nbsp;= Early bird pricing available up to 30 days before start date. Regular
+                            &nbsp;= Early bird pricing available up to 60 days before start date. Regular
                             price: {this._formatPrice(this.props.price)}
                         </div>
                     </div> :
