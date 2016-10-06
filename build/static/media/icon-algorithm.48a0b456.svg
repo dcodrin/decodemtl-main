@@ -1,0 +1,18 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <title>
+    icon-algorithm
+  </title>
+  <g fill="none" fill-rule="evenodd">
+    <path d="M64 32c0 11.045-8.954 20-20 20s-20-8.955-20-20c0-11.05 8.954-20 20-20s20 8.95 20 20z" fill="#D7D7D7"/>
+    <g stroke="#D6252C" stroke-width="2" transform="translate(1 1)">
+      <circle cx="8" cy="54" r="8"/>
+      <circle cx="8" cy="31" r="8"/>
+      <circle cx="31" cy="19" r="8"/>
+      <circle cx="54" cy="31" r="8"/>
+      <circle cx="31" cy="43" r="8"/>
+      <circle cx="8" cy="8" r="8"/>
+      <path d="M31 43L8 31l23-12"/>
+      <path d="M31 43L8 8l23 11 23 12-23 12L8 54l23-35"/>
+    </g>
+  </g>
+</svg>

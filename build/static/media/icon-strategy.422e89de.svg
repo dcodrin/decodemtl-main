@@ -1,0 +1,16 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <title>
+    icon-strategy
+  </title>
+  <g transform="translate(0 1)" fill="none" fill-rule="evenodd">
+    <circle fill="#D6D6D6" cx="21" cy="42" r="21"/>
+    <g transform="translate(17)" stroke="#D6252C" stroke-width="2">
+      <path d="M34 4h12v58H0V4h12"/>
+      <path d="M12 0h22v10H12z"/>
+      <path d="M37 8h3v48H6V8h3M12 48c0-12.703 9.297-23 22-23"/>
+      <path d="M30 31l4-6-6-4M24 47l8-8M24 39l8 8"/>
+      <circle cx="15" cy="21" r="3"/>
+      <path d="M30 3v3H16V3"/>
+    </g>
+  </g>
+</svg>

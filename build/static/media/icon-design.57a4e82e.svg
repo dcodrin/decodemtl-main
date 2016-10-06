@@ -1,0 +1,12 @@
+<svg width="64" height="62" viewBox="0 0 64 62" xmlns="http://www.w3.org/2000/svg">
+  <title>
+    icon-design
+  </title>
+  <g transform="translate(0 2)" fill="none" fill-rule="evenodd">
+    <circle fill="#D6D6D6" cx="21" cy="21" r="21"/>
+    <g stroke="#D6252C" stroke-width="2">
+      <path d="M28 9v41M20 50V9M24 9v41M24 1l-4 8h8zM34 50V1h10v49M40 4v2M34 9h3M34 13h3M34 17h3M34 21h3M34 25h3M34 29h3M34 33h3M34 37h3M34 41h3M34 45h3M34 49h3M59 59H5l-4-4v-2h24l2 2h10l2-2h24v2zM17 15H8c-1.656 0-3 1.343-3 3v32M59 50V18c0-1.657-1.344-3-3-3h-9"/>
+      <path d="M47 19h8v30h-8M17 49H9V19h8"/>
+    </g>
+  </g>
+</svg>

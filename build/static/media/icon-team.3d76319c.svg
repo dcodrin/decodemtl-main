@@ -1,0 +1,14 @@
+<svg width="64" height="60" viewBox="0 0 64 60" xmlns="http://www.w3.org/2000/svg">
+  <title>
+    icon-team
+  </title>
+  <g transform="translate(0 1)" fill="none" fill-rule="evenodd">
+    <circle fill="#D6D6D6" cx="21" cy="38" r="21"/>
+    <g stroke="#D6252C" stroke-width="2">
+      <path d="M37 5.5C37 9 35.037 12 32 12s-5-3-5-6.5S28 0 32 0s5 2 5 5.5z"/>
+      <path d="M35 11l7 4v2c0 1.657-1 3-2 3H24c-1 0-2-1.343-2-3v-2l7-4M16 43.5c0 3.5-1.963 6.5-5 6.5s-5-3-5-6.5S7 38 11 38s5 2 5 5.5z"/>
+      <path d="M14 49l7 4v2c0 1.657-1 3-2 3H3c-1 0-2-1.343-2-3v-2l7-4M58 43.5c0 3.5-1.963 6.5-5 6.5s-5-3-5-6.5 1-5.5 5-5.5 5 2 5 5.5z"/>
+      <path d="M56 49l7 4v2c0 1.657-1 3-2 3H45c-1 0-2-1.343-2-3v-2l7-4M32 25v10M32 35l-10 8M32 35l10 8"/>
+    </g>
+  </g>
+</svg>
