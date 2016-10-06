@@ -83,7 +83,8 @@ blockquote {
 	font-size: 1.4rem;
 }
 .text-body-small {
-	font-size: 0.9rem;
+	@include breakpoint(mintablet) {
+		font-size: 0.9rem;
 }
 .text-subtle {
 	color: $hardgrey;
@@ -99,6 +100,9 @@ blockquote {
 // Module Headers -----------
 .module-title {
 	@include module-title-style();
+	@include breakpoint(phablet) {
+		font-size: 2.25rem;
+	}
 }
 .module-title-medium {
 	@include module-title-style(1.6rem);
@@ -108,11 +112,13 @@ blockquote {
 }
 .module-title-jumbo {
 	font-family: $font_bold;
-	margin-top: -0.2em;
 	display: block;
-	font-size: 2em;
 	color: $red;
 	@include word-wrap;
+	font-size: 1.6em;
+	@include breakpoint(minlaptop) {
+		font-size: 2em;
+	}
 }
 .module-boxed .module-title:first-of-type {
 	margin-top: 0.2em;
@@ -135,3 +141,4 @@ blockquote {
  		color: $lightgrey;
  	}
  }
+}

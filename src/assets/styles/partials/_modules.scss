@@ -48,6 +48,13 @@
 	background: $lightgrey;
 }
 // Two cta buttons 
+.cta-single {
+	@include breakpoint(laptop) {
+		margin-bottom: 1em;
+	}
+}
+
+// Two cta buttons 
 .cta-double {
 	.btn-large:not(:last-child) {
 		margin-right: 1em;
@@ -351,8 +358,8 @@
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: space-between;
-		flex: 0 1 60%;
 		@include breakpoint(mintablet) {
+			flex: 0 1 60%;
 			margin-left: auto;
 		}
 	}
@@ -405,19 +412,25 @@
 // Home Hero Module
 // ========================
 .hero-content {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-between;
+	@include breakpoint(mintablet) {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		// align-items: center;
+	}
+	p:first-child {
+		margin-top: 0;
+	}
 }
 .hero-text{
-	flex: 1 calc(50% - 50px);
-	margin-right: 50px;
+	@include breakpoint(mintablet) {
+		flex: 1 calc(50% - 50px);
+		margin-right: 50px;
+	}
 }
 .hero-visual {
 	.video-trigger {
-		// max-height: 260px;
 		max-height: 13rem;
-		// max-width: 448px;
 		max-width: 22.4rem;
 	}
 }

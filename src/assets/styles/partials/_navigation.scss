@@ -6,6 +6,7 @@
 	@include breakpoint(phablet) {
 		background:$lightgrey;
 		padding: 0;
+		margin-bottom: 3rem;
 	}
 }
 .site-header-wrapper {

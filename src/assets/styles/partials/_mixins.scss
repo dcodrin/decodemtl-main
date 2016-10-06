@@ -93,6 +93,7 @@
 // -------------------------
 @mixin module-title-style($fz:3rem) {
   font-size: $fz;
+  line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.025em;
   font-family: $font_cond_bold;
