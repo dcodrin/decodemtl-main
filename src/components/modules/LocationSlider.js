@@ -123,7 +123,7 @@ const LocationSlider = React.createClass({
             if (slidePosition > 0) return req(images[nextSlide - 1]);
             return req(images[slide - 1]);
         };
-
+        console.log("RENDER");
         return (
             <section className="module module-full-width module-boxed-light working-space-module">
                 <div className="wrapper">
