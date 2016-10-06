@@ -266,36 +266,48 @@ blockquote {
   font-size: 1.4rem; }
 
 @media (min-width: 50em) {
-  .text-body-small {
-    font-size: 0.9rem; } }
-.text-body-small .text-subtle {
+    .text-body-small {
+        font-size: 0.9rem;
+    }
+}
+
+.text-subtle {
   color: #666666; }
-.text-body-small .text-measure {
+
+.text-measure {
   max-width: 40em; }
-.text-body-small .text-body-large.text-measure {
+
+.text-body-large.text-measure {
   max-width: 30em; }
-.text-body-small .module-title {
+
+.module-title {
   font-size: 3rem;
-  line-height: 1;
+    line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.025em;
   font-family: "DINNextW01-CondensedBol", "Verdana", "Helvetica Neue", "Arial", sans-serif; }
-  @media (max-width: 37.5em) {
-    .text-body-small .module-title {
-      font-size: 2.25rem; } }
-.text-body-small .module-title-medium {
+
+@media (max-width: 37.5em) {
+    .module-title {
+        font-size: 2.25rem;
+    }
+}
+
+.module-title-medium {
   font-size: 1.6rem;
-  line-height: 1;
+    line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.025em;
   font-family: "DINNextW01-CondensedBol", "Verdana", "Helvetica Neue", "Arial", sans-serif; }
-.text-body-small .module-title-small {
+
+.module-title-small {
   font-size: 1.2rem;
-  line-height: 1;
+    line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.025em;
   font-family: "DINNextW01-CondensedBol", "Verdana", "Helvetica Neue", "Arial", sans-serif; }
-.text-body-small .module-title-jumbo {
+
+.module-title-jumbo {
   font-family: "DIN Next W01 Bold", sans-serif;
   display: block;
   color: #D6252C;
@@ -306,22 +318,29 @@ blockquote {
   -ms-hyphens: auto;
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
-  hyphens: auto;
-  font-size: 1.6em; }
-  @media (min-width: 64em) {
-    .text-body-small .module-title-jumbo {
-      font-size: 2em; } }
-.text-body-small .module-boxed .module-title:first-of-type {
+    hyphens: auto;
+    font-size: 1.6em;
+}
+
+@media (min-width: 64em) {
+    .module-title-jumbo {
+        font-size: 2em;
+    }
+}
+
+.module-boxed .module-title:first-of-type {
   margin-top: 0.2em; }
-.text-body-small .row-container h1:first-of-type,
-.text-body-small .row-container h2:first-of-type,
-.text-body-small .row-container h3:first-of-type,
-.text-body-small .row-container h4:first-of-type,
-.text-body-small .row-container p:first-of-type {
+
+.row-container h1:first-of-type,
+.row-container h2:first-of-type,
+.row-container h3:first-of-type,
+.row-container h4:first-of-type,
+.row-container p:first-of-type {
   margin-top: 0; }
-.text-body-small .site-footer {
+
+.site-footer {
   color: #999999; }
-  .text-body-small .site-footer h4 {
+  .site-footer h4 {
     color: #F0F0F0; }
 
 img,
@@ -943,8 +962,10 @@ a {
   @media (max-width: 37.5em) {
     .site-header {
       background: #F0F0F0;
-      padding: 0;
-      margin-bottom: 3rem; } }
+        padding: 0;
+        margin-bottom: 3rem;
+    }
+  }
 
 .site-header-wrapper {
   display: flex;
@@ -1366,8 +1387,10 @@ body.nav-container-active {
   background: #F0F0F0; }
 
 @media (max-width: 64em) {
-  .cta-single {
-    margin-bottom: 1em; } }
+    .cta-single {
+        margin-bottom: 1em;
+    }
+}
 
 .cta-double .btn-large:not(:last-child) {
   margin-right: 1em; }
@@ -1523,7 +1546,7 @@ body.nav-container-active {
   letter-spacing: 0.04em;
   margin-bottom: 1em; }
 .course-item .module-title-jumbo {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
   margin-top: 0;
   line-height: 0.9; }
 
@@ -1593,10 +1616,11 @@ body.nav-container-active {
   .events-list .event-description {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between; }
+      justify-content: space-between;
+  }
     @media (min-width: 50em) {
       .events-list .event-description {
-        flex: 0 1 60%;
+          flex: 0 1 60%;
         margin-left: auto; } }
   .events-list .event-arrow {
     flex: 0 0 10%;
@@ -1638,17 +1662,23 @@ body.nav-container-active {
     max-height: 100%; }
 
 @media (min-width: 50em) {
-  .hero-content {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between; } }
+    .hero-content {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+}
+
 .hero-content p:first-child {
-  margin-top: 0; }
+    margin-top: 0;
+}
 
 @media (min-width: 50em) {
-  .hero-text {
-    flex: 1 calc(50% - 50px);
-    margin-right: 50px; } }
+    .hero-text {
+        flex: 1 calc(50% - 50px);
+        margin-right: 50px;
+    }
+}
 
 .hero-visual .video-trigger {
   max-height: 13rem;
