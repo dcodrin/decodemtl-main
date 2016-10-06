@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const LocationSlider = React.createClass({
     propTypes: {
@@ -8,31 +9,13 @@ const LocationSlider = React.createClass({
     getInitialState() {
         return {
             slide: 1,
-            slidePosition: 0,
-            slideOpacity: 1,
-            slideStartPosition: 500,
-            slideStep: 25,
             images: this.props.req.keys()
         };
     },
     _handleSlide(slideDirection){
-        const {slide, slideStep, slideStartPosition} = this.state;
-        const images = this.props.req.keys();
-        //avoid infinite loop
-        if (this.animate) {
-            return;
-        }
-        //reset state
-        this.setState({
-            slideOpacity: 0,
-            slidePosition: 0
-        });
+        const {slide, images} = this.state;
+
         if (slideDirection === 'next') {
-            this.setState({
-                slidePosition: -slideStartPosition
-            });
-            //500 % slideStep === 0 must be TRUE
-            this._animateSlide(slideStep, slideDirection, -slideStartPosition);
             if (slide % images.length !== 0) {
                 this.setState({
                     slide: slide + 1,
@@ -47,83 +30,43 @@ const LocationSlider = React.createClass({
                 });
             }
         } else if (slideDirection === 'prev') {
-            this.setState({
-                slidePosition: slideStartPosition
-            });
-            //500 % step === 0 must be TRUE
-            this._animateSlide(slideStep, slideDirection, slideStartPosition);
             if (slide > 1) {
                 this.setState({
                     slide: slide - 1,
                     nextSlide: slide,
                     prevSlide: (slide - 2) === 0 ? images.length : slide - 2
                 });
-                // this.props.req(images[slide]);
-                // this.props.req(images[ (slide - 2) === 0 ? images.length : slide - 2])
             } else {
                 this.setState({
                     slide: images.length,
                     nextSlide: 1,
                     prevSlide: images.length - 1
                 });
-                // this.props.req(images[1]);
-                // this.props.req(images[images.length - 1])
             }
         }
     },
-    _moveSlide(step, slideStartPos) {
-        this.setState({
-            slidePosition: this.state.slidePosition + step,
-            slideOpacity: this.state.slideOpacity + (1 / Math.abs((slideStartPos / step)))
-        });
-    },
-    _animateSlide(step, slideDirection, slideStartPos) {
-        this.animate = setInterval(() => {
-            if (slideDirection === 'next' && this.state.slidePosition < 0) {
-                this._moveSlide(step, slideStartPos);
-            } else if (slideDirection === 'prev' && this.state.slidePosition > 0) {
-                this._moveSlide(-step, slideStartPos);
-            } else {
-                clearInterval(this.animate);
-                this.animate = null;
-            }
-        }, 20);
-    },
-    componentWillMount() {
-      this.props.req.keys().forEach(img => this.props.req(img));
-    },
-    componentWillUnmount() {
-        clearInterval(this.animate);
-        this.animate = null;
+    componentWillAppear() {
+        console.log('Entered')
     },
     render() {
         //TODO REMOVE ESLINT EXCEPTION ONCE REFACTORED
-        const {slidePosition, slideOpacity, nextSlide, prevSlide, slide, images} = this.state; // eslint-disable-line no-unused-vars
+        const {nextSlide, prevSlide, slide, images} = this.state; // eslint-disable-line no-unused-vars
         const req = this.props.req;
 
         const imageContainer = {
             position: 'relative',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            paddingTop: '66%'
         };
-
 
         const currImage = {
             position: 'relative',
-            opacity: slideOpacity
         };
 
         const imageSlide = {
             position: 'absolute',
-            opacity: 1 - slideOpacity >= 0 ? 1 - slideOpacity : 0,
             top: 0
         };
-
-        const getSource = (slidePosition) => {
-            if (slidePosition < 0) return req(images[prevSlide - 1]);
-            if (slidePosition > 0) return req(images[nextSlide - 1]);
-            return req(images[slide - 1]);
-        };
-        console.log("RENDER");
         return (
             <section className="module module-full-width module-boxed-light working-space-module">
                 <div className="wrapper">
@@ -139,9 +82,14 @@ const LocationSlider = React.createClass({
                             <div
                                 style={imageContainer}
                                 className="carousel-img visible">
-                                {/*NOTE: The image overlay is necessary to avoid flashes in Safari*/}
-                                {/*<img style={imageSlide} src={getSource(slidePosition)} alt=""/>*/}
-                                <img style={currImage} src={req(images[slide - 1])} alt=""/>
+                                {/*{prevSlide ? <img style={imageSlide} src={req(images[prevSlide - 1])} alt=""/> : null}*/}
+                                <ReactCSSTransitionGroup
+                                    transitionName="video"
+                                    transitionEnterTimeout={500}
+                                    transitionLeaveTimeout={300}>
+                                    <img key={slide} style={imageSlide} src={req(images[slide - 1])} alt=""/>
+                                </ReactCSSTransitionGroup>
+                                {/*{nextSlide ? <img style={imageSlide} src={req(images[nextSlide - 1])} alt=""/> : null}*/}
                             </div>
                         </div>
                         {/* /.carousel-box */}
@@ -162,5 +110,7 @@ const LocationSlider = React.createClass({
         );
     }
 });
+
+
 
 export default LocationSlider;

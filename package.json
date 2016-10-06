@@ -36,6 +36,7 @@
     "nodemailer": "^2.6.0",
     "react": "^15.3.1",
     "react-addons-css-transition-group": "^15.3.1",
+    "react-addons-transition-group": "^15.3.2",
     "react-dom": "^15.3.1",
     "react-easy-transition": "0.0.5",
     "react-helmet": "^3.1.0",

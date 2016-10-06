@@ -1674,13 +1674,13 @@ body.nav-container-active {
 
 .video-enter.video-enter-active {
   opacity: 1;
-  transition: opacity 300ms ease-in; }
+  transition: opacity 200ms ease-in; }
 
 .video-leave {
   opacity: 1; }
 
 .video-leave.video-leave-active {
   opacity: 0.01;
-  transition: opacity 200ms ease-out; }
+  transition: opacity 300ms ease-out; }
 
 /*# sourceMappingURL=toolkit.css.map */
