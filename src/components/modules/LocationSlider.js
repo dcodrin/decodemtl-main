@@ -1,131 +1,63 @@
 import React from 'react';
 import {Link} from 'react-router';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const LocationSlider = React.createClass({
     propTypes: {
         req: React.PropTypes.func.isRequired
     },
-    getDefaultProps () {
-        return {};
-    },
     getInitialState() {
         return {
             slide: 1,
-            slidePosition: 0,
-            slideOpacity: 1,
-            slideStartPosition: 500,
-            slideStep: 25
+            images: this.props.req.keys()
         };
     },
     _handleSlide(slideDirection){
-        const {slide, slideStep, slideStartPosition} = this.state;
-        const images = this.props.req.keys();
-        //avoid infinite loop
-        if (this.animate) {
-            return;
-        }
-        //reset state
-        this.setState({
-            slideOpacity: 0,
-            slidePosition: 0
-        });
+        const {slide, images} = this.state;
         if (slideDirection === 'next') {
-            this.setState({
-                slidePosition: -slideStartPosition
-            });
-            //500 % slideStep === 0 must be TRUE
-            this._animateSlide(slideStep, slideDirection, -slideStartPosition);
             if (slide % images.length !== 0) {
                 this.setState({
-                    slide: slide + 1,
-                    prevSlide: slide,
-                    nextSlide: (slide + 2) > images.length ? 1 : slide + 2
+                    slide: slide + 1
                 })
             } else {
                 this.setState({
-                    slide: 1,
-                    prevSlide: slide,
-                    nextSlide: 2
+                    slide: 1
                 });
             }
         } else if (slideDirection === 'prev') {
-            this.setState({
-                slidePosition: slideStartPosition
-            });
-            //500 % step === 0 must be TRUE
-            this._animateSlide(slideStep, slideDirection, slideStartPosition);
             if (slide > 1) {
                 this.setState({
-                    slide: slide - 1,
-                    nextSlide: slide,
-                    prevSlide: (slide - 2) === 0 ? images.length : slide - 2
+                    slide: slide - 1
                 });
-                // this.props.req(images[slide]);
-                // this.props.req(images[ (slide - 2) === 0 ? images.length : slide - 2])
             } else {
                 this.setState({
-                    slide: images.length,
-                    nextSlide: 1,
-                    prevSlide: images.length - 1
+                    slide: images.length
                 });
-                // this.props.req(images[1]);
-                // this.props.req(images[images.length - 1])
             }
         }
     },
-    _moveSlide(step, slideStartPos) {
-        this.setState({
-            slidePosition: this.state.slidePosition + step,
-            slideOpacity: this.state.slideOpacity + (1 / Math.abs((slideStartPos / step)))
+    componentWillMount() {
+        //Preload images when component mounts
+        this.props.req.keys().forEach(src => {
+            const img = document.createElement('img');
+            img.src = this.props.req(src); // Assigning the img src immediately requests the image
         });
-    },
-    _animateSlide(step, slideDirection, slideStartPos) {
-        this.animate = setInterval(() => {
-            if (slideDirection === 'next' && this.state.slidePosition < 0) {
-                this._moveSlide(step, slideStartPos);
-            } else if (slideDirection === 'prev' && this.state.slidePosition > 0) {
-                this._moveSlide(-step, slideStartPos);
-            } else {
-                clearInterval(this.animate);
-                this.animate = null;
-            }
-        }, 20);
-    },
-    componentWillUnmount() {
-        clearInterval(this.animate);
-        this.animate = null;
     },
     render() {
         //TODO REMOVE ESLINT EXCEPTION ONCE REFACTORED
-        const {slidePosition, slideOpacity, slideStartPosition, nextSlide, prevSlide, slide} = this.state; // eslint-disable-line no-unused-vars
+        const {slide, images} = this.state; // eslint-disable-line no-unused-vars
         const req = this.props.req;
-        const images = req.keys();
 
         const imageContainer = {
             position: 'relative',
-            overflow: 'hidden'
-        };
-
-
-        const currImage = {
-            position: 'relative',
-            //left: slidePosition, SLIDE DISABLED
-            opacity: slideOpacity
+            paddingTop: '66%',
+            maxWidth: '99%'
         };
 
         const imageSlide = {
             position: 'absolute',
-            opacity: 1 - slideOpacity >= 0 ? 1 - slideOpacity : 0,
-            // left: slidePosition > 0 ? slidePosition - slideStartPosition : slidePosition + slideStartPosition,
             top: 0
         };
-
-        const getSource = (slidePosition) => {
-            if (slidePosition < 0) return req(images[prevSlide - 1]);
-            if (slidePosition > 0) return req(images[nextSlide - 1]);
-            return req(images[slide - 1]);
-        };
-
         return (
             <section className="module module-full-width module-boxed-light working-space-module">
                 <div className="wrapper">
@@ -133,29 +65,36 @@ const LocationSlider = React.createClass({
                     <figure className="carousel">
                         <div className="carousel-control carousel-previous"
                              onClick={this._handleSlide.bind(this, 'prev')}>
-                            <i className="fa fa-angle-left" aria-hidden="true" title="Previous Image"/><span
-                            className="sr-only">Previous Project</span>
+                            <i className="fa fa-angle-left" aria-hidden="true" title="Previous Image"/>
+                            <span className="sr-only">Previous Project</span>
                         </div>
                         {/* /.carousel-control */}
                         <div className="carousel-box">
                             <div
                                 style={imageContainer}
                                 className="carousel-img visible">
-                                {/*NOTE: The image overlay is necessary to avoid flashes in Safari*/}
-                                <img style={imageSlide} src={getSource(slidePosition)} alt=""/>
-                                <img style={currImage} src={req(images[slide - 1])} alt=""/>
+                                {/*//A key needs to be passed in order for the <img> tag to be rerendered*/}
+                                <ReactCSSTransitionGroup
+                                    transitionName="image"
+                                    transitionEnterTimeout={400}
+                                    transitionLeaveTimeout={400}
+                                    component="div">
+                                    <img key={slide} style={imageSlide} src={req(images[slide - 1])} alt=""/>
+                                </ReactCSSTransitionGroup>
                             </div>
                         </div>
                         {/* /.carousel-box */}
                         <div className="carousel-control carousel-next" onClick={this._handleSlide.bind(this, 'next')}>
-                            <i className="fa fa-angle-right" aria-hidden="true" title="Next Image"/><span
-                            className="sr-only">Next Project</span>
+                            <i className="fa fa-angle-right" aria-hidden="true" title="Next Image"/>
+                            <span className="sr-only">Next Project</span>
                         </div>
                         {/* /.carousel-control */}
                     </figure>
                     {/* /.carousel */}
                     <div className="link-more text-body-small">
-                        <Link to="/wework">Learn more about the WeWork experience<span className="fa fa-caret-right" aria-hidden="true" /></Link>
+                        <Link to="/wework">Learn more about the WeWork experience
+                            <span className="fa fa-caret-right" aria-hidden="true"/>
+                        </Link>
                     </div>
                 </div>
                 {/* /.wrapper */}
@@ -163,5 +102,6 @@ const LocationSlider = React.createClass({
         );
     }
 });
+
 
 export default LocationSlider;

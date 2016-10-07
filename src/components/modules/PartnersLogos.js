@@ -14,19 +14,18 @@ const PartnersLogos = (props) => {
             <div className="wrapper">
                 <h4>Our grads work with these fine folks</h4>
                 <div className="partner-logos-container">
-                    {
-                        req.keys().map((img, i) => (
-                            <div key={i} className="partner-logo">
-                                <img src={req(img)} alt=""/>
-                            </div>
-                        ))
-                    }
+                    {req.keys().map((img, i) => (
+                        <div key={i} className="partner-logo">
+                            <img src={req(img)} alt=""/>
+                        </div>
+                    ))}
                 </div>
                 {/*<!-- /.partner-logo-container -->*/}
                 <div className="link-more text-body-small">
                     <a href={employerLink}>Join
-                        our growing network of hiring partners<span className="fa fa-caret-right"
-                                                                    aria-hidden="true"/></a>
+                        our growing network of hiring partners
+                        <span className="fa fa-caret-right" aria-hidden="true"/>
+                    </a>
                 </div>
             </div>
             {/* <!-- /.wrapper -->*/}

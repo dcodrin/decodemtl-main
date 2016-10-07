@@ -83,11 +83,17 @@
   0% { opacity: 1; }
   100% { opacity: 0; }
 }
+@keyframes blink {
+  0% { fill: $black; }
+  50% { fill: $red; }
+  100% { fill: $black; }
+}
 
 // Typography
 // -------------------------
 @mixin module-title-style($fz:3rem) {
   font-size: $fz;
+  line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.025em;
   font-family: $font_cond_bold;

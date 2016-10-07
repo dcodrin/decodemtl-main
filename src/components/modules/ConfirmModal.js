@@ -29,6 +29,15 @@ const ConfirmModal = React.createClass({
             status: false
         })
     },
+    _preventMobileScroll (e) {
+        e.preventDefault();
+    },
+    componentWillMount() {
+        window.addEventListener('touchmove', this._preventMobileScroll);
+    },
+    componentWillUnmount() {
+        window.removeEventListener('touchmove', this._preventMobileScroll);
+    },
     render() {
         let title, text, titleError, textError;
         switch (this.props.modalType) {
@@ -61,11 +70,9 @@ const ConfirmModal = React.createClass({
             return <ErrorSub title={titleError} text={textError}/>
         };
 
-
         return (
             <div style={{display: 'block'}}
-                 className="modal modal-light"
-            >
+                 className="modal modal-light">
                 <div className="close-btn">
                     <svg onClick={this.props.toggleModal} id="close-x" className="close-x"
                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">

@@ -51,7 +51,6 @@ const Employers = (props) => {
 
     ];
 
-
     return (
         <div>
             <Helmet

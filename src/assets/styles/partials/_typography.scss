@@ -18,9 +18,12 @@
 // Global
 // ===================
 html {
-	font-size: 125%; // 20px
+	font-size: 100%; // 16px
+	@include breakpoint(minphablet) {
+		font-size: 125%; // 20px
+	}
 	@include breakpoint(mindesktop) {
-		font-size: 138%;
+		font-size: 138%; // 22px
 	}
 }
 body {
@@ -80,7 +83,9 @@ blockquote {
 	font-size: 1.4rem;
 }
 .text-body-small {
-	font-size: 0.9rem;
+  @include breakpoint(mintablet) {
+    font-size: 0.9rem;
+  }
 }
 .text-subtle {
 	color: $hardgrey;
@@ -96,6 +101,9 @@ blockquote {
 // Module Headers -----------
 .module-title {
 	@include module-title-style();
+  @include breakpoint(phablet) {
+    font-size: 2.25rem;
+  }
 }
 .module-title-medium {
 	@include module-title-style(1.6rem);
@@ -105,19 +113,32 @@ blockquote {
 }
 .module-title-jumbo {
 	font-family: $font_bold;
-	margin-top: -0.2em;
 	display: block;
-	font-size: 2em;
 	color: $red;
 	@include word-wrap;
+  font-size: 1.6em;
+  @include breakpoint(minlaptop) {
+    font-size: 2em;
+  }
+}
+.module-boxed .module-title:first-of-type {
+	margin-top: 0.2em;
+}
+// Spacing for headers in row layouts ------
+.row-container h1:first-of-type,
+.row-container h2:first-of-type,
+.row-container h3:first-of-type,
+.row-container h4:first-of-type,
+.row-container p:first-of-type {
+	margin-top: 0;
 }
 
 // ===================
 // Footer
 // ===================
- .site-footer {
- 	color: $midgrey;
- 	h4 {
- 		color: $lightgrey;
- 	}
- }
+.site-footer {
+  color: $midgrey;
+  h4 {
+    color: $lightgrey;
+  }
+}

@@ -29,11 +29,12 @@
 	}
 	.cell {
 		padding: 0.3em 0;
-		flex: 1 1 15%;
-      &:nth-of-type(odd) {
-      }
-      &:nth-of-type(even) {
-      }
+		flex-grow: 1;
+		flex-shrink: 1;
+		&:nth-of-type(odd) {
+		}
+		&:nth-of-type(even) {
+		}
 		@include breakpoint(mintablet) {
 			&:not(:first-child) {
 				padding-left: 1em;
@@ -42,13 +43,13 @@
 				text-align: left;
 			}
 			&:last-child {
-              text-align: right;
+				text-align: right;
 			}
 		}
 	}
-  .fa {
-    padding-left: 0.5em;
-  }
+	.fa {
+		padding-left: 0.5em;
+	}
 }
 // ========================
 // Two Column Table
@@ -80,7 +81,9 @@
 }
 
 .table-footnote {
-  font-size: 0.8rem;
-  width: 100%;
-  text-align: right;
+	font-size: 0.8rem;
+	width: 100%;
+	@include breakpoint(minphablet) {
+		text-align: right;
+	}
 }

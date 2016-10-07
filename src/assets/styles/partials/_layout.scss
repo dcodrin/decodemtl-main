@@ -48,11 +48,3 @@
 .alternating:nth-of-type(even) .one-half-content:nth-child(2) {
 	order: -1;
 }
-// Spacing for headers ------
-.row-container h1:first-of-type,
-.row-container h2:first-of-type,
-.row-container h3:first-of-type,
-.row-container h4:first-of-type,
-.row-container p:first-of-type {
-	margin-top: 0;
-}
