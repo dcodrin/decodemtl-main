@@ -14,28 +14,38 @@ const LocationSlider = React.createClass({
     },
     _handleSlide(slideDirection){
         const {slide, images} = this.state;
-
         if (slideDirection === 'next') {
             if (slide % images.length !== 0) {
                 this.setState({
-                    slide: slide + 1
+                    slide: slide + 1,
+                    prevSlide: slide,
+                    nextSlide: (slide + 2) > images.length ? 1 : slide + 2
                 })
             } else {
                 this.setState({
-                    slide: 1
+                    slide: 1,
+                    prevSlide: slide,
+                    nextSlide: 2
                 });
             }
         } else if (slideDirection === 'prev') {
             if (slide > 1) {
                 this.setState({
-                    slide: slide - 1
+                    slide: slide - 1,
+                    nextSlide: slide,
+                    prevSlide: (slide - 2) === 0 ? images.length : slide - 2
                 });
             } else {
                 this.setState({
-                    slide: images.length
+                    slide: images.length,
+                    nextSlide: 1,
+                    prevSlide: images.length - 1
                 });
             }
         }
+
+        this.props.req(this.props.req(images[this.state.nextSlide - 1]));
+        this.props.req(this.props.req(images[this.state.prevSlide - 1]));
     },
     render() {
         //TODO REMOVE ESLINT EXCEPTION ONCE REFACTORED
@@ -47,6 +57,7 @@ const LocationSlider = React.createClass({
             paddingTop: '66%',
             maxWidth: '99%'
         };
+
         const imageSlide = {
             position: 'absolute',
             top: 0
@@ -73,7 +84,6 @@ const LocationSlider = React.createClass({
                                     transitionLeaveTimeout={400}>
                                     <img key={slide} style={imageSlide} src={req(images[slide - 1])} alt=""/>
                                 </ReactCSSTransitionGroup>
-                                {/*{nextSlide ? <img style={imageSlide} src={req(images[nextSlide - 1])} alt=""/> : null}*/}
                             </div>
                         </div>
                         {/* /.carousel-box */}
