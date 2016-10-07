@@ -17,35 +17,31 @@ const LocationSlider = React.createClass({
         if (slideDirection === 'next') {
             if (slide % images.length !== 0) {
                 this.setState({
-                    slide: slide + 1,
-                    prevSlide: slide,
-                    nextSlide: (slide + 2) > images.length ? 1 : slide + 2
+                    slide: slide + 1
                 })
             } else {
                 this.setState({
-                    slide: 1,
-                    prevSlide: slide,
-                    nextSlide: 2
+                    slide: 1
                 });
             }
         } else if (slideDirection === 'prev') {
             if (slide > 1) {
                 this.setState({
-                    slide: slide - 1,
-                    nextSlide: slide,
-                    prevSlide: (slide - 2) === 0 ? images.length : slide - 2
+                    slide: slide - 1
                 });
             } else {
                 this.setState({
-                    slide: images.length,
-                    nextSlide: 1,
-                    prevSlide: images.length - 1
+                    slide: images.length
                 });
             }
         }
-
-        this.props.req(this.props.req(images[this.state.nextSlide - 1]));
-        this.props.req(this.props.req(images[this.state.prevSlide - 1]));
+    },
+    componentWillMount() {
+        //Preload images when component mounts
+        this.props.req.keys().forEach(src => {
+            const img = document.createElement('img');
+            img.src = src; // Assigning the img src immediately requests the image
+        });
     },
     render() {
         //TODO REMOVE ESLINT EXCEPTION ONCE REFACTORED
@@ -104,7 +100,6 @@ const LocationSlider = React.createClass({
         );
     }
 });
-
 
 
 export default LocationSlider;
