@@ -85,6 +85,13 @@ const CourseProjectsSlider = React.createClass({
             }
         }, 20);
     },
+    componentWillMount() {
+        //Preload images when component mounts
+        this.props.projects.forEach(project => {
+            const img = document.createElement('img');
+            img.src = project.img; // Assigning the img src immediately requests the image
+        });
+    },
     componentWillUnmount() {
         clearInterval(this.animate);
         this.animate = null;
