@@ -50,13 +50,14 @@ const LocationSlider = React.createClass({
 
         const imageContainer = {
             position: 'relative',
-            paddingTop: '66%',
-            maxWidth: '99%'
+            paddingTop: '66%'
         };
 
         const imageSlide = {
             position: 'absolute',
-            top: 0
+            top: 0,
+            height: '100%',
+            width: '100%'
         };
         return (
             <section className="module module-full-width module-boxed-light working-space-module">
@@ -65,8 +66,8 @@ const LocationSlider = React.createClass({
                     <figure className="carousel">
                         <div className="carousel-control carousel-previous"
                              onClick={this._handleSlide.bind(this, 'prev')}>
-                            <i className="fa fa-angle-left" aria-hidden="true" title="Previous Image"/><span
-                            className="sr-only">Previous Project</span>
+                            <i className="fa fa-angle-left" aria-hidden="true" title="Previous Image"/>
+                            <span className="sr-only">Previous Project</span>
                         </div>
                         {/* /.carousel-control */}
                         <div className="carousel-box">
@@ -77,22 +78,24 @@ const LocationSlider = React.createClass({
                                 <ReactCSSTransitionGroup
                                     transitionName="image"
                                     transitionEnterTimeout={400}
-                                    transitionLeaveTimeout={400}>
+                                    transitionLeaveTimeout={400}
+                                    component="div">
                                     <img key={slide} style={imageSlide} src={req(images[slide - 1])} alt=""/>
                                 </ReactCSSTransitionGroup>
                             </div>
                         </div>
                         {/* /.carousel-box */}
                         <div className="carousel-control carousel-next" onClick={this._handleSlide.bind(this, 'next')}>
-                            <i className="fa fa-angle-right" aria-hidden="true" title="Next Image"/><span
-                            className="sr-only">Next Project</span>
+                            <i className="fa fa-angle-right" aria-hidden="true" title="Next Image"/>
+                            <span className="sr-only">Next Project</span>
                         </div>
                         {/* /.carousel-control */}
                     </figure>
                     {/* /.carousel */}
                     <div className="link-more text-body-small">
-                        <Link to="/wework">Learn more about the WeWork experience<span className="fa fa-caret-right"
-                                                                                       aria-hidden="true"/></Link>
+                        <Link to="/wework">Learn more about the WeWork experience
+                            <span className="fa fa-caret-right" aria-hidden="true"/>
+                        </Link>
                     </div>
                 </div>
                 {/* /.wrapper */}
