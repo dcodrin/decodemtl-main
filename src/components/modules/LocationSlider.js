@@ -18,51 +18,35 @@ const LocationSlider = React.createClass({
         if (slideDirection === 'next') {
             if (slide % images.length !== 0) {
                 this.setState({
-                    slide: slide + 1,
-                    prevSlide: slide,
-                    nextSlide: (slide + 2) > images.length ? 1 : slide + 2
+                    slide: slide + 1
                 })
             } else {
                 this.setState({
-                    slide: 1,
-                    prevSlide: slide,
-                    nextSlide: 2
+                    slide: 1
                 });
             }
         } else if (slideDirection === 'prev') {
             if (slide > 1) {
                 this.setState({
-                    slide: slide - 1,
-                    nextSlide: slide,
-                    prevSlide: (slide - 2) === 0 ? images.length : slide - 2
+                    slide: slide - 1
                 });
             } else {
                 this.setState({
-                    slide: images.length,
-                    nextSlide: 1,
-                    prevSlide: images.length - 1
+                    slide: images.length
                 });
             }
         }
     },
-    componentWillAppear() {
-        console.log('Entered')
-    },
     render() {
         //TODO REMOVE ESLINT EXCEPTION ONCE REFACTORED
-        const {nextSlide, prevSlide, slide, images} = this.state; // eslint-disable-line no-unused-vars
+        const {slide, images} = this.state; // eslint-disable-line no-unused-vars
         const req = this.props.req;
 
         const imageContainer = {
             position: 'relative',
-            overflow: 'hidden',
-            paddingTop: '66%'
+            paddingTop: '66%',
+            maxWidth: '99%'
         };
-
-        const currImage = {
-            position: 'relative',
-        };
-
         const imageSlide = {
             position: 'absolute',
             top: 0
@@ -82,11 +66,11 @@ const LocationSlider = React.createClass({
                             <div
                                 style={imageContainer}
                                 className="carousel-img visible">
-                                {/*{prevSlide ? <img style={imageSlide} src={req(images[prevSlide - 1])} alt=""/> : null}*/}
+                                {/*//A key needs to be passed in order for the <img> tag to be rerendered*/}
                                 <ReactCSSTransitionGroup
-                                    transitionName="video"
-                                    transitionEnterTimeout={500}
-                                    transitionLeaveTimeout={300}>
+                                    transitionName="image"
+                                    transitionEnterTimeout={400}
+                                    transitionLeaveTimeout={400}>
                                     <img key={slide} style={imageSlide} src={req(images[slide - 1])} alt=""/>
                                 </ReactCSSTransitionGroup>
                                 {/*{nextSlide ? <img style={imageSlide} src={req(images[nextSlide - 1])} alt=""/> : null}*/}

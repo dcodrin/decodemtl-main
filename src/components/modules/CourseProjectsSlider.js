@@ -132,18 +132,6 @@ const CourseProjectsSlider = React.createClass({
                                 <img style={imageSlide} src={getSource(slidePosition)} alt=""/>
                                 <img style={currImage} src={projects[slide - 1].img} alt=""/>
                             </div>
-                            {/*{projects.map((item, i) => {*/}
-                            {/*return (*/}
-                            {/*<div*/}
-                            {/*style={imageContainer}*/}
-                            {/*key={i}*/}
-                            {/*className={slide === i + 1 ? "student-project-image visible" : "student-project-image"}>*/}
-                            {/*{slidePosition < 0 ? <img style={imageSlide} src={projects[nextSlide - 1].img} alt=""/> : null}*/}
-                            {/*<img style={currImage} src={item.img} alt=""/>*/}
-                            {/*{slidePosition > 0 ? <img style={imageSlide} src={projects[prevSlide - 1].img} alt=""/> : null}*/}
-                            {/*</div>*/}
-                            {/*);*/}
-                            {/*})}*/}
                         </div>
                         <div className="student-project-details">
                             <div className="slider-controls buttons">

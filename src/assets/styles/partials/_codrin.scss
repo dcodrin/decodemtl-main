@@ -23,7 +23,7 @@
 
 .video-enter.video-enter-active {
   opacity: 1;
-  transition: opacity 200ms ease-in;
+  transition: opacity 500ms ease-in;
 }
 
 .video-leave {
@@ -35,4 +35,21 @@
   transition: opacity 300ms ease-out;
 }
 
+// Image Slider Transitions ------------
+.image-enter {
+  opacity: 0.5;
+}
 
+.image-enter.image-enter-active {
+  opacity: 1;
+  transition: opacity 400ms ease-in;
+}
+
+.image-leave {
+  opacity: 1;
+}
+
+.image-leave.image-leave-active {
+  opacity: 0.01;
+  transition: opacity 400ms ease-out;
+}
