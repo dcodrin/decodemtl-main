@@ -40,7 +40,7 @@ const LocationSlider = React.createClass({
         //Preload images when component mounts
         this.props.req.keys().forEach(src => {
             const img = document.createElement('img');
-            img.src = src; // Assigning the img src immediately requests the image
+            img.src = this.props.req(src); // Assigning the img src immediately requests the image
         });
     },
     render() {
