@@ -50,14 +50,13 @@ const LocationSlider = React.createClass({
 
         const imageContainer = {
             position: 'relative',
-            paddingTop: '66%'
+            paddingTop: '66%',
+            maxWidth: '99%'
         };
 
         const imageSlide = {
             position: 'absolute',
-            top: 0,
-            height: '100%',
-            width: '100%'
+            top: 0
         };
         return (
             <section className="module module-full-width module-boxed-light working-space-module">
