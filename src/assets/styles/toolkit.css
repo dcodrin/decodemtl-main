@@ -182,7 +182,9 @@ html {
       padding: 0; } }
   @media (min-width: 87.5em) {
     .wrapper {
-      max-width: 1300px; } }
+        max-width: 1200px;
+    }
+  }
 
 .row-container {
   padding: calc(3rem / 2) 0; }
@@ -582,7 +584,14 @@ ol {
   bottom: 0;
   background: rgba(240, 240, 240, 0.9);
   z-index: 50;
-  padding: 10vh 10vw; }
+    padding: 10vh 0.5em 0 0.5em;
+}
+
+@media (min-width: 64em) {
+    .modal {
+        padding: 10vh 10vw 0 10vw;
+    }
+}
   .modal .close-btn {
     position: absolute;
     top: 5vh;
@@ -703,7 +712,8 @@ span.required {
   color: #D6252C;
   line-height: 0;
   font-family: inherit;
-  font-size: 1.9rem; }
+    font-size: 1.5em;
+}
 
 div.required {
   position: relative; }
@@ -714,7 +724,10 @@ div.required {
     content: '*'; }
 
 span.required {
-  margin-left: 0.2em; }
+    margin-left: 0.2em;
+    position: relative;
+    top: 0.1em;
+}
 
 button,
 input[type="button"],
@@ -984,13 +997,14 @@ a {
 .home-link {
   display: flex;
   flex: 0 0 240px;
+    max-width: 240px;
   margin-right: auto; }
   @media (max-width: 50em) {
     .home-link {
       display: none; } }
   .home-link .petals {
     transform: rotate(0deg);
-    transform-origin: center;
+      transform-origin: 32px 32px;
     transition: transform 0.2s; }
   .home-link:hover .petals {
     transform: rotate(180deg); }
@@ -1492,27 +1506,33 @@ body.nav-container-active {
   .career-support .info-block > * {
     margin: auto; }
 
-@media (min-width: 50em) {
-  .employer-cta-module {
-    text-align: center; } }
+.employer-cta-module {
+    text-align: center;
+}
 
 .skills-container {
   text-align: left;
   color: inherit;
-  margin: 3rem -3em;
   padding: 1em 3em;
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start; }
   @media (min-width: 50em) {
     .skills-container {
+        margin: 3rem -3em;
       flex-flow: row nowrap;
       justify-content: space-between;
       align-items: flex-start; } }
 
 .skill {
-  padding: 1em 0;
-  flex: 0 0 calc(30% - 1em); }
+    padding: 1em 0;
+}
+
+@media (min-width: 50em) {
+    .skill {
+        flex: 0 0 calc(30% - 1em);
+    }
+}
 
 .skill-title {
   display: flex;

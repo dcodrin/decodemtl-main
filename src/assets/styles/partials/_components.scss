@@ -325,7 +325,10 @@ ol {
 	@include overlay;
 	background:transparentize($lightgrey, 0.1);
 	z-index: 50;
-	padding: 10vh 10vw;
+	padding: 10vh 0.5em 0 0.5em;
+	@include breakpoint(minlaptop) {
+		padding: 10vh 10vw 0 10vw;
+	}
 	.close-btn {
 		position: absolute;
 		top:5vh;

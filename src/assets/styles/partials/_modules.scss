@@ -223,19 +223,17 @@
 // Employer CTA Module
 // ========================
 .employer-cta-module {
-	@include breakpoint(mintablet) {
 		text-align: center;
-	}
 }
 .skills-container {
 	text-align: left;
 	color: inherit;
-	margin: $module-vert-pd -3em;
 	padding: 1em 3em;
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: flex-start;
 	@include breakpoint(mintablet) {
+      margin: $module-vert-pd -3em;
 		flex-flow: row nowrap;
 		justify-content: space-between;
 		align-items: flex-start;
@@ -243,7 +241,9 @@
 }
 .skill {
 	padding: 1em 0;
-	flex: 0 0 calc(30% - 1em);
+  @include breakpoint(mintablet) {
+    flex: 0 0 calc(30% - 1em);
+  }
 }
 .skill-title {
 	display: flex;

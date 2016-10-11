@@ -59,7 +59,7 @@ const SiteNav = React.createClass({
                         {/* wide screen logo */}
                         <Link className="home-link" to="/" itemProp="url" aria-label="Home">
                             <svg className="decode-logo" id="decode-logo" xmlns="http://www.w3.org/2000/svg" width="426"
-                                 height="64" viewBox="0 0 426 64">
+                                 height="64" viewBox="-1 0 426 64">
                                 <g className="mtl" id="mtl">
                                     <path id="L"
                                           d="M397.345 11.79c0-.42.21-.63.63-.63h6.174c.42 0 .63.21.63.63v35.153c0 .252.125.38.377.38h19.656c.42 0 .63.21.63.63v5.417c0 .42-.21.63-.63.63h-26.838c-.42 0-.63-.21-.63-.63V11.79z"/>
