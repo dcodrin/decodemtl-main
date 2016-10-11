@@ -23,7 +23,7 @@ export const generalFAQ = [
     },
     {
         question: 'Where are you located?',
-        answer: 'We are located in downtown Montreal in the Place Ville Marie complex. We are part of the WeWork co-working space located on the 4th floor of 3 Place Ville Marie.'
+        answer: (<div>We are located in downtown Montreal in the Place Ville Marie complex. We are part of the WeWork co-working space located on the 4th floor of 3 Place Ville Marie. You can learn more about WeWork <a href="/wework">here</a>.</div>)
     },
     {
         question: 'How do I know which course to take?',
@@ -85,9 +85,5 @@ export const partTimeFAQ = [
     {
         question: 'What do I need to bring with me?',
         answer: 'Any fast laptop will do. MacOS, Linux, or Windows all work fine.'
-    },
-    {
-        question: 'Do I need any prior knowledge to attend this course?',
-        answer: 'None at all, this course is beginner friendly. However, there will be a minimal amount of pre-course work to do.'
     },
 ];

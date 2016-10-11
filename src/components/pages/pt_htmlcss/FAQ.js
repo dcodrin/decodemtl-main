@@ -23,6 +23,6 @@ module.exports = [
     },
     {
         question: 'I have more questions, who can I ask?',
-        answer: (<div>The best way to contact us is to send an email to <a href="#">hello@decodemtl.com</a>.</div>)
+        answer: (<div>The best way to contact us is to send an email to <a href="mailto:hello@decodemtl.com">hello@decodemtl.com</a>.</div>)
     }
 ];

@@ -23,7 +23,7 @@ module.exports = [
     },
     {
         question: 'I am an international student, do you offer housing?',
-        answer: 'We have partnered with EVO, a student residence just down the street from us. You can read more about EVO here.'
+        answer: (<div>We have partnered with EVO, a student residence just down the street from us. You can read more about EVO <a href="/housing">here</a>.</div>)
     },
     {
         question: 'What do I need to bring with me?',
@@ -35,6 +35,6 @@ module.exports = [
     },
     {
         question: 'I have more questions, who can I ask?',
-        answer: (<div>The best way to contact us is to send an email to <a href="#">hello@decodemtl.com</a>.</div>)
+        answer: (<div>The best way to contact us is to send an email to <a href="mailto:hello@decodemtl.com">hello@decodemtl.com</a>.</div>)
     },
 ];

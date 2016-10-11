@@ -9,9 +9,7 @@ const Success = (props) => {
             <section className="module">
                 <div className="wrapper">
                     <h2 className="module-title">Success!</h2>
-                    <p>THIS IS THE SUCCESS PAGE</p>
-                    <p>If you have any questions in the mean time, please <a href="mailto:hello@decodemtl.com">email
-                        us</a>.</p>
+                    <p>Your request has been received. Our team is currently reviewing it and will get back to you within 48 hours (not including weekends or holidays).</p>
                 </div>
             </section>
         );
@@ -25,7 +23,7 @@ const Success = (props) => {
                 ]}/>
             <div className="wrapper">
                 <h2 className="module-title">Something went wrong!</h2>
-                <p>Please try again! If the problem persists, please contact hello@decodemtl.com.</p>
+                <p>Please try again! If the problem persists, please contact <a href="mailto:hello@decodemtl.com">hello@decodemtl.com</a>.</p>
             </div>
         </section>
     );
